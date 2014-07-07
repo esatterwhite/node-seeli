@@ -1,0 +1,41 @@
+{
+  "name": "seeli",
+  "version": "0.0.0",
+  "description": "Object oriented, flexible CLI tools",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/esatterwhite/node-seele.git"
+  },
+  "keywords": [
+    "CLI",
+    "OOP",
+    "command",
+    "line",
+    "class",
+    "terminal",
+    "ANSI",
+    "cli"
+  ],
+  "author": "Eric Satterwhite",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/esatterwhite/node-seele/issues"
+  },
+  "homepage": "https://github.com/esatterwhite/node-seele",
+  "dependencies": {
+    "prime": "~0.4.2",
+    "mout": "~0.9.1",
+    "chalk": "~0.5.0",
+    "mocha": "~1.20.1",
+    "inquirer": "~0.5.1",
+    "nopt": "~3.0.1",
+    "abbrev": "~1.0.5"
+  }
+}
