@@ -82,3 +82,12 @@ name | type | default | description
 * **choices**: Used only during an interactive command. Restricts the users options only to the options specified
 * **skip**: if set to `true` this flag will be omitted from the interactive command prompts
 * **event**: if set to `true` the command will emit an event withe the same name as the flag with the value that was captured for that flag
+
+
+## Asyncronous
+
+Your defined `run` function will be passed a `done` function to be called when your command has finished. This allows you to do complex async operations ond I/O. The `done` callback accepts an error, if their is one, and the final output to be displayed for your command.
+
+## Errors
+
+Errors are handled by Node's error domains. Each command will run inside of its own domain and will emit an error event if and error is passed to the `done` callback from the `run` method.
