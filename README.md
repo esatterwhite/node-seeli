@@ -66,12 +66,12 @@ node cli.js test --name=mark --name=sally --no-excited
 
 name | type | default | description
 -----|:-----:|--------|-------------
-**description** | `String` |  **""**
-**args** | `Array` | **null**
-**interactive** | `Boolean` | **true**
-**usage** | `String` / `Array` | **""**
-**flags** | `Object` | **{}**
-**run** | `Function` | **no-op**
+**description** | `String` |  `""`
+**args** | `Array` | `null`
+**interactive** | `Boolean` | `true`
+**usage** | `String` / `Array` | `""`
+**flags** | `Object` | `{}`
+**run** | `Function` | `no-op`
 
 ### Flag Options
 
@@ -83,6 +83,10 @@ name | type | default | description
 * **skip**: if set to `true` this flag will be omitted from the interactive command prompts
 * **event**: if set to `true` the command will emit an event withe the same name as the flag with the value that was captured for that flag
 
+
+## Auto Help
+
+Seeli will generate help from the usage string and flags 
 
 ## Asyncronous
 
