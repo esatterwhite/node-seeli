@@ -30,12 +30,13 @@
   },
   "homepage": "https://github.com/esatterwhite/node-seele",
   "dependencies": {
-    "prime": "~0.4.2",
-    "mout": "~0.9.1",
+    "abbrev": "~1.0.5",
     "chalk": "~0.5.0",
-    "mocha": "~1.20.1",
     "inquirer": "~0.5.1",
+    "mocha": "~1.20.1",
+    "mout": "~0.9.1",
     "nopt": "~3.0.1",
-    "abbrev": "~1.0.5"
+    "prime": "~0.4.2",
+    "semver": "^3.0.1"
   }
 }
