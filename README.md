@@ -66,12 +66,12 @@ node cli.js test --name=mark --name=sally --no-excited
 
 name | type | default | description
 -----|:-----:|--------|-------------
-**description** | `String` |  `""`
-**args** | `Array` | `null`
-**interactive** | `Boolean` | `true`
-**usage** | `String` / `Array` | `""`
-**flags** | `Object` | `{}`
-**run** | `Function` | `no-op`
+**description** | `String` |  `""` | Used to render help output
+**args** | `Array` | `null` | if supplied, `agrs` will be used instead of `process.argv`
+**interactive** | `Boolean` | `true` | If set to false, the flag will be excluded from the interactive prompts
+**usage** | `String` / `Array` | `""` | A string or array of strings used to generate help text
+**flags** | `Object` | `{}` | key value pairs used to control the command where keys are the name of the flag and the values is a configuration object for the flag
+**run** | `Function` | `no-op` | A function used as the body of the command. it will be passed a `name`, a `data` object containing the processed values from the command input and a `done` function to be called when the command is done.
 
 ### Flag Options
 
