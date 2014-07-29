@@ -92,6 +92,43 @@ Seeli will generate help from the usage string and flags
 
 Your defined `run` function will be passed a `done` function to be called when your command has finished. This allows you to do complex async operations ond I/O. The `done` callback accepts an error, if their is one, and the final output to be displayed for your command.
 
+## Events
+
+Instances of the seeli Command or Commands the inherit from it as also instances of the `EventEmitter` class. By default any flag that has its `event` option set to `true` will emit an event with the value of of the flag before the run function is executed.
+
+```js
+var EventCommand = new cli.Command({
+	args:[ '--one', '--no-two']
+  , flags:{
+		one:{
+			type:Boolean
+			,event:true
+		}
+		,two:{
+			type:Boolean
+			,event:true
+		}
+	}
+  , run: function( cmd, data, done ){
+  	done( null, data.one && data.two )
+  }
+});
+
+EventCommand.on('one', function( value ){
+	assert.equal( true, value );
+});
+
+EventCommand.on('two', function( value ){
+	assert.equal( false, value )
+});
+
+EventCommand.on('content', function( value ){
+	assert.equal( false, value );
+});
+
+EventCommand.run( null );
+```
+
 ## Errors
 
 Errors are handled by Node's error domains. Each command will run inside of its own domain and will emit an error event if and error is passed to the `done` callback from the `run` method.
