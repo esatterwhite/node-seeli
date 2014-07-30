@@ -1,8 +1,8 @@
 node-seeli ( C-L-I )
 ======================
 
-Object orientated, event driven CLI module
-
+Object orientated, event driven **Interactive** CLI module
+![fake](./assets/test.gif "interactive mode")
 
 ```js
 var cli = require("seeli")
@@ -49,7 +49,7 @@ var cli = require("seeli")
 		cb( null, out );
 	}
 });
-cli.use('test', Test)
+cli.use('hello', Test)
 cli.run();
 ```
 
@@ -60,6 +60,24 @@ node cli.js help test
 node cli.js test --help
 node cli.js test --interactive
 node cli.js test --name=mark --name=sally --no-excited
+```
+
+
+
+## Seeli.run( )
+
+Executes The command line interface
+
+## Seeli.use( name `<str>`, cmd `<Command>` )
+
+Registers a new command under the specified name where the hame will envoke the associated command
+
+```js
+var cli = require('seeli')
+var Cmd = new cli.Command();
+
+cli.use('test', Cmd )
+cli.run()
 ```
 
 ## Options
@@ -132,3 +150,5 @@ EventCommand.run( null );
 ## Errors
 
 Errors are handled by Node's error domains. Each command will run inside of its own domain and will emit an error event if and error is passed to the `done` callback from the `run` method.
+
+
