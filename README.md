@@ -80,6 +80,8 @@ cli.use('test', Cmd )
 cli.run()
 ```
 
+## Command( options `<object>` )
+
 ## Options
 
 name | type | default | description
@@ -92,14 +94,15 @@ name | type | default | description
 **run** | `Function` | `no-op` | A function used as the body of the command. it will be passed a `name`, a `data` object containing the processed values from the command input and a `done` function to be called when the command is done.
 
 ### Flag Options
-
-* **type** ( required ): The type of input that is expected. Boolean types to not expect input. The present of the flag implies `true`. Additionally, boolean flags allow for `--no-<flag>` to enforce `false`. If you want to accept muliple values, you specify type as an array with the first value being the type you which to accept. For example `[String, Array ]` means you will accept multiple string values.
-* **descrption**: a description of the flag in question. 
-* **shorthand**: An options short hand flag that will be expanded out to the long hand flag.
-* **default**: A value to return if the flag is omitted.
-* **choices**: Used only during an interactive command. Restricts the users options only to the options specified
-* **skip**: if set to `true` this flag will be omitted from the interactive command prompts
-* **event**: if set to `true` the command will emit an event withe the same name as the flag with the value that was captured for that flag
+name | required | description
+-----|:--------:|------------
+type |  `true` | The type of input that is expected. Boolean types to not expect input. The present of the flag implies `true`. Additionally, boolean flags allow for `--no-<flag>` to enforce `false`. If you want to accept muliple values, you specify type as an array with the first value being the type you which to accept. For example `[String, Array ]` means you will accept multiple string values.|
+descrption | `false` | a description of the flag in question.  |
+shorthand  | `false` | An options short hand flag that will be expanded out to the long hand flag. |
+default    | `false` | A value to return if the flag is omitted. |
+choices    | `false` | Used only during an interactive command. Restricts the users options only to the options specified |
+skip       | `false` | if set to `true` this flag will be omitted from the interactive command prompts |
+event      | `false` | if set to `true` the command will emit an event withe the same name as the flag with the value that was captured for that flag |
 
 
 ## Auto Help
@@ -152,3 +155,6 @@ EventCommand.run( null );
 Errors are handled by Node's error domains. Each command will run inside of its own domain and will emit an error event if and error is passed to the `done` callback from the `run` method.
 
 
+## TODOs
+
+* required flag handling. It can be inforce in interactive mode, but not plain cli mode
