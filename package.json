@@ -36,7 +36,7 @@
     "mout",
     "nopt",
     "prime",
-    "semver",
+    "semver"
   ],
   "dependencies": {
     "abbrev": "~1.0.5",
