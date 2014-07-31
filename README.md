@@ -4,7 +4,7 @@ node-seeli ( C-L-I )
 Object orientated, event driven , **Interactive** CLI module. Seeli aims to give you the tools to compose
 A command line interface they way you want it, and otherwise, stay out of your way.
 
-![walkthrough gif](https://github.com/esatterwhite/node-seeli/blob/master/assets/test.gif "interactive mode")
+![walkthrough gif](https://raw.githubusercontent.com/esatterwhite/node-seeli/master/assets/test.gif "interactive mode")
 
 ```js
 var cli = require("seeli")
