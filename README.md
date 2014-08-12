@@ -1,3 +1,4 @@
+![build image](https://travis-ci.org/esatterwhite/node-seeli.svg?branch=master)
 node-seeli ( C-L-I )
 ======================
 
