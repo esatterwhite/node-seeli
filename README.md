@@ -185,4 +185,4 @@ EventCommand.run( null );
 
 ## Errors
 
-Errors are handled by Node's error domains. Each command will run inside of its own domain and will emit an error event if and error is passed to the `done` callback from the `run` method. Seeli will supress trace messages by default. You can use the `--traceback` flag on any command to surface the full stack trace
+Errors are handled by Node's error [domains](http://nodejs.org/api/domain.html). Each command will run inside of its own domain and will emit an error event if and error is passed to the `done` callback from the `run` method. Seeli will supress trace messages by default. You can use the `--traceback` flag on any command to surface the full stack trace
