@@ -1,15 +1,17 @@
-![build image](https://travis-ci.org/esatterwhite/node-seeli.svg?branch=master)
-node-seeli ( C-L-I )
+![build image](https://travis-ci.org/esatterwhite/node-seeli.svg?branch=master)&nbsp;
+![package dependancies](https://david-dm.org/esatterwhite/node-seeli.png)
+seeli ( C. L. I. )
 ======================
 
 Object orientated, event driven , **Interactive** CLI module. Seeli aims to give you the tools to compose
 A command line interface they way you want it, and otherwise, stay out of your way.
 
-![walkthrough gif](https://raw.githubusercontent.com/esatterwhite/node-seeli/master/assets/test.gif "interactive mode")
+![
+ gif](https://raw.githubusercontent.com/esatterwhite/node-seeli/master/assets/test.gif "interactive mode")
 
 ```js
 var cli = require("seeli")
-var Test = new cli.Command({
+var Hello = new cli.Command({
 	description:"diaplays a simple hello world command"
 	,usage:[
 		"Usage: cli hello --interactive",
@@ -52,17 +54,17 @@ var Test = new cli.Command({
 		cb( null, out );
 	}
 });
-cli.use('hello', Test)
+cli.use('hello', Hello)
 cli.run();
 ```
 
-now you will have a fully functional test command with help and an interactive walk through
+now you will have a fully functional hello command with help and an interactive walk through
 
 ```
-node cli.js help test 
-node cli.js test --help
-node cli.js test --interactive
-node cli.js test --name=mark --name=sally --no-excited
+node cli.js help hello
+node cli.js hello --help
+node cli.js hello --interactive
+node cli.js hello --name=Mark --name=Sally --no-excited
 ```
 
 
@@ -133,7 +135,7 @@ name | required | type | description
 **shorthand**  | `false` | `string` | An options short hand flag that will be expanded out to the long hand flag. |
 **default**    | `false` | `mixed` | A value to return if the flag is omitted. |
 **choices**    | `false` | `array` | Used only during an interactive command. Restricts the users options only to the options **specified** |
-**skip**       | `false` | `boolean` | if set to `true` this flag will be omitted from the interactive command prompts |
+**skip**       | `false` | `boolean` | **interactive mode only** - if set to `true` this flag will be omitted from the interactive command prompts |
 **event**      | `false` | `boolean` | if set to `true` the command will emit an event withe the same name as the flag with **the** value that was captured for that flag |
 **when** | `false` | `function` | **interactive mode only** Receives the current user answers hash and should return true or **false** depending on whether or not this question should be asked. 
 **valdate** | `false` | `function` | **interactive mode only**  - recieves user input and should return true if the value is **valid**, and an error message (String) otherwise. If false is returned, a default error message is provided.
