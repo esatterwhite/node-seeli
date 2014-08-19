@@ -1,4 +1,4 @@
-var cli = require("./")
+var cli = require("../")
 var Test = new cli.Command({
 	description:"diaplays a simple hello world command"
 	,usage:[
