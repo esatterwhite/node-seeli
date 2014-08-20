@@ -11,6 +11,7 @@ var Test = new cli.Command({
 			type:[ String, Array ]
 			,shorthand:'n'
 			,description:"The name of the person to say hello to"
+			,required:true
 		}
 		,excited: {
 			type:Boolean
