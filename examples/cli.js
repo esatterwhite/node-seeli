@@ -46,5 +46,5 @@ var Test = new cli.Command({
 		cb( null, out );
 	}
 });
-cli.use('hello', Test)
+cli.use('world', Test)
 cli.run();
