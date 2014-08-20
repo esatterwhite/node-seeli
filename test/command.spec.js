@@ -188,6 +188,29 @@ describe('command', function(){
 
 			assert.equal( 2, DefaultCommand.argv.one )
 		});
+
+		it('should raise an exception for required fields if not supplied', function(){
+			var RequiredCommand = new cli.Command({
+				flags:{
+					one:{
+						type:Number
+						,required:true
+					}
+				}
+			});
+			assert.throws(function(){
+				RequiredCommand.run();
+			})
+
+			RequiredCommand.reset();
+			RequiredCommand.setOptions({
+				args:['--one=1']
+			})
+
+			assert.doesNotThrow(function(){
+				RequiredCommand.run()
+			})
+		})
 	})
 
 	describe("#run", function(){
