@@ -83,6 +83,14 @@ the parent application
 
 ## Seeli.use( name `<string>`, cmd `<Command>` )
 
+```js
+var cli = require('seeli')
+var Cmd = new cli.Command();
+
+cli.use('test', Cmd )
+cli.run()
+```
+
 Registers a new command under the specified name where the hame will envoke the associated command
 
 ## Seeli.bold( text `<string>`)
@@ -111,15 +119,6 @@ wraps text in the ansi code for cyan
 ## Seeli.magenta( text `<string>`)
 
 conwraps text in the ansi code for magenta
-
-
-```js
-var cli = require('seeli')
-var Cmd = new cli.Command();
-
-cli.use('test', Cmd )
-cli.run()
-```
 
 ## Command( options `<object>` )
 
