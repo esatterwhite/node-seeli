@@ -72,7 +72,16 @@ node cli.js world --name=Mark --name=Sally --no-excited
 
 Executes The command line interface
 
-## Seeli.use( name `<stringe>`, cmd `<Command>` )
+## Seeli.list`<Array>`
+
+List of all top level registered commands
+
+## Seeli.exitOnError `<Boolean>`
+
+If set to turn seeli will exit the process when it encouters an error. If false, it will leave error handling up to
+the parent application
+
+## Seeli.use( name `<string>`, cmd `<Command>` )
 
 Registers a new command under the specified name where the hame will envoke the associated command
 
@@ -187,4 +196,15 @@ EventCommand.run( null );
 
 ## Errors
 
-Errors are handled by Node's error [domains](http://nodejs.org/api/domain.html). Each command will run inside of its own domain and will emit an error event if and error is passed to the `done` callback from the `run` method. Seeli will supress trace messages by default. You can use the `--traceback` flag on any command to surface the full stack trace
+Errors are handled by Node's error [domains](http://nodejs.org/api/domain.html). Each command will run inside of its own domain and will emit an error event if and error is passed to the `done` callback from the `run` method. Seeli will supress trace messages by default. You can use the `--traceback` flag on any command to surface the full stack trace. If the error object emitted has a `code` property that is a non zero value, seeli will forcefully exit the process with the error code.
+
+```js
+var cli = require("seeli")
+var ErrCmd = new cli.Command({
+	run: function(){
+		var e = new Error("Invalid Command")
+		e.code = 10;
+		this.emit('error',e )
+	}
+});
+```
