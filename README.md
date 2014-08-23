@@ -1,5 +1,4 @@
-![build image](https://travis-ci.org/esatterwhite/node-seeli.svg?branch=master)&nbsp;
-![package dependancies](https://david-dm.org/esatterwhite/node-seeli.png)
+![build image](https://travis-ci.org/esatterwhite/node-seeli.svg?branch=master)&nbsp;![package dependancies](https://david-dm.org/esatterwhite/node-seeli.png)
 seeli ( C. L. I. )
 ======================
 
@@ -54,17 +53,17 @@ var Hello = new cli.Command({
 		cb( null, out );
 	}
 });
-cli.use('hello', Hello)
+cli.use('world', Hello)
 cli.run();
 ```
 
-now you will have a fully functional hello command with help and an interactive walk through
+now you will have a fully functional world command with help and an interactive walk through
 
 ```
-node cli.js help hello
-node cli.js hello --help
-node cli.js hello --interactive
-node cli.js hello --name=Mark --name=Sally --no-excited
+node cli.js help world
+node cli.js world --help
+node cli.js world --interactive
+node cli.js world --name=Mark --name=Sally --no-excited
 ```
 
 
