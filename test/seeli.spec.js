@@ -13,16 +13,23 @@ describe('cli', function(){
 		it('should allow commands to be registered by name', function(){
 			cli.use('test', TestCommand)
 			assert.notEqual( cli.list.indexOf('test'), -1 )
-
 		})
 
 		describe("#list", function(){
+			it('should return an array', function(){
+				assert.ok( Array.isArray( cli.list ) )
+			})
 
+			it('should only list top level commands', function(){
+				var ls = cli.list
+				assert.notEqual(cli.list.indexOf('test'), -1  )
+				assert.notEqual(cli.list.indexOf('help'), -1  )
+				assert.equal(cli.list.indexOf('h'), -1  )
+				assert.equal(cli.list.indexOf('he'), -1  )
+				assert.equal(cli.list.indexOf('hel'), -1  )
+			})
 		});
 
 	});
 
-	describe('#remove', function(){
-
-	});
 })

@@ -249,4 +249,29 @@ describe('command', function(){
 		});
 	})
 
+	describe("Subclassing", function(){
+		it('should allow for subclassing',function(){
+			var AltCommand = cli.Class({
+				inherits:cli.Command
+				,fake: function( ){
+					return false
+				}
+			})
+
+			var Alt = new AltCommand({
+				flags:{
+					test:{
+						type:Boolean
+						,event:false
+					}
+				}
+			})
+
+			cli.use( 'alt', Alt )
+			assert.notEqual( cli.list.indexOf( 'alt' ), -1 )
+			assert.equal( Alt.fake(), false )
+			assert.equal( cli.commands.alt.fake(), false )
+		})
+	})
+
 })
