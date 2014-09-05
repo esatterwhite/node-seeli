@@ -40,12 +40,12 @@
   ],
   "dependencies": {
     "abbrev": "~1.0.5",
-    "chalk": "~0.5.0",
-    "inquirer": "~0.5.1",
+    "chalk": "^0.5.1",
+    "inquirer": "^0.7.1",
     "mocha": "^1.21.4",
-    "mout": "~0.9.1",
+    "mout": "^0.10.0",
     "nopt": "~3.0.1",
-    "prime": "~0.4.2",
+    "prime": "^0.4.2",
     "semver": "^3.0.1"
   },
   "devDependencies": {
