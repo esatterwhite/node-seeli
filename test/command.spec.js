@@ -272,6 +272,38 @@ describe('command', function(){
 			assert.equal( Alt.fake(), false )
 			assert.equal( cli.commands.alt.fake(), false )
 		})
-	})
+	});
+
+	describe("Directive parsing", function(){
+		it('should pass the first non-flag argument to run', function(){
+			var DirectiveCommand = new cli.Command({
+				flags:{
+					test:{
+						type:Boolean
+						,default:true
+					}
+				}
+				,run: function( cmd, data, done ){
+					assert.notStrictEqual( cmd, null )
+					assert.equal( cmd, "test")
+				}
+			});
+
+			DirectiveCommand.setOptions({
+				args:['test', '--test']
+			})
+
+			DirectiveCommand.run(null)
+
+			DirectiveCommand.reset()
+
+			assert.throws(function(){
+				// should throw because it is expecting test
+				// sending fake should make its way to the run function
+				DirectiveCommand.run('fake')
+			})
+
+		});
+	});
 
 })
