@@ -1,4 +1,5 @@
 ![build image](https://travis-ci.org/esatterwhite/node-seeli.svg?branch=master)&nbsp;![package dependancies](https://david-dm.org/esatterwhite/node-seeli.png)
+
 seeli ( C. L. I. )
 ======================
 
@@ -90,7 +91,7 @@ cli.use('test', Cmd )
 cli.run()
 ```
 
-Registers a new command under the specified name where the hame will envoke the associated command
+Registers a new command under the specified name where the name will invoke the associated command
 
 ## Seeli.bold( text `<string>`)
 
@@ -98,7 +99,7 @@ wraps text in the ansi code for bold
 
 ## Seeli.green( text `<string>`)
 
-cwraps text in the ansi code for green
+wraps text in the ansi code for green
 
 ## Seeli.blue( text `<string>`)
 
@@ -109,7 +110,7 @@ wraps text in the ansi code for red
 
 ## Seeli.yellow( text `<string>`)
 
-cowraps text in the ansi code for yellow
+wraps text in the ansi code for yellow
 
 ## Seeli.cyan( text `<string>`)
 
@@ -135,8 +136,8 @@ name | type | default | description
 ### Flag Options
 name | required | type | description
 -----|:--------:|:----:|------------
-**type** |  `true` | `string` |The type of input that is expected. Boolean types to not expect input. The present of the flag **implies** `true`. Additionally, boolean flags allow for `--no-<flag>` to enforce `false`. If you want to accept muliple **values**, you specify type as an array with the first value being the type you which to accept. For example `[String, Array ]**`** means you will accept multiple string values.|
-**descrption** | `false` | `string` |  a description of the flag in question.  |
+**type** |  `true` | `string` |The type of input that is expected. Boolean types to not expect input. The present of the flag **implies** `true`. Additionally, boolean flags allow for `--no-<flag>` to enforce `false`. If you want to accept multiple **values**, you specify type as an array with the first value being the type you which to accept. For example `[String, Array ]**`** means you will accept multiple string values.|
+**description** | `false` | `string` |  a description of the flag in question.  |
 **required** | `false` | `boolean` |  If set to `true` a `RequiredFieldError` will be emitted  |
 **shorthand**  | `false` | `string` | An options short hand flag that will be expanded out to the long hand flag. |
 **default**    | `false` | `mixed` | A value to return if the flag is omitted. |
@@ -144,7 +145,7 @@ name | required | type | description
 **skip**       | `false` | `boolean` | **interactive mode only** - if set to `true` this flag will be omitted from the interactive command prompts |
 **event**      | `false` | `boolean` | if set to `true` the command will emit an event withe the same name as the flag with **the** value that was captured for that flag |
 **when** | `false` | `function` | **interactive mode only** Receives the current user answers hash and should return true or **false** depending on whether or not this question should be asked. 
-**valdate** | `false` | `function` | **interactive mode only**  - recieves user input and should return true if the value is **valid**, and an error message (String) otherwise. If false is returned, a default error message is provided.
+**validate** | `false` | `function` | **interactive mode only**  - receives user input and should return true if the value is **valid**, and an error message (String) otherwise. If false is returned, a default error message is provided.
 **filter** | `false` | `function` | **interactive mode only** Receives the user input and return the filtered value to be used **inside** the program. The value returned will be added to the Answers hash.
 
 ## Auto Help
@@ -153,7 +154,7 @@ Seeli will generate help from the usage string and flags. You can help as a comm
 
 ## Asyncronous
 
-Your defined `run` function will be passed a `done` function to be called when your command has finished. This allows you to do complex async operations ond I/O. The `done` callback accepts an error, if their is one, and the final output to be displayed for your command.
+Your defined `run` function will be passed a `done` function to be called when your command has finished. This allows you to do complex async operations and I/O. The `done` callback accepts an error, if there is one, and the final output to be displayed for your command.
 
 ## Events
 
@@ -194,7 +195,7 @@ EventCommand.run( null );
 
 ## Errors
 
-Errors are handled by Node's error [domains](http://nodejs.org/api/domain.html). Each command will run inside of its own domain and will emit an error event if and error is passed to the `done` callback from the `run` method. Seeli will supress trace messages by default. You can use the `--traceback` flag on any command to surface the full stack trace. If the error object emitted has a `code` property that is a non zero value, seeli will forcefully exit the process with the error code.
+Errors are handled by Node's error [domains](http://nodejs.org/api/domain.html). Each command will run inside of its own domain and will emit an error event if and error is passed to the `done` callback from the `run` method. Seeli will suppress trace messages by default. You can use the `--traceback` flag on any command to surface the full stack trace. If the error object emitted has a `code` property that is a non zero value, seeli will forcefully exit the process with the error code.
 
 ```js
 var cli = require("seeli")
