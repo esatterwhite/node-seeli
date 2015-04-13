@@ -49,7 +49,7 @@ var Hello = new cli.Command({
 		}
 		out = out.join('\n');
 
-		out = data.value == 'screaming' ? out.toUpperCase() : out;
+		out = data.volume == 'screaming' ? out.toUpperCase() : out;
 		cb( null, out );
 	}
 });
