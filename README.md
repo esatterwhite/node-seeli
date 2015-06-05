@@ -145,7 +145,7 @@ name | required | type | description
 **skip**       | `false` | `boolean` | **interactive mode only** - if set to `true` this flag will be omitted from the interactive command prompts |
 **event**      | `false` | `boolean` | if set to `true` the command will emit an event withe the same name as the flag with **the** value that was captured for that flag |
 **when** | `false` | `function` | **interactive mode only** Receives the current user answers hash and should return true or **false** depending on whether or not this question should be asked. 
-**validate** | `false` | `function` | **interactive mode only**  - receives user input and should return true if the value is **valid**, and an error message (String) otherwise. If false is returned, a default error message is provided.
+**validate** | `false` | `function` |  receives user input and should return true if the value is **valid**, and an error message (String) otherwise. If false is returned, a default error message is provided.
 **filter** | `false` | `function` | **interactive mode only** Receives the user input and return the filtered value to be used **inside** the program. The value returned will be added to the Answers hash.
 
 ## Auto Help
