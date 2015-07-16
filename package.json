@@ -46,11 +46,11 @@
   "dependencies": {
     "abbrev": "~1.0.5",
     "chalk": "^1.0.0",
-    "inquirer": "^0.8.2",
+    "inquirer": "^0.9.0",
     "mout": "^0.11.0",
     "nopt": "~3.0.1",
-    "prime": "^0.4.2",
-    "semver": "^4.3.3"
+    "prime": "^0.5.0",
+    "semver": "^5.0.1"
   },
   "devDependencies": {
     "mocha": "^2.2.4"
