@@ -120,6 +120,18 @@ wraps text in the ansi code for cyan
 
 wraps text in the ansi code for magenta
 
+## Seeli.set( key `<string>`, value `<object>` )
+
+sets a conf value.
+
+## Seeli.get( key `<string>` )
+
+A config value to look up. Can be a dot separated key to look up nested values
+
+#### Supported Confgurations
+
+* color - The chalk color to use when outputting help text. default `green`
+
 ## Command( options `<object>` )
 
 ## Options
