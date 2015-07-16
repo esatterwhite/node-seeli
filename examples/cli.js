@@ -47,4 +47,5 @@ var Test = new cli.Command({
 	}
 });
 cli.use('world', Test)
+cli.set('color','yellow');
 cli.run();
