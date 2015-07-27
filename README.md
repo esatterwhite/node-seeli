@@ -1,4 +1,5 @@
 ![build image](https://travis-ci.org/esatterwhite/node-seeli.svg?branch=master)&nbsp;![package dependancies](https://david-dm.org/esatterwhite/node-seeli.png)
+[![Codacy Badge](https://www.codacy.com/project/badge/47a935a723c94c73bc97d749836ee489)](https://www.codacy.com/app/esatterwhite/node-seeli)
 
 seeli ( C. L. I. )
 ======================
