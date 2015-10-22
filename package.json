@@ -1,6 +1,6 @@
 {
   "name": "seeli",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Object oriented, flexible CLI tools",
   "main": "index.js",
   "directories": {
@@ -29,14 +29,14 @@
     "argv",
     "interactive"
   ],
-  "author":{
-	  "name": "Eric Satterwhite",
-	  "email":"esatterwhite@wi.rr.com"
+  "author": {
+    "name": "Eric Satterwhite",
+    "email": "esatterwhite@wi.rr.com"
   },
-  "contributors":{
-	"name" : "Dennis Ploeger",
-	"email" : "develop@dieploegers.de",
-	"url" : "http://dennis.dieploegers.de"
+  "contributors": {
+    "name": "Dennis Ploeger",
+    "email": "develop@dieploegers.de",
+    "url": "http://dennis.dieploegers.de"
   },
   "license": "MIT",
   "bugs": {
