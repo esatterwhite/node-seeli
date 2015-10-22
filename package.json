@@ -29,7 +29,15 @@
     "argv",
     "interactive"
   ],
-  "author": "Eric Satterwhite",
+  "author":{
+	  "name": "Eric Satterwhite",
+	  "email":"esatterwhite@wi.rr.com"
+  },
+  "contributors":{
+	"name" : "Dennis Ploeger",
+	"email" : "develop@dieploegers.de",
+	"url" : "http://dennis.dieploegers.de"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/esatterwhite/node-seeli/issues"
