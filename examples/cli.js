@@ -38,7 +38,6 @@ var Test = new cli.Command({
 	}
 	,run: function( cmd, data, cb ){
 		var out = [];
-		console.log( data );
 		var names = Array.isArray( data.name ) ? data.name : [ data.name ]
 		for( var x =0; x< names.length; x++ ){
 			var value = "Hello, " + names[x]
