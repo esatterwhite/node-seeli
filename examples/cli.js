@@ -1,4 +1,6 @@
+/*jshint laxcomma: true, smarttabs: true, node:true, mocha: true*/
 var cli = require("../")
+var path = require('path')
 var Test = new cli.Command({
 	description:"diaplays a simple hello world command"
 	,usage:[
@@ -6,6 +8,7 @@ var Test = new cli.Command({
 		cli.bold("Usage:") + " cli hello --name=john",
 		cli.bold("Usage:") + " cli hello --name=john --name=marry --name=paul -v screaming"
 	]
+
 	,flags:{
 		name:{
 			type:[ String, Array ]
@@ -26,10 +29,16 @@ var Test = new cli.Command({
 			,default:'normal'
 			,shorthand:'v'
 		}
+		,tester:{
+			type:require('url')
+			,description:"home page url"
+			,required:true
+			,shorthand:'u'
+		}
 	}
 	,run: function( cmd, data, cb ){
 		var out = [];
-
+		console.log( data );
 		var names = Array.isArray( data.name ) ? data.name : [ data.name ]
 		for( var x =0; x< names.length; x++ ){
 			var value = "Hello, " + names[x]
