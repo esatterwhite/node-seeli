@@ -12,47 +12,47 @@ A command line interface the way you want it, and otherwise, stays out of your w
 ```js
 var cli = require("seeli")
 var Hello = new cli.Command({
-	description:"diaplays a simple hello world command"
-	,usage:[
-		"Usage: cli hello --interactive",
-		"Usage: cli hello --name=john",
-		"Usage: cli hello --name=john --name=marry --name=paul -v screaming"
-	]
-	,flags:{
-		name:{
-			type:[ String, Array ]
-			,shorthand:'n'
-			,description:"The name of the person to say hello to"
-		}
-		,excited: {
-			type:Boolean
-			,shorthand: 'e'
-			,description:"Say hello in a very excited manner"
-			,default:false
-		}
-		,volume:{
-			type:String
-			,choices:['normal', 'screaming']
-			,default:'normal'
-			,shorthand:'v'
-		}
-	}
-	,run: function( cmd, data, cb ){
-		var out = [];
+    description:"diaplays a simple hello world command"
+    ,usage:[
+        "Usage: cli hello --interactive",
+        "Usage: cli hello --name=john",
+        "Usage: cli hello --name=john --name=marry --name=paul -v screaming"
+    ]
+    ,flags:{
+        name:{
+            type:[ String, Array ]
+            ,shorthand:'n'
+            ,description:"The name of the person to say hello to"
+        }
+        ,excited: {
+            type:Boolean
+            ,shorthand: 'e'
+            ,description:"Say hello in a very excited manner"
+            ,default:false
+        }
+        ,volume:{
+            type:String
+            ,choices:['normal', 'screaming']
+            ,default:'normal'
+            ,shorthand:'v'
+        }
+    }
+    ,run: function( cmd, data, cb ){
+        var out = [];
 
-		for( var x =0; x< data.name.length; x++ ){
-			var value = "Hello, " + data.name[x]
-			if( data.excited ){
-				value += '!'
-			}
-			out.push( value );
+        for( var x =0; x< data.name.length; x++ ){
+            var value = "Hello, " + data.name[x]
+            if( data.excited ){
+                value += '!'
+            }
+            out.push( value );
 
-		}
-		out = out.join('\n');
+        }
+        out = out.join('\n');
 
-		out = data.volume == 'screaming' ? out.toUpperCase() : out;
-		cb( null, out );
-	}
+        out = data.volume == 'screaming' ? out.toUpperCase() : out;
+        cb( null, out );
+    }
 });
 cli.use('world', Hello)
 cli.run();
@@ -178,32 +178,32 @@ Instances of the seeli Command or Commands the inherit from it as also instances
 
 ```js
 var EventCommand = new cli.Command({
-	args:[ '--one', '--no-two']
+    args:[ '--one', '--no-two']
   , flags:{
-		one:{
-			type:Boolean
-			,event:true
-		}
-		,two:{
-			type:Boolean
-			,event:true
-		}
-	}
+        one:{
+            type:Boolean
+            ,event:true
+        }
+        ,two:{
+            type:Boolean
+            ,event:true
+        }
+    }
   , run: function( cmd, data, done ){
-  	done( null, data.one && data.two )
+    done( null, data.one && data.two )
   }
 });
 
 EventCommand.on('one', function( value ){
-	assert.equal( true, value );
+    assert.equal( true, value );
 });
 
 EventCommand.on('two', function( value ){
-	assert.equal( false, value )
+    assert.equal( false, value )
 });
 
 EventCommand.on('content', function( value ){
-	assert.equal( false, value );
+    assert.equal( false, value );
 });
 
 EventCommand.run( null );
@@ -216,10 +216,10 @@ Errors are handled by Node's error [domains](http://nodejs.org/api/domain.html).
 ```js
 var cli = require("seeli")
 var ErrCmd = new cli.Command({
-	run: function(){
-		var e = new Error("Invalid Command")
-		e.code = 10;
-		this.emit('error',e )
-	}
+    run: function(){
+        var e = new Error("Invalid Command")
+        e.code = 10;
+        this.emit('error',e )
+    }
 });
 ```
