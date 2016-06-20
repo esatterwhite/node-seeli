@@ -274,6 +274,41 @@ describe('command', function(){
 		});
 	});
 
+	describe('Aliasing', function(){
+		describe('from string',function(){
+			afterEach(function(){
+				cli.commands.reset();
+			});
+
+			it('should generate command alias', function(){
+				var SingleAlias = new cli.Command({
+					alias: 'singel'
+					,run: function(){}
+				});
+
+				cli.use('single', SingleAlias);
+
+				assert.ok( cli.commands.hasOwnProperty('single'))
+				assert.ok( cli.commands.hasOwnProperty('singe'))
+				assert.ok( cli.commands.hasOwnProperty('singel'))
+			});
+		});
+
+		describe('from Array',function(){
+			it('should generate multipl command alias', function(){
+				var SingleAlias = new cli.Command({
+					alias: ['singel', 'snigle']
+					,run: function(){}
+				});
+
+				cli.use('single', SingleAlias);
+				assert.ok( cli.commands.hasOwnProperty('single'))
+				assert.ok( cli.commands.hasOwnProperty('sni'))
+				assert.ok( cli.commands.hasOwnProperty('snigle'))
+				assert.ok( cli.commands.hasOwnProperty('singel'))
+			});
+		})
+	})
 	describe("Directive parsing", function(){
 		it('should pass the first non-flag argument to run', function(){
 			var DirectiveCommand = new cli.Command({
