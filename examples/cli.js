@@ -29,12 +29,6 @@ var Test = new cli.Command({
 			,default:'normal'
 			,shorthand:'v'
 		}
-		,tester:{
-			type:require('url')
-			,description:"home page url"
-			,required:true
-			,shorthand:'u'
-		}
 	}
 	,run: function( cmd, data, cb ){
 		var out = [];

@@ -84,6 +84,8 @@ the parent application
 
 ## Seeli.use( name `<string>`, cmd `<Command>` )
 
+Registers a new command under the specified name where the name will invoke the associated command
+
 ```js
 var cli = require('seeli')
 var Cmd = new cli.Command();
@@ -92,7 +94,6 @@ cli.use('test', Cmd )
 cli.run()
 ```
 
-Registers a new command under the specified name where the name will invoke the associated command
 
 ## Seeli.bold( text `<string>`)
 
