@@ -29,8 +29,22 @@ var Test = new cli.Command({
 			,default:'normal'
 			,shorthand:'v'
 		}
+		,password: {
+			type:String,
+			mask:true,
+			description:"unique password",
+			shorthand:'p'
+		}
+
+		,url:{
+			type:require('url')
+			,shorthand:'u'
+			,required:true
+			,description:'a short url'
+		}
 	}
 	,run: function( cmd, data, cb ){
+		console.log( data )
 		var out = [];
 		var names = Array.isArray( data.name ) ? data.name : [ data.name ]
 		for( var x =0; x< names.length; x++ ){
