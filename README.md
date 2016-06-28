@@ -158,6 +158,7 @@ name | required | type | description
 **required** | `false` | `boolean` |  If set to `true` a `RequiredFieldError` will be emitted  |
 **shorthand**  | `false` | `string` | An options short hand flag that will be expanded out to the long hand flag. |
 **default**    | `false` | `mixed` | A value to return if the flag is omitted. |
+**mask**       | `false` | `boolean` | **interactive mode only** Sets the input type to masked input to hide values
 **choices**    | `false` | `array` | Used only during an interactive command. Restricts the users options only to the options **specified** |
 **skip**       | `false` | `boolean` | **interactive mode only** - if set to `true` this flag will be omitted from the interactive command prompts |
 **event**      | `false` | `boolean` | if set to `true` the command will emit an event withe the same name as the flag with **the** value that was captured for that flag |
