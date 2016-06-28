@@ -133,7 +133,7 @@ A config value to look up. Can be a dot separated key to look up nested values
 #### Supported Confgurations
 
 * color `<String>` - The chalk color to use when outputting help text. default `green`
-* name `<String>   - the name of the command that is used in generated help
+* name `<String>`   - the name of the command that is used in generated help
 * help `<String>`  - a file path or module name to a custom help command. This will be passed to `require` and must export a single command instance
     * `seeli.set('help', '/path/to/help/command')`
     
