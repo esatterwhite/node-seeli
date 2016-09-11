@@ -252,7 +252,16 @@ describe('command', function(){
 
 	describe("Subclassing", function(){
 		it('should allow for subclassing',function(){
+
+			let defaults = {
+				description:"This is a subclass"
+			};
+
 			class AltCommand extends cli.Command {
+				constructor(options){
+					super( defaults, options );
+				}
+			
 				fake( ){
 					return false
 				}
@@ -266,7 +275,7 @@ describe('command', function(){
 					}
 				}
 			});
-
+			
 			cli.use( 'alt', Alt );
 			assert.notEqual( cli.list.indexOf( 'alt' ), -1 );
 			assert.equal( Alt.fake(), false );
