@@ -12,7 +12,7 @@ describe('command', function(){
 			var DescriptionCommand = new cli.Command({
 				description:"a test command"
 			});
-			
+
 			assert.equal('a test command', DescriptionCommand.description );
 
 			DescriptionCommand.setOptions({
@@ -252,12 +252,11 @@ describe('command', function(){
 
 	describe("Subclassing", function(){
 		it('should allow for subclassing',function(){
-			var AltCommand = cli.Class({
-				inherits:cli.Command
-				,fake: function( ){
+			class AltCommand extends cli.Command {
+				fake( ){
 					return false
 				}
-			});
+			}
 
 			var Alt = new AltCommand({
 				flags:{
