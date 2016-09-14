@@ -1,18 +1,19 @@
 /* jshint laxcomma: true, smarttabs: true, node: true */
-var assert = require("assert");
-var cli    = require("../");
-var chalk  = require("chalk");
-var os     = require("os");
+const assert  = require("assert");
+const cli     = require("../")
+const Command = require("../lib/command");
+const chalk   = require("chalk");
+const os      = require("os");
+const domain      = require('../lib/domain')
 
 describe('command', function(){
 
 	// description parsing
 	describe('~description', function(){
 		it('should accept a single string', function(){
-			var DescriptionCommand = new cli.Command({
+			DescriptionCommand = new Command({
 				description:"a test command"
 			});
-
 			assert.equal('a test command', DescriptionCommand.description );
 
 			DescriptionCommand.setOptions({
@@ -29,7 +30,7 @@ describe('command', function(){
 
 
 		it('should accept a single string', function(){
-			var UsageCommand = new cli.Command({
+			var UsageCommand = new Command({
 				usage:"usage -a 'fake' --verbose"
 			});
 
@@ -37,13 +38,15 @@ describe('command', function(){
 				"usage -a 'fake' --verbose",
 				"Options:",
 				"  -i, --interactive, --no-interactive <boolean> [false] Use the interactive propmts",
-				"     --color, --no-color <boolean> [true] Enable ANSI color in output"
+				"     --color, --no-color <boolean> [true] Enable ANSI color in output",
+				"  ",
+                "  <...>: input type | *: repeatable flags | [...]: default values"
 			].join(os.EOL );
-			assert.equal( out, chalk.stripColor( UsageCommand.usage ) );
+			assert.equal(out.trim(),chalk.stripColor( UsageCommand.usage ).trim() );
 		});
 
 		it('should accept an array of strings', function(){
-			var UsageCommand = new cli.Command({
+			var UsageCommand = new Command({
 				usage:[
 					"usage -a 'fake' --verbose",
 					"usage -b 'tesk' --no-verbose",
@@ -56,7 +59,9 @@ describe('command', function(){
 
 				"Options:",
 				"  -i, --interactive, --no-interactive <boolean> [false] Use the interactive propmts",
-				"     --color, --no-color <boolean> [true] Enable ANSI color in output"
+				"     --color, --no-color <boolean> [true] Enable ANSI color in output",
+				"  ",
+                "  <...>: input type | *: repeatable flags | [...]: default values"
 			].join(os.EOL );
 			assert.equal( out, chalk.stripColor( UsageCommand.usage ) );
 		});
@@ -65,7 +70,7 @@ describe('command', function(){
 	// internal argv parsing
 	describe('~argv', function(){
 		it('should accept an array of arguments', function(){
-			var ArgCommand = new cli.Command({
+			var ArgCommand = new Command({
 				args:['--no-color']
 			});
 			assert.strictEqual( false, ArgCommand.argv.color);
@@ -79,7 +84,7 @@ describe('command', function(){
 		});
 
 		it('should understand unknown flags', function(){
-			var ArgCommand = new cli.Command({
+			var ArgCommand = new Command({
 				args:['--no-color', '--fake']
 			});
 			assert.strictEqual( false, ArgCommand.argv.color);
@@ -91,7 +96,7 @@ describe('command', function(){
 	describe("~flags", function(){
 		
 		it('should accept String Types', function(){
-			var StringCommand = new cli.Command({
+			var StringCommand = new Command({
 				flags:{
 					string:{
 						type:String
@@ -104,7 +109,7 @@ describe('command', function(){
 		});
 
 		it('should accept Boolean Types', function( ){
-			var BooleanCommand = new cli.Command({
+			var BooleanCommand = new Command({
 				flags:{
 					bool:{
 						type:Boolean
@@ -123,7 +128,7 @@ describe('command', function(){
 		});
 
 		it('should accept Number Types', function(){
-			var NumberCommand = new cli.Command({
+			var NumberCommand = new Command({
 				flags:{
 					num:{
 						type:Number
@@ -138,7 +143,7 @@ describe('command', function(){
 
 
 		it('should accept multiple value flags', function(){
-			var MultiCommand = new cli.Command({
+			var MultiCommand = new Command({
 				flags:{
 					multi:{
 						type:[Number, Array]
@@ -150,7 +155,7 @@ describe('command', function(){
 		});
 
 		it('should accept short hand flags', function(){
-			var Short = new cli.Command({
+			var Short = new Command({
 				flags:{
 					"short":{
 						type:String
@@ -163,7 +168,7 @@ describe('command', function(){
 		});
 
 		it('should accept default values', function(){
-			var DefaultCommand = new cli.Command({
+			var DefaultCommand = new Command({
 				flags:{
 					one:{
 						type:Number
@@ -190,7 +195,7 @@ describe('command', function(){
 		});
 
 		it('should throw an exception for required fields if not supplied', function(){
-			var RequiredCommand = new cli.Command({
+			var RequiredCommand = new Command({
 				flags:{
 					one:{
 						type:Number
@@ -198,10 +203,11 @@ describe('command', function(){
 					}
 				}
 			});
-
+	
+			domain.remove( RequiredCommand );
 			assert.throws(function(){
 				RequiredCommand.run();
-			});
+			}, 'should throw an error');
 
 			RequiredCommand.reset();
 			RequiredCommand.setOptions({
@@ -210,13 +216,13 @@ describe('command', function(){
 
 			assert.doesNotThrow(function(){
 				RequiredCommand.run();
-			});
+			},'should not thow');
 		});
 	});
 
 	describe("#run", function(){
 		it('should emit events for marked flags', function(){
-			var EventCommand = new cli.Command({
+			var EventCommand = new Command({
 				args:[ '--one', '--no-two']
 			  , flags:{
 					one:{
@@ -257,7 +263,7 @@ describe('command', function(){
 				description:"This is a subclass"
 			};
 
-			class AltCommand extends cli.Command {
+			class AltCommand extends Command {
 				constructor(options){
 					super( defaults, options );
 				}
@@ -290,7 +296,7 @@ describe('command', function(){
 			});
 
 			it('should generate command alias', function(){
-				var SingleAlias = new cli.Command({
+				var SingleAlias = new Command({
 					alias: 'singel'
 					,run: function(){}
 				});
@@ -305,7 +311,7 @@ describe('command', function(){
 
 		describe('from Array',function(){
 			it('should generate multipl command alias', function(){
-				var SingleAlias = new cli.Command({
+				var SingleAlias = new Command({
 					alias: ['singel', 'snigle']
 					,run: function(){}
 				});
@@ -320,7 +326,7 @@ describe('command', function(){
 	})
 	describe("Directive parsing", function(){
 		it('should pass the first non-flag argument to run', function(){
-			var DirectiveCommand = new cli.Command({
+			var DirectiveCommand = new Command({
 				flags:{
 					test:{
 						type:Boolean
