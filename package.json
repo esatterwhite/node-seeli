@@ -53,8 +53,7 @@
     "chalk",
     "inquirer",
     "mout",
-    "nopt",
-    "prime"
+    "nopt"
   ],
   "dependencies": {
     "abbrev": "~1.0.5",
