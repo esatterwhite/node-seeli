@@ -1,4 +1,5 @@
 /* jshint laxcomma: true, smarttabs: true, node: true */
+'use strict';
 const assert  = require("assert");
 const cli     = require("../")
 const Command = require("../lib/command");
@@ -11,7 +12,7 @@ describe('command', function(){
 	// description parsing
 	describe('~description', function(){
 		it('should accept a single string', function(){
-			DescriptionCommand = new Command({
+			let DescriptionCommand = new Command({
 				description:"a test command"
 			});
 			assert.equal('a test command', DescriptionCommand.description );
