@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --reporter=spec"
+    "test": "mocha --reporter=spec",
+	"docs":"jsdoc -r lib"
   },
   "repository": {
     "type": "git",
@@ -65,6 +66,7 @@
     "nopt": "~3.0.1"
   },
   "devDependencies": {
+    "jsdoc": "^3.4.2",
     "mocha": "^2.2.4"
   }
 }
