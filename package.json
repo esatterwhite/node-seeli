@@ -1,6 +1,6 @@
 {
   "name": "seeli",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Object oriented, flexible CLI tools",
   "main": "index.js",
   "directories": {
@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "mocha --reporter=spec",
-	"docs":"jsdoc -r lib"
+    "docs": "jsdoc -r lib"
   },
   "repository": {
     "type": "git",
