@@ -3,5 +3,4 @@ script: npm test
 language: node_js
 node_js:
   - "6"
-  - "6.2"
-  - "6.4"
+  - "7"
