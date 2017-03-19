@@ -57,14 +57,14 @@
     "nopt"
   ],
   "dependencies": {
-    "abbrev": "~1.0.5",
+    "abbrev": "~1.1.0",
     "chalk": "^1.0.0",
-    "clone": "^1.0.2",
+    "clone": "^2.0.0",
     "debug": "^2.6.3",
     "inquirer": "^3.0.6",
     "jsdoc": "^3.4.3",
     "mout": "^1.0.0",
-    "nopt": "~3.0.1"
+    "nopt": "~4.0.0"
   },
   "devDependencies": {
     "jsdoc": "^3.4.2",
