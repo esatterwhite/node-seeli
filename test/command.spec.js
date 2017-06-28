@@ -37,9 +37,11 @@ describe('command', function(){
 
       var out = [
         "usage -a 'fake' --verbose",
+        "",
         "Options:",
-        "  -i, --interactive, --no-interactive <boolean> [false] Use the interactive propmts",
-        "     --color, --no-color <boolean> [true] Enable ANSI color in output",
+        "",
+        "  " + "-i, --interactive, --no-interactive <boolean> [false] Use the interactive propmts",
+        "  --color, --no-color <boolean> [true] Enable ANSI color in output",
         "  ",
                 "  <...>: input type | *: repeatable flags | [...]: default values"
       ].join(os.EOL );
@@ -57,10 +59,11 @@ describe('command', function(){
       var out = [
         "usage -a 'fake' --verbose",
         "usage -b 'tesk' --no-verbose",
-
+        "",
         "Options:",
-        "  -i, --interactive, --no-interactive <boolean> [false] Use the interactive propmts",
-        "     --color, --no-color <boolean> [true] Enable ANSI color in output",
+        "",
+        "  " + "-i, --interactive, --no-interactive <boolean> [false] Use the interactive propmts",
+        "  --color, --no-color <boolean> [true] Enable ANSI color in output",
         "  ",
                 "  <...>: input type | *: repeatable flags | [...]: default values"
       ].join(os.EOL );
@@ -95,7 +98,6 @@ describe('command', function(){
 
   // flag parsing
   describe("~flags", function(){
-    
     it('should accept String Types', function(){
       var StringCommand = new Command({
         flags:{
@@ -282,7 +284,6 @@ describe('command', function(){
           }
         }
       });
-      
       cli.use( 'alt', Alt );
       assert.notEqual( cli.list.indexOf( 'alt' ), -1 );
       assert.equal( Alt.fake(), false );

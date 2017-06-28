@@ -2,7 +2,7 @@
 var cli = require("../")
 var path = require('path')
 var Test = new cli.Command({
-  description:"diaplays a simple hello world command"
+  description:"displays a simple hello world command"
   ,usage:[
     `${cli.bold("Usage:")} cli hello --interactive`,
     `${cli.bold("Usage:")} cli hello --name=john`,
@@ -10,21 +10,21 @@ var Test = new cli.Command({
   ]
 
   ,flags:{
-    
+
     name:{
       type:[ String, Array ]
       ,shorthand:'n'
       ,description:"The name of the person to say hello to"
       ,required:true
     }
-    
+
     ,excited: {
       type:Boolean
       ,shorthand: 'e'
       ,description:"Say hello in a very excited manner"
       ,default:false
     }
-    
+
     ,volume:{
       type:String
       ,choices:['normal', 'screaming']
