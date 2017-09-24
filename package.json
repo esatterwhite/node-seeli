@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --reporter=spec",
+    "test": "tap -Rspec -J --cov test/",
     "docs": "jsdoc -r lib"
   },
   "repository": {
@@ -62,12 +62,13 @@
   },
   "devDependencies": {
     "jsdoc": "^3.4.2",
+    "mocha": "^2.2.4",
     "tap": "^10.7.2"
   },
   "nyc": {
     "exclude": [
-      "test/",
-      "examples/"
+      "test/"
+    , "examples/"
     ]
   }
 }
