@@ -49,13 +49,6 @@
     "url": "https://github.com/esatterwhite/node-seeli/issues"
   },
   "homepage": "https://github.com/esatterwhite/node-seeli",
-  "bundledDependencies": [
-    "abbrev",
-    "chalk",
-    "inquirer",
-    "mout",
-    "nopt"
-  ],
   "dependencies": {
     "abbrev": "~1.1.0",
     "chalk": "^1.0.0",
