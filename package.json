@@ -57,7 +57,8 @@
     "inquirer": "^3.0.6",
     "jsdoc": "^3.4.3",
     "mout": "^1.0.0",
-    "nopt": "~4.0.0"
+    "nopt": "~4.0.0",
+    "strip-ansi": "^4.0.0"
   },
   "devDependencies": {
     "jsdoc": "^3.4.2",
