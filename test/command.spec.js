@@ -7,31 +7,31 @@ const chalk   = require("chalk");
 const strip   = require('strip-ansi');
 const os      = require("os");
 const domain      = require('../lib/domain')
+const test = require('tap').test
 
-describe('command', function(){
+test('command', function(t){
 
   // description parsing
-  describe('~description', function(){
-    it('should accept a single string', function(){
+  t.test('~description', function(tt){
+    tt.test('should accept a single string', function(ttt){
       let DescriptionCommand = new Command({
         description:"a test command"
       });
-      assert.equal('a test command', DescriptionCommand.description );
+      ttt.equal('a test command', DescriptionCommand.description );
 
       DescriptionCommand.setOptions({
         description:"a different description"
       });
 
-      assert.equal("a different description", DescriptionCommand.description );
-
+      ttt.equal("a different description", DescriptionCommand.description );
+      ttt.end()
     });
+    tt.end()
   });
 
   // usage parsing
-  describe('~usage', function(){
-
-
-    it('should accept a single string', function(){
+  t.test('~usage', function(tt){
+    tt.test('should accept a single string', function(ttt){
       var UsageCommand = new Command({
         usage:"usage -a 'fake' --verbose"
       });
@@ -46,10 +46,11 @@ describe('command', function(){
         "  ",
                 "  <...>: input type | *: repeatable flags | [...]: default values"
       ].join(os.EOL );
-      assert.equal(out.trim(), strip( UsageCommand.usage ).trim() );
+      ttt.equal(out.trim(), strip( UsageCommand.usage ).trim() );
+      ttt.end()
     });
 
-    it('should accept an array of strings', function(){
+    tt.test('should accept an array of strings', function(ttt){
       var UsageCommand = new Command({
         usage:[
           "usage -a 'fake' --verbose",
@@ -68,38 +69,43 @@ describe('command', function(){
         "  ",
                 "  <...>: input type | *: repeatable flags | [...]: default values"
       ].join(os.EOL );
-      assert.equal( out, strip( UsageCommand.usage ) );
+      ttt.equal( out, strip( UsageCommand.usage ) );
+      ttt.end()
     });
+    tt.end()
   });
 
   // internal argv parsing
-  describe('~argv', function(){
-    it('should accept an array of arguments', function(){
+  t.test('~argv', function(tt){
+    tt.test('should accept an array of arguments', function(ttt){
       var ArgCommand = new Command({
         args:['--no-color']
       });
-      assert.strictEqual( false, ArgCommand.argv.color);
+      ttt.strictEqual( false, ArgCommand.argv.color);
       ArgCommand.reset();
 
       ArgCommand.setOptions({
         args:['--color']
       });
 
-      assert.strictEqual( true, ArgCommand.argv.color);
+      ttt.strictEqual( true, ArgCommand.argv.color);
+      ttt.end()
     });
 
-    it('should understand unknown flags', function(){
+    tt.test('should understand unknown flags', function(ttt){
       var ArgCommand = new Command({
         args:['--no-color', '--fake']
       });
-      assert.strictEqual( false, ArgCommand.argv.color);
-      assert.strictEqual( true, ArgCommand.argv.fake);
+      ttt.strictEqual( false, ArgCommand.argv.color);
+      ttt.strictEqual( true, ArgCommand.argv.fake);
+      ttt.end()
     });
+    tt.end()
   });
 
   // flag parsing
-  describe("~flags", function(){
-    it('should accept String Types', function(){
+  t.test("~flags", function(tt){
+    tt.test('should accept String Types', function(ttt){
       var StringCommand = new Command({
         flags:{
           string:{
@@ -109,10 +115,11 @@ describe('command', function(){
         ,args:[ '--string=fake' ]
       });
 
-      assert.strictEqual( 'fake', StringCommand.argv.string );
+      ttt.strictEqual( 'fake', StringCommand.argv.string );
+      ttt.end()
     });
 
-    it('should accept Boolean Types', function( ){
+    tt.test('should accept Boolean Types', function(ttt){
       var BooleanCommand = new Command({
         flags:{
           bool:{
@@ -122,16 +129,16 @@ describe('command', function(){
         ,args:[ '--bool' ]
       });
 
-      assert.strictEqual( true, BooleanCommand.argv.bool );
+      ttt.strictEqual( true, BooleanCommand.argv.bool );
       BooleanCommand.reset();
       BooleanCommand.setOptions({
         args:['--no-bool']
       });
-      assert.strictEqual( false, BooleanCommand.argv.bool );
-
+      ttt.strictEqual( false, BooleanCommand.argv.bool );
+      ttt.end()
     });
 
-    it('should accept Number Types', function(){
+    tt.test('should accept Number Types', function(ttt){
       var NumberCommand = new Command({
         flags:{
           num:{
@@ -141,12 +148,13 @@ describe('command', function(){
         ,args:[ '--num=1' ]
       });
 
-      assert.strictEqual( 1, NumberCommand.argv.num );
+      ttt.strictEqual( 1, NumberCommand.argv.num );
+      ttt.end()
     });
 
 
 
-    it('should accept multiple value flags', function(){
+    tt.test('should accept multiple value flags', function(ttt){
       var MultiCommand = new Command({
         flags:{
           multi:{
@@ -155,10 +163,11 @@ describe('command', function(){
         }
         ,args:[ '--multi=1', '--multi=2', '--multi=3' ]
       });
-      assert.deepEqual( [1,2,3], MultiCommand.argv.multi );
+      ttt.deepEqual( [1,2,3], MultiCommand.argv.multi );
+      ttt.end()
     });
 
-    it('should accept short hand flags', function(){
+    tt.test('should accept short hand flags', function(ttt){
       var Short = new Command({
         flags:{
           "short":{
@@ -168,10 +177,11 @@ describe('command', function(){
         }
         ,args:[ '-s', 'short' ]
       });
-      assert.strictEqual( 'short', Short.argv.short );
+      ttt.strictEqual( 'short', Short.argv.short );
+      ttt.end()
     });
 
-    it('should accept default values', function(){
+    tt.test('should accept default values', function(ttt){
       var DefaultCommand = new Command({
         flags:{
           one:{
@@ -186,8 +196,8 @@ describe('command', function(){
         }
       });
 
-      assert.equal( 1, DefaultCommand.argv.one );
-      assert.equal( 'two', DefaultCommand.argv.two );
+      ttt.equal( 1, DefaultCommand.argv.one );
+      ttt.equal( 'two', DefaultCommand.argv.two );
 
       DefaultCommand.reset();
 
@@ -195,10 +205,11 @@ describe('command', function(){
         args:['--one=2']
       });
 
-      assert.equal( 2, DefaultCommand.argv.one );
+      ttt.equal( 2, DefaultCommand.argv.one );
+      ttt.end()
     });
 
-    it('should throw an exception for required fields if not supplied', function(){
+    tt.test('should throw an exception for required fields if not supplied', function(ttt){
       var RequiredCommand = new Command({
         flags:{
           one:{
@@ -207,9 +218,9 @@ describe('command', function(){
           }
         }
       });
-  
+
       domain.remove( RequiredCommand );
-      assert.throws(function(){
+      ttt.throws(function(){
         RequiredCommand.run();
       }, 'should throw an error');
 
@@ -218,14 +229,17 @@ describe('command', function(){
         args:['--one=1']
       });
 
-      assert.doesNotThrow(function(){
+      ttt.doesNotThrow(function(){
         RequiredCommand.run();
       },'should not thow');
+      ttt.end()
     });
+    tt.end()
   });
 
-  describe("#run", function(){
-    it('should emit events for marked flags', function(){
+  t.test("#run", function(tt){
+    tt.test('should emit events for marked flags', function(ttt){
+      ttt.plan(3)
       var EventCommand = new Command({
         args:[ '--one', '--no-two']
         , flags:{
@@ -244,24 +258,26 @@ describe('command', function(){
       });
 
       EventCommand.on('one', function( value ){
-        assert.equal( true, value );
+        ttt.equal( true, value );
       });
 
       EventCommand.on('two', function( value ){
-        assert.equal( false, value );
+        ttt.equal( false, value );
       });
 
       EventCommand.on('content', function( value ){
-        assert.equal( false, value );
+        ttt.equal( false, value );
       });
 
       EventCommand.run( null );
 
     });
+
+    tt.end()
   });
 
-  describe("Subclassing", function(){
-    it('should allow for subclassing',function(){
+  t.test("Subclassing", function(tt){
+    tt.test('should allow for subclassing',function(ttt){
 
       let defaults = {
         description:"This is a subclass"
@@ -271,7 +287,6 @@ describe('command', function(){
         constructor(options){
           super( defaults, options );
         }
-      
         fake( ){
           return false
         }
@@ -286,19 +301,23 @@ describe('command', function(){
         }
       });
       cli.use( 'alt', Alt );
-      assert.notEqual( cli.list.indexOf( 'alt' ), -1 );
-      assert.equal( Alt.fake(), false );
-      assert.equal( cli.commands.alt.fake(), false );
+      ttt.notEqual( cli.list.indexOf( 'alt' ), -1 );
+      ttt.equal( Alt.fake(), false );
+      ttt.equal( cli.commands.alt.fake(), false );
+      ttt.end()
     });
+
+    tt.end()
   });
 
-  describe('Aliasing', function(){
-    describe('from string',function(){
-      afterEach(function(){
+  t.test('Aliasing', function(tt){
+    tt.test('from string',function(ttt){
+      ttt.afterEach(function(cb){
         cli.commands.reset();
+        cb()
       });
 
-      it('should generate command alias', function(){
+      ttt.test('should generate command alias', function(tttt){
         var SingleAlias = new Command({
           alias: 'singel'
           ,run: function(){}
@@ -306,29 +325,34 @@ describe('command', function(){
 
         cli.use('single', SingleAlias);
 
-        assert.ok( cli.commands.hasOwnProperty('single'))
-        assert.ok( cli.commands.hasOwnProperty('singe'))
-        assert.ok( cli.commands.hasOwnProperty('singel'))
+        tttt.ok( cli.commands.hasOwnProperty('single'))
+        tttt.ok( cli.commands.hasOwnProperty('singe'))
+        tttt.ok( cli.commands.hasOwnProperty('singel'))
+        tttt.end()
       });
+      ttt.end()
     });
 
-    describe('from Array',function(){
-      it('should generate multipl command alias', function(){
+    tt.test('from Array',function(ttt){
+      ttt.test('should generate multipl command alias', function(tttt){
         var SingleAlias = new Command({
           alias: ['singel', 'snigle']
           ,run: function(){}
         });
 
         cli.use('single', SingleAlias);
-        assert.ok( cli.commands.hasOwnProperty('single'))
-        assert.ok( cli.commands.hasOwnProperty('sni'))
-        assert.ok( cli.commands.hasOwnProperty('snigle'))
-        assert.ok( cli.commands.hasOwnProperty('singel'))
+        tttt.ok( cli.commands.hasOwnProperty('single'))
+        tttt.ok( cli.commands.hasOwnProperty('sni'))
+        tttt.ok( cli.commands.hasOwnProperty('snigle'))
+        tttt.ok( cli.commands.hasOwnProperty('singel'))
+        tttt.end()
       });
+      ttt.end()
     })
+    tt.end()
   })
-  describe("Directive parsing", function(){
-    it('should pass the first non-flag argument to run', function(){
+  t.test("Directive parsing", function(tt){
+    tt.test('should pass the first non-flag argument to run', function(ttt){
       var DirectiveCommand = new Command({
         flags:{
           test:{
@@ -350,13 +374,39 @@ describe('command', function(){
 
       DirectiveCommand.reset();
 
-      assert.throws(function(){
+      ttt.throws(function(){
         // should throw because it is expecting test
         // sending fake should make its way to the run function
         DirectiveCommand.run('fake');
       });
 
+      ttt.end()
     });
+    tt.end()
   });
+  t.test('strict mode', (tt) => {
+    tt.plan(1)
+    var DirectiveCommand = new Command({
+      strict: true
+    , flags: {
+        test: {
+          type: Boolean
+          ,default: true
+        }
+      }
+    , run: function( cmd, data, done ){
+        done(null, '')
+      }
+    });
 
+    DirectiveCommand.setOptions({
+      args:['--fake=1']
+    });
+
+    DirectiveCommand.once('error', (err) => {
+      tt.equal(err.code, 'ENOFLAG', 'should return an error')
+    })
+    DirectiveCommand.run();
+  })
+  t.end()
 });

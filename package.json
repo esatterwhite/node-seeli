@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --reporter=spec",
+    "test": "tap -Rspec -J --cov test/",
     "docs": "jsdoc -r lib"
   },
   "repository": {
@@ -55,13 +55,12 @@
     "clone": "^2.0.0",
     "debug": "^2.6.3",
     "inquirer": "^3.0.6",
-    "jsdoc": "^3.4.3",
     "mout": "^1.0.0",
     "nopt": "~4.0.0",
     "strip-ansi": "^4.0.0"
   },
   "devDependencies": {
-    "jsdoc": "^3.4.2",
+    "jsdoc": "^3.5.5",
     "tap": "^10.7.2"
   },
   "nyc": {
