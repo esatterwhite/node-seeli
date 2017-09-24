@@ -4,6 +4,7 @@ const assert  = require("assert");
 const cli     = require("../")
 const Command = require("../lib/command");
 const chalk   = require("chalk");
+const strip   = require('strip-ansi');
 const os      = require("os");
 const domain      = require('../lib/domain')
 
@@ -45,7 +46,7 @@ describe('command', function(){
         "  ",
                 "  <...>: input type | *: repeatable flags | [...]: default values"
       ].join(os.EOL );
-      assert.equal(out.trim(),chalk.stripColor( UsageCommand.usage ).trim() );
+      assert.equal(out.trim(), strip( UsageCommand.usage ).trim() );
     });
 
     it('should accept an array of strings', function(){
@@ -67,7 +68,7 @@ describe('command', function(){
         "  ",
                 "  <...>: input type | *: repeatable flags | [...]: default values"
       ].join(os.EOL );
-      assert.equal( out, chalk.stripColor( UsageCommand.usage ) );
+      assert.equal( out, strip( UsageCommand.usage ) );
     });
   });
 

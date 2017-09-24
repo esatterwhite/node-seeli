@@ -2,6 +2,14 @@ var assert = require("assert");
 var cli    = require("../");
 
 describe('cli', function(){
+  describe('color functions', function(){
+    it('should export color functions', function() {
+      const colors = ['red', 'blue','green', 'yellow','bold', 'grey', 'dim', 'black', 'magenta', 'cyan'];
+      for (const color of colors) {
+        assert.equal(typeof cli[color], 'function', `${color} should be a top level function`);
+      }
+    });
+  });
   describe('conf', function(){
     it('should store default values', function(){
       assert.ok(cli.get('name'))
