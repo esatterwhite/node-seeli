@@ -1,11 +1,11 @@
 /* jshint laxcomma: true, smarttabs: true, node: true */
 'use strict';
-const assert  = require("assert");
-const cli     = require("../")
-const Command = require("../lib/command");
-const chalk   = require("chalk");
+const assert  = require('assert');
+const cli     = require('../')
+const Command = require('../lib/command');
+const chalk   = require('chalk');
 const strip   = require('strip-ansi');
-const os      = require("os");
+const os      = require('os');
 const domain      = require('../lib/domain')
 const test = require('tap').test
 
@@ -377,6 +377,7 @@ test('command', function(t){
       ttt.throws(function(){
         // should throw because it is expecting test
         // sending fake should make its way to the run function
+        const stream = new stream.Passthrough()
         DirectiveCommand.run('fake');
       });
 
@@ -386,6 +387,11 @@ test('command', function(t){
   });
   t.test('strict mode', (tt) => {
     tt.plan(1)
+    const log = console.log
+    console.log = () => {}
+    tt.on('end', () => {
+      console.log = log
+    })
     var DirectiveCommand = new Command({
       strict: true
     , flags: {
@@ -402,7 +408,6 @@ test('command', function(t){
     DirectiveCommand.setOptions({
       args:['--fake=1']
     });
-
     DirectiveCommand.once('error', (err) => {
       tt.equal(err.code, 'ENOFLAG', 'should return an error')
     })
