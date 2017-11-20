@@ -3,7 +3,10 @@
 const assert  = require('assert');
 const cli     = require('../')
 const Command = require('../lib/command');
+const {usage} = require('../lib/helpers/commands');
+const commands = require('../lib/commands')
 const chalk   = require('chalk');
+const Help    = require('../lib/commands/help')
 const strip   = require('strip-ansi');
 const os      = require('os');
 const domain      = require('../lib/domain')
@@ -28,10 +31,68 @@ test('command', function(t){
     });
     tt.end()
   });
+  
+  t.test('nested flags', (tt) => {
+    tt.plan(3)
+    const NestedCommand = new Command({
+      flags: {
+        test: {
+          type: Boolean
+        , required: true
+        }
+      , 'foo:bar:baz': {
+          type: Number
+        , required: true
+        }
+      }
+    , run: ( cmd, data, done ) => {
+        console.log(data)
+        tt.match(data, {
+          foo: {
+            bar: {
+              baz: Number
+            }
+          }
+        , test: Boolean
+        })
+        done(null, 'done')
+      }
+    })
+
+    tt.afterEach((cb) => {
+      NestedCommand.reset()
+      cb()
+    })
+
+    tt.test('resolves nested values', (ttt) => {
+      ttt.plan(1)
+      NestedCommand.setOptions({
+        args: ['', '--no-test', '--foo:bar:baz=12']
+      })
+      NestedCommand.once('content', () => {
+        ttt.pass('content returned')
+      })
+      NestedCommand.run()
+    })
+
+    tt.test('Type validation honored', (ttt) => {
+      NestedCommand.setOptions({
+        args: ['', '--test', '--foo:bar:baz=test']
+      })
+      ttt.throws(() => {
+        NestedCommand.run()
+      })
+      ttt.end()
+    })
+    tt.end()
+  })
 
   // usage parsing
   t.test('~usage', function(tt){
     tt.test('should accept a single string', function(ttt){
+      ttt.on('end', () => {
+        commands.unregister('usage')
+      })
       var UsageCommand = new Command({
         usage:"usage -a 'fake' --verbose"
       });
@@ -47,7 +108,12 @@ test('command', function(t){
                 "  <...>: input type | *: repeatable flags | [...]: default values"
       ].join(os.EOL );
       ttt.equal(out.trim(), strip( UsageCommand.usage ).trim() );
-      ttt.end()
+
+      commands.register('usage', UsageCommand)
+      Help.run('usage', (err, content) => {
+        ttt.equal(content.trim(), strip(UsageCommand.usage).trim());
+        ttt.end()
+      })
     });
 
     tt.test('should accept an array of strings', function(ttt){
@@ -385,6 +451,7 @@ test('command', function(t){
     });
     tt.end()
   });
+
   t.test('strict mode', (tt) => {
     tt.plan(1)
     const log = console.log
