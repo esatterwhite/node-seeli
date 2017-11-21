@@ -37,18 +37,12 @@ var Test = new cli.Command({
       type:String,
       mask:true,
       description:"unique password",
-      shorthand:'p'
-    }
-
-    ,url:{
-      type:require('url')
-      ,shorthand:'u'
-      ,required:true
-      ,description:'a short url'
+      shorthand:'p',
+      required: false
     }
   }
   ,run: function( cmd, data, cb ){
-    console.log( data )
+    //console.log( data )
     var out = [];
     var names = Array.isArray( data.name ) ? data.name : [ data.name ]
     for( var x =0; x< names.length; x++ ){
@@ -60,12 +54,17 @@ var Test = new cli.Command({
       out.push( value );
 
     }
+    if (data.password) {
+      out.push('')
+      out.push('your password was set.')
+    }
     out = out.join('\n');
 
     out = data.volume == 'screaming' ? out.toUpperCase() : out;
     cb( null, out );
   }
 });
-cli.use('world', Test)
+cli.set('exitOnError', true)
+cli.use('hello', Test)
 cli.set('color','yellow');
 cli.run();
