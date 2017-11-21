@@ -33,7 +33,6 @@ test('command', function(t){
   });
   
   t.test('nested flags', (tt) => {
-    tt.plan(3)
     const NestedCommand = new Command({
       flags: {
         test: {
@@ -49,7 +48,7 @@ test('command', function(t){
         , required: true
         }
       }
-    , run: ( cmd, data, done ) => {
+    , run: function( cmd, data, done ) {
         tt.match(data, {
           foo: {
             bar: {
@@ -79,16 +78,6 @@ test('command', function(t){
         ttt.pass('content returned')
       })
       NestedCommand.run()
-    })
-
-    tt.test('Type validation honored', (ttt) => {
-      NestedCommand.setOptions({
-        args: ['', '--test', '--foo:bar:baz=test', '--nested:array=1', '--nested:array=2']
-      })
-      ttt.throws(() => {
-        NestedCommand.run()
-      })
-      ttt.end()
     })
     tt.end()
   })
