@@ -44,9 +44,12 @@ test('command', function(t){
           type: Number
         , required: true
         }
+      , 'nested:array': {
+          type: [Number, Array]
+        , required: true
+        }
       }
     , run: ( cmd, data, done ) => {
-        console.log(data)
         tt.match(data, {
           foo: {
             bar: {
@@ -54,6 +57,9 @@ test('command', function(t){
             }
           }
         , test: Boolean
+        , nested: {
+            array: [1, 2]
+          }
         })
         done(null, 'done')
       }
@@ -67,7 +73,7 @@ test('command', function(t){
     tt.test('resolves nested values', (ttt) => {
       ttt.plan(1)
       NestedCommand.setOptions({
-        args: ['', '--no-test', '--foo:bar:baz=12']
+        args: ['', '--no-test', '--foo:bar:baz=12', '--nested:array=1', '--nested:array=2']
       })
       NestedCommand.once('content', () => {
         ttt.pass('content returned')
@@ -77,7 +83,7 @@ test('command', function(t){
 
     tt.test('Type validation honored', (ttt) => {
       NestedCommand.setOptions({
-        args: ['', '--test', '--foo:bar:baz=test']
+        args: ['', '--test', '--foo:bar:baz=test', '--nested:array=1', '--nested:array=2']
       })
       ttt.throws(() => {
         NestedCommand.run()
@@ -110,6 +116,7 @@ test('command', function(t){
       ttt.equal(out.trim(), strip( UsageCommand.usage ).trim() );
 
       commands.register('usage', UsageCommand)
+      Help.removeAllListeners()
       Help.run('usage', (err, content) => {
         ttt.equal(content.trim(), strip(UsageCommand.usage).trim());
         ttt.end()

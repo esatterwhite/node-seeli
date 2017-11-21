@@ -136,7 +136,7 @@ A config value to look up. Can be a dot separated key to look up nested values
 * name `<String>`   - the name of the command that is used in generated help
 * help `<String>`  - a file path or module name to a custom help command. This will be passed to `require` and must export a single command instance
     * `seeli.set('help', '/path/to/help/command')`
-    
+
 ## Command( options `<object>` )
 
 ## Options
@@ -162,9 +162,30 @@ name | required | type | description
 **choices**    | `false` | `array` | Used only during an interactive command. Restricts the users options only to the options **specified** |
 **skip**       | `false` | `boolean` | **interactive mode only** - if set to `true` this flag will be omitted from the interactive command prompts |
 **event**      | `false` | `boolean` | if set to `true` the command will emit an event withe the same name as the flag with **the** value that was captured for that flag |
-**when** | `false` | `function` | **interactive mode only** Receives the current user answers hash and should return true or **false** depending on whether or not this question should be asked. 
+**when** | `false` | `function` | **interactive mode only** Receives the current user answers hash and should return true or **false** depending on whether or not this question should be asked.
 **validate** | `false` | `function` |  receives user input and should return true if the value is **valid**, and an error message (String) otherwise. If false is returned, a default error message is provided.
 **filter** | `false` | `function` | **interactive mode only** Receives the user input and return the filtered value to be used **inside** the program. The value returned will be added to the Answers hash.
+
+#### Nested Flags
+
+Flag names that contain a colon (`:`) will be parsed as a nested value in the data that is return to you commands. You can Set arbitrarily deep values.
+You can use this to automatically construct complext object. Array values are limited to primitive types
+
+```javascript
+// cli ---foo:bar:foobar=hello --foo:bar:baz=world --nested:array=1 --nested:array=2
+
+{
+  foo: {
+    bar: {
+      foobar: "hello"
+    , baz: "world"
+    }
+  }
+, nested: {
+    array: [1, 2]
+  }
+}
+```
 
 ## Auto Help
 
