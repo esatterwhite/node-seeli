@@ -64,11 +64,6 @@ test('command', function(t){
       }
     })
 
-    tt.afterEach((cb) => {
-      NestedCommand.reset()
-      cb()
-    })
-
     tt.test('resolves nested values', (ttt) => {
       ttt.plan(1)
       NestedCommand.setOptions({

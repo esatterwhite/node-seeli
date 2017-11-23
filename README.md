@@ -12,49 +12,70 @@ A command line interface the way you want it, and otherwise, stays out of your w
 ```js
 var cli = require("seeli")
 var Hello = new cli.Command({
-    description:"diaplays a simple hello world command"
-    ,usage:[
-        "Usage: cli hello --interactive",
-        "Usage: cli hello --name=john",
-        "Usage: cli hello --name=john --name=marry --name=paul -v screaming"
-    ]
-    ,flags:{
-        name:{
-            type:[ String, Array ]
-            ,shorthand:'n'
-            ,description:"The name of the person to say hello to"
-        }
-        ,excited: {
-            type:Boolean
-            ,shorthand: 'e'
-            ,description:"Say hello in a very excited manner"
-            ,default:false
-        }
-        ,volume:{
-            type:String
-            ,choices:['normal', 'screaming']
-            ,default:'normal'
-            ,shorthand:'v'
-        }
+  description:"displays a simple hello world command"
+  ,usage:[
+    `${cli.bold("Usage:")} cli hello --interactive`,
+    `${cli.bold("Usage:")} cli hello --name=john`,
+    `${cli.bold("Usage:")} cli hello --name=john --name=marry --name=paul -v screaming`
+  ]
+
+  ,flags:{
+
+    name:{
+      type:[ String, Array ]
+      ,shorthand:'n'
+      ,description:"The name of the person to say hello to"
+      ,required:true
     }
-    ,run: function( cmd, data, cb ){
-        var out = [];
 
-        for( var x =0; x< data.name.length; x++ ){
-            var value = "Hello, " + data.name[x]
-            if( data.excited ){
-                value += '!'
-            }
-            out.push( value );
-
-        }
-        out = out.join('\n');
-
-        out = data.volume == 'screaming' ? out.toUpperCase() : out;
-        cb( null, out );
+    ,excited: {
+      type:Boolean
+      ,shorthand: 'e'
+      ,description:"Say hello in a very excited manner"
+      ,default:false
     }
+
+    ,volume:{
+      type:String
+      ,choices:['normal', 'screaming']
+      ,description:"Will yell at each person"
+      ,default:'normal'
+      ,shorthand:'v'
+    }
+
+    ,password: {
+      type:String,
+      mask:true,
+      description:"unique password",
+      shorthand:'p',
+      required: false
+    }
+  }
+  ,run: function( cmd, data, cb ){
+    const out = [];
+    const names = Array.isArray( data.name ) ? data.name : [ data.name ]
+    for(const name of names){
+      var value = `Hello ${name}
+      if( data.excited ){
+        value += '!'
+      }
+
+      out.push( value );
+
+    }
+    if (data.password) {
+      out.push('')
+      out.push('your password was set.')
+    }
+    out = out.join('\n');
+
+    out = data.volume == 'screaming' ? out.toUpperCase() : out;
+    cb( null, out );
+  }
 });
-cli.use('world', Hello)
+cli.set('exitOnError', true)
+cli.use('hello', Hello)
+cli.set('color','green');
 cli.run();
 ```
 

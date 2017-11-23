@@ -66,5 +66,5 @@ var Test = new cli.Command({
 });
 cli.set('exitOnError', true)
 cli.use('hello', Test)
-cli.set('color','yellow');
+cli.set('color','green');
 cli.run();
