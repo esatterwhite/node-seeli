@@ -1,16 +1,16 @@
 /* jshint laxcomma: true, smarttabs: true, node: true */
 'use strict';
-const assert  = require('assert');
-const cli     = require('../')
-const Command = require('../lib/command');
-const {usage} = require('../lib/helpers/commands');
+const assert   = require('assert');
+const cli      = require('../')
+const Command  = require('../lib/command');
+const usage    = require('../lib/usage');
 const commands = require('../lib/commands')
-const chalk   = require('chalk');
-const Help    = require('../lib/commands/help')
-const strip   = require('strip-ansi');
-const os      = require('os');
-const domain      = require('../lib/domain')
-const test = require('tap').test
+const chalk    = require('chalk');
+const Help     = require('../lib/commands/help')
+const strip    = require('strip-ansi');
+const os       = require('os');
+const domain   = require('../lib/domain')
+const test     = require('tap').test
 
 test('command', function(t){
 
