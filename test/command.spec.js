@@ -31,7 +31,7 @@ test('command', function(t){
     });
     tt.end()
   });
-  
+
   t.test('nested flags', (tt) => {
     const NestedCommand = new Command({
       flags: {
@@ -85,6 +85,7 @@ test('command', function(t){
       })
       var UsageCommand = new Command({
         usage:"usage -a 'fake' --verbose"
+      , args: ['--no-color']
       });
 
       var out = [
@@ -97,12 +98,20 @@ test('command', function(t){
         "  ",
                 "  <...>: input type | *: repeatable flags | [...]: default values"
       ].join(os.EOL );
+
       ttt.equal(out.trim(), strip( UsageCommand.usage ).trim() );
 
       commands.register('usage', UsageCommand)
       Help.removeAllListeners()
+      Help.reset()
+      Help.setOptions({
+        args: ['--no-color']
+      })
       Help.run('usage', (err, content) => {
         ttt.equal(content.trim(), strip(UsageCommand.usage).trim());
+      })
+      Help.run('help', (err, content) => {
+        ttt.match(content, /really/)
         ttt.end()
       })
     });
@@ -173,6 +182,25 @@ test('command', function(t){
       });
 
       ttt.strictEqual( 'fake', StringCommand.argv.string );
+      ttt.end()
+    });
+
+    tt.test('should reject input type miss matches', function(ttt){
+      var NumberCommand = new Command({
+        flags:{
+          number:{
+            type: Number
+          }
+        }
+      });
+      domain.remove( NumberCommand );
+      NumberCommand.reset()
+      NumberCommand.setOptions({
+        args: [ '--number=string' ]
+      })
+      ttt.throws(() => {
+        NumberCommand.run()
+      })
       ttt.end()
     });
 
@@ -289,6 +317,28 @@ test('command', function(t){
       ttt.doesNotThrow(function(){
         RequiredCommand.run();
       },'should not thow');
+      ttt.end()
+    });
+
+    tt.test('should throw execption when validation fails', function(ttt) {
+      var ValidationCommand = new Command({
+        flags: {
+          one: {
+            type: Number
+          , validate: () => {
+              return false
+            }
+          }
+        }
+      });
+      domain.remove(ValidationCommand);
+      ValidationCommand.reset()
+      ValidationCommand.setOptions({
+        args: ['--one=1']
+      })
+      ttt.throws(function() {
+        ValidationCommand.run();
+      });
       ttt.end()
     });
     tt.end()

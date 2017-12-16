@@ -66,38 +66,41 @@ test('cli', function(t){
   });
 
   t.test('#run', function(tt) {
-    const help = cli.commands.help
-    const log = console.log
+    const help = cli.commands.help;
+    const log = console.log;
     console.log = (str) => {
-      const data = String(str)
+      const data = String(str);
       if (/usage/i.test(data)) {
         const expected = [
-          'Usage:  seeli.spec <command> [options]'
+          'Usage:  runner <command> [options]'
         , ''
         , 'Where <command> is the name the command to execute'
         , '*  help - displays information about available commands'
-        ].join(os.EOL)
-        tt.equal(data, expected)
-        tt.end()
+        ].join(os.EOL);
+        tt.equal(data, expected);
+        tt.end();
       } else {
-        log(str)
+        log(str);
       }
     }
     tt.on('end', () => {
-      help.reset()
-      console.log = log
-    })
+      help.reset();
+      console.log = log;
+    });
     help.setOptions({
       args: ['--no-color']
-    })
+    });
 
     help.on('content', (content) => {
-      tt.pass('help called')
-    })
+      tt.pass('help called');
+    });
 
-    cli.set('exitOnContent', false)
-    cli.run()
-  })
+    cli.set({
+      exitOnContent: false
+    , name: 'runner'
+    });
+    cli.run();
+  });
 
-  t.end()
+  t.end();
 });
