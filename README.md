@@ -143,6 +143,26 @@ wraps text in the ansi code for cyan
 
 wraps text in the ansi code for magenta
 
+## Seeli.redBright( text `<string>`)
+
+wraps text in the ansi code for redBright
+
+## Seeli.blueBright( text `<string>`)
+
+wraps text in the ansi code for blueBright
+
+## Seeli.greenBright( text `<string>`)
+
+wraps text in the ansi code for greenBright
+
+## Seeli.yellowBright( text `<string>`)
+
+wraps text in the ansi code for yellowBright
+
+## Seeli.cyanBright( text `<string>`)
+
+wraps text in the ansi code for cyanBright
+
 ## Seeli.set( key `<string>`, value `<object>` )
 
 sets a conf value.
@@ -155,6 +175,8 @@ A config value to look up. Can be a dot separated key to look up nested values
 
 * color `<String>` - The chalk color to use when outputting help text. default `green`
 * name `<String>`   - the name of the command that is used in generated help
+* exitOnError `<Boolean>` - Seeli will forcefully exit the current process when an error is encountered. default `false`
+* exitOnContent `<Boolean>` - Seeli will forefully exit the current process when it is passed output content from a command. default `true`
 * help `<String>`  - a file path or module name to a custom help command. This will be passed to `require` and must export a single command instance
     * `seeli.set('help', '/path/to/help/command')`
 
@@ -165,6 +187,7 @@ A config value to look up. Can be a dot separated key to look up nested values
 name | type | default | description
 -----|:-----:|--------|-------------
 **description** | `String` |  `""` | Used to render help output
+**strict** | `Boolean` |  `false` | When true, commands will error when the receive unknown flags
 **args** | `Array` | `null` | if supplied, `agrs` will be used instead of `process.argv`
 **interactive** | `Boolean` | `true` | If set to false, the flag will be excluded from the interactive prompts
 **usage** | `String` / `Array` | `""` | A string or array of strings used to generate help text
