@@ -41,8 +41,7 @@ var Test = new cli.Command({
       required: false
     }
   }
-  ,run: function( cmd, data, cb ){
-    //console.log( data )
+  ,run: async function( cmd, data ){
     var out = [];
     var names = Array.isArray( data.name ) ? data.name : [ data.name ]
     for( var x =0; x< names.length; x++ ){
@@ -60,8 +59,7 @@ var Test = new cli.Command({
     }
     out = out.join('\n');
 
-    out = data.volume == 'screaming' ? out.toUpperCase() : out;
-    cb( null, out );
+    return data.volume == 'screaming' ? out.toUpperCase() : out;
   }
 });
 cli.set('exitOnError', true)
