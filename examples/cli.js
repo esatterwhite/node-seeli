@@ -3,12 +3,13 @@ var cli = require("../")
 var path = require('path')
 
 cli.set('exitOnError', true);
-cli.set('color','green');
+cli.set('color','red');
 cli.set('name', 'example');
 
 var Test = new cli.Command({
   description:"displays a simple hello world command"
 , name: 'hello'
+, ui: 'dots12'
 , usage:[
     `${cli.bold("Usage:")} cli hello --interactive`
   , `${cli.bold("Usage:")} cli hello --name=john`
@@ -48,6 +49,7 @@ var Test = new cli.Command({
     }
   }
 , run: async function( cmd, data ){
+    this.ui.start()
     var out = [];
     var names = Array.isArray( data.name ) ? data.name : [ data.name ]
     for( var x =0; x< names.length; x++ ){
@@ -65,7 +67,16 @@ var Test = new cli.Command({
     }
     out = out.join('\n');
 
-    return data.volume == 'screaming' ? out.toUpperCase() : out;
+    out = data.volume == 'screaming' ? out.toUpperCase() : out;
+    const ui = this.ui
+    await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        ui.succeed('your password was set')
+      }, 5000)
+    })
+
+
+    return out
   }
 });
 
