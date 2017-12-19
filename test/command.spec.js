@@ -46,7 +46,7 @@ test('command', function(t){
         , required: true
         }
       }
-    , run: function( cmd, data, done ) {
+    , run: function( cmd, data ) {
         tt.match(data, {
           foo: {
             bar: {
@@ -58,7 +58,7 @@ test('command', function(t){
             array: [1, 2]
           }
         })
-        done(null, 'done')
+        return 'done';
       }
     })
 
@@ -105,13 +105,18 @@ test('command', function(t){
       Help.setOptions({
         args: ['--no-color']
       })
-      Help.run('usage', (err, content) => {
+      Help.run('usage')
+      .then((content) => {
         ttt.equal(content.trim(), strip(UsageCommand.usage).trim());
       })
-      Help.run('help', (err, content) => {
+      .catch(ttt.error)
+
+      Help.run('help')
+      .then((content) => {
         ttt.match(content, /really/)
         ttt.end()
       })
+      .catch(ttt.error)
     });
 
     tt.test('should accept an array of strings', function(ttt){
@@ -196,9 +201,7 @@ test('command', function(t){
       NumberCommand.setOptions({
         args: [ '--number=string' ]
       })
-      ttt.throws(() => {
-        NumberCommand.run()
-      })
+      tt.rejects(NumberCommand.run())
       ttt.end()
     });
 
@@ -303,17 +306,14 @@ test('command', function(t){
       });
 
       domain.remove( RequiredCommand );
-      ttt.throws(function(){
-        RequiredCommand.run();
-      }, 'should throw an error');
-
+      ttt.rejects(RequiredCommand.run());
       RequiredCommand.reset();
       RequiredCommand.setOptions({
         args:['--one=1']
       });
 
-      ttt.doesNotThrow(function(){
-        RequiredCommand.run();
+      ttt.doesNotThrow(async () => {
+        await RequiredCommand.run()
       },'should not thow');
       ttt.end()
     });
@@ -329,14 +329,11 @@ test('command', function(t){
           }
         }
       });
-      domain.remove(ValidationCommand);
       ValidationCommand.reset()
       ValidationCommand.setOptions({
         args: ['--one=1']
       })
-      ttt.throws(function() {
-        ValidationCommand.run();
-      });
+      ttt.rejects(ValidationCommand.run());
       ttt.end()
     });
     tt.end()
@@ -357,8 +354,8 @@ test('command', function(t){
             ,event:true
           }
         }
-        , run: function( cmd, data, done ){
-          done( null, data.one && data.two );
+      , run: async function( cmd, data) {
+          return (data.one && data.two );
         }
       });
 
@@ -506,8 +503,8 @@ test('command', function(t){
           ,default: true
         }
       }
-    , run: function( cmd, data, done ){
-        done(null, '')
+    , run: async function( cmd, data, done ){
+        return ''
       }
     });
 

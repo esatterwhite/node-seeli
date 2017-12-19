@@ -56,7 +56,7 @@ test('type-of', (t) => {
   for (const item of cases) {
     const actual = typeOf(item[0]);
     const expected = item[1];
-    t.equal(actual, expected, item[0]);
+    t.equal(actual, expected, item[2]);
   }
   t.end();
 });
