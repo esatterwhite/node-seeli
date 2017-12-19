@@ -5,7 +5,13 @@ const cli    = require('../');
 
 test('cli', function(t){
   t.test('color functions', function(tt){
-    const colors = ['red', 'blue','green', 'yellow','bold', 'grey', 'dim', 'black', 'magenta', 'cyan'];
+    const colors = [
+      'red', 'blue','green'
+    , 'yellow','bold', 'grey'
+    , 'dim', 'black', 'magenta'
+    , 'cyan', 'redBright', 'blueBright'
+    , 'greenBright', 'yellowBright', 'cyanBright'
+    ];
     for (const color of colors) {
       tt.type(cli[color], Function, `${color} should be a top level function`);
     }
@@ -13,22 +19,34 @@ test('cli', function(t){
   });
 
   t.test('conf', function(tt){
-    tt.test('should store default values', function(ttt){
-      ttt.ok(cli.get('name'))
-      ttt.ok(cli.get('color'))
-      ttt.ok(cli.get('help'))
-      ttt.end()
+    tt.test('should store default values', (ttt) => {
+      ttt.ok(cli.get('name'));
+      ttt.ok(cli.get('color'));
+      ttt.ok(cli.get('help'));
+      ttt.end();
     });
 
-    tt.test('should allow arbitrary values', function(ttt){
+    tt.test('should allow arbitrary values', (ttt) => {
       cli.set('test', 1 );
-      ttt.equal( cli.get('test'), 1 )
-      ttt.end()
+      ttt.equal( cli.get('test'), 1 );
+      ttt.end();
     });
 
-    tt.end()
-  });
+    tt.test('should allow setting multiple values', (ttt) => {
+      cli.set({
+        a: 1
+      , b: 2
+      , c: 3
+      });
 
+      ttt.equal(cli.get('a'), 1, 'a===1');
+      ttt.equal(cli.get('b'), 2, 'b===2');
+      ttt.equal(cli.get('c'), 3, 'c===3');
+      ttt.end();
+    });
+
+    tt.end();
+  });
 
   t.test('#use', function(tt){
     tt.on('end', () => {
