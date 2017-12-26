@@ -85,9 +85,7 @@ test('cli', function(t){
 
   t.test('#run', function(tt) {
     const help = cli.commands.help;
-    const log = console.log;
-    console.log = (str) => {
-      const data = String(str);
+    help.once('content', (data) => {
       if (/usage/i.test(data)) {
         const expected = [
           'Usage:  runner <command> [options]'
@@ -97,20 +95,11 @@ test('cli', function(t){
         ].join(os.EOL);
         tt.equal(data, expected);
         tt.end();
-      } else {
-        log(str);
       }
-    }
-    tt.on('end', () => {
-      help.reset();
-      console.log = log;
-    });
-    help.setOptions({
-      args: ['--no-color']
     });
 
-    help.on('content', (content) => {
-      tt.pass('help called');
+    help.setOptions({
+      args: ['--no-color']
     });
 
     cli.set({

@@ -97,7 +97,7 @@ test('command', function(t){
                 "  <...>: input type | *: repeatable flags | [...]: default values"
       ].join(os.EOL );
 
-      ttt.equal(out.trim(), strip( UsageCommand.usage ).trim() );
+      ttt.equal(strip( UsageCommand.usage ).trim(), out.trim() );
 
       commands.register('usage', UsageCommand)
       Help.removeAllListeners()
@@ -123,13 +123,13 @@ test('command', function(t){
       var UsageCommand = new Command({
         usage:[
           "usage -a 'fake' --verbose",
-          "usage -b 'tesk' --no-verbose",
+          "usage -b 'test' --no-verbose",
         ]
       });
 
       var out = [
         "usage -a 'fake' --verbose",
-        "usage -b 'tesk' --no-verbose",
+        "usage -b 'test' --no-verbose",
         "",
         "Options:",
         "",
@@ -138,7 +138,7 @@ test('command', function(t){
         "  ",
                 "  <...>: input type | *: repeatable flags | [...]: default values"
       ].join(os.EOL );
-      ttt.equal( out, strip( UsageCommand.usage ) );
+      ttt.equal(strip( UsageCommand.usage ), out);
       ttt.end()
     });
     tt.end()
