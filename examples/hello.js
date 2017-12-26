@@ -1,4 +1,5 @@
 'use strict'
+const os = require('os')
 const cli = require('../')
 
 module.exports = new cli.Command({
@@ -50,33 +51,49 @@ module.exports = new cli.Command({
     , required: false
     }
   }
+, onContent: (content) => {
+    // command success
+    // content is the final output from run function
+    // non string content is not written to stdout automatically
+    // you could do it here
+
+    console.log(content.join(os.EOL))
+  }
+
 , run: async function( cmd, data ){
-    const ui = this.ui
-    ui.start()
-    var names = Array.isArray( data.name ) ? data.name : [ data.name ]
+    const ui = this.ui;
+    const out = [];
+    ui.start('processing names');
+    var names = Array.isArray( data.name ) ? data.name : [ data.name ];
     for( var x = 0; x< names.length; x++ ){
       await new Promise((resolve) => {
         setTimeout(() => {
-          let value = "Hello, " + names[x]
+          let value = "Hello, " + names[x];
           if( data.excited ){
-            value += '!'
+            value += '!';
           }
 
-          ui.text = ( data.volume === 'screaming' ? value.toUpperCase() : value );
+          out.push( data.volume === 'screaming' ? value.toUpperCase() : value );
+          resolve(true);
+        }, 1000 * x);
+      });
+    }
+
+    ui.succeed('names processed successfully');
+
+    if (data.password) {
+      await new Promise((resolve, reject) => {
+        ui.start('configuring password')
+        setTimeout(() => {
+          ui.succeed('your password was set')
           resolve(true)
-        }, 1000 * x)
+        }, 1000 * (names.length + 1))
       })
     }
-    await new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (data.password) {
-          ui.succeed('your password was set')
-        } else {
-          ui.stop()
-        }
-      }, 1000 * (names.length + 1))
-    })
 
+    // anything returned from run
+    // is emitted from the `content` event
+    // strings will automatically be written to stdout
     return out
   }
 });
