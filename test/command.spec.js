@@ -1,13 +1,17 @@
 /* jshint laxcomma: true, smarttabs: true, node: true */
 'use strict';
+
+const fs       = require('fs');
+const path     = require('path');
+const os       = require('os');
 const assert   = require('assert');
+const strip    = require('strip-ansi');
 const cli      = require('../')
 const Command  = require('../lib/command');
 const commands = require('../lib/commands')
 const Help     = require('../lib/commands/help')
-const strip    = require('strip-ansi');
-const os       = require('os');
 const domain   = require('../lib/domain')
+const usage    = require('../lib/usage')
 const test     = require('tap').test
 
 test('command', function(t){
@@ -86,18 +90,9 @@ test('command', function(t){
       , args: ['--no-color']
       });
 
-      var out = [
-        "usage -a 'fake' --verbose",
-        "",
-        "Options:",
-        "",
-        "  " + "-i, --interactive, --no-interactive <boolean> [false] Use the interactive propmts",
-        "  --color, --no-color <boolean> [true] Enable ANSI color in output",
-        "  ",
-                "  <...>: input type | *: repeatable flags | [...]: default values"
-      ].join(os.EOL );
-
-      ttt.equal(strip( UsageCommand.usage ).trim(), out.trim() );
+      const fixture_path = path.join(__dirname, 'fixtures', 'usage-sigular.fixture')
+      const stdout = fs.readFileSync(fixture_path, 'utf8')
+      ttt.equal(strip( UsageCommand.usage ).trim(), stdout.trim() );
 
       commands.register('usage', UsageCommand)
       Help.removeAllListeners()
@@ -138,7 +133,9 @@ test('command', function(t){
         "  ",
                 "  <...>: input type | *: repeatable flags | [...]: default values"
       ].join(os.EOL );
-      ttt.equal(strip( UsageCommand.usage ), out);
+      const fixture_path = path.join(__dirname, 'fixtures', 'usage-array.fixture')
+      const stdout = fs.readFileSync(fixture_path, 'utf8');
+      ttt.equal(strip( UsageCommand.usage ), stdout);
       ttt.end()
     });
     tt.end()
