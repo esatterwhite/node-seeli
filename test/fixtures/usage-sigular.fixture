@@ -1,0 +1,9 @@
+usage -a 'fake' --verbose
+
+Options:
+
+  -i, --interactive, --no-interactive   <boolean> [false]             Use the interactive propmts
+  --color, --no-color                   <boolean> [true]              Enable ANSI color in output
+
+
+  <...>: input type | *: repeatable flags | [...]: default values
