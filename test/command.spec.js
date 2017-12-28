@@ -35,6 +35,7 @@ test('command', function(t){
   });
 
   t.test('nested flags', (tt) => {
+    tt.plan(3)
     const NestedCommand = new Command({
       flags: {
         test: {
@@ -49,6 +50,9 @@ test('command', function(t){
           type: [Number, Array]
         , required: true
         }
+      }
+    , onContent: () => {
+        tt.pass('content also emitted')
       }
     , run: function( cmd, data ) {
         tt.match(data, {
@@ -76,7 +80,6 @@ test('command', function(t){
       })
       NestedCommand.run()
     })
-    tt.end()
   })
 
   // usage parsing
@@ -122,17 +125,6 @@ test('command', function(t){
         ]
       });
 
-      var out = [
-        "usage -a 'fake' --verbose",
-        "usage -b 'test' --no-verbose",
-        "",
-        "Options:",
-        "",
-        "  " + "-i, --interactive, --no-interactive <boolean> [false] Use the interactive propmts",
-        "  --color, --no-color <boolean> [true] Enable ANSI color in output",
-        "  ",
-                "  <...>: input type | *: repeatable flags | [...]: default values"
-      ].join(os.EOL );
       const fixture_path = path.join(__dirname, 'fixtures', 'usage-array.fixture')
       const stdout = fs.readFileSync(fixture_path, 'utf8');
       ttt.equal(strip( UsageCommand.usage ), stdout);
@@ -487,11 +479,6 @@ test('command', function(t){
 
   t.test('strict mode', (tt) => {
     tt.plan(1)
-    const log = console.log
-    console.log = () => {}
-    tt.on('end', () => {
-      console.log = log
-    })
     var DirectiveCommand = new Command({
       strict: true
     , flags: {
