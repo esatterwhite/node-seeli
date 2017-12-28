@@ -1,12 +1,14 @@
 /*jshint laxcomma: true, smarttabs: true, node:true, mocha: true*/
-var cli = require('../')
-
+const cli = require('../')
+const commands = require('./commands')
 cli.set({
   exitOnError: true
 , color: 'green'
 , name: 'example'
 })
 
-cli.use('hello', require('./hello'));
-cli.use('foaas', require('./foaas'));
+for (const [name, command] of Object.entries(commands)) {
+  cli.use(name, command)
+}
+
 cli.run();
