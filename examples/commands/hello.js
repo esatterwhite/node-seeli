@@ -1,6 +1,6 @@
 'use strict'
 const os = require('os')
-const cli = require('../')
+const cli = require('../../')
 
 module.exports = new cli.Command({
   description:"displays a simple hello world command"

@@ -2,7 +2,7 @@
 
 const https = require('https')
 
-const cli = require('../')
+const cli = require('../../')
 const Command = cli.Command
 
 const NAME = cli.get('name')
