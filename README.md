@@ -10,82 +10,122 @@ A command line interface the way you want it, and otherwise, stays out of your w
 ![gif](https://raw.githubusercontent.com/esatterwhite/node-seeli/master/assets/seeli.gif "interactive mode")
 
 ```js
-var cli = require("seeli")
-var Hello = new cli.Command({
+const os = require('os')
+const cli = require('seeli')
+
+cli.set({
+  exitOnError: true
+, color: 'green'
+, name: 'example'
+})
+
+const Hello new cli.Command({
   description:"displays a simple hello world command"
-  ,usage:[
-    `${cli.bold("Usage:")} cli hello --interactive`,
-    `${cli.bold("Usage:")} cli hello --name=john`,
-    `${cli.bold("Usage:")} cli hello --name=john --name=marry --name=paul -v screaming`
+, name: 'hello'
+, ui: 'dots'
+, usage:[
+    `${cli.bold("Usage:")} ${cli.get('name')} hello --interactive`
+  , `${cli.bold("Usage:")} ${cli.get('name')} hello --name=john`
+  , `${cli.bold("Usage:")} ${cli.get('name')} hello --name=john --name=marry --name=paul -v screaming`
   ]
 
-  ,flags:{
+, flags:{
 
     name:{
       type:[ String, Array ]
-      ,shorthand:'n'
-      ,description:"The name of the person to say hello to"
-      ,required:true
+    , shorthand:'n'
+    , description:"The name of the person to say hello to"
+    , required:true
     }
 
-    ,excited: {
+  , 'nested:value' : {
+      type: Number
+    , shorthand: 'nv'
+    , description: 'A newsted Value'
+    , name: 'nested'
+    }
+
+  , excited: {
       type:Boolean
-      ,shorthand: 'e'
-      ,description:"Say hello in a very excited manner"
-      ,default:false
+    , shorthand: 'e'
+    , description:"Say hello in a very excited manner"
+    , default:false
     }
 
-    ,volume:{
+  , volume:{
       type:String
-      ,choices:['normal', 'screaming']
-      ,description:"Will yell at each person"
-      ,default:'normal'
-      ,shorthand:'v'
+    , choices:['normal', 'screaming']
+    , description:"Will yell at each person"
+    , default:'normal'
+    , shorthand:'v'
     }
 
-    ,password: {
-      type:String,
-      mask:true,
-      description:"unique password",
-      shorthand:'p',
-      required: false
+  , password: {
+      type:String
+    , mask:true
+    , description:"unique password"
+    , shorthand:'p'
+    , required: false
     }
   }
-  ,run: function( cmd, data, cb ){
+, onContent: (content) => {
+    // command success
+    // content is the final output from run function
+    // non string content is not written to stdout automatically
+    // you could do it here
+
+    console.log(content.join(os.EOL))
+  }
+
+, run: async function( cmd, data ){
     const out = [];
-    const names = Array.isArray( data.name ) ? data.name : [ data.name ]
-    for(const name of names){
-      var value = `Hello ${name}
-      if( data.excited ){
-        value += '!'
-      }
+    this.ui.start('processing names');
+    var names = Array.isArray( data.name ) ? data.name : [ data.name ];
+    for( var x = 0; x< names.length; x++ ){
+      this.ui.text = (`processing ${names[x]}`)
+      await new Promise((resolve) => {
+        setTimeout(() => {
+          let value = "Hello, " + names[x];
+          if( data.excited ){
+            value += '!';
+          }
 
-      out.push( value );
-
+          out.push( data.volume === 'screaming' ? value.toUpperCase() : value );
+          resolve(true);
+        }, 1000 * x + 1);
+      });
     }
+
+    this.ui.succeed('names processed successfully');
+
     if (data.password) {
-      out.push('')
-      out.push('your password was set.')
+      await new Promise((resolve, reject) => {
+        this.ui.start('configuring password')
+        setTimeout(() => {
+          this.ui.succeed('your password was set')
+          resolve(true)
+        }, 1000 * (names.length + 1))
+      })
     }
-    out = out.join('\n');
 
-    out = data.volume == 'screaming' ? out.toUpperCase() : out;
-    cb( null, out );
+    // anything returned from run
+    // is emitted from the `content` event
+    // strings will automatically be written to stdout
+    return out
   }
 });
-cli.set('exitOnError', true)
+
 cli.use('hello', Hello)
-cli.set('color','green');
 cli.run();
 ```
 
 now you will have a fully functional world command with help and an interactive walk through
 
 ```
-node cli.js help world
-node cli.js world --help
-node cli.js world --interactive
-node cli.js world --name=Mark --name=Sally --no-excited
+node ./cli help world
+node ./cli world --help
+node ./cli world --interactive
+node ./cli world --name=Mark --name=Sally --no-excited
 ```
 
 
@@ -97,11 +137,6 @@ Executes The command line interface
 ## Seeli.list`<Array>`
 
 List of all top level registered commands
-
-## Seeli.exitOnError `<Boolean>`
-
-If set to turn seeli will exit the process when it encouters an error. If false, it will leave error handling up to
-the parent application
 
 ## Seeli.use( name `<string>`, cmd `<Command>` )
 
@@ -192,7 +227,8 @@ name | type | default | description
 **interactive** | `Boolean` | `true` | If set to false, the flag will be excluded from the interactive prompts
 **usage** | `String` / `Array` | `""` | A string or array of strings used to generate help text
 **flags** | `Object` | `{}` | key value pairs used to control the command where keys are the name of the flag and the values is a configuration object for the flag
-**run** | `Function` | `no-op` | A function used as the body of the command. it will be passed a `name`, a `data` object containing the processed values from the command input and a `done` function to be called when the command is done.
+**ui** | `String` | `dots` | The kind of [progress indicator](https://github.com/sindresorhus/cli-spinners/blob/master/spinners.jso) your command should use
+**run** | `Function` | `no-op` | An async function used as the body of the command. It will be passed a `subcommand` name if one was passed, and a `data` object containing the processed values from the command input.
 
 ### Flag Options
 name | required | type | description
@@ -237,7 +273,12 @@ Seeli will generate help from the usage string and flags. You can help as a comm
 
 ## Asyncronous
 
-Your defined `run` function will be passed a `done` function to be called when your command has finished. This allows you to do complex async operations and I/O. The `done` callback accepts an error, if there is one, and the final output to be displayed for your command.
+Your defined `run` function can be an async function, or a function that returns a `Promise`. This allows you to do complex async operations and I/O. If an error is thrown, it will be displayed.
+Otherwise, the content returned from your `run` function will be output to stdout ( if it returned a `String`).
+
+## Progress
+
+Your command's `run` function has access to an instance of [ora](https://www.npmjs.com/package/ora) allowing you to display progress indicators and helpful messages while you perform other work.
 
 ## Events
 
@@ -245,48 +286,34 @@ Instances of the seeli Command or Commands the inherit from it as also instances
 
 ```js
 var EventCommand = new cli.Command({
-    args:[ '--one', '--no-two']
-  , flags:{
-        one:{
-            type:Boolean
-            ,event:true
-        }
-        ,two:{
-            type:Boolean
-            ,event:true
-        }
+  args:[ '--one', '--no-two']
+, flags:{
+    one:{
+      type:Boolean
+    , event:true
     }
-  , run: function( cmd, data, done ){
-    done( null, data.one && data.two )
+  , two:{
+      type:Boolean
+    , event:true
+    }
+  }
+, run: async function( cmd, data ){
+    return data.one && data.two
   }
 });
 
 EventCommand.on('one', function( value ){
-    assert.equal( true, value );
+  assert.equal( true, value );
 });
 
 EventCommand.on('two', function( value ){
-    assert.equal( false, value )
+  assert.equal( false, value )
 });
 
 EventCommand.on('content', function( value ){
-    assert.equal( false, value );
+  assert.equal( false, value );
 });
 
 EventCommand.run( null );
 ```
 
-## Errors
-
-Errors are handled by Node's error [domains](http://nodejs.org/api/domain.html). Each command will run inside of its own domain and will emit an error event if and error is passed to the `done` callback from the `run` method. Seeli will suppress trace messages by default. You can use the `--traceback` flag on any command to surface the full stack trace. If the error object emitted has a `code` property that is a non zero value, seeli will forcefully exit the process with the error code.
-
-```js
-var cli = require("seeli")
-var ErrCmd = new cli.Command({
-    run: function(){
-        var e = new Error("Invalid Command")
-        e.code = 10;
-        this.emit('error',e )
-    }
-});
-```
