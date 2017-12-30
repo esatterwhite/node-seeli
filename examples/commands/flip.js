@@ -1,7 +1,6 @@
 'use strict'
 
 const cli = require('../../')
-
 const CHARS = {
   // uppercase (incomplete)
   'A':'∀',
@@ -89,7 +88,11 @@ Object.keys(CHARS).forEach(function (key) {
 module.exports = new cli.Command({
   interactive: false
 , description: 'flips text upside-down'
-, usage: `${cli.get('name')} flip [word]`
+, usage: [
+    `${cli.get('name')} flip <${cli.colorize('word')}>`
+  , `${cli.get('name')} flip ${cli.colorize('test')}`
+  , `${cli.get('name')} flip ${cli.colorize('Hello World!')}`
+  ]
 , run: async function(word) {
     if (!word) return
     var result = ''
