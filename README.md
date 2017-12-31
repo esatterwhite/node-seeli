@@ -59,14 +59,6 @@ const Hello new cli.Command({
     , default:'normal'
     , shorthand:'v'
     }
-
-  , password: {
-      type:String
-    , mask:true
-    , description:"unique password"
-    , shorthand:'p'
-    , required: false
-    }
   }
 , onContent: (content) => {
     // command success
@@ -97,17 +89,6 @@ const Hello new cli.Command({
     }
 
     this.ui.succeed('names processed successfully');
-
-    if (data.password) {
-      await new Promise((resolve, reject) => {
-        this.ui.start('configuring password')
-        setTimeout(() => {
-          this.ui.succeed('your password was set')
-          resolve(true)
-        }, 1000 * (names.length + 1))
-      })
-    }
-
     // anything returned from run
     // is emitted from the `content` event
     // strings will automatically be written to stdout

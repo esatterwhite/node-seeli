@@ -5,4 +5,5 @@ module.exports = {
 , foaas: require('./foaas')
 , flip: require('./flip')
 , ui: require('./ui')
+, password: require('./password-confirm')
 }
