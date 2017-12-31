@@ -2,7 +2,7 @@
 const cli = require('../')
 cli.set({
   exitOnError: true
-, color: 'green'
+, color: 'blue'
 , name: 'example'
 })
 
