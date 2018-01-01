@@ -19,7 +19,7 @@ cli.set({
 , name: 'example'
 })
 
-const Hello new cli.Command({
+const Hello = new cli.Command({
   description:"displays a simple hello world command"
 , name: 'hello'
 , ui: 'dots'
