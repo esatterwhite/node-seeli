@@ -100,7 +100,7 @@ cli.use('hello', Hello)
 cli.run();
 ```
 
-now you will have a fully functional world command with help and an interactive walk through
+now you will have a fully functional `hello world` command with help and an interactive walk through
 
 ```
 node ./cli help world
