@@ -221,6 +221,7 @@ name | required | type | description
 **default**    | `false` | `mixed` | A value to return if the flag is omitted. |
 **mask**       | `false` | `boolean` | **interactive mode only** Sets the input type to masked input to hide values
 **choices**    | `false` | `array` | Used only during an interactive command. Restricts the users options only to the options **specified** |
+**multi**      | `false` | `boolean` | **interactive mode only** If choices is specified, and multi is true, this user will be presented a multi checkbox UI allowing them to pick multiple values. The return value will be an array
 **skip**       | `false` | `boolean` | **interactive mode only** - if set to `true` this flag will be omitted from the interactive command prompts |
 **event**      | `false` | `boolean` | if set to `true` the command will emit an event withe the same name as the flag with **the** value that was captured for that flag |
 **when** | `false` | `function` | **interactive mode only** Receives the current user answers hash and should return true or **false** depending on whether or not this question should be asked.
