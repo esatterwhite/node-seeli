@@ -218,6 +218,7 @@ name | required | type | description
 **description** | `false` | `string` |  a description of the flag in question.  |
 **required** | `false` | `boolean` |  If set to `true` a `RequiredFieldError` will be emitted  |
 **shorthand**  | `false` | `string` | An options short hand flag that will be expanded out to the long hand flag. |
+**interacive** | `false` | `boolean` | If set to false the flag will omitted from interactive prompts
 **default**    | `false` | `mixed` | A value to return if the flag is omitted. |
 **mask**       | `false` | `boolean` | **interactive mode only** Sets the input type to masked input to hide values
 **choices**    | `false` | `array` | Used only during an interactive command. Restricts the users options only to the options **specified** |
