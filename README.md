@@ -232,7 +232,7 @@ name | required | type | description
 #### Nested Flags
 
 Flag names that contain a colon (`:`) will be parsed as a nested value in the data that is return to you commands. You can Set arbitrarily deep values.
-You can use this to automatically construct complext object. Array values are limited to primitive types
+You can use this to automatically construct complex object. Array values are limited to primitive types
 
 ```javascript
 // cli ---foo:bar:foobar=hello --foo:bar:baz=world --nested:array=1 --nested:array=2
