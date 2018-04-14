@@ -208,7 +208,7 @@ name | type | default | description
 **interactive** | `Boolean` | `true` | If set to false, the flag will be excluded from the interactive prompts
 **usage** | `String` / `Array` | `""` | A string or array of strings used to generate help text
 **flags** | `Object` | `{}` | key value pairs used to control the command where keys are the name of the flag and the values is a configuration object for the flag
-**ui** | `String` | `dots` | The kind of [progress indicator](https://github.com/sindresorhus/cli-spinners/blob/master/spinners.jso) your command should use
+**ui** | `String` | `dots` | The kind of [progress indicator](https://github.com/sindresorhus/cli-spinners/blob/master/spinners.json) your command should use
 **run** | `Function` | `no-op` | An async function used as the body of the command. It will be passed a `subcommand` name if one was passed, and a `data` object containing the processed values from the command input.
 
 ### Flag Options
