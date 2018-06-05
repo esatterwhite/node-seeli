@@ -64,7 +64,7 @@
   },
   "devDependencies": {
     "jsdoc": "^3.5.5",
-    "tap": "^10.7.2"
+    "tap": "^12.0.1"
   },
   "nyc": {
     "exclude": [
