@@ -49,7 +49,7 @@
   },
   "homepage": "https://github.com/esatterwhite/node-seeli",
   "dependencies": {
-    "abbrev": "~1.1.0",
+    "abbrev": "^1.1.1",
     "chalk": "^2.4.1",
     "cliui": "^4.1.0",
     "clone": "^2.0.0",
