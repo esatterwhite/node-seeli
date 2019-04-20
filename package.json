@@ -51,7 +51,7 @@
   "dependencies": {
     "abbrev": "^1.1.1",
     "chalk": "^2.4.2",
-    "cliui": "^4.1.0",
+    "cliui": "^5.0.0",
     "clone": "^2.1.2",
     "debug": "^4.1.1",
     "inquirer": "^6.3.1",
