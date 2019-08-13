@@ -42,7 +42,7 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=7.0.0"
+    "node": ">=8.0.0"
   },
   "bugs": {
     "url": "https://github.com/esatterwhite/node-seeli/issues"
