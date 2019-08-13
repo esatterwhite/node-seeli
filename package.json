@@ -62,7 +62,7 @@
     "strip-ansi": "^5.2.0"
   },
   "devDependencies": {
-    "tap": "^12.6.2"
+    "tap": "^14.6.1"
   },
   "nyc": {
     "exclude": [
