@@ -10,15 +10,14 @@ const cli      = require('../')
 const Command  = require('../lib/command');
 const commands = require('../lib/commands')
 const Help     = require('../lib/commands/help')
-const domain   = require('../lib/domain')
 const usage    = require('../lib/usage')
 const test     = require('tap').test
 
-test('command', function(t){
+test('command', async (t) => {
 
   // description parsing
-  t.test('~description', function(tt){
-    tt.test('should accept a single string', function(ttt){
+  t.test('~description', async (tt) => {
+    tt.test('should accept a single string', async (ttt) => {
       let DescriptionCommand = new Command({
         description:"a test command"
       });
@@ -29,13 +28,10 @@ test('command', function(t){
       });
 
       ttt.equal("a different description", DescriptionCommand.description );
-      ttt.end()
     });
-    tt.end()
   });
 
-  t.test('nested flags', (tt) => {
-    tt.plan(3)
+  t.test('nested flags', async (tt) => {
     const NestedCommand = new Command({
       flags: {
         test: {
@@ -83,8 +79,8 @@ test('command', function(t){
   })
 
   // usage parsing
-  t.test('~usage', function(tt){
-    tt.test('should accept a single string', function(ttt){
+  t.test('~usage', async (tt) => {
+    tt.test('should accept a single string', async (ttt) => {
       ttt.on('end', () => {
         commands.unregister('usage')
       })
@@ -103,22 +99,20 @@ test('command', function(t){
       Help.setOptions({
         args: ['--no-color']
       })
-      Help.run('usage')
-      .then((content) => {
-        ttt.equal(content.trim(), strip(UsageCommand.usage).trim());
-      })
-      .catch(ttt.error)
 
-      Help.run('help')
-      .then((content) => {
+      {
+        const content = await Help.run('usage')
+        ttt.equal(content.trim(), strip(UsageCommand.usage).trim());
+      }
+
+      {
+        const content = await Help.run('help')
         ttt.match(content, /really/)
-        ttt.end()
-      })
-      .catch(ttt.error)
+      }
     });
 
-    tt.test('should accept an array of strings', function(ttt){
-      var UsageCommand = new Command({
+    tt.test('should accept an array of strings', async (ttt) => {
+      const UsageCommand = new Command({
         usage:[
           "usage -a 'fake' --verbose",
           "usage -b 'test' --no-verbose",
@@ -128,151 +122,139 @@ test('command', function(t){
       const fixture_path = path.join(__dirname, 'fixtures', 'usage-array.fixture')
       const stdout = fs.readFileSync(fixture_path, 'utf8');
       ttt.equal(strip( UsageCommand.usage ), stdout);
-      ttt.end()
     });
-    tt.end()
   });
 
   // internal argv parsing
-  t.test('~argv', function(tt){
-    tt.test('should accept an array of arguments', function(ttt){
-      var ArgCommand = new Command({
+  t.test('~argv', async (tt) => {
+    tt.test('should accept an array of arguments', async (ttt) => {
+      const ArgCommand = new Command({
         args:['--no-color']
       });
-      ttt.strictEqual( false, ArgCommand.argv.color);
+      ttt.strictEqual(ArgCommand.argv.color, false);
       ArgCommand.reset();
 
       ArgCommand.setOptions({
         args:['--color']
       });
 
-      ttt.strictEqual( true, ArgCommand.argv.color);
-      ttt.end()
+      ttt.strictEqual(ArgCommand.argv.color, true);
     });
 
-    tt.test('should understand unknown flags', function(ttt){
-      var ArgCommand = new Command({
-        args:['--no-color', '--fake']
+    tt.test('should understand unknown flags', async (ttt) => {
+      const ArgCommand = new Command({
+        args: ['--no-color', '--fake']
       });
-      ttt.strictEqual( false, ArgCommand.argv.color);
-      ttt.strictEqual( true, ArgCommand.argv.fake);
-      ttt.end()
+      ttt.strictEqual(ArgCommand.argv.color, false);
+      ttt.strictEqual(ArgCommand.argv.fake, true);
     });
-    tt.end()
   });
 
   // flag parsing
-  t.test("~flags", function(tt){
-    tt.test('should accept String Types', function(ttt){
-      var StringCommand = new Command({
-        flags:{
-          string:{
-            type:String
+  t.test("~flags", async (tt) => {
+    tt.test('should accept String Types', async (ttt) => {
+      const StringCommand = new Command({
+        flags: {
+          string: {
+            type: String
           }
         }
-        ,args:[ '--string=fake' ]
+      , args: [ '--string=fake' ]
       });
 
-      ttt.strictEqual( 'fake', StringCommand.argv.string );
-      ttt.end()
+      ttt.strictEqual(StringCommand.argv.string, 'fake');
     });
 
-    tt.test('should reject input type miss matches', function(ttt){
-      var NumberCommand = new Command({
-        flags:{
-          number:{
+    tt.test('should reject input type miss matches', async (ttt) => {
+      const NumberCommand = new Command({
+        flags: {
+          number: {
             type: Number
           }
         }
       });
-      domain.remove( NumberCommand );
       NumberCommand.reset()
       NumberCommand.setOptions({
         args: [ '--number=string' ]
       })
       tt.rejects(NumberCommand.run())
-      ttt.end()
     });
 
-    tt.test('should accept Boolean Types', function(ttt){
-      var BooleanCommand = new Command({
-        flags:{
-          bool:{
-            type:Boolean
+    tt.test('should accept Boolean Types', async (ttt) => {
+      const BooleanCommand = new Command({
+        flags: {
+          bool: {
+            type: Boolean
           }
         }
-        ,args:[ '--bool' ]
+      , args: [ '--bool' ]
       });
 
-      ttt.strictEqual( true, BooleanCommand.argv.bool );
+      ttt.strictEqual(BooleanCommand.argv.bool, true);
       BooleanCommand.reset();
       BooleanCommand.setOptions({
-        args:['--no-bool']
+        args: ['--no-bool']
       });
-      ttt.strictEqual( false, BooleanCommand.argv.bool );
-      ttt.end()
+      ttt.strictEqual(BooleanCommand.argv.bool, false );
     });
 
-    tt.test('should accept Number Types', function(ttt){
-      var NumberCommand = new Command({
-        flags:{
-          num:{
-            type:Number
+    tt.test('should accept Number Types', async (ttt) => {
+      const NumberCommand = new Command({
+        flags: {
+          num: {
+            type: Number
           }
         }
-        ,args:[ '--num=1' ]
+      , args: [ '--num=1' ]
       });
 
-      ttt.strictEqual( 1, NumberCommand.argv.num );
-      ttt.end()
+      ttt.strictEqual(NumberCommand.argv.num, 1);
     });
 
 
 
-    tt.test('should accept multiple value flags', function(ttt){
-      var MultiCommand = new Command({
-        flags:{
-          multi:{
-            type:[Number, Array]
+    tt.test('should accept multiple value flags', async (ttt) => {
+      const MultiCommand = new Command({
+        flags: {
+          multi: {
+            type: [Number, Array]
           }
         }
-        ,args:[ '--multi=1', '--multi=2', '--multi=3' ]
+      , args: [ '--multi=1', '--multi=2', '--multi=3' ]
       });
-      ttt.deepEqual( [1,2,3], MultiCommand.argv.multi );
-      ttt.end()
+      ttt.deepEqual(MultiCommand.argv.multi, [1, 2, 3]);
     });
 
-    tt.test('should accept short hand flags', function(ttt){
-      var Short = new Command({
-        flags:{
-          "short":{
-            type:String
-            ,shorthand:'s'
+    tt.test('should accept short hand flags', async (ttt) => {
+      const Short = new Command({
+        flags: {
+          short: {
+            type: String
+          , shorthand: 's'
           }
         }
-        ,args:[ '-s', 'short' ]
+      , args: [ '-s', 'short' ]
       });
-      ttt.strictEqual( 'short', Short.argv.short );
-      ttt.end()
+      ttt.strictEqual(Short.argv.short, 'short');
     });
 
-    tt.test('should accept default values', function(ttt){
-      var DefaultCommand = new Command({
-        flags:{
-          one:{
-            type:Number
-            ,default:1
+    tt.test('should accept default values', async (ttt) => {
+      const DefaultCommand = new Command({
+        flags: {
+          one: {
+            type: Number
+          , default: 1
           }
 
           ,two:{
             type: String
-            ,default:"two"
+          , default: 'two'
           }
         }
       });
 
-      ttt.equal( 1, DefaultCommand.argv.one );
-      ttt.equal( 'two', DefaultCommand.argv.two );
+      ttt.equal(DefaultCommand.argv.one, 1);
+      ttt.equal(DefaultCommand.argv.two, 'two');
 
       DefaultCommand.reset();
 
@@ -280,35 +262,30 @@ test('command', function(t){
         args:['--one=2']
       });
 
-      ttt.equal( 2, DefaultCommand.argv.one );
-      ttt.end()
+      ttt.equal(DefaultCommand.argv.one, 2);
     });
 
-    tt.test('should throw an exception for required fields if not supplied', function(ttt){
-      var RequiredCommand = new Command({
-        flags:{
-          one:{
-            type:Number
-            ,required:true
+    tt.test('should throw an exception for required fields if not supplied', async (ttt) => {
+      const RequiredCommand = new Command({
+        flags: {
+          one: {
+            type: Number
+          , required: true
           }
         }
       });
 
-      domain.remove( RequiredCommand );
       ttt.rejects(RequiredCommand.run());
       RequiredCommand.reset();
       RequiredCommand.setOptions({
         args:['--one=1']
       });
 
-      ttt.doesNotThrow(async () => {
-        await RequiredCommand.run()
-      },'should not thow');
-      ttt.end()
+      ttt.resolves(RequiredCommand.run(), 'should not thow');
     });
 
-    tt.test('should throw execption when validation fails', function(ttt) {
-      var ValidationCommand = new Command({
+    tt.test('should throw execption when validation fails', async (ttt) =>  {
+      const ValidationCommand = new Command({
         flags: {
           one: {
             type: Number
@@ -323,54 +300,46 @@ test('command', function(t){
         args: ['--one=1']
       })
       ttt.rejects(ValidationCommand.run());
-      ttt.end()
     });
-    tt.end()
   });
 
-  t.test("#run", function(tt){
-    tt.test('should emit events for marked flags', function(ttt){
-      ttt.plan(3)
-      var EventCommand = new Command({
-        args:[ '--one', '--no-two']
-        , flags:{
-          one:{
-            type:Boolean
-            ,event:true
+  t.test('#run', async (tt) => {
+    tt.test('should emit events for marked flags', async (ttt) => {
+      const EventCommand = new Command({
+        args: [ '--one', '--no-two']
+      , flags: {
+          one: {
+            type: Boolean
+          , event: true
           }
-          ,two:{
-            type:Boolean
-            ,event:true
+        , two:{
+            type: Boolean
+          , event: true
           }
         }
-      , run: async function( cmd, data) {
+      , run: async (cmd, data) => {
           return (data.one && data.two );
         }
       });
 
-      EventCommand.on('one', function( value ){
-        ttt.equal( true, value );
+      EventCommand.on('one', (value) => {
+        ttt.equal(value, true);
       });
 
-      EventCommand.on('two', function( value ){
-        ttt.equal( false, value );
+      EventCommand.on('two', (value) => {
+        ttt.equal(value, false);
       });
 
-      EventCommand.on('content', function( value ){
-        ttt.equal( false, value );
+      EventCommand.on('content', (value) => {
+        ttt.equal(value, false);
       });
-
-      EventCommand.run( null );
-
+      EventCommand.run(null);
     });
-
-    tt.end()
   });
 
-  t.test("Subclassing", function(tt){
-    tt.test('should allow for subclassing',function(ttt){
-
-      let defaults = {
+  t.test('Subclassing', async (tt) => {
+    tt.test('should allow for subclassing', async (ttt) => {
+      const defaults = {
         description:"This is a subclass"
       };
 
@@ -383,77 +352,66 @@ test('command', function(t){
         }
       }
 
-      var Alt = new AltCommand({
-        flags:{
-          test:{
-            type:Boolean
-            ,event:false
+      const Alt = new AltCommand({
+        flags: {
+          test: {
+            type: Boolean
+          , event: false
           }
         }
       });
-      cli.use( 'alt', Alt );
-      ttt.notEqual( cli.list.indexOf( 'alt' ), -1 );
-      ttt.equal( Alt.fake(), false );
-      ttt.equal( cli.commands.alt.fake(), false );
-      ttt.end()
+      cli.use('alt', Alt);
+      ttt.notEqual(cli.list.indexOf( 'alt' ), -1);
+      ttt.equal(Alt.fake(), false);
+      ttt.equal(cli.commands.alt.fake(), false);
     });
-
-    tt.end()
   });
 
-  t.test('Aliasing', function(tt){
-    tt.test('from string',function(ttt){
-      ttt.afterEach(function(cb){
+  t.test('Aliasing', async (tt) => {
+    tt.test('from string',async (ttt) => {
+      ttt.afterEach((cb) => {
         cli.commands.reset();
         cb()
       });
 
-      ttt.test('should generate command alias', function(tttt){
-        var SingleAlias = new Command({
-          alias: 'singel'
-          ,run: function(){}
-        });
-
-        cli.use('single', SingleAlias);
-
-        tttt.ok( cli.commands.hasOwnProperty('single'))
-        tttt.ok( cli.commands.hasOwnProperty('singe'))
-        tttt.ok( cli.commands.hasOwnProperty('singel'))
-        tttt.end()
+      const SingleAlias = new Command({
+        alias: 'singel'
+      , run: function(){}
       });
-      ttt.end()
+
+      cli.use('single', SingleAlias);
+
+      ttt.ok(cli.commands.hasOwnProperty('single'))
+      ttt.ok(cli.commands.hasOwnProperty('singe'))
+      ttt.ok(cli.commands.hasOwnProperty('singel'))
     });
 
-    tt.test('from Array',function(ttt){
-      ttt.test('should generate multipl command alias', function(tttt){
-        var SingleAlias = new Command({
-          alias: ['singel', 'snigle']
-          ,run: function(){}
-        });
-
-        cli.use('single', SingleAlias);
-        tttt.ok( cli.commands.hasOwnProperty('single'))
-        tttt.ok( cli.commands.hasOwnProperty('sni'))
-        tttt.ok( cli.commands.hasOwnProperty('snigle'))
-        tttt.ok( cli.commands.hasOwnProperty('singel'))
-        tttt.end()
+    tt.test('from Array',async (ttt) => {
+      const SingleAlias = new Command({
+        alias: ['singel', 'snigle']
+      , run: function(){}
       });
-      ttt.end()
+
+      cli.use('single', SingleAlias);
+      ttt.ok(cli.commands.hasOwnProperty('single'))
+      ttt.ok(cli.commands.hasOwnProperty('sni'))
+      ttt.ok(cli.commands.hasOwnProperty('snigle'))
+      ttt.ok(cli.commands.hasOwnProperty('singel'))
     })
-    tt.end()
   })
-  t.test("Directive parsing", function(tt){
-    tt.test('should pass the first non-flag argument to run', function(ttt){
-      var DirectiveCommand = new Command({
-        flags:{
-          test:{
-            type:Boolean
-            ,default:true
+
+  t.test('Directive parsing', async (tt) => {
+    tt.test('should pass the first non-flag argument to run', async (ttt) => {
+      const DirectiveCommand = new Command({
+        flags: {
+          test: {
+            type: Boolean
+          , default: true
           }
         }
-        ,run: function( cmd ){
+      , run: async (cmd) => {
           assert.notStrictEqual( cmd, null );
-          assert.equal( cmd, "test");
+          assert.equal(cmd, 'test');
         }
       });
 
@@ -462,32 +420,26 @@ test('command', function(t){
       });
 
       DirectiveCommand.run(null);
-
       DirectiveCommand.reset();
-
-      ttt.throws(function(){
+      ttt.rejects(
         // should throw because it is expecting test
         // sending fake should make its way to the run function
-        const stream = new stream.Passthrough()
-        DirectiveCommand.run('fake');
-      });
-
-      ttt.end()
+        DirectiveCommand.run('fake')
+      );
     });
-    tt.end()
   });
 
   t.test('strict mode', (tt) => {
     tt.plan(1)
-    var DirectiveCommand = new Command({
+    const DirectiveCommand = new Command({
       strict: true
     , flags: {
         test: {
           type: Boolean
-          ,default: true
+        , default: true
         }
       }
-    , run: async function( cmd, data, done ){
+    , run: async (cmd, data) => {
         return ''
       }
     });
