@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tap -Rtap -J --cov test"
+    "test": "tap -Rtap -J --cov test",
+    "check": "check-pkg"
   },
   "repository": {
     "type": "git",
@@ -62,6 +63,7 @@
     "strip-ansi": "^6.0.0"
   },
   "devDependencies": {
+    "check-pkg": "^2.1.1",
     "tap": "^14.10.2"
   },
   "nyc": {
