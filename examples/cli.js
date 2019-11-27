@@ -8,7 +8,11 @@ cli.set({
 
 const commands = require('./commands')
 for (const [name, command] of Object.entries(commands)) {
-  cli.use(name, command)
+  if (command.options.name) {
+    cli.use(command)
+  } else {
+    cli.use(name, command)
+  }
 }
 
 cli.run();
