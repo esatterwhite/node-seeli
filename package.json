@@ -64,6 +64,7 @@
   },
   "devDependencies": {
     "check-pkg": "^2.1.1",
+    "cli-spinners": "^2.3.0",
     "tap": "^14.10.2"
   },
   "nyc": {
