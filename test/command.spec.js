@@ -1,4 +1,3 @@
-/* jshint laxcomma: true, smarttabs: true, node: true */
 'use strict';
 
 const fs       = require('fs');
@@ -81,9 +80,6 @@ test('command', async (t) => {
   // usage parsing
   t.test('~usage', async (tt) => {
     tt.test('should accept a single string', async (ttt) => {
-      ttt.on('end', () => {
-        commands.unregister('usage')
-      })
       var UsageCommand = new Command({
         usage:"usage -a 'fake' --verbose"
       , args: ['--no-color']
@@ -109,6 +105,7 @@ test('command', async (t) => {
         const content = await Help.run('help')
         ttt.match(content, /really/)
       }
+      commands.unregister('usage')
     });
 
     tt.test('should accept an array of strings', async (ttt) => {
@@ -304,7 +301,8 @@ test('command', async (t) => {
   });
 
   t.test('#run', async (tt) => {
-    tt.test('should emit events for marked flags', async (ttt) => {
+    tt.test('should emit events for marked flags', (ttt) => {
+      ttt.plan(3)
       const EventCommand = new Command({
         args: [ '--one', '--no-two']
       , flags: {
@@ -410,8 +408,9 @@ test('command', async (t) => {
           }
         }
       , run: async (cmd) => {
-          assert.notStrictEqual( cmd, null );
-          assert.equal(cmd, 'test');
+          if (cmd) {
+            assert.equal(cmd, 'test');
+          }
         }
       });
 
@@ -419,7 +418,7 @@ test('command', async (t) => {
         args:['test', '--test']
       });
 
-      DirectiveCommand.run(null);
+      await DirectiveCommand.run(null);
       DirectiveCommand.reset();
       ttt.rejects(
         // should throw because it is expecting test
