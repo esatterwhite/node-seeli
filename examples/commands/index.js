@@ -6,4 +6,5 @@ module.exports = {
 , flip: require('./flip')
 , ui: require('./ui')
 , password: require('./password-confirm')
+, sub: require('./sub')
 }
