@@ -36,11 +36,11 @@ test('object', (t) => {
 })
 
 test('type-of', (t) => {
-  const typeFn = () => {
+  function typeFn() {
     return String
   }
 
-  const valueFn = () => {
+  function valueFn() {
     return 1
   }
   const cases = [

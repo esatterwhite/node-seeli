@@ -19,37 +19,34 @@ const two = new Command({
 
 test('registry', async (t) => {
 
-  t.test('#register (by command)', async (tt) => {
+  t.test('#register (by command)', async (t) => {
     const registry = new Registry()
     registry.register(two)
 
-    tt.equal(registry.two, two, 'registered property')
-    tt.deepEqual(registry.list(), ['two'], 'registered commands')
-    tt.equal(registry.tow, two, 'registered alias')
+    t.equal(registry.get('two'), two, 'registered property')
+    t.deepEqual(registry.list(), ['two'], 'registered commands')
+    t.equal(registry.get('tow'), two, 'registered alias')
 
-    registry.tow = one
-    tt.equal(registry.two, one, 'command reassigned by alias')
   })
 
-  t.test('#register (by name)', async (tt) => {
+  t.test('#register (by name)', async (t) => {
     const registry = new Registry()
     registry.register('one', two)
 
-    tt.equal(registry.one, two, 'registered property')
-    tt.deepEqual(registry.list(), ['one'], 'registered commands')
-    tt.equal(registry.tow, two, 'registered alias')
+    t.equal(registry.get('one'), two, 'registered property')
+    t.deepEqual(registry.list(), ['one'], 'registered commands')
+    t.equal(registry.get('tow'), two, 'registered alias')
   })
 
-
-  t.test('#unregister (by name)', async (tt) => {
+  t.test('#unregister (by name)', async (t) => {
     const registry = new Registry()
     registry.register('one', one)
 
-    tt.equal(registry.one, one, 'registered property')
+    t.equal(registry.get('one'), one, 'registered property')
     registry.unregister(one.options.name)
-    tt.deepEqual(registry.list(), [], 'registered commands')
-    tt.notOk(registry.one)
-    tt.doesNotThrow(() => {
+    t.deepEqual(registry.list(), [], 'registered commands')
+    t.notOk(registry.get('one'))
+    t.doesNotThrow(() => {
       registry.unregister()
     })
   })

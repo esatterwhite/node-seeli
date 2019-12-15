@@ -210,6 +210,7 @@ name | type | default | description
 **flags** | `Object` | `{}` | key value pairs used to control the command where keys are the name of the flag and the values is a configuration object for the flag
 **ui** | `String` | `dots` | The kind of [progress indicator](https://github.com/sindresorhus/cli-spinners/blob/master/spinners.json) your command should use
 **run** | `Function` | `no-op` | An async function used as the body of the command. It will be passed a `subcommand` name if one was passed, and a `data` object containing the processed values from the command input.
+**commands** | `Command[]` | `[]` | A list of additional command to utilize as sub commands.
 
 ### Flag Options
 name | required | type | description

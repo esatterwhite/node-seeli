@@ -1,9 +1,11 @@
 #!/usr/bin/env node
+
 'use strict'
 const cli = require('../')
+
 cli.set({
-  exitOnError: true
-, color: 'greenBright'
+  exitOnError: false
+, color: 'green'
 , name: 'example'
 })
 
@@ -16,4 +18,6 @@ for (const [name, command] of Object.entries(commands)) {
   }
 }
 
-cli.run()
+if (require.main === module) cli.run()
+
+module.exports = cli

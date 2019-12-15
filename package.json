@@ -13,6 +13,13 @@
     "lint:fix": "npm run lint -- --fix",
     "release": "semantic-release"
   },
+  "files": [
+    "index.js",
+    "lib/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "eslintConfig": {
     "root": true,
     "extends": "eslint-config-codedependant",
@@ -35,7 +42,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://github.com/esatterwhite/node-seeli.git"
+    "url": "git+ssh://git@github.com/esatterwhite/node-seeli.git"
   },
   "keywords": [
     "CLI",
