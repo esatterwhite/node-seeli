@@ -1,4 +1,6 @@
 'use strict'
+
+const tty = require('tty')
 const os = require('os')
 const cli = require('../../')
 
@@ -15,41 +17,36 @@ module.exports = new cli.Command({
 , flags:{
 
     name:{
-      type:[ String, Array ]
-    , shorthand:'n'
-    , description:"The name of the person to say hello to"
-    , required:true
-    }
-
-  , 'nested:value' : {
-      type: Number
-    , shorthand: 'nv'
-    , description: 'A newsted Value'
-    , name: 'nested'
+      type: [ String, Array ]
+    , shorthand: 'n'
+    , description: 'The name of the person to say hello to'
+    , required: true
     }
 
   , excited: {
-      type:Boolean
+      type: Boolean
     , shorthand: 'e'
-    , description:"Say hello in a very excited manner"
-    , default:false
+    , description: 'Say hello in a very excited manner'
+    , default: false
     }
 
   , volume:{
-      type:String
-    , choices:['normal', 'screaming']
-    , description:"Will yell at each person"
-    , default:'normal'
-    , shorthand:'v'
+      type: String
+    , choices: ['normal', 'screaming']
+    , description: 'Will yell at each person'
+    , default: 'normal'
+    , shorthand: 'v'
     }
   }
 , onContent: (content) => {
     // command success
-    // content is the final output from run function
+    // content is the final output from `run` function
     // non string content is not written to stdout automatically
-    // you could do it here
+    // you can format / do conditional output here
 
-    console.log(content.join(os.EOL))
+    if (tty.isatty(process.stdout.fd)) {
+      console.log(content.join(os.EOL))
+    }
   }
 
 , run: async function( cmd, data ){
