@@ -1,6 +1,7 @@
 'use strict';
 
 const fs       = require('fs');
+const stream   = require('stream')
 const path     = require('path');
 const os       = require('os');
 const assert   = require('assert');
@@ -451,5 +452,66 @@ test('command', async (t) => {
     })
     DirectiveCommand.run();
   })
+
+  t.test('manual prompt', async (tt) => {
+    const cmd = new Command({
+      run: async function (name, data) {
+        const promise = this.prompt({
+          type: 'input'
+        , name: 'option'
+        , message: 'do you want this option'
+        })
+
+        promise.ui.rl.emit('line', 'yes')
+        return promise
+      }
+    })
+
+    const output = await cmd.run()
+    tt.match(output, { option: 'yes' })
+  })
+
+  t.test('non-interactive errors on interactive', async (tt) => {
+    const cmd = new Command({
+      interactive: false
+    , run: async function(name, data) {
+        tt.fail('run function should not be called')
+      }
+    })
+    cmd.setOptions({ args: ['--interactive'] })
+    await tt.rejects(cmd.run(), {code: 'ECOMMAND'})
+  })
+
+  t.test('interactive command', async (tt) => {
+    const cmd = new Command({
+      interactive: true
+    , strict: true
+    , args: ['--interactive']
+    , flags: {
+        fake: {
+          type: String
+        , required: true
+        , description: 'is this fake'
+        }
+      }
+    , run: async function(name, data) {
+        return data
+      }
+    })
+
+    const prompt = cmd.prompt
+
+    cmd.prompt = function(arg) {
+      const promise = prompt.call(cmd, arg)
+      promise.ui.activePrompt.done('yes')
+      return promise
+    }
+
+    const answers = await cmd.run()
+    tt.match(answers, {
+      fake: 'yes'
+    })
+  })
+
   t.end()
 });

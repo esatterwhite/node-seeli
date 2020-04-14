@@ -20,6 +20,16 @@ test('object', (t) => {
       }
     });
 
+    const b = object.set({}, 'a,b,c,d', 2, ',');
+    tt.deepEqual(b, {
+      a: {
+        b: {
+          c: {
+            d: 2
+          }
+        }
+      }
+    });
     tt.end();
   });
   t.end();
