@@ -1,0 +1,14 @@
+{
+  "name": "examples",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "cli.js",
+  "bin": {
+    "seeli": "cli.js"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "Eric Satterwhite <esatterwhite@wi.rr.com>",
+  "license": "ISC"
+}

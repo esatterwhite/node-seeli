@@ -1,8 +1,8 @@
-/*jshint laxcomma: true, smarttabs: true, node:true, mocha: true*/
+#!/usr/bin/env node
 const cli = require('../')
 cli.set({
   exitOnError: true
-, color: 'blue'
+, color: 'greenBright'
 , name: 'example'
 })
 
