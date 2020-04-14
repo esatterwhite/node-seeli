@@ -1,0 +1,523 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/esatterwhite/dev/js/node-seeli
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 110
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 15
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 1000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Seeli
+    style:
+      border: 0px black solid
+      boxShadow: none
+      margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Inconsolata, Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 16
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 846
+    content: "\e[H\e[J\e[01;32m$\e[00m "
+  - delay: 791
+    content: s
+  - delay: 262
+    content: e
+  - delay: 106
+    content: e
+  - delay: 133
+    content: l
+  - delay: 109
+    content: i
+  - delay: 178
+    content: "\r\n"
+  - delay: 242
+    content: "\e[?25h\e[37m\e[1mUsage: \e[22m\e[39m seeli <\e[92mcommand\e[39m> [options]\r\n\r\nWhere <command> is the name the command to execute\r\n\e[37m\e[1m* \e[22m\e[39m \e[92mhelp\e[39m - displays information about available commands\r\n\e[37m\e[1m* \e[22m\e[39m \e[92mhello\e[39m - displays a simple hello world command\r\n\e[37m\e[1m* \e[22m\e[39m \e[92mfooas\e[39m - Let people know how you really feel\r\n\e[37m\e[1m* \e[22m\e[39m \e[92mcommand\e[39m - flips text upside-down\r\n\e[37m\e[1m* \e[22m\e[39m \e[92mui\e[39m - Allows you to play with progress spinners and displays\r\n\e[37m\e[1m* \e[22m\e[39m \e[92mpassword\e[39m - Set your password\r\n\e_$\e\\\e[01;32m$\e[00m "
+  - delay: 904
+    content: s
+  - delay: 251
+    content: e
+  - delay: 75
+    content: e
+  - delay: 54
+    content: l
+  - delay: 231
+    content: i
+  - delay: 68
+    content: ' '
+  - delay: 312
+    content: h
+  - delay: 221
+    content: e
+  - delay: 91
+    content: l
+  - delay: 182
+    content: l
+  - delay: 121
+    content: o
+  - delay: 1082
+    content: ' '
+  - delay: 226
+    content: '-'
+  - delay: 93
+    content: '-'
+  - delay: 126
+    content: h
+  - delay: 89
+    content: e
+  - delay: 133
+    content: l
+  - delay: 85
+    content: p
+  - delay: 639
+    content: "\r\n"
+  - delay: 250
+    content: "\e[?25hdisplays a simple hello world command\r\n=====================================\r\n\e[1mUsage:\e[22m seeli hello --interactive\r\n\e[1mUsage:\e[22m seeli hello --name=john\r\n\e[1mUsage:\e[22m seeli hello --name=john --name=marry --name=paul -v screaming\r\n\r\nOptions:\r\n\r\n  -i, --interactive, --no-interactive   <\e[92mboolean\e[39m> [\e[1mfalse\e[22m]             Use the interactive propmts\r\n  --color, --no-color                   <\e[92mboolean\e[39m> [\e[1mtrue\e[22m]              Enable ANSI color in output\r\n  -n, --name                            <\e[92mstring*\e[39m>                     The name of the person to say hello to\r\n  -e, --excited, --no-excited           <\e[92mboolean\e[39m> [\e[1mfalse\e[22m]             Say hello in a very excited manner\r\n  -v, --volume                          <\e[92mstring\e[39m>  [\e[1mnormal\e[22m]            Will yell at each person\r\n\r\n\r\n  \e[92m<...>\e[39m: input type | \e[92m*\e[39m: repeatable flags | \e[92m[...]\e[39m: default values\r\n"
+  - delay: 13
+    content: "\e_$\e\\\e[01;32m$\e[00m "
+  - delay: 3201
+    content: "\e[H\e[J\e[01;32m$\e[00m "
+  - delay: 496
+    content: s
+  - delay: 220
+    content: e
+  - delay: 130
+    content: e
+  - delay: 112
+    content: l
+  - delay: 204
+    content: i
+  - delay: 197
+    content: ' '
+  - delay: 849
+    content: h
+  - delay: 399
+    content: e
+  - delay: 151
+    content: l
+  - delay: 206
+    content: l
+  - delay: 130
+    content: o
+  - delay: 97
+    content: ' '
+  - delay: 194
+    content: '-'
+  - delay: 133
+    content: '-'
+  - delay: 225
+    content: 'n'
+  - delay: 56
+    content: a
+  - delay: 172
+    content: m
+  - delay: 95
+    content: e
+  - delay: 147
+    content: =
+  - delay: 258
+    content: j
+  - delay: 96
+    content: o
+  - delay: 456
+    content: e
+  - delay: 255
+    content: ' '
+  - delay: 112
+    content: '-'
+  - delay: 273
+    content: 'n'
+  - delay: 222
+    content: ' '
+  - delay: 611
+    content: b
+  - delay: 150
+    content: i
+  - delay: 241
+    content: l
+  - delay: 135
+    content: l
+  - delay: 675
+    content: "\r\n"
+  - delay: 245
+    content: "\e[?25l\e[92m⠋\e[39m processing names"
+  - delay: 93
+    content: "\e[2K\e[1G\e[92m⠙\e[39m processing bill"
+  - delay: 80
+    content: "\e[2K\e[1G\e[92m⠹\e[39m processing bill"
+  - delay: 80
+    content: "\e[2K\e[1G\e[92m⠸\e[39m processing bill"
+  - delay: 81
+    content: "\e[2K\e[1G\e[92m⠼\e[39m processing bill"
+  - delay: 80
+    content: "\e[2K\e[1G\e[92m⠴\e[39m processing bill"
+  - delay: 81
+    content: "\e[2K\e[1G\e[92m⠦\e[39m processing bill"
+  - delay: 80
+    content: "\e[2K\e[1G\e[92m⠧\e[39m processing bill"
+  - delay: 81
+    content: "\e[2K\e[1G\e[92m⠇\e[39m processing bill"
+  - delay: 92
+    content: "\e[2K\e[1G\e[92m⠏\e[39m processing bill"
+  - delay: 80
+    content: "\e[2K\e[1G\e[92m⠋\e[39m processing bill"
+  - delay: 90
+    content: "\e[2K\e[1G\e[92m⠙\e[39m processing bill"
+  - delay: 80
+    content: "\e[2K\e[1G\e[92m⠹\e[39m processing bill\e[2K\e[1G\e[?25h\e[32m✔\e[39m names processed successfully\r\n\e[?25hHello, joe\r\nHello, bill\r\n\e[?25h\e_$\e\\\e[01;32m$\e[00m "
+  - delay: 1975
+    content: "\e[H\e[J\e[01;32m$\e[00m "
+  - delay: 1241
+    content: s
+  - delay: 228
+    content: e
+  - delay: 67
+    content: e
+  - delay: 142
+    content: l
+  - delay: 128
+    content: i
+  - delay: 178
+    content: ' '
+  - delay: 464
+    content: u
+  - delay: 82
+    content: i
+  - delay: 235
+    content: ' '
+  - delay: 66
+    content: '-'
+  - delay: 66
+    content: '-'
+  - delay: 281
+    content: i
+  - delay: 67
+    content: n
+  - delay: 67
+    content: t
+  - delay: 67
+    content: e
+  - delay: 67
+    content: r
+  - delay: 67
+    content: a
+  - delay: 67
+    content: c
+  - delay: 67
+    content: t
+  - delay: 67
+    content: i
+  - delay: 67
+    content: v
+  - delay: 67
+    content: e
+  - delay: 856
+    content: "\r\n"
+  - delay: 284
+    content: "\e[32m?\e[39m \e[1minfo: info messages to display\e[22m\e[0m \e[0m\e[33D\e[33C"
+  - delay: 1738
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1minfo: info messages to display\e[22m\e[0m \e[0mo\e[34D\e[34C"
+  - delay: 74
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1minfo: info messages to display\e[22m\e[0m \e[0mon\e[35D\e[35C"
+  - delay: 67
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1minfo: info messages to display\e[22m\e[0m \e[0mone\e[36D\e[36C"
+  - delay: 316
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1minfo: info messages to display\e[22m\e[0m \e[0m\e[36mone\e[39m\e[36D\e[36C\r\n\e[32m?\e[39m \e[1minfo: info messages to display\e[22m\e[0m \e[0m\e[33D\e[33C"
+  - delay: 726
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1minfo: info messages to display\e[22m\e[0m \e[0mt\e[34D\e[34C"
+  - delay: 94
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1minfo: info messages to display\e[22m\e[0m \e[0mtw\e[35D\e[35C"
+  - delay: 214
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1minfo: info messages to display\e[22m\e[0m \e[0mtwo\e[36D\e[36C"
+  - delay: 95
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1minfo: info messages to display\e[22m\e[0m \e[0m\e[36mtwo\e[39m\e[36D\e[36C\r\n\e[32m?\e[39m \e[1minfo: info messages to display\e[22m\e[0m \e[0m\e[33D\e[33C"
+  - delay: 896
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1minfo: info messages to display\e[22m\e[0m \e[0m\e[33D\e[33C\r\n\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0m\e[36D\e[36C"
+  - delay: 1959
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0mt\e[37D\e[37C"
+  - delay: 158
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0mth\e[38D\e[38C"
+  - delay: 91
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0mthr\e[39D\e[39C"
+  - delay: 93
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0mthre\e[40D\e[40C"
+  - delay: 120
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0mthree\e[41D\e[41C"
+  - delay: 111
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0m\e[36mthree\e[39m\e[41D\e[41C\r\n\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0m\e[36D\e[36C"
+  - delay: 921
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0mf\e[37D\e[37C"
+  - delay: 110
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0mfo\e[38D\e[38C"
+  - delay: 120
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0mfou\e[39D\e[39C"
+  - delay: 94
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0mfour\e[40D\e[40C"
+  - delay: 105
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0m\e[36mfour\e[39m"
+  - delay: 17
+    content: "\e[40D\e[40C\r\n\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0m\e[36D\e[36C"
+  - delay: 859
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mwarn: warning messages to display\e[22m\e[0m \e[0m\e[36D\e[36C\r\n\e[32m?\e[39m \e[1mfail: failure messages to display\e[22m\e[0m \e[0m\e[36D\e[36C"
+  - delay: 1606
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mfail: failure messages to display\e[22m\e[0m \e[0me\e[37D\e[37C"
+  - delay: 224
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mfail: failure messages to display\e[22m\e[0m \e[0mer\e[38D\e[38C"
+  - delay: 78
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mfail: failure messages to display\e[22m\e[0m \e[0merr\e[39D\e[39C"
+  - delay: 126
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mfail: failure messages to display\e[22m\e[0m \e[0merro\e[40D\e[40C"
+  - delay: 75
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mfail: failure messages to display\e[22m\e[0m \e[0merror\e[41D\e[41C"
+  - delay: 125
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mfail: failure messages to display\e[22m\e[0m \e[0m\e[36merror\e[39m\e[41D\e[41C\r\n\e[32m?\e[39m \e[1mfail: failure messages to display\e[22m\e[0m \e[0m\e[36D\e[36C"
+  - delay: 1064
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mfail: failure messages to display\e[22m\e[0m \e[0m\e[36D\e[36C\r\n\e[32m?\e[39m \e[1msucceed: success messages to display\e[22m\e[0m \e[0m\e[39D\e[39C"
+  - delay: 447
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1msucceed: success messages to display\e[22m\e[0m \e[0ms\e[40D\e[40C"
+  - delay: 249
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1msucceed: success messages to display\e[22m\e[0m \e[0msu\e[41D\e[41C"
+  - delay: 60
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1msucceed: success messages to display\e[22m\e[0m \e[0msuc\e[42D\e[42C"
+  - delay: 141
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1msucceed: success messages to display\e[22m\e[0m \e[0msucc\e[43D\e[43C"
+  - delay: 212
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1msucceed: success messages to display\e[22m\e[0m \e[0msucce\e[44D\e[44C"
+  - delay: 105
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1msucceed: success messages to display\e[22m\e[0m \e[0msucces\e[45D\e[45C"
+  - delay: 186
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1msucceed: success messages to display\e[22m\e[0m \e[0msuccess\e[46D\e[46C"
+  - delay: 217
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1msucceed: success messages to display\e[22m\e[0m \e[0m\e[36msuccess\e[39m\e[46D\e[46C\r\n\e[32m?\e[39m \e[1msucceed: success messages to display\e[22m\e[0m \e[0m\e[39D\e[39C"
+  - delay: 655
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1msucceed: success messages to display\e[22m\e[0m \e[0m\e[39D\e[39C\r\n\e[?25l\e[32m?\e[39m \e[1mspinner: The spinner type to use\e[22m\e[0m \e[0m\e[2m(Use arrow keys)\e[22m\r\n  dots4 \r\n  dots5 \r\n  dots6 \r\n\e[36m❯ dots7\e[39m \r\n  dots8 \r\n  dots9 \r\n  dots10 \r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 1534
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mspinner: The spinner type to use\e[22m\e[0m \e[0m\r\n  dots5 \r\n  dots6 \r\n  dots7 \r\n\e[36m❯ dots8\e[39m \r\n  dots9 \r\n  dots10 \r\n  dots11 \r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 222
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mspinner: The spinner type to use\e[22m\e[0m \e[0m\r\n  dots6 \r\n  dots7 \r\n  dots8 \r\n\e[36m❯ dots9\e[39m \r\n  dots10 \r\n  dots11 \r\n  dots12 \r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 110
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mspinner: The spinner type to use\e[22m\e[0m \e[0m\r\n  dots7 \r\n  dots8 \r\n  dots9 \r\n\e[36m❯ dots10\e[39m \r\n  dots11 \r\n  dots12 \r\n  dots8Bit \r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 197
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mspinner: The spinner type to use\e[22m\e[0m \e[0m\r\n  dots8 \r\n  dots9 \r\n  dots10 \r\n\e[36m❯ dots11\e[39m \r\n  dots12 \r\n  dots8Bit \r\n  line \r\n\e[2m(Move up and down to reveal more choices)\e[22m\e[41D\e[41C"
+  - delay: 1147
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mspinner: The spinner type to use\e[22m\e[0m \e[0m\e[36mdots11\e[39m\e[41D\e[41C\r\n\e[?25h\e[32m?\e[39m \e[1mdelay: time delay (sec) between messages\e[22m\e[0m \e[0m\e[2m(1) \e[22m\e[47D\e[47C"
+  - delay: 2413
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mdelay: time delay (sec) between messages\e[22m\e[0m \e[0m\e[36m1\e[39m\e[44D\e[44C\r\n\e[?25l\e[92m⠁\e[39m info..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠂\e[39m info..."
+  - delay: 102
+    content: "\e[2K\e[1G\e[92m⠄\e[39m info..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⡀\e[39m info..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⢀\e[39m info..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠠\e[39m info..."
+  - delay: 102
+    content: "\e[2K\e[1G\e[92m⠐\e[39m info..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠈\e[39m info..."
+  - delay: 102
+    content: "\e[2K\e[1G\e[92m⠁\e[39m info..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠂\e[39m info..."
+  - delay: 91
+    content: "\e[2K\e[1G\e[?25h\e[34mℹ\e[39m one\r\n\e[?25l\e[92m⠁\e[39m info..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⠂\e[39m info..."
+  - delay: 102
+    content: "\e[2K\e[1G\e[92m⠄\e[39m info..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⡀\e[39m info..."
+  - delay: 102
+    content: "\e[2K\e[1G\e[92m⢀\e[39m info..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⠠\e[39m info..."
+  - delay: 104
+    content: "\e[2K\e[1G\e[92m⠐\e[39m info..."
+  - delay: 98
+    content: "\e[2K\e[1G\e[92m⠈\e[39m info..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠁\e[39m info..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠂\e[39m info..."
+  - delay: 93
+    content: "\e[2K\e[1G\e[?25h\e[34mℹ\e[39m two\r\n\e[?25l\e[92m⠁\e[39m warn..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠂\e[39m warn..."
+  - delay: 115
+    content: "\e[2K\e[1G\e[92m⠄\e[39m warn..."
+  - delay: 87
+    content: "\e[2K\e[1G\e[92m⡀\e[39m warn..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⢀\e[39m warn..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠠\e[39m warn..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⠐\e[39m warn..."
+  - delay: 108
+    content: "\e[2K\e[1G\e[92m⠈\e[39m warn..."
+  - delay: 94
+    content: "\e[2K\e[1G\e[92m⠁\e[39m warn..."
+  - delay: 104
+    content: "\e[2K\e[1G\e[92m⠂\e[39m warn..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[?25h\e[33m⚠\e[39m three\r\n\e[?25l\e[92m⠁\e[39m warn..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠂\e[39m warn..."
+  - delay: 102
+    content: "\e[2K\e[1G\e[92m⠄\e[39m warn..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⡀\e[39m warn..."
+  - delay: 116
+    content: "\e[2K\e[1G\e[92m⢀\e[39m warn..."
+  - delay: 86
+    content: "\e[2K\e[1G\e[92m⠠\e[39m warn..."
+  - delay: 104
+    content: "\e[2K\e[1G\e[92m⠐\e[39m warn..."
+  - delay: 108
+    content: "\e[2K\e[1G\e[92m⠈\e[39m warn..."
+  - delay: 102
+    content: "\e[2K\e[1G\e[92m⠁\e[39m warn..."
+  - delay: 106
+    content: "\e[2K\e[1G\e[92m⠂\e[39m warn..."
+  - delay: 78
+    content: "\e[2K\e[1G\e[?25h\e[33m⚠\e[39m four\r\n\e[?25l\e[92m⠁\e[39m fail..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠂\e[39m fail..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠄\e[39m fail..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⡀\e[39m fail..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⢀\e[39m fail..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠠\e[39m fail..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⠐\e[39m fail..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⠈\e[39m fail..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠁\e[39m fail..."
+  - delay: 103
+    content: "\e[2K\e[1G\e[92m⠂\e[39m fail..."
+  - delay: 93
+    content: "\e[2K\e[1G\e[?25h\e[31m✖\e[39m error\r\n\e[?25l\e[92m⠁\e[39m succeed..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠂\e[39m succeed..."
+  - delay: 105
+    content: "\e[2K\e[1G\e[92m⠄\e[39m succeed..."
+  - delay: 109
+    content: "\e[2K\e[1G\e[92m⡀\e[39m succeed..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⢀\e[39m succeed..."
+  - delay: 101
+    content: "\e[2K\e[1G\e[92m⠠\e[39m succeed..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⠐\e[39m succeed..."
+  - delay: 103
+    content: "\e[2K\e[1G\e[92m⠈\e[39m succeed..."
+  - delay: 100
+    content: "\e[2K\e[1G\e[92m⠁\e[39m succeed..."
+  - delay: 105
+    content: "\e[2K\e[1G\e[92m⠂\e[39m succeed..."
+  - delay: 75
+    content: "\e[2K\e[1G\e[?25h\e[32m✔\e[39m success\r\n\e[?25h"
+  - delay: 10
+    content: "\e$\e\\\e[01;32m$\e[00m "
+  - delay: 1980
+    content: "\r\n"
