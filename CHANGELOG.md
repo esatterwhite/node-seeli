@@ -1,8 +1,14 @@
 # Changelog
 
+## v10.0.0 (2020-06-01)
+
+*  10.0.0 [View](https://github.com/esatterwhite/node-seeli/commit/edbe192b3e95ec64a3467ee0a92fa495a51fb313)
+*  pkg: softens the error handling [View](https://github.com/esatterwhite/node-seeli/commit/33071952aa777d37cc8272ef2b0d11f1895fc79c)
+
+
 ## v9.0.0 (2020-04-14)
 
-*  9.0.0 [View](https://github.com/esatterwhite/node-seeli/commit/67e85436269511cecd242c37f25b30089dada1a4)
+*  9.0.0 [View](https://github.com/esatterwhite/node-seeli/commit/ce2bbbbcf882962daf1bff182d535422f2677f8e)
 *  example: include updated demo gif and asset files [View](https://github.com/esatterwhite/node-seeli/commit/44b4f4ed143cff0133e00f36feb82ad328d143ba)
 *  example: include updated demo gif and asset files [View](https://github.com/esatterwhite/node-seeli/commit/fcc9246318d6f520bdb8e3f2fc6b321d61993e20)
 *  test: increase test coverage [View](https://github.com/esatterwhite/node-seeli/commit/9cad6de6052dd32ed32107353a80a7f70dcd6fef)
