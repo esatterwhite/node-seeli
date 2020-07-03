@@ -1,5 +1,12 @@
 # Changelog
 
+## v10.0.1 (2020-07-03)
+
+*  10.0.1 [View](https://github.com/esatterwhite/node-seeli/commit/e142f1541f44db34a514e519dc7d677d6f3bf66a)
+*  conf: wrap os calls in try catch. [View](https://github.com/esatterwhite/node-seeli/commit/4b4e984e9e80444e4724d14e071e2b754ac7cafd)
+*  update change log [View](https://github.com/esatterwhite/node-seeli/commit/55b9bc29ecb5f9bea03ac8869ed0c56505e85d82)
+
+
 ## v10.0.0 (2020-06-01)
 
 *  10.0.0 [View](https://github.com/esatterwhite/node-seeli/commit/edbe192b3e95ec64a3467ee0a92fa495a51fb313)
