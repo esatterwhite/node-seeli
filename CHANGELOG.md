@@ -1,3 +1,10 @@
+## [10.0.2](https://github.com/esatterwhite/node-seeli/compare/v10.0.1...v10.0.2) (2020-07-18)
+
+
+### Bug Fixes
+
+* **test:** moving the tap config into package.js ([b4eb31c](https://github.com/esatterwhite/node-seeli/commit/b4eb31c36f737434871ddb23ae2dc1bb03630766))
+
 # Changelog
 
 ## v10.0.1 (2020-07-03)
@@ -552,5 +559,3 @@
 *  fixing the error output [View](https://github.com/esatterwhite/node-seeli/commit/0f6455ef4d12d5b0c7e77fe6b2865287a6768ab7)
 *  linting [View](https://github.com/esatterwhite/node-seeli/commit/516b3cfa4128412de72e3f968b2dfe56d836e4af)
 *  beefing up output styles [View](https://github.com/esatterwhite/node-seeli/commit/c6430ca6ec464cd3a42fa6c998a8bd76e4082c16)
-
-
