@@ -9,7 +9,8 @@
   "scripts": {
     "test": "tap",
     "tap": "tap",
-    "check": "check-pkg"
+    "check": "check-pkg",
+    "release": "semantic-release"
   },
   "repository": {
     "type": "git",
