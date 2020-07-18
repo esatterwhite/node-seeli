@@ -43,7 +43,7 @@ jobs:
       - name: Publish
         run: npm run release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PACKAGES_TOKEN }}
           GIT_AUTHOR_NAME: 'Dependant Bot'
           GIT_AUTHOR_EMAIL: 'release-bot@codedependant.net'
           GIT_COMMITTER_NAME: 'Dependant Bot'
