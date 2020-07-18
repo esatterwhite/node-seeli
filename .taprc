@@ -1,5 +1,0 @@
-files:
-  - test/**/*.spec.js
-jsx: false
-esm: false
-jobs: 3

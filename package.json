@@ -7,13 +7,13 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tap -Rtap -J --coverage-report=text",
+    "test": "tap",
     "tap": "tap",
     "check": "check-pkg"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/esatterwhite/node-seeli"
+    "url": "git+ssh://github.com/esatterwhite/node-seeli.git"
   },
   "keywords": [
     "CLI",
@@ -72,10 +72,22 @@
     "semantic-release": "^17.1.1",
     "tap": "^14.10.2"
   },
-  "nyc": {
-    "exclude": [
-      "test/",
-      "examples/"
+  "tap": {
+    "jsx": false,
+    "ts": false,
+    "browser": false,
+    "esm": false,
+    "coverage-report": [
+      "text",
+      "text-summary",
+      "json"
+    ],
+    "files": [
+      "test/**/*.js"
+    ],
+    "nyc-arg": [
+      "--exclude=test/",
+      "--exclude=examples/"
     ]
   }
 }
