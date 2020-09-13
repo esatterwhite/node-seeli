@@ -1,6 +1,6 @@
 'use strict'
 
-const cli = require('../../');
+const cli = require('../../')
 
 module.exports = new cli.Command({
   description: 'Set your password'
@@ -9,10 +9,10 @@ module.exports = new cli.Command({
 , usage: `${cli.get('name')} password --interactive`
 , flags: {
     password: {
-      type:String
-    , mask:true
-    , description:"unique password"
-    , shorthand:'p'
+      type: String
+    , mask: true
+    , description: 'unique password'
+    , shorthand: 'p'
     , required: false
     }
   }
@@ -25,7 +25,7 @@ module.exports = new cli.Command({
       })
 
       if (response.confirm !== data.password) {
-        return this.ui.fail('passwords do not match');
+        return this.ui.fail('passwords do not match')
       }
 
       await new Promise((resolve, reject) => {
@@ -37,4 +37,4 @@ module.exports = new cli.Command({
       })
     }
   }
-});
+})

@@ -1,7 +1,8 @@
-/*jshint laxcomma:true, smarttabs: true */
+'use strict'
 /**
  * Seeli ( SEE - EL - I ) A.K.A CLI
  * @module seeli
  * @author  Eric Satterwhite
  **/
-module.exports = require('./lib');
+
+module.exports = require('./lib')

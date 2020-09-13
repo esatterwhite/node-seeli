@@ -7,7 +7,7 @@ module.exports = new cli.Command({
   description: 'Allows you to play with progress spinners and displays'
 , name: 'ui'
 , usage: [
-    `${cli.bold("Usage:")}`
+    `${cli.bold('Usage:')}`
   , `  ${cli.get('name')} ui <${cli.colorize('options')}>`
   , `  ${cli.get('name')} ui --interactive`
   , `  ${cli.get('name')} ui --info=test --warn=foo --fail=bar --delay=2 --spinner=dots5`
@@ -34,16 +34,16 @@ module.exports = new cli.Command({
     , required: false
     }
   , spinner: {
-      type: String
-    , description: 'The spinner type to use'
-    , required: false
-    , default: 'dots7'
-    , choices: Object.keys(spinners)
+      'type': String
+    , 'description': 'The spinner type to use'
+    , 'required': false
+    , 'default': 'dots7'
+    , 'choices': Object.keys(spinners)
     }
   , delay: {
-      type: Number
-    , description: 'time delay (sec) between messages'
-    , default: 1
+      'type': Number
+    , 'description': 'time delay (sec) between messages'
+    , 'default': 1
     }
   }
 , run: async function(cmd, data) {
