@@ -27,7 +27,7 @@ module.exports = {
     }],
   , ['@semantic-release/release-notes-generator', null]
   , ['@semantic-release/changelog', {
-      changelogTitle: 'Changlog'
+      changelogTitle: '# Changlog'
     , changelogFile: 'CHANGELOG.md'
     }]
   , ['@semantic-release/npm', null]
