@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+'use strict'
 const cli = require('../')
 cli.set({
   exitOnError: true
@@ -15,4 +16,4 @@ for (const [name, command] of Object.entries(commands)) {
   }
 }
 
-cli.run();
+cli.run()

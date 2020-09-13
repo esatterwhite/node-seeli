@@ -9,12 +9,24 @@
   "scripts": {
     "test": "tap",
     "tap": "tap",
+    "lint": "eslint ./",
+    "lint:fix": "npm run lint -- --fix",
     "check": "check-pkg",
     "release": "semantic-release"
   },
   "eslintConfig": {
     "root": true,
-    "extends": "@answerbook/eslint-config-reasonable",
+    "extends": "eslint-config-codedependant",
+    "rules": {
+      "no-eq-null": 0,
+      "no-var": 2,
+      "prefer-const": ["error"],
+      "no-cond-assign": 0
+    },
+    "parserOptions": {
+      "ecmaVersion": 2020,
+      "sourceType": "script"
+    },
     "ignorePatterns": [
       "node_modules/"
     ]

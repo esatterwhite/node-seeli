@@ -45,11 +45,11 @@ module.exports = new Command({
         return reject(err)
       }
       const req = https.get({
-        protocol:'https:'
+        protocol: 'https:'
       , hostname: 'foaas.com'
       , path: `/${cmd}/${data.from}`
       , headers: {
-          accept: 'application/json'
+          'accept': 'application/json'
         , 'user-agent': 'seeli/v8.0.0'
         }
       }, (res) => {

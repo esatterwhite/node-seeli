@@ -2,14 +2,14 @@
 
 const path = require('path')
 const url = require('url')
-const tap = require('tap');
-const object = require('../lib/lang/object/');
+const tap = require('tap')
+const object = require('../lib/lang/object/')
 const typeOf = require('../lib/usage/type-of')
-const test = tap.test;
+const test = tap.test
 
 test('object', (t) => {
   t.test('#set', (tt) => {
-    const a = object.set({}, 'a:b:c:d', 1);
+    const a = object.set({}, 'a:b:c:d', 1)
     tt.deepEqual(a, {
       a: {
         b: {
@@ -18,9 +18,9 @@ test('object', (t) => {
           }
         }
       }
-    });
+    })
 
-    const b = object.set({}, 'a,b,c,d', 2, ',');
+    const b = object.set({}, 'a,b,c,d', 2, ',')
     tt.deepEqual(b, {
       a: {
         b: {
@@ -29,11 +29,11 @@ test('object', (t) => {
           }
         }
       }
-    });
-    tt.end();
-  });
-  t.end();
-});
+    })
+    tt.end()
+  })
+  t.end()
+})
 
 test('type-of', (t) => {
   const typeFn = () => {
@@ -62,11 +62,11 @@ test('type-of', (t) => {
   , [valueFn, 'number', 'function value']
   , [[typeFn], 'string*', '[function primitive] === string*']
   , [[valueFn], 'number*', '[function value] === number*']
-  ];
+  ]
   for (const item of cases) {
-    const actual = typeOf(item[0]);
-    const expected = item[1];
-    t.equal(actual, expected, item[2]);
+    const actual = typeOf(item[0])
+    const expected = item[1]
+    t.equal(actual, expected, item[2])
   }
-  t.end();
-});
+  t.end()
+})
