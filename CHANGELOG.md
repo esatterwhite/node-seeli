@@ -1,3 +1,7 @@
+Changlog
+
+# [11.0.0](https://github.com/esatterwhite/node-seeli/compare/v10.0.2...v11.0.0) (2020-09-13)
+
 ## [10.0.2](https://github.com/esatterwhite/node-seeli/compare/v10.0.1...v10.0.2) (2020-07-18)
 
 

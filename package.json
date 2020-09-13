@@ -1,6 +1,6 @@
 {
   "name": "seeli",
-  "version": "10.0.2",
+  "version": "11.0.0",
   "description": "Object oriented, flexible CLI tools",
   "main": "index.js",
   "directories": {
@@ -20,7 +20,9 @@
     "rules": {
       "no-eq-null": 0,
       "no-var": 2,
-      "prefer-const": ["error"],
+      "prefer-const": [
+        "error"
+      ],
       "no-cond-assign": 0
     },
     "parserOptions": {
