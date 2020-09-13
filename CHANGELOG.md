@@ -1,5 +1,12 @@
 # Changlog
 
+## [11.0.1](https://github.com/esatterwhite/node-seeli/compare/v11.0.0...v11.0.1) (2020-09-13)
+
+
+### Bug Fixes
+
+* **release:** update changelog title to be a header ([fe6ae68](https://github.com/esatterwhite/node-seeli/commit/fe6ae68c60b5bdc05992fcfbbc09678d98fe38c1))
+
 # [11.0.0](https://github.com/esatterwhite/node-seeli/compare/v10.0.2...v11.0.0) (2020-09-13)
 
 ## [10.0.2](https://github.com/esatterwhite/node-seeli/compare/v10.0.1...v10.0.2) (2020-07-18)
