@@ -1,4 +1,4 @@
-Changlog
+# Changlog
 
 # [11.0.0](https://github.com/esatterwhite/node-seeli/compare/v10.0.2...v11.0.0) (2020-09-13)
 
@@ -8,8 +8,6 @@ Changlog
 ### Bug Fixes
 
 * **test:** moving the tap config into package.js ([b4eb31c](https://github.com/esatterwhite/node-seeli/commit/b4eb31c36f737434871ddb23ae2dc1bb03630766))
-
-# Changelog
 
 ## v10.0.1 (2020-07-03)
 
