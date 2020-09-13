@@ -12,6 +12,13 @@
     "check": "check-pkg",
     "release": "semantic-release"
   },
+  "eslintConfig": {
+    "root": true,
+    "extends": "@answerbook/eslint-config-reasonable",
+    "ignorePatterns": [
+      "node_modules/"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://github.com/esatterwhite/node-seeli.git"
