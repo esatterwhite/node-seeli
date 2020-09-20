@@ -1,5 +1,6 @@
 # test
 test/
+docs/
 
 # assets
 assets/
@@ -32,3 +33,6 @@ node_modules
 cli.js
 *.save
 .travis.yml
+.github/
+release.config.js
+pnpm-lock.yaml

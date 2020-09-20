@@ -1,0 +1,3675 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/esatterwhite
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 80
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 10
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: UI Spinners
+    style:
+      border: 0px black solid
+      boxShadow: none
+      margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Inconsolata, Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 20
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 1582
+    content: "\e~\e[01;32m$\e[00m "
+  - delay: 774
+    content: s
+  - delay: 263
+    content: e
+  - delay: 118
+    content: e
+  - delay: 247
+    content: l
+  - delay: 245
+    content: i
+  - delay: 158
+    content: ' '
+  - delay: 187
+    content: s
+  - delay: 175
+    content: p
+  - delay: 202
+    content: i
+  - delay: 203
+    content: 'n'
+  - delay: 139
+    content: 'n'
+  - delay: 152
+    content: e
+  - delay: 66
+    content: r
+  - delay: 165
+    content: s
+  - delay: 565
+    content: "\r\n"
+  - delay: 382
+    content: "\e[?25l\e[91m⠋\e[39m dots"
+  - delay: 84
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠹\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠸\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠼\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠴\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠦\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠧\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠇\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠏\e[39m dots"
+  - delay: 84
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠹\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠸\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠼\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠴\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠦\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠧\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠇\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠏\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠹\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠸\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠼\e[39m dots"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠹\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠸\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠼\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠴\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠦\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠧\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠇\e[39m dots"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠏\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠹\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠸\e[39m dots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠼\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠴\e[39m dots"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m⠦\e[39m dots"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠧\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠇\e[39m dots"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠏\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠹\e[39m dots"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠸\e[39m dots"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠼\e[39m dots"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⣾\e[39m dots2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⣽\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣻\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢿\e[39m dots2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⡿\e[39m dots2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⣟\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣯\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣷\e[39m dots2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⣾\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣽\e[39m dots2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⣻\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢿\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡿\e[39m dots2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⣟\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣯\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣷\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣾\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣽\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣻\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢿\e[39m dots2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⡿\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣟\e[39m dots2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⣯\e[39m dots2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⣷\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣾\e[39m dots2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠚\e[39m dots3"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⠞\e[39m dots3"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠖\e[39m dots3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠦\e[39m dots3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠴\e[39m dots3"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠲\e[39m dots3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠳\e[39m dots3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠓\e[39m dots3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠚\e[39m dots3"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠞\e[39m dots3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠖\e[39m dots3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠦\e[39m dots3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠴\e[39m dots3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠲\e[39m dots3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠳\e[39m dots3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠓\e[39m dots3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠚\e[39m dots3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠞\e[39m dots3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠖\e[39m dots3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠄\e[39m dots4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠆\e[39m dots4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠇\e[39m dots4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots4"
+  - delay: 85
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots4"
+  - delay: 77
+    content: "\e[2K\e[1G\e[91m⠸\e[39m dots4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠰\e[39m dots4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠠\e[39m dots4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠰\e[39m dots4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠸\e[39m dots4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠇\e[39m dots4"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠆\e[39m dots4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠄\e[39m dots4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠆\e[39m dots4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠇\e[39m dots4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠸\e[39m dots4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠰\e[39m dots4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠠\e[39m dots4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠰\e[39m dots4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠸\e[39m dots4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠚\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots5"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠲\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠴\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠦\e[39m dots5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠖\e[39m dots5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠐\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠐\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠓\e[39m dots5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠚\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠁\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠉\e[39m dots6"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠚\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots6"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠲\e[39m dots6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠴\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠤\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠄\e[39m dots6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠄\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠤\e[39m dots6"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⠴\e[39m dots6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠲\e[39m dots6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠚\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots6"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠉\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠁\e[39m dots6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠁\e[39m dots6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠈\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠉\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠓\e[39m dots7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠐\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠐\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠖\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠦\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠤\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠠\e[39m dots7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠠\e[39m dots7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠤\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠦\e[39m dots7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠖\e[39m dots7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠐\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠐\e[39m dots7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠓\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠋\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠉\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠈\e[39m dots7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠈\e[39m dots7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠁\e[39m dots8"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠁\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠉\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠙\e[39m dots8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠚\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠲\e[39m dots8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠴\e[39m dots8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠤\e[39m dots8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠄\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠄\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠤\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠠\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠠\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠤\e[39m dots8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠦\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠖\e[39m dots8"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠐\e[39m dots8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠐\e[39m dots8"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠒\e[39m dots8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠓\e[39m dots8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢹\e[39m dots9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⢺\e[39m dots9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢼\e[39m dots9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣸\e[39m dots9"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⣇\e[39m dots9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡧\e[39m dots9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⡗\e[39m dots9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⡏\e[39m dots9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⢹\e[39m dots9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⢺\e[39m dots9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⢼\e[39m dots9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⣸\e[39m dots9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣇\e[39m dots9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡧\e[39m dots9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡗\e[39m dots9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⡏\e[39m dots9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢹\e[39m dots9"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⢺\e[39m dots9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⢼\e[39m dots9"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⣸\e[39m dots9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⣇\e[39m dots9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡧\e[39m dots9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡗\e[39m dots9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡏\e[39m dots9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⢹\e[39m dots9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢄\e[39m dots10"
+  - delay: 85
+    content: "\e[2K\e[1G\e[91m⢂\e[39m dots10"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⢁\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡁\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡈\e[39m dots10"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⡐\e[39m dots10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⡠\e[39m dots10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⢄\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢂\e[39m dots10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⢁\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡁\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡈\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡐\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡠\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢄\e[39m dots10"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⢂\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢁\e[39m dots10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⡁\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡈\e[39m dots10"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⡐\e[39m dots10"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⡠\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢄\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢂\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢁\e[39m dots10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⡁\e[39m dots10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠁\e[39m dots11"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠄\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡀\e[39m dots11"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⢀\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠠\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠐\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠈\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠁\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots11"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠄\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡀\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢀\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠠\e[39m dots11"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠐\e[39m dots11"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠈\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠁\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m dots11"
+  - delay: 78
+    content: "\e[2K\e[1G\e[91m⠄\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡀\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢀\e[39m dots11"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠠\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠐\e[39m dots11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠈\e[39m dots11"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⢀⠀\e[39m dots12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⡀⠀\e[39m dots12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠄⠀\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢂⠀\e[39m dots12"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⡂⠀\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠅⠀\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢃⠀\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⡃⠀\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠍⠀\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢋⠀\e[39m dots12"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⡋⠀\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠍⠁\e[39m dots12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⢋⠁\e[39m dots12"
+  - delay: 78
+    content: "\e[2K\e[1G\e[91m⡋⠁\e[39m dots12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠍⠉\e[39m dots12"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠋⠉\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠋⠉\e[39m dots12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠉⠙\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠉⠙\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠉⠩\e[39m dots12"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠈⢙\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠈⡙\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⢈⠩\e[39m dots12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⡀⢙\e[39m dots12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠄⡙\e[39m dots12"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m-\e[39m line"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\\\e[39m line"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m|\e[39m line"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m/\e[39m line"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m-\e[39m line"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\\\e[39m line"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m|\e[39m line"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m/\e[39m line"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m-\e[39m line"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\\\e[39m line"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m|\e[39m line"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m/\e[39m line"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m line"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\\\e[39m line"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m|\e[39m line"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m/\e[39m line"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m-\e[39m line"
+  - delay: 88
+    content: "\e[2K\e[1G\e[91m\\\e[39m line"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m|\e[39m line"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m/\e[39m line"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m line"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\\\e[39m line"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m|\e[39m line"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m/\e[39m line"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m-\e[39m line"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m line2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m line2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m–\e[39m line2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m—\e[39m line2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m–\e[39m line2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m line2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠂\e[39m line2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m line2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m–\e[39m line2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m—\e[39m line2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m–\e[39m line2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m line2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠂\e[39m line2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m-\e[39m line2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m–\e[39m line2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m—\e[39m line2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m–\e[39m line2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m line2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m line2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m line2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m–\e[39m line2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m—\e[39m line2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m–\e[39m line2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m-\e[39m line2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠂\e[39m line2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m┤\e[39m pipe"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m┘\e[39m pipe"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m┴\e[39m pipe"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m└\e[39m pipe"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m├\e[39m pipe"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m┌\e[39m pipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m┬\e[39m pipe"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m┐\e[39m pipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m┤\e[39m pipe"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m┘\e[39m pipe"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m┴\e[39m pipe"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m└\e[39m pipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m├\e[39m pipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m┌\e[39m pipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m┬\e[39m pipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m┐\e[39m pipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m┤\e[39m pipe"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m┘\e[39m pipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m┴\e[39m pipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m└\e[39m pipe"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m├\e[39m pipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m┌\e[39m pipe"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m┬\e[39m pipe"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m┐\e[39m pipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m┤\e[39m pipe"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.  \e[39m simpleDots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m.. \e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m...\e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m   \e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.  \e[39m simpleDots"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m.. \e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m...\e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m   \e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.  \e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.. \e[39m simpleDots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m...\e[39m simpleDots"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m   \e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.  \e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.. \e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m...\e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m   \e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.  \e[39m simpleDots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m.. \e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m...\e[39m simpleDots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m   \e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.  \e[39m simpleDots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m.. \e[39m simpleDots"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m...\e[39m simpleDots"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m   \e[39m simpleDots"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.  \e[39m simpleDotsScrolling"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m.. \e[39m simpleDotsScrolling"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m...\e[39m simpleDotsScrolling"
+  - delay: 85
+    content: "\e[2K\e[1G\e[91m ..\e[39m simpleDotsScrolling"
+  - delay: 75
+    content: "\e[2K\e[1G\e[91m  .\e[39m simpleDotsScrolling"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m   \e[39m simpleDotsScrolling"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.  \e[39m simpleDotsScrolling"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m.. \e[39m simpleDotsScrolling"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m...\e[39m simpleDotsScrolling"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m ..\e[39m simpleDotsScrolling"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m  .\e[39m simpleDotsScrolling"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m   \e[39m simpleDotsScrolling"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.  \e[39m simpleDotsScrolling"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.. \e[39m simpleDotsScrolling"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m...\e[39m simpleDotsScrolling"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m ..\e[39m simpleDotsScrolling"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m  .\e[39m simpleDotsScrolling"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m   \e[39m simpleDotsScrolling"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.  \e[39m simpleDotsScrolling"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m.. \e[39m simpleDotsScrolling"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m...\e[39m simpleDotsScrolling"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m ..\e[39m simpleDotsScrolling"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m  .\e[39m simpleDotsScrolling"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m   \e[39m simpleDotsScrolling"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.  \e[39m simpleDotsScrolling"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✶\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✸\e[39m star"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m✹\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✺\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✹\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✷\e[39m star"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m✶\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✸\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✹\e[39m star"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m✺\e[39m star"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m✹\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✷\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✶\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✸\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✹\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✺\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✹\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✷\e[39m star"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m✶\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✸\e[39m star"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m✹\e[39m star"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m✺\e[39m star"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m✹\e[39m star"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m✷\e[39m star"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m✶\e[39m star"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m+\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mx\e[39m star2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m*\e[39m star2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m+\e[39m star2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mx\e[39m star2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m*\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m+\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mx\e[39m star2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m*\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m+\e[39m star2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mx\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m*\e[39m star2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m+\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mx\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m*\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m+\e[39m star2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91mx\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m*\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m+\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mx\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m*\e[39m star2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m+\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mx\e[39m star2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m*\e[39m star2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m-\e[39m flip"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m`\e[39m flip"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m`\e[39m flip"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m'\e[39m flip"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m´\e[39m flip"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m-\e[39m flip"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m flip"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m`\e[39m flip"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m`\e[39m flip"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m'\e[39m flip"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m´\e[39m flip"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m-\e[39m flip"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m_\e[39m flip"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☱\e[39m hamburger"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☲\e[39m hamburger"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☴\e[39m hamburger"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☱\e[39m hamburger"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☲\e[39m hamburger"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m☴\e[39m hamburger"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☱\e[39m hamburger"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☲\e[39m hamburger"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☴\e[39m hamburger"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m☱\e[39m hamburger"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m☲\e[39m hamburger"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☴\e[39m hamburger"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m☱\e[39m hamburger"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☲\e[39m hamburger"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m☴\e[39m hamburger"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☱\e[39m hamburger"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m☲\e[39m hamburger"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☴\e[39m hamburger"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m☱\e[39m hamburger"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☲\e[39m hamburger"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m☴\e[39m hamburger"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☱\e[39m hamburger"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☲\e[39m hamburger"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☴\e[39m hamburger"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☱\e[39m hamburger"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▁\e[39m growVertical"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m▃\e[39m growVertical"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▄\e[39m growVertical"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▅\e[39m growVertical"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▆\e[39m growVertical"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▇\e[39m growVertical"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m▆\e[39m growVertical"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▅\e[39m growVertical"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▄\e[39m growVertical"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▃\e[39m growVertical"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▁\e[39m growVertical"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▃\e[39m growVertical"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▄\e[39m growVertical"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▅\e[39m growVertical"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m▆\e[39m growVertical"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m▇\e[39m growVertical"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▆\e[39m growVertical"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▅\e[39m growVertical"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▄\e[39m growVertical"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▃\e[39m growVertical"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▁\e[39m growVertical"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▃\e[39m growVertical"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▄\e[39m growVertical"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▅\e[39m growVertical"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▏\e[39m growHorizontal"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▎\e[39m growHorizontal"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m▍\e[39m growHorizontal"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▌\e[39m growHorizontal"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▋\e[39m growHorizontal"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▊\e[39m growHorizontal"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▉\e[39m growHorizontal"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m▊\e[39m growHorizontal"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▋\e[39m growHorizontal"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▌\e[39m growHorizontal"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▍\e[39m growHorizontal"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▎\e[39m growHorizontal"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▏\e[39m growHorizontal"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▎\e[39m growHorizontal"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▍\e[39m growHorizontal"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▌\e[39m growHorizontal"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▋\e[39m growHorizontal"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▊\e[39m growHorizontal"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▉\e[39m growHorizontal"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▊\e[39m growHorizontal"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▋\e[39m growHorizontal"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▌\e[39m growHorizontal"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▍\e[39m growHorizontal"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▎\e[39m growHorizontal"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▏\e[39m growHorizontal"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m \e[39m balloon"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m.\e[39m balloon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mo\e[39m balloon"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91mO\e[39m balloon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m@\e[39m balloon"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m*\e[39m balloon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m \e[39m balloon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m \e[39m balloon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.\e[39m balloon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mo\e[39m balloon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mO\e[39m balloon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m@\e[39m balloon"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m*\e[39m balloon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m \e[39m balloon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m \e[39m balloon"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m.\e[39m balloon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mo\e[39m balloon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mO\e[39m balloon"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m@\e[39m balloon"
+  - delay: 77
+    content: "\e[2K\e[1G\e[91m*\e[39m balloon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m \e[39m balloon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m \e[39m balloon"
+  - delay: 84
+    content: "\e[2K\e[1G\e[91m.\e[39m balloon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mo\e[39m balloon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mO\e[39m balloon"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m.\e[39m balloon2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mo\e[39m balloon2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mO\e[39m balloon2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m°\e[39m balloon2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91mO\e[39m balloon2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mo\e[39m balloon2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m.\e[39m balloon2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m.\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mo\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mO\e[39m balloon2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m°\e[39m balloon2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mO\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mo\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mo\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mO\e[39m balloon2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m°\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mO\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mo\e[39m balloon2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m.\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m.\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mo\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mO\e[39m balloon2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m°\e[39m balloon2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▓\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▒\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G"
+  - delay: 5
+    content: "\e[91m░\e[39m noise"
+  - delay: 76
+    content: "\e[2K\e[1G\e[91m▓\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▒\e[39m noise"
+  - delay: 86
+    content: "\e[2K\e[1G\e[91m░\e[39m noise"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▓\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▒\e[39m noise"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m░\e[39m noise"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▓\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▒\e[39m noise"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m░\e[39m noise"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▓\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▒\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m░\e[39m noise"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▓\e[39m noise"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▒\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m░\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▓\e[39m noise"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▒\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m░\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▓\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▒\e[39m noise"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m░\e[39m noise"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠁\e[39m bounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠂\e[39m bounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠄\e[39m bounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠂\e[39m bounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠁\e[39m bounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠂\e[39m bounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠄\e[39m bounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠂\e[39m bounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠁\e[39m bounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m bounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠄\e[39m bounce"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠂\e[39m bounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠁\e[39m bounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m bounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠄\e[39m bounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m bounce"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⠁\e[39m bounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m bounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠄\e[39m bounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠂\e[39m bounce"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m⠁\e[39m bounce"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠂\e[39m bounce"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠄\e[39m bounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠂\e[39m bounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠁\e[39m bounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▖\e[39m boxBounce"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▘\e[39m boxBounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▝\e[39m boxBounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▗\e[39m boxBounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▖\e[39m boxBounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▘\e[39m boxBounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▝\e[39m boxBounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▗\e[39m boxBounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▖\e[39m boxBounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▘\e[39m boxBounce"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▝\e[39m boxBounce"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▗\e[39m boxBounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▖\e[39m boxBounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▘\e[39m boxBounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▝\e[39m boxBounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▗\e[39m boxBounce"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m▖\e[39m boxBounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▘\e[39m boxBounce"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▝\e[39m boxBounce"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▗\e[39m boxBounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▖\e[39m boxBounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▘\e[39m boxBounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▝\e[39m boxBounce"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▗\e[39m boxBounce"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▖\e[39m boxBounce"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▌\e[39m boxBounce2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▀\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▄\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▌\e[39m boxBounce2"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m▀\e[39m boxBounce2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▄\e[39m boxBounce2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▌\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▀\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▄\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▌\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▀\e[39m boxBounce2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▐\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▄\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G"
+  - delay: 18
+    content: "\e[91m▌\e[39m boxBounce2"
+  - delay: 63
+    content: "\e[2K\e[1G\e[91m▀\e[39m boxBounce2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▄\e[39m boxBounce2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▌\e[39m boxBounce2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▀\e[39m boxBounce2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▐\e[39m boxBounce2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▄\e[39m boxBounce2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◢\e[39m triangle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◣\e[39m triangle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◤\e[39m triangle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◥\e[39m triangle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◢\e[39m triangle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◣\e[39m triangle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◤\e[39m triangle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◥\e[39m triangle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◢\e[39m triangle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◣\e[39m triangle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◤\e[39m triangle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◥\e[39m triangle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◢\e[39m triangle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◣\e[39m triangle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◤\e[39m triangle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◥\e[39m triangle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◢\e[39m triangle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◣\e[39m triangle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◤\e[39m triangle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◥\e[39m triangle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◢\e[39m triangle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◣\e[39m triangle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◤\e[39m triangle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◥\e[39m triangle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◢\e[39m triangle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◜\e[39m arc"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◠\e[39m arc"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◝\e[39m arc"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◞\e[39m arc"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◡\e[39m arc"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◟\e[39m arc"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◜\e[39m arc"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◠\e[39m arc"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◝\e[39m arc"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◞\e[39m arc"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◡\e[39m arc"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◟\e[39m arc"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◜\e[39m arc"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◠\e[39m arc"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m◝\e[39m arc"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◞\e[39m arc"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◡\e[39m arc"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◟\e[39m arc"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◜\e[39m arc"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◠\e[39m arc"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◝\e[39m arc"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◞\e[39m arc"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◡\e[39m arc"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◟\e[39m arc"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◜\e[39m arc"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◡\e[39m circle"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⊙\e[39m circle"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◠\e[39m circle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◡\e[39m circle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊙\e[39m circle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◠\e[39m circle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◡\e[39m circle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊙\e[39m circle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◠\e[39m circle"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◡\e[39m circle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊙\e[39m circle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◠\e[39m circle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◡\e[39m circle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⊙\e[39m circle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◠\e[39m circle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◡\e[39m circle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⊙\e[39m circle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◠\e[39m circle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◡\e[39m circle"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⊙\e[39m circle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◠\e[39m circle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◡\e[39m circle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊙\e[39m circle"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◠\e[39m circle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◡\e[39m circle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◰\e[39m squareCorners"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◳\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◲\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◱\e[39m squareCorners"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◰\e[39m squareCorners"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◳\e[39m squareCorners"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◲\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◱\e[39m squareCorners"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◰\e[39m squareCorners"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◳\e[39m squareCorners"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◲\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◱\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◰\e[39m squareCorners"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◳\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◲\e[39m squareCorners"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◱\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◰\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◳\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◲\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◱\e[39m squareCorners"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◰\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◳\e[39m squareCorners"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◲\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◱\e[39m squareCorners"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◴\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◷\e[39m circleQuarters"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◶\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◵\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◴\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◷\e[39m circleQuarters"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◶\e[39m circleQuarters"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◵\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◴\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◷\e[39m circleQuarters"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◶\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◵\e[39m circleQuarters"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◴\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◷\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◶\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◵\e[39m circleQuarters"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◴\e[39m circleQuarters"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◷\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◶\e[39m circleQuarters"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m◵\e[39m circleQuarters"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◴\e[39m circleQuarters"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◷\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◶\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◵\e[39m circleQuarters"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◴\e[39m circleQuarters"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◐\e[39m circleHalves"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◓\e[39m circleHalves"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◑\e[39m circleHalves"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◒\e[39m circleHalves"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◐\e[39m circleHalves"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◓\e[39m circleHalves"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◑\e[39m circleHalves"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◒\e[39m circleHalves"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◐\e[39m circleHalves"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◓\e[39m circleHalves"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◑\e[39m circleHalves"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◒\e[39m circleHalves"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◐\e[39m circleHalves"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◓\e[39m circleHalves"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◑\e[39m circleHalves"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◒\e[39m circleHalves"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◐\e[39m circleHalves"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◓\e[39m circleHalves"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◑\e[39m circleHalves"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◒\e[39m circleHalves"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◐\e[39m circleHalves"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◓\e[39m circleHalves"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◑\e[39m circleHalves"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◒\e[39m circleHalves"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◐\e[39m circleHalves"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m╪\e[39m squish"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m╪\e[39m squish"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m╪\e[39m squish"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m╪\e[39m squish"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m╪\e[39m squish"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m╪\e[39m squish"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m╪\e[39m squish"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m╪\e[39m squish"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m╪\e[39m squish"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m╪\e[39m squish"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m╪\e[39m squish"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m╪\e[39m squish"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m╫\e[39m squish"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⊷\e[39m toggle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊷\e[39m toggle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊷\e[39m toggle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⊷\e[39m toggle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊷\e[39m toggle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⊷\e[39m toggle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⊷\e[39m toggle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊷\e[39m toggle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⊷\e[39m toggle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⊷\e[39m toggle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⊷\e[39m toggle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊷\e[39m toggle"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⊶\e[39m toggle"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle2"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle2"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle3"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle3"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle4"
+  - delay: 87
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle4"
+  - delay: 74
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle4"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m□\e[39m toggle4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▪\e[39m toggle4"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▫\e[39m toggle4"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m■\e[39m toggle4"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▮\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▯\e[39m toggle5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▮\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▯\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▮\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▯\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▮\e[39m toggle5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▯\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▮\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▯\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▮\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▯\e[39m toggle5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▮\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▯\e[39m toggle5"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▮\e[39m toggle5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▯\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K"
+  - delay: 8
+    content: "\e[1G\e[91m▮\e[39m toggle5"
+  - delay: 72
+    content: "\e[2K\e[1G\e[91m▯\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▮\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▯\e[39m toggle5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▮\e[39m toggle5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▯\e[39m toggle5"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▮\e[39m toggle5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▯\e[39m toggle5"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m၀\e[39m toggle6"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m၀\e[39m toggle6"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m၀\e[39m toggle6"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m၀\e[39m toggle6"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m၀\e[39m toggle6"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m၀\e[39m toggle6"
+  - delay: 78
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m၀\e[39m toggle6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m၀\e[39m toggle6"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m၀\e[39m toggle6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m၀\e[39m toggle6"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m၀\e[39m toggle6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m၀\e[39m toggle6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mဝ\e[39m toggle6"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⦿\e[39m toggle7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⦿\e[39m toggle7"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⦿\e[39m toggle7"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⦿\e[39m toggle7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⦿\e[39m toggle7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⦿\e[39m toggle7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⦿\e[39m toggle7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⦿\e[39m toggle7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⦿\e[39m toggle7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⦿\e[39m toggle7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⦿\e[39m toggle7"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⦿\e[39m toggle7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⦾\e[39m toggle7"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◌\e[39m toggle8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◌\e[39m toggle8"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◌\e[39m toggle8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◌\e[39m toggle8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◌\e[39m toggle8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◌\e[39m toggle8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◌\e[39m toggle8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◌\e[39m toggle8"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◌\e[39m toggle8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◌\e[39m toggle8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◌\e[39m toggle8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◌\e[39m toggle8"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◍\e[39m toggle8"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◎\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◎\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◎\e[39m toggle9"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◎\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◎\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◎\e[39m toggle9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◎\e[39m toggle9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◎\e[39m toggle9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◎\e[39m toggle9"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m◎\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◎\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◎\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m◉\e[39m toggle9"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m㊂\e[39m toggle10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m㊀\e[39m toggle10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m㊁\e[39m toggle10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m㊂\e[39m toggle10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m㊀\e[39m toggle10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m㊁\e[39m toggle10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m㊂\e[39m toggle10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m㊀\e[39m toggle10"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m㊁\e[39m toggle10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m㊂\e[39m toggle10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m㊀\e[39m toggle10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m㊁\e[39m toggle10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m㊂\e[39m toggle10"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m㊀\e[39m toggle10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m㊁\e[39m toggle10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m㊂\e[39m toggle10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m㊀\e[39m toggle10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m㊁\e[39m toggle10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m㊂\e[39m toggle10"
+  - delay: 85
+    content: "\e[2K\e[1G\e[91m㊀\e[39m toggle10"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m㊁\e[39m toggle10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m㊂\e[39m toggle10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m㊀\e[39m toggle10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m㊁\e[39m toggle10"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m㊂\e[39m toggle10"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧇\e[39m toggle11"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⧆\e[39m toggle11"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⧇\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧆\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧇\e[39m toggle11"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⧆\e[39m toggle11"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⧇\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧆\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧇\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧆\e[39m toggle11"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⧇\e[39m toggle11"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⧆\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧇\e[39m toggle11"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⧆\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧇\e[39m toggle11"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⧆\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧇\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧆\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧇\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧆\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧇\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧆\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧇\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⧆\e[39m toggle11"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☖\e[39m toggle12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☖\e[39m toggle12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☖\e[39m toggle12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☖\e[39m toggle12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☖\e[39m toggle12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☖\e[39m toggle12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☖\e[39m toggle12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☖\e[39m toggle12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☖\e[39m toggle12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☖\e[39m toggle12"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☖\e[39m toggle12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☖\e[39m toggle12"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☗\e[39m toggle12"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m=\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m*\e[39m toggle13"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m-\e[39m toggle13"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m=\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m*\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m=\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m*\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m toggle13"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m=\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m*\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m=\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m*\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m=\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m*\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m=\e[39m toggle13"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m*\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m=\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m*\e[39m toggle13"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m toggle13"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m=\e[39m toggle13"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m←\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↖\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↑\e[39m arrow"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m↗\e[39m arrow"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m→\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↘\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↓\e[39m arrow"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m↙\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m←\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↖\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↑\e[39m arrow"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m↗\e[39m arrow"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m→\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↘\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↓\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↙\e[39m arrow"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m←\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↖\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↑\e[39m arrow"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m↗\e[39m arrow"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m→\e[39m arrow"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m↘\e[39m arrow"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m↓\e[39m arrow"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↙\e[39m arrow"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m←\e[39m arrow"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⬆️ \e[39m arrow2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↗️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m➡️ \e[39m arrow2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m↘️ \e[39m arrow2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⬇️ \e[39m arrow2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↙️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⬅️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m↖️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⬆️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m↗️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m➡️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m↘️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⬇️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m↙️ \e[39m arrow2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⬅️ \e[39m arrow2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↖️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⬆️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m↗️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m➡️ \e[39m arrow2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m↘️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⬇️ \e[39m arrow2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↙️ \e[39m arrow2"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⬅️ \e[39m arrow2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m↖️ \e[39m arrow2"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⬆️ \e[39m arrow2"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m▹▹▹▹▹\e[39m arrow3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▸▹▹▹▹\e[39m arrow3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▹▸▹▹▹\e[39m arrow3"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m▹▹▸▹▹\e[39m arrow3"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m▹▹▹▸▹\e[39m arrow3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▹▹▹▹▸\e[39m arrow3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▹▹▹▹▹\e[39m arrow3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▸▹▹▹▹\e[39m arrow3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▹▸▹▹▹\e[39m arrow3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▹▹▸▹▹\e[39m arrow3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▹▹▹▸▹\e[39m arrow3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▹▹▹▹▸\e[39m arrow3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▹▹▹▹▹\e[39m arrow3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▸▹▹▹▹\e[39m arrow3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▹▸▹▹▹\e[39m arrow3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▹▹▸▹▹\e[39m arrow3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▹▹▹▸▹\e[39m arrow3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▹▹▹▹▸\e[39m arrow3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▹▹▹▹▹\e[39m arrow3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▸▹▹▹▹\e[39m arrow3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▹▸▹▹▹\e[39m arrow3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▹▹▸▹▹\e[39m arrow3"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▹▹▹▸▹\e[39m arrow3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▹▹▹▹▸\e[39m arrow3"
+  - delay: 78
+    content: "\e[2K\e[1G\e[91m▹▹▹▹▹\e[39m arrow3"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[    ]\e[39m bouncingBar"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m[=   ]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[==  ]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[=== ]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[ ===]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[  ==]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[   =]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[    ]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[   =]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[  ==]\e[39m bouncingBar"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m[ ===]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[====]\e[39m bouncingBar"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m[=== ]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[==  ]\e[39m bouncingBar"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m[=   ]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[    ]\e[39m bouncingBar"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m[=   ]\e[39m bouncingBar"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m[==  ]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[=== ]\e[39m bouncingBar"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m[ ===]\e[39m bouncingBar"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m[  ==]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m[   =]\e[39m bouncingBar"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m[    ]\e[39m bouncingBar"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m[   =]\e[39m bouncingBar"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m[  ==]\e[39m bouncingBar"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m( ●    )\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m(  ●   )\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m(   ●  )\e[39m bouncingBall"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m(    ● )\e[39m bouncingBall"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m(     ●)\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m(    ● )\e[39m bouncingBall"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m(   ●  )\e[39m bouncingBall"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m(  ●   )\e[39m bouncingBall"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m( ●    )\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m(●     )\e[39m bouncingBall"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m( ●    )\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m(  ●   )\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m(   ●  )\e[39m bouncingBall"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m(    ● )\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m(     ●)\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m(    ● )\e[39m bouncingBall"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m(   ●  )\e[39m bouncingBall"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m(  ●   )\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m( ●    )\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m(●     )\e[39m bouncingBall"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m( ●    )\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m(  ●   )\e[39m bouncingBall"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m(   ●  )\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m(    ● )\e[39m bouncingBall"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F61D \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F61D \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F61D \e[39m smiley"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F61D \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F61D \e[39m smiley"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F61D \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F61D \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F61D \e[39m smiley"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F61D \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F61D \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F61D \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F61D \e[39m smiley"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F604 \e[39m smiley"
+  - delay: 86
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F649 \e[39m monkey"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F64A \e[39m monkey"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F649 \e[39m monkey"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F64A \e[39m monkey"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F649 \e[39m monkey"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F64A \e[39m monkey"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F649 \e[39m monkey"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F64A \e[39m monkey"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F649 \e[39m monkey"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F64A \e[39m monkey"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F649 \e[39m monkey"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F64A \e[39m monkey"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F648 \e[39m monkey"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F49B \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F499 \e[39m hearts"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F49C \e[39m hearts"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F49A \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m❤️ \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F49B \e[39m hearts"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F499 \e[39m hearts"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m\U0001F49C \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F49A \e[39m hearts"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m❤️ \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F49B \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F499 \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F49C \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F49A \e[39m hearts"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m❤️ \e[39m hearts"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F49B \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F499 \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F49C \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F49A \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m❤️ \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F49B \e[39m hearts"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F499 \e[39m hearts"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F49C \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F49A \e[39m hearts"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m❤️ \e[39m hearts"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F55B \e[39m clock"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F550 \e[39m clock"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F551 \e[39m clock"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F552 \e[39m clock"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m\U0001F553 \e[39m clock"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F554 \e[39m clock"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F555 \e[39m clock"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F556 \e[39m clock"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F557 \e[39m clock"
+  - delay: 84
+    content: "\e[2K\e[1G\e[91m\U0001F558 \e[39m clock"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F559 \e[39m clock"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F55A \e[39m clock"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F55B \e[39m clock"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F550 \e[39m clock"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F551 \e[39m clock"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F552 \e[39m clock"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F553 \e[39m clock"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F554 \e[39m clock"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F555 \e[39m clock"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F556 \e[39m clock"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F557 \e[39m clock"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F558 \e[39m clock"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F559 \e[39m clock"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F55A \e[39m clock"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F55B \e[39m clock"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30D \e[39m earth"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F30E \e[39m earth"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F30F \e[39m earth"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F30D \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30E \e[39m earth"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m\U0001F30F \e[39m earth"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F30D \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30E \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30F \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30D \e[39m earth"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F30E \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30F \e[39m earth"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F30D \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30E \e[39m earth"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F30F \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30D \e[39m earth"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F30E \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30F \e[39m earth"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F30D \e[39m earth"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F30E \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30F \e[39m earth"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F30D \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30E \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30F \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F30D \e[39m earth"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F311 \e[39m moon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F312 \e[39m moon"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F313 \e[39m moon"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m\U0001F314 \e[39m moon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F315 \e[39m moon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F316 \e[39m moon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F317 \e[39m moon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F318 \e[39m moon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F311 \e[39m moon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F312 \e[39m moon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F313 \e[39m moon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F314 \e[39m moon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F315 \e[39m moon"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F316 \e[39m moon"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F317 \e[39m moon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F318 \e[39m moon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F311 \e[39m moon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F312 \e[39m moon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F313 \e[39m moon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F314 \e[39m moon"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F315 \e[39m moon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F316 \e[39m moon"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F317 \e[39m moon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F318 \e[39m moon"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F3C3 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F3C3 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F3C3 \e[39m runner"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F3C3 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F3C3 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F3C3 \e[39m runner"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F3C3 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F3C3 \e[39m runner"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F3C3 \e[39m runner"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F3C3 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F3C3 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F3C3 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F6B6 \e[39m runner"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐⠂       ▌\e[39m pong"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐⠈       ▌\e[39m pong"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐ ⠂      ▌\e[39m pong"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐ ⠠      ▌\e[39m pong"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐  ⡀     ▌\e[39m pong"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐  ⠠     ▌\e[39m pong"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐   ⠂    ▌\e[39m pong"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐   ⠈    ▌\e[39m pong"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▐    ⠂   ▌\e[39m pong"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m▐    ⠠   ▌\e[39m pong"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐     ⡀  ▌\e[39m pong"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐     ⠠  ▌\e[39m pong"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐      ⠂ ▌\e[39m pong"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐      ⠈ ▌\e[39m pong"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m▐       ⠂▌\e[39m pong"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐       ⠠▌\e[39m pong"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐       ⡀▌\e[39m pong"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐      ⠠ ▌\e[39m pong"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▐      ⠂ ▌\e[39m pong"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐     ⠈  ▌\e[39m pong"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐     ⠂  ▌\e[39m pong"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▐    ⠠   ▌\e[39m pong"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐    ⡀   ▌\e[39m pong"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐   ⠠    ▌\e[39m pong"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐   ⠂    ▌\e[39m pong"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐|\\____________▌\e[39m shark"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m▐_|\\___________▌\e[39m shark"
+  - delay: 78
+    content: "\e[2K\e[1G\e[91m▐__|\\__________▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐___|\\_________▌\e[39m shark"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐____|\\________▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐_____|\\_______▌\e[39m shark"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐______|\\______▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐_______|\\_____▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐________|\\____▌\e[39m shark"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐_________|\\___▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐__________|\\__▌\e[39m shark"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐___________|\\_▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐____________|\\▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐____________/|▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐___________/|_▌\e[39m shark"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▐__________/|__▌\e[39m shark"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐_________/|___▌\e[39m shark"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m▐________/|____▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐_______/|_____▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐______/|______▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐_____/|_______▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐____/|________▌\e[39m shark"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m▐___/|_________▌\e[39m shark"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m▐__/|__________▌\e[39m shark"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m▐_/|___________▌\e[39m shark"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91md\e[39m dqpb"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mq\e[39m dqpb"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mp\e[39m dqpb"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mb\e[39m dqpb"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91md\e[39m dqpb"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mq\e[39m dqpb"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91mp\e[39m dqpb"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mb\e[39m dqpb"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91md\e[39m dqpb"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mq\e[39m dqpb"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mp\e[39m dqpb"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mb\e[39m dqpb"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91md\e[39m dqpb"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mq\e[39m dqpb"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mp\e[39m dqpb"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mb\e[39m dqpb"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91md\e[39m dqpb"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91mq\e[39m dqpb"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mp\e[39m dqpb"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mb\e[39m dqpb"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91md\e[39m dqpb"
+  - delay: 77
+    content: "\e[2K\e[1G\e[91mq\e[39m dqpb"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mp\e[39m dqpb"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mb\e[39m dqpb"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91md\e[39m dqpb"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☀️ \e[39m weather"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☀️ \e[39m weather"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☀️ \e[39m weather"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m\U0001F324 \e[39m weather"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⛅️ \e[39m weather"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F325 \e[39m weather"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m☁️ \e[39m weather"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F327 \e[39m weather"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F328 \e[39m weather"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F327 \e[39m weather"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F328 \e[39m weather"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F327 \e[39m weather"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F328 \e[39m weather"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⛈ \e[39m weather"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F328 \e[39m weather"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m\U0001F327 \e[39m weather"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F328 \e[39m weather"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m☁️ \e[39m weather"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F325 \e[39m weather"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⛅️ \e[39m weather"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F324 \e[39m weather"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m☀️ \e[39m weather"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m☀️ \e[39m weather"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m☀️ \e[39m weather"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F384\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F384\e[39m christmas"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F384\e[39m christmas"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F384\e[39m christmas"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F384\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F384\e[39m christmas"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m\U0001F384\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F384\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F384\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F384\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m\U0001F384\e[39m christmas"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m\U0001F384\e[39m christmas"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m\U0001F332\e[39m christmas"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m،   \e[39m grenade"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m′   \e[39m grenade"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m ´ \e[39m grenade"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m ‾ \e[39m grenade"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m  ⸌\e[39m grenade"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m  ⸊\e[39m grenade"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m  |\e[39m grenade"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m  ⁎\e[39m grenade"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m  ⁕\e[39m grenade"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m ෴ \e[39m grenade"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m  ⁓\e[39m grenade"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m   \e[39m grenade"
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m   \e[39m grenade"
+  - delay: 84
+    content: "\e[2K\e[1G\e[91m   \e[39m grenade"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m،   \e[39m grenade"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m′   \e[39m grenade"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m ´ \e[39m grenade"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m ‾ \e[39m grenade"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m  ⸌\e[39m grenade"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m  ⸊\e[39m grenade"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m  |\e[39m grenade"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m  ⁎\e[39m grenade"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m  ⁕\e[39m grenade"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m ෴ \e[39m grenade"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m  ⁓\e[39m grenade"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m∙∙∙\e[39m point"
+  - delay: 85
+    content: "\e[2K\e[1G\e[91m●∙∙\e[39m point"
+  - delay: 77
+    content: "\e[2K\e[1G\e[91m∙●∙\e[39m point"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m∙∙●\e[39m point"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m∙∙∙\e[39m point"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m∙∙∙\e[39m point"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m●∙∙\e[39m point"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m∙●∙\e[39m point"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m∙∙●\e[39m point"
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m∙∙∙\e[39m point"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m∙∙∙\e[39m point"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m●∙∙\e[39m point"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m∙●∙\e[39m point"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m∙∙●\e[39m point"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m∙∙∙\e[39m point"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m∙∙∙\e[39m point"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m●∙∙\e[39m point"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m∙●∙\e[39m point"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m∙∙●\e[39m point"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m∙∙∙\e[39m point"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m∙∙∙\e[39m point"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m●∙∙\e[39m point"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m∙●∙\e[39m point"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m∙∙●\e[39m point"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m∙∙∙\e[39m point"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m-\e[39m layer"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m=\e[39m layer"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m≡\e[39m layer"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m layer"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m=\e[39m layer"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m≡\e[39m layer"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m layer"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m=\e[39m layer"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m≡\e[39m layer"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m-\e[39m layer"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m=\e[39m layer"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m≡\e[39m layer"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m-\e[39m layer"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m=\e[39m layer"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m≡\e[39m layer"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m layer"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m=\e[39m layer"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m≡\e[39m layer"
+  - delay: 84
+    content: "\e[2K\e[1G\e[91m-\e[39m layer"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m=\e[39m layer"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m≡\e[39m layer"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m-\e[39m layer"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m=\e[39m layer"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m≡\e[39m layer"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mρββββββ\e[39m betaWave"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mβρβββββ\e[39m betaWave"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mββρββββ\e[39m betaWave"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mβββρβββ\e[39m betaWave"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mββββρββ\e[39m betaWave"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mβββββρβ\e[39m betaWave"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91mββββββρ\e[39m betaWave"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mρββββββ\e[39m betaWave"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mβρβββββ\e[39m betaWave"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mββρββββ\e[39m betaWave"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mβββρβββ\e[39m betaWave"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mββββρββ\e[39m betaWave"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mβββββρβ\e[39m betaWave"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mββββββρ\e[39m betaWave"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mρββββββ\e[39m betaWave"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mβρβββββ\e[39m betaWave"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91mββρββββ\e[39m betaWave"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mβββρβββ\e[39m betaWave"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mββββρββ\e[39m betaWave"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mβββββρβ\e[39m betaWave"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mββββββρ\e[39m betaWave"
+  - delay: 80
+    content: "\e[2K\e[1G\e[91mρββββββ\e[39m betaWave"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91mβρβββββ\e[39m betaWave"
+  - delay: 81
+    content: "\e[2K\e[1G\e[91mββρββββ\e[39m betaWave"
+  - delay: 82
+    content: "\e[2K\e[1G\e[91mβββρβββ\e[39m betaWave"
+  - delay: 44
+    content: "\e[2K\e[1G\e[?25h\e[32m✔\e[39m done\r\n\e[?25h\e[?25h\e_esatterwhite@thanos:~/dev/js/seeli-docs/docs\e\\\e[01;32m[esatterwhite@thanos\e[01;37m docs\e[01;32m]$\e[00m "
+  - delay: 80
+    content: "\r\n"
