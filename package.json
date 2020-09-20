@@ -11,7 +11,11 @@
     "tap": "tap",
     "lint": "eslint ./",
     "lint:fix": "npm run lint -- --fix",
-    "release": "semantic-release"
+    "release": "semantic-release",
+    "vuepress": "vuepress",
+    "docs:dev": "vuepress dev gh-pages",
+    "docs:build": "vuepress build gh-pages",
+    "npm:clean": "rm -rf node_modules gh-pages/**/node_modules"
   },
   "files": [
     "index.js",
@@ -37,6 +41,7 @@
     },
     "ignorePatterns": [
       "node_modules/",
+      "gh-pages/",
       "examples/"
     ]
   },
@@ -127,6 +132,8 @@
     "nyc-arg": [
       "--exclude=test/",
       "--exclude=examples/",
+      "--exclude=gh-pages/",
+      "--exclude=docs/",
       "--exclude=release.config.js",
       "--all"
     ]
