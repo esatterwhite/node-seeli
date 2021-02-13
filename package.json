@@ -11,7 +11,6 @@
     "tap": "tap",
     "lint": "eslint ./",
     "lint:fix": "npm run lint -- --fix",
-    "check": "check-pkg",
     "release": "semantic-release"
   },
   "eslintConfig": {
@@ -30,7 +29,8 @@
       "sourceType": "script"
     },
     "ignorePatterns": [
-      "node_modules/"
+      "node_modules/",
+      "examples/"
     ]
   },
   "repository": {
@@ -89,10 +89,9 @@
     "@semantic-release/changelog": "^5.0.1",
     "@semantic-release/git": "^9.0.0",
     "@semantic-release/github": "^7.0.7",
-    "check-pkg": "^2.1.1",
     "cli-spinners": "^2.3.0",
     "eslint": "^7.9.0",
-    "eslint-config-codedependant": "^1.0.0",
+    "eslint-config-codedependant": "^2.1.1",
     "semantic-release": "^17.1.1",
     "tap": "^14.10.2"
   },
