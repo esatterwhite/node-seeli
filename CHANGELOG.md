@@ -1,5 +1,18 @@
 # Changlog
 
+# [12.0.0](https://github.com/esatterwhite/node-seeli/compare/v11.0.2...v12.0.0) (2021-02-14)
+
+
+### Features
+
+* **command:** support for sub commands ([a99346c](https://github.com/esatterwhite/node-seeli/commit/a99346cb011473ac03b62f247cf522295eb36788))
+
+
+### BREAKING CHANGES
+
+* **command:** Commands are no longer dot accessible from the regirstry
+* **command:** The command registry is a Map, not an object
+
 ## [11.0.2](https://github.com/esatterwhite/node-seeli/compare/v11.0.1...v11.0.2) (2021-02-13)
 
 ## [11.0.1](https://github.com/esatterwhite/node-seeli/compare/v11.0.0...v11.0.1) (2020-09-13)
