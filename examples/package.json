@@ -10,5 +10,15 @@
   "scripts": {},
   "keywords": [],
   "author": "Eric Satterwhite <esatterwhite@wi.rr.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cli-spinners": "^2.5.0",
+    "debug": "*",
+    "seeli": "file:../"
+  },
+  "seeli": {
+    "color": "magenta",
+    "name": "fake",
+    "help": "./commands/ui"
+  }
 }

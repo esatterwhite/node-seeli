@@ -1,7 +1,7 @@
 'use strict'
 
 const toArray = require('mout/lang/toArray')
-const cli = require('../../')
+const cli = require('seeli')
 const spinners = require('cli-spinners')
 module.exports = new cli.Command({
   description: 'Allows you to play with progress spinners and displays'

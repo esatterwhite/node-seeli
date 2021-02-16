@@ -1,6 +1,6 @@
 'use strict'
 
-const cli = require('../../')
+const cli = require('seeli')
 
 module.exports = new cli.Command({
   description: 'Set your password'
