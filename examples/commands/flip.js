@@ -1,6 +1,6 @@
 'use strict'
 
-const cli = require('../../')
+const cli = require('seeli')
 const CHARS = {
   // uppercase (incomplete)
   'A': '∀'

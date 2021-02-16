@@ -2,7 +2,7 @@
 
 const tty = require('tty')
 const os = require('os')
-const cli = require('../../')
+const cli = require('seeli')
 
 module.exports = new cli.Command({
   description: 'displays a simple hello world command'
