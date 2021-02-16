@@ -1,5 +1,12 @@
 # Changlog
 
+# [12.1.0](https://github.com/esatterwhite/node-seeli/compare/v12.0.0...v12.1.0) (2021-02-16)
+
+
+### Features
+
+* **conf:** config is loaded from package.json ([25a1c2b](https://github.com/esatterwhite/node-seeli/commit/25a1c2bb9b8b039e4263997f90f33e0336fb282b))
+
 # [12.0.0](https://github.com/esatterwhite/node-seeli/compare/v11.0.2...v12.0.0) (2021-02-14)
 
 
