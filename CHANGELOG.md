@@ -1,5 +1,7 @@
 # Changlog
 
+## [12.1.2](https://github.com/esatterwhite/node-seeli/compare/v12.1.1...v12.1.2) (2021-02-26)
+
 ## [12.1.1](https://github.com/esatterwhite/node-seeli/compare/v12.1.0...v12.1.1) (2021-02-26)
 
 
