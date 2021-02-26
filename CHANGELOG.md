@@ -1,5 +1,12 @@
 # Changlog
 
+## [12.1.1](https://github.com/esatterwhite/node-seeli/compare/v12.1.0...v12.1.1) (2021-02-26)
+
+
+### Bug Fixes
+
+* correct release rules for semantic-release ([45d322d](https://github.com/esatterwhite/node-seeli/commit/45d322d8e8b0b20a49a861c40d2e98e92e92db48))
+
 # [12.1.0](https://github.com/esatterwhite/node-seeli/compare/v12.0.0...v12.1.0) (2021-02-16)
 
 
