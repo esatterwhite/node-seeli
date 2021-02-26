@@ -15,7 +15,9 @@ module.exports = {
         ]
       }
     , releaseRules: [
-        {type: 'build', release: 'patch'}
+        {breaking: true, release: 'major'}
+      , {revert: true, release: 'patch'}
+      , {type: 'build', release: 'patch'}
       , {type: 'ci', release: 'patch'}
       , {type: 'release', release: 'patch'}
       , {type: 'chore', release: 'patch'}
