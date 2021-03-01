@@ -605,7 +605,9 @@ test('command', async (t) => {
         args: ['cmd', 'hub', 'bub']
       })
 
-      const output = await cmd.run()
+      const hub = cmd.get('hub')
+      const bub = hub.get('bub')
+      const output = await bub.run()
       t.equal(output, 'bub', 'bub command executed')
     })
   })
