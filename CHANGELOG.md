@@ -1,5 +1,12 @@
 # Changlog
 
+## [12.1.4](https://github.com/esatterwhite/node-seeli/compare/v12.1.3...v12.1.4) (2021-03-01)
+
+
+### Bug Fixes
+
+* **command:** fix resolving of subcommands ([6df9776](https://github.com/esatterwhite/node-seeli/commit/6df97768466b6339cd9e74a7e450099d4070b19f))
+
 ## [12.1.3](https://github.com/esatterwhite/node-seeli/compare/v12.1.2...v12.1.3) (2021-03-01)
 
 
