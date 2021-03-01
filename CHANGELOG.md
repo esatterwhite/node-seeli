@@ -1,5 +1,12 @@
 # Changlog
 
+## [12.1.3](https://github.com/esatterwhite/node-seeli/compare/v12.1.2...v12.1.3) (2021-03-01)
+
+
+### Bug Fixes
+
+* **help:** allow printing for invalid commands ([1a13e9c](https://github.com/esatterwhite/node-seeli/commit/1a13e9c8d3242d75bc1815269dca04bee24e92f0))
+
 ## [12.1.2](https://github.com/esatterwhite/node-seeli/compare/v12.1.1...v12.1.2) (2021-02-26)
 
 ## [12.1.1](https://github.com/esatterwhite/node-seeli/compare/v12.1.0...v12.1.1) (2021-02-26)
