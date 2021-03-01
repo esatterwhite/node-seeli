@@ -74,8 +74,8 @@ test('command', async (t) => {
   })
 
   // usage parsing
-  t.test('~usage', async (tt) => {
-    test('should accept a single string', async (t) => {
+  t.test('~usage', async (t) => {
+    t.test('should accept a single string', async (t) => {
       const UsageCommand = new Command({
         usage: "usage -a 'fake' --verbose"
       , args: ['--no-color']
@@ -104,7 +104,7 @@ test('command', async (t) => {
       commands.unregister('usage')
     })
 
-    test('should accept an array of strings', async (t) => {
+    t.test('should accept an array of strings', async (t) => {
       const UsageCommand = new Command({
         usage: [
           "usage -a 'fake' --verbose"
@@ -115,6 +115,56 @@ test('command', async (t) => {
       const fixture_path = path.join(__dirname, 'fixtures', 'usage-array.fixture')
       const stdout = fs.readFileSync(fixture_path, 'utf8')
       t.equal(strip(UsageCommand.usage), stdout)
+    })
+
+    t.test('handles missing subcommands', async (t) => {
+      const a = new Command({
+        name: 'a'
+      , usage: ['get a']
+      , run: async function() {}
+      })
+
+      const b = new Command({
+        name: 'b'
+      , usage: ['get b']
+      , run: async function() {}
+      })
+
+      const CmdA = new Command({
+        name: 'get'
+      , usage: [
+          ...a.options.usage
+        , ...b.options.usage
+        ]
+      , commands: [a, b]
+      , run: async function(cmd, flags) {
+          if (cmd && !this.has(cmd)) {
+            const error = new Error(`unknown waves action ${cmd}`)
+            error.code = 'ENOCOMMAND'
+            throw error
+          }
+
+          const help = cli.commands.get('help')
+          console.log(flags.argv.remain)
+          return help.run(flags.argv.remain)
+        }
+      })
+
+      commands.register(CmdA)
+      t.on('end', () => {
+        commands.unregister('get')
+      })
+      Help.removeAllListeners()
+      Help.reset()
+      Help.setOptions({
+        args: ['--no-color', 'get', 'c']
+      })
+
+      {
+        const content = await Help.run()
+        t.match(content.trim(), /Invalid command:/)
+        t.match(content, /\$ command\.spec get c/)
+      }
     })
   })
 
