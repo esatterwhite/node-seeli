@@ -76,6 +76,11 @@ test('command', async (t) => {
   // usage parsing
   t.test('~usage', async (t) => {
     t.test('should accept a single string', async (t) => {
+      t.on('end', () => {
+        cli.set('color', 'green')
+      })
+
+      cli.set('color', 'invalid')
       const UsageCommand = new Command({
         usage: "usage -a 'fake' --verbose"
       , args: ['--no-color']
