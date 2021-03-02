@@ -1,5 +1,12 @@
 # Changlog
 
+# [12.2.0](https://github.com/esatterwhite/node-seeli/compare/v12.1.4...v12.2.0) (2021-03-02)
+
+
+### Features
+
+* **seeli:** add basic support for plugins ([782a066](https://github.com/esatterwhite/node-seeli/commit/782a06602f35fbb7fdc2a56f95f030bfd5afa229)), closes [#39](https://github.com/esatterwhite/node-seeli/issues/39)
+
 ## [12.1.4](https://github.com/esatterwhite/node-seeli/compare/v12.1.3...v12.1.4) (2021-03-01)
 
 
