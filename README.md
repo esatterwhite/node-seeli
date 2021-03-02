@@ -111,7 +111,39 @@ node ./cli world --interactive
 node ./cli world --name=Mark --name=Sally --no-excited
 ```
 
+<!-- vim-markdown-toc GFM -->
 
+* [API](#api)
+  * [Seeli.run( )](#seelirun-)
+  * [Seeli.list`<Array>`](#seelilistarray)
+  * [Seeli.use( name `<string>`, cmd `<Command>` )](#seeliuse-name-string-cmd-command-)
+  * [Seeli.bold( text `<string>`)](#seelibold-text-string)
+  * [Seeli.green( text `<string>`)](#seeligreen-text-string)
+  * [Seeli.blue( text `<string>`)](#seeliblue-text-string)
+  * [Seeli.red( text `<string>`)](#seelired-text-string)
+  * [Seeli.yellow( text `<string>`)](#seeliyellow-text-string)
+  * [Seeli.cyan( text `<string>`)](#seelicyan-text-string)
+  * [Seeli.magenta( text `<string>`)](#seelimagenta-text-string)
+  * [Seeli.redBright( text `<string>`)](#seeliredbright-text-string)
+  * [Seeli.blueBright( text `<string>`)](#seelibluebright-text-string)
+  * [Seeli.greenBright( text `<string>`)](#seeligreenbright-text-string)
+  * [Seeli.yellowBright( text `<string>`)](#seeliyellowbright-text-string)
+  * [Seeli.cyanBright( text `<string>`)](#seelicyanbright-text-string)
+  * [Seeli.set( key `<string>`, value `<object>` )](#seeliset-key-string-value-object-)
+  * [Seeli.get( key `<string>` )](#seeliget-key-string-)
+      * [Supported Confgurations](#supported-confgurations)
+        * [Package Configuration](#package-configuration)
+  * [Command( options `<object>` )](#command-options-object-)
+  * [Options](#options)
+    * [Flag Options](#flag-options)
+      * [Nested Flags](#nested-flags)
+  * [Auto Help](#auto-help)
+  * [Asyncronous](#asyncronous)
+  * [Progress](#progress)
+  * [Events](#events)
+
+<!-- vim-markdown-toc -->
+# API
 
 ## Seeli.run( )
 
@@ -195,8 +227,28 @@ A config value to look up. Can be a dot separated key to look up nested values
 * name `<String>`   - the name of the command that is used in generated help
 * exitOnError `<Boolean>` - Seeli will forcefully exit the current process when an error is encountered. default `false`
 * exitOnContent `<Boolean>` - Seeli will forefully exit the current process when it is passed output content from a command. default `true`
+* plugins `<String>|<function>[]` - A list of plugins to load and execute. A plugin may be either a function, or a module id to be required.
+  If it is a module id, the module must export a single function which will be passed the seeli instance when called.
 * help `<String>`  - a file path or module name to a custom help command. This will be passed to `require` and must export a single command instance
     * `seeli.set('help', '/path/to/help/command')`
+
+##### Package Configuration
+
+Alternatively, initial configuration may be provided via `package.json` in a top-level key - `seeli`
+
+```json5
+// package.json
+
+{
+  "seeli": {
+    "color": "blue",
+    "name": "whizbang",
+    "plugins": [
+      "@myscope/simple-command"
+    ]
+  }
+}
+```
 
 ## Command( options `<object>` )
 
