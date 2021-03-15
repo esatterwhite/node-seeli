@@ -22,7 +22,7 @@
   ],
   "eslintConfig": {
     "root": true,
-    "extends": "eslint-config-codedependant",
+    "extends": "codedependant",
     "rules": {
       "no-eq-null": 0,
       "no-var": 2,
@@ -115,7 +115,8 @@
     "coverage-report": [
       "text",
       "text-summary",
-      "json"
+      "json",
+      "html"
     ],
     "files": [
       "test/**/*.js"
@@ -123,6 +124,7 @@
     "nyc-arg": [
       "--exclude=test/",
       "--exclude=examples/",
+      "--exclude=release.config.js",
       "--all"
     ]
   }
