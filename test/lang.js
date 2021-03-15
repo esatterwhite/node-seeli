@@ -7,8 +7,8 @@ const object = require('../lib/lang/object/')
 const typeOf = require('../lib/usage/type-of')
 const test = tap.test
 
-test('object', (t) => {
-  t.test('#set', (tt) => {
+test('object', async (t) => {
+  t.test('#set', async (tt) => {
     const a = object.set({}, 'a:b:c:d', 1)
     tt.deepEqual(a, {
       a: {
@@ -30,9 +30,21 @@ test('object', (t) => {
         }
       }
     })
-    tt.end()
   })
-  t.end()
+
+  t.test('#merge', async (t) => {
+    const one = {a: {b: [1]}, c: path, d: url, x: {y: {z: 1}}}
+    const two = {x: {y: {f: 3}}}
+    const out = object.merge(one, two)
+    t.deepEqual(out.c, path, 'path module intact')
+    t.deepEqual(out.d, url, 'url module intact')
+    t.deepEqual(out, {
+      a: {b: [1]}
+    , c: path
+    , d: url
+    , x: {y: {z: 1, f: 3}}
+    })
+  })
 })
 
 test('type-of', (t) => {

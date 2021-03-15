@@ -126,13 +126,17 @@ test('command', async (t) => {
       const a = new Command({
         name: 'a'
       , usage: ['get a']
-      , run: async function() {}
+      , run: async function() {
+          return null
+        }
       })
 
       const b = new Command({
         name: 'b'
       , usage: ['get b']
-      , run: async function() {}
+      , run: async function() {
+          return null
+        }
       })
 
       const CmdA = new Command({
@@ -168,7 +172,7 @@ test('command', async (t) => {
       {
         const content = await Help.run()
         t.match(content.trim(), /Invalid command:/)
-        t.match(content, /\$ command\.spec get c/)
+        t.match(content, /\$ command get c/)
       }
     })
   })
@@ -386,6 +390,20 @@ test('command', async (t) => {
     })
   })
 
+  t.test('Command static run function', async (t) => {
+    async function run() {
+      return 'static call'
+    }
+    class StaticCommand extends Command {
+      constructor(opts = {}) {
+        super(opts, {run})
+      }
+    }
+
+    const out = await StaticCommand.run()
+    t.equal(out, 'static call', 'static run function output')
+  })
+
   t.test('Subclassing', async (tt) => {
     test('should allow for subclassing', async (t) => {
       const defaults = {
@@ -563,6 +581,44 @@ test('command', async (t) => {
     t.match(answers, {
       fake: 'yes'
     })
+  })
+
+  t.test('command#toPrompt', async (t) => {
+    const cmd = new Command({
+      flags: {
+        one: {
+          type: Boolean
+        , description: 'boolean flag'
+        , when: () => {
+            return true
+          }
+        }
+      , two: {
+          type: [Number, Array]
+        , filter: (val) => {
+            return val
+          }
+        }
+      }
+    })
+
+    const out = cmd.toPrompt()
+    t.ok(Array.isArray(out), 'output is an array')
+    t.equal(out.length, 2, 'expected prompt count')
+
+    t.match(out, [{
+      type: 'confirm'
+    , message: 'one: boolean flag'
+    , when: Function
+    , validate: undefined
+    , filter: undefined
+    }, {
+      type: 'number'
+    , message: /no description/ig
+    , when: undefined
+    , validate: undefined
+    , filter: Function
+    }])
   })
 
   t.test('sub command execution', async (t) => {
