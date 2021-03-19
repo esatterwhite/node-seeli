@@ -1,5 +1,17 @@
 # Changlog
 
+# [12.3.0](https://github.com/esatterwhite/node-seeli/compare/v12.2.0...v12.3.0) (2021-03-19)
+
+
+### Bug Fixes
+
+* **command:** fix interactive prompts for repeating numbers ([c810602](https://github.com/esatterwhite/node-seeli/commit/c810602368a0a8e6470e1fd7b1b2c339299342cf))
+
+
+### Features
+
+* **command:** add a command method to convert flags to prompts ([5817b34](https://github.com/esatterwhite/node-seeli/commit/5817b3438fd00117361175dba13fd63bb86a7e66))
+
 # [12.2.0](https://github.com/esatterwhite/node-seeli/compare/v12.1.4...v12.2.0) (2021-03-02)
 
 
