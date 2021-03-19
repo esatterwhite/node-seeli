@@ -17,6 +17,7 @@ test('flagToPrompt', async (t) => {
     , when: undefined
     , validate: undefined
     , filter: undefined
+    , transformer: undefined
     })
   })
 
@@ -29,6 +30,7 @@ test('flagToPrompt', async (t) => {
     , when: () => {}
     , validate: () => {}
     , filter: () => {}
+    , transformer: () => {}
     })
 
     t.match(out, {
@@ -39,6 +41,7 @@ test('flagToPrompt', async (t) => {
     , when: Function
     , validate: Function
     , filter: Function
+    , transformer: Function
     })
   })
 }).catch(threw)
