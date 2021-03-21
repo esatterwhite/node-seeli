@@ -33,6 +33,9 @@ module.exports = {
     , changelogFile: 'CHANGELOG.md'
     }]
   , ['@semantic-release/npm', null]
+  , ['@semantic-release/exec', {
+      publishCmd: 'npm run docs:build'
+    }]
   , ['@semantic-release/git', {
       assets: [
         'package.json'
