@@ -1,5 +1,23 @@
 # Changlog
 
+## [12.3.1](https://github.com/esatterwhite/node-seeli/compare/v12.3.0...v12.3.1) (2021-03-21)
+
+
+### Chores
+
+* **deps:** semantic-release/exec@5.0.0 ([43b10f8](https://github.com/esatterwhite/node-seeli/commit/43b10f8c16ce3a89c51f0fe661f44bbc393feae3))
+
+
+### Dependancies
+
+* plugin-back-to-top@1.5.4 ([e1efba4](https://github.com/esatterwhite/node-seeli/commit/e1efba4f0dc26700a33c94c155999e793dc7f4a6))
+* vuepres@1.8.2 ([b863117](https://github.com/esatterwhite/node-seeli/commit/b863117ad591ba142daf497147fa95ebe1921d02))
+
+
+### Documentation
+
+* include a docs site for githubpages ([abf1528](https://github.com/esatterwhite/node-seeli/commit/abf152829de5a51d81eee08cec705c9f7dc9eb1b))
+
 # [12.3.0](https://github.com/esatterwhite/node-seeli/compare/v12.2.0...v12.3.0) (2021-03-19)
 
 
