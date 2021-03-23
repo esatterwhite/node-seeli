@@ -1,5 +1,22 @@
 # Changlog
 
+# [12.4.0](https://github.com/esatterwhite/node-seeli/compare/v12.3.2...v12.4.0) (2021-03-23)
+
+
+### Bug Fixes
+
+* **release:** re-enable github releases ([2ac8f96](https://github.com/esatterwhite/node-seeli/commit/2ac8f964398640b5edbd65bcb6ff895c2cc4a9a2))
+
+
+### Features
+
+* **doc:** fixing readme docs ([7724fb3](https://github.com/esatterwhite/node-seeli/commit/7724fb3f7c0bfd4c273606725126ef52af125ed2))
+
+
+### Miscellaneous
+
+* 2021-03-23, Version 12.3.3 [skip ci] ([925fc9a](https://github.com/esatterwhite/node-seeli/commit/925fc9a971a96d4ea061afd02b07fec8376e508a))
+
 ## [12.3.3](https://github.com/esatterwhite/node-seeli/compare/v12.3.2...v12.3.3) (2021-03-23)
 
 
