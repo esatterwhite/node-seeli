@@ -75,13 +75,13 @@ module.exports = {
     }]
   , ['@semantic-release/npm', null]
   , ['@semantic-release/exec', {
-      publishCmd: 'npm run docs:build'
+      prepareCmd: 'npm run docs:build'
     }]
   , ['@semantic-release/git', {
       assets: ['package.json', 'package-lock.json', 'CHANGELOG.md', 'docs']
     , message: `release: ${year}-${month}-${day}, `
         + 'Version <%= nextRelease.version %> [skip ci]'
     }]
-  , ['@semantic-release/github', null]
+//  , ['@semantic-release/github', null]
   ]
 }
