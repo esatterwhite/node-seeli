@@ -3,6 +3,7 @@
 module.exports = {
   title: 'Seeli'
 , dest: 'docs'
+, base: '/node-seeli/'
 , patterns: [
     '**/*.md'
   , '!node_modules'
