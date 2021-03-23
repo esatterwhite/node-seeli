@@ -82,6 +82,6 @@ module.exports = {
     , message: `release: ${year}-${month}-${day}, `
         + 'Version <%= nextRelease.version %> [skip ci]'
     }]
-//  , ['@semantic-release/github', null]
+  , ['@semantic-release/github', null]
   ]
 }
