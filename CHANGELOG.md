@@ -1,5 +1,20 @@
 # Changlog
 
+## [12.3.2](https://github.com/esatterwhite/node-seeli/compare/v12.3.1...v12.3.2) (2021-03-23)
+
+
+### Bug Fixes
+
+* **doc:** fix readme ([3350e19](https://github.com/esatterwhite/node-seeli/commit/3350e19eb5354e7b7572f11f44600d8a5158edf6))
+* **docs:** fix vuepress base path ([bc4c4fa](https://github.com/esatterwhite/node-seeli/commit/bc4c4fa4b91a105c2d5c8da35f7c3306184ecfc0))
+* **release:** fix release config ([f600710](https://github.com/esatterwhite/node-seeli/commit/f600710b25be0a78b2b36c75fd4a6e08446d9b2c))
+
+
+### Miscellaneous
+
+* 2021-03-22, Version 12.3.2 [skip ci] ([3b8fe39](https://github.com/esatterwhite/node-seeli/commit/3b8fe39b3218bf6d4142d498be57c400b99a3645))
+* 2021-03-22, Version 12.3.3 [skip ci] ([52709c3](https://github.com/esatterwhite/node-seeli/commit/52709c3d1c2b5019a5fc16f7f049745cc1765552))
+
 ## [12.3.3](https:/home/esatterwhite/dev/js/node-seeli/compare/v12.3.2...v12.3.3) (2021-03-23)
 
 
