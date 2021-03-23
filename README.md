@@ -3,7 +3,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/47a935a723c94c73bc97d749836ee489)](https://www.codacy.com/app/esatterwhite/node-seeli?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=esatterwhite/node-seeli&amp;utm_campaign=Badge_Grade)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-Seeli ( C. L. I. )
+seeli ( C. L. I. )
 ======================
 
 Object orientated, event driven , **Interactive** CLI module. Seeli aims to give you the tools to compose
