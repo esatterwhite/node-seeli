@@ -1,5 +1,12 @@
 # Changlog
 
+## [12.3.2](https:/home/esatterwhite/dev/js/node-seeli/compare/v12.3.1...v12.3.2) (2021-03-23)
+
+
+### Bug Fixes
+
+* **doc:** fix readme ([3350e19](https:/home/esatterwhite/dev/js/node-seeli/commit/3350e19eb5354e7b7572f11f44600d8a5158edf6))
+
 ## [12.3.1](https://github.com/esatterwhite/node-seeli/compare/v12.3.0...v12.3.1) (2021-03-21)
 
 
