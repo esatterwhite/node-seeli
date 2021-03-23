@@ -1,5 +1,12 @@
 # Changlog
 
+## [12.3.3](https:/home/esatterwhite/dev/js/node-seeli/compare/v12.3.2...v12.3.3) (2021-03-23)
+
+
+### Bug Fixes
+
+* **release:** fix release config ([f600710](https:/home/esatterwhite/dev/js/node-seeli/commit/f600710b25be0a78b2b36c75fd4a6e08446d9b2c))
+
 ## [12.3.2](https:/home/esatterwhite/dev/js/node-seeli/compare/v12.3.1...v12.3.2) (2021-03-23)
 
 

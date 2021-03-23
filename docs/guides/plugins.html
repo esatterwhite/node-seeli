@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Plugins | Seeli</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="The Object orientated, event driven interactive cli framework">
+    
+    <link rel="preload" href="/assets/css/0.styles.c4d68e36.css" as="style"><link rel="preload" href="/assets/js/app.edc7cd19.js" as="script"><link rel="preload" href="/assets/js/2.d59a66de.js" as="script"><link rel="preload" href="/assets/js/14.1c72996d.js" as="script"><link rel="prefetch" href="/assets/js/10.3606840a.js"><link rel="prefetch" href="/assets/js/11.b55ebb0e.js"><link rel="prefetch" href="/assets/js/12.ebd0f183.js"><link rel="prefetch" href="/assets/js/13.716df869.js"><link rel="prefetch" href="/assets/js/3.8dcc17fe.js"><link rel="prefetch" href="/assets/js/4.28b8a761.js"><link rel="prefetch" href="/assets/js/5.9f5355f2.js"><link rel="prefetch" href="/assets/js/6.35a75a95.js"><link rel="prefetch" href="/assets/js/7.10c6e184.js"><link rel="prefetch" href="/assets/js/8.c9f49a79.js"><link rel="prefetch" href="/assets/js/9.dc242d84.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.c4d68e36.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Seeli</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://github.com/esatterwhite/node-seeli" target="_self" class="nav-link external">
+  Github
+  <!----></a></div><div class="nav-item"><a href="/getting-started.html" class="nav-link">
+  Getting Started
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Guides" class="dropdown-title"><span class="title">Guides</span> <span class="arrow down"></span></button> <button type="button" aria-label="Guides" class="mobile-dropdown-title"><span class="title">Guides</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guides/commands.html" class="nav-link">
+  Commands
+</a></li><li class="dropdown-item"><!----> <a href="/guides/ui.html" class="nav-link">
+  Progress UI
+</a></li><li class="dropdown-item"><!----> <a href="/guides/interactive.html" class="nav-link">
+  Interactive Commands
+</a></li><li class="dropdown-item"><!----> <a href="/guides/plugins.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Plugins
+</a></li></ul></div></div><div class="nav-item"><a href="/changelog.html" class="nav-link">
+  Changelog
+</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="https://github.com/esatterwhite/node-seeli" target="_self" class="nav-link external">
+  Github
+  <!----></a></div><div class="nav-item"><a href="/getting-started.html" class="nav-link">
+  Getting Started
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Guides" class="dropdown-title"><span class="title">Guides</span> <span class="arrow down"></span></button> <button type="button" aria-label="Guides" class="mobile-dropdown-title"><span class="title">Guides</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guides/commands.html" class="nav-link">
+  Commands
+</a></li><li class="dropdown-item"><!----> <a href="/guides/ui.html" class="nav-link">
+  Progress UI
+</a></li><li class="dropdown-item"><!----> <a href="/guides/interactive.html" class="nav-link">
+  Interactive Commands
+</a></li><li class="dropdown-item"><!----> <a href="/guides/plugins.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Plugins
+</a></li></ul></div></div><div class="nav-item"><a href="/changelog.html" class="nav-link">
+  Changelog
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Plugins</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guides/plugins.html#autoloading" class="sidebar-link">Autoloading</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/guides/plugins.html#manual-loading" class="sidebar-link">Manual Loading</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="plugins"><a href="#plugins" class="header-anchor">#</a> Plugins</h1> <p>Seeli provides basic support for plugins as a means to share commands
+and other common bits of functionality. Plugins are javascript functions
+that will be called during initialization of the command line interface.
+When called, the plugin will be passed the current seeli instance which gives you access to configuration and the ability to register additional commands</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token string">'use strict'</span>
+<span class="token keyword">const</span> BasicCommand <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./commands/basic'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> simplePlugin
+
+<span class="token keyword">function</span> <span class="token function">simplePlugin</span><span class="token punctuation">(</span><span class="token parameter">seeli</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  seeli<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span><span class="token string">'color'</span><span class="token punctuation">,</span> <span class="token string">'magenta'</span><span class="token punctuation">)</span>
+  seeli<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>BasicCommand<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="autoloading"><a href="#autoloading" class="header-anchor">#</a> Autoloading</h2> <p>When seeli is initialized it will pull plugins from the <code>plugins</code> array loaded
+from configuration. The plugins array can contains <code>functions</code>, or <code>strings</code>.
+If a string is found, it is treated as a module id and loaded via <code>require</code>. The
+module should expose a single function as described above.</p> <p>The easiest way to load plugins is to define an array of plugins in <code>package.json</code></p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;seeli&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;plugins&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">&quot;basic-command&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;common-settings&quot;</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="manual-loading"><a href="#manual-loading" class="header-anchor">#</a> Manual Loading</h2> <p>Alternatively, plugins can be loaded manually using the <code>plugin</code> function.
+The <code>plugin</code> function accepts a variable number of plugins.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token string">'use strict'</span>
+
+<span class="token keyword">const</span> seeli <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'seeli'</span><span class="token punctuation">)</span>
+
+seeli<span class="token punctuation">.</span><span class="token function">plugin</span><span class="token punctuation">(</span>
+  <span class="token string">'@myscope/base-config'</span>
+<span class="token punctuation">,</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./lib/another-plugin'</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guides/interactive.html" class="prev">
+        Interactive Commands
+      </a></span> <!----></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.edc7cd19.js" defer></script><script src="/assets/js/2.d59a66de.js" defer></script><script src="/assets/js/14.1c72996d.js" defer></script>
+  </body>
+</html>
