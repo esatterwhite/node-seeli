@@ -9,6 +9,7 @@ module.exports = {
   , '!node_modules'
   , '!**/node_modules'
   , '!**/examples/node_modules'
+  , '!**/examples/node_modules/**/*'
   ]
 , description: 'The Object orientated, event driven interactive cli framework'
 , configureWebpack: {

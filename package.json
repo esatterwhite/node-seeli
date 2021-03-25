@@ -42,6 +42,7 @@
     "ignorePatterns": [
       "node_modules/",
       "gh-pages/",
+      "docs/",
       "examples/"
     ]
   },

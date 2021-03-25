@@ -672,4 +672,55 @@ test('command', async (t) => {
       t.equal(output, 'bub', 'bub command executed')
     })
   })
+
+  t.test('choice validation', async (t) => {
+    const cmd = new Command({
+      interactive: false
+    , strict: false
+    , flags: {
+        option: {
+          type: [String, Array]
+        , choices: ['one', 'two']
+        }
+      , single: {
+          type: Number
+        , choices: [1, 4]
+        }
+      }
+    , run: async () => {
+        return true
+      }
+    })
+
+    t.afterEach(async () => {
+      cmd.reset()
+    })
+
+    t.test('valid options (no input)', async (t) => {
+      t.resolves(cmd.run(), 'valid options pass validation')
+    })
+
+    t.test('valid options', async (t) => {
+      cmd.setOptions({
+        args: ['--option=one', '--option=two']
+      })
+      t.resolves(cmd.run(), 'valid options pass validation')
+    })
+
+    t.test('valid options (numeric input)', async (t) => {
+      cmd.setOptions({
+        args: ['--single=1']
+      })
+      t.resolves(cmd.run(), 'valid options pass validation')
+    })
+
+    t.test('invalid options', async (t) => {
+      cmd.setOptions({
+        args: ['--option=one', '--option=three']
+      })
+      t.rejects(cmd.run(), {
+        code: 'EINVALIDCHOICE'
+      }, 'EINVALIDCHOICE error raised')
+    })
+  })
 })
