@@ -1,5 +1,12 @@
 # Changlog
 
+# [12.5.0](https://github.com/esatterwhite/node-seeli/compare/v12.4.0...v12.5.0) (2021-04-05)
+
+
+### Features
+
+* **command:** enable flag choice validation ([437b1b6](https://github.com/esatterwhite/node-seeli/commit/437b1b648d1f7ddcc6f65234ae70ba8eed9fc840))
+
 # [12.4.0](https://github.com/esatterwhite/node-seeli/compare/v12.3.2...v12.4.0) (2021-03-23)
 
 
