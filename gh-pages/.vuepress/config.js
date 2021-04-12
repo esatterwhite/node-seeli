@@ -6,10 +6,15 @@ module.exports = {
 , base: '/node-seeli/'
 , patterns: [
     '**/*.md'
-  , '!node_modules'
+  , '**/*.gif'
+  , '!node_modules/**/*'
+  , '!node_modules/.pnpm/**/*'
+  , '!examples/node_modules'
+  , '!examples/node_modules/**/*'
   , '!**/node_modules'
+  , '!**/node_modules/.pnpm'
   , '!**/examples/node_modules'
-  , '!**/examples/node_modules/**/*'
+  , '!**/examples/node_modules/.pnpm/**/*'
   ]
 , description: 'The Object orientated, event driven interactive cli framework'
 , configureWebpack: {
