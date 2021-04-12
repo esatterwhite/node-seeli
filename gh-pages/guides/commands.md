@@ -30,7 +30,7 @@ module.exports = new seeli.Command({
 })
 ```
 
-This the basic skeleton command, but it doesn't have any defined behavior.
+This a basic skeleton for a command command, but it doesn't have any defined behavior.
 
 ## Execution
 
@@ -39,7 +39,6 @@ executing any and all command specific logic when the command is dispatched.
 And javascript type can be returned from a `run` function. When a [String](https://mdn.io/string)
 is returned, it will automatically be passed to `console.log`. When a return
 value of type `string` is received, a `content` event is emitted with the return value.
-
 
 ```javascript
 const {Command} = require('seeli')

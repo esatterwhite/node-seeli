@@ -1,5 +1,5 @@
 {
-  "name": "examples",
+  "name": "seeli-examples",
   "version": "1.0.0",
   "description": "",
   "main": "cli.js",
@@ -16,7 +16,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "seeli": "link:../.."
+    "seeli": "link:../..",
+    "seeli-examples": "link:"
   },
   "devDependencies": {
     "terminalizer": "^0.7.2"
