@@ -1,5 +1,5 @@
 ---
-prev: ../commands
+prev: ./commands
 next: ./plugins
 ---
 
@@ -90,7 +90,7 @@ The result will be passed to the command as a single array just as it would from
 
 <<< @/gh-pages/examples/commands/multichoice.js{10,13}
 
-![choices](../assets/img/guides/interactive-multichoice.gif)
+![multiple choice](../assets/img/guides/interactive-multichoice.gif)
 
 ## Conditional Flags
 
@@ -113,6 +113,6 @@ The Prompt function is a direct pass through to the [inquirer][] prompt function
 
 <<< @/gh-pages/examples/commands/manual.js{16-24}
 
-![conditional](../assets/img/guides/interactive-manual.gif)
+![manual prompts](../assets/img/guides/interactive-manual.gif)
 
 [inquirer]: https://www.npmjs.com/package/inquirer

@@ -10,7 +10,7 @@ to interact and communicate with users.
 
 ## Progress Indicators
 
-Seeli commands have access to an instance of [ora](https://www.npmjs.com/package/ora) inside the `run` function.
+Seeli commands have access to an instance of [ora][] inside the `run` function.
 It can be controlled by the `ui` property. Additionally, you may use `ui` configuration
 property to change the progress spinner to any valid ora spinner.
 
@@ -55,7 +55,7 @@ You must call `this.ui.start(...)` again to restart it
 
 ## Prompts
 
-Seeli uses the [inquirer](https://www.npmjs.com/package/inquirer) to interactively collect input
+Seeli uses the [inquirer][] to interactively collect input
 from users. This functionality is exposed via the `prompt` function.
 This is a direct passthrough the the inquirer function of the [same name](https://www.npmjs.com/package/inquirer#inquirerpromptquestions---promise).
 This makes things like conditional and branching logic based on user input
@@ -65,5 +65,5 @@ significantly easier.
 ![prompts](../assets/img/guides/ui-prompts.gif)
 
 
-[inquirer]: 
-[ora]: 
+[inquirer]: https://www.npmjs.com/package/inquirer
+[ora]: https://www.npmjs.com/package/ora
