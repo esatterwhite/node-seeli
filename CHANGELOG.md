@@ -1,5 +1,18 @@
 # Changlog
 
+## [12.5.1](https://github.com/esatterwhite/node-seeli/compare/v12.5.0...v12.5.1) (2021-04-25)
+
+
+### Bug Fixes
+
+* **command:** corrects interactive prompt type for arrays ([869b2cb](https://github.com/esatterwhite/node-seeli/commit/869b2cb23c11b16108a412469d43e88180a95c2e))
+
+
+### Miscellaneous
+
+* gh-pages: fix invalid routing links ([d58c70b](https://github.com/esatterwhite/node-seeli/commit/d58c70bad89aed9fb805f4d625ad4b63676b56bf))
+* gh-pages: include tutorials for interactive commands ([adb4b34](https://github.com/esatterwhite/node-seeli/commit/adb4b3478f35e1bb319f2d2d3e3a065a0ca8f2e3))
+
 # [12.5.0](https://github.com/esatterwhite/node-seeli/compare/v12.4.0...v12.5.0) (2021-04-05)
 
 

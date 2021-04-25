@@ -8,7 +8,7 @@
     
     <meta name="description" content="The Object orientated, event driven interactive cli framework">
     
-    <link rel="preload" href="/node-seeli/assets/css/0.styles.908e3697.css" as="style"><link rel="preload" href="/node-seeli/assets/js/app.9d95edd6.js" as="script"><link rel="preload" href="/node-seeli/assets/js/2.dc635ad0.js" as="script"><link rel="preload" href="/node-seeli/assets/js/13.716df869.js" as="script"><link rel="prefetch" href="/node-seeli/assets/js/10.3606840a.js"><link rel="prefetch" href="/node-seeli/assets/js/11.b55ebb0e.js"><link rel="prefetch" href="/node-seeli/assets/js/12.ebd0f183.js"><link rel="prefetch" href="/node-seeli/assets/js/14.1c72996d.js"><link rel="prefetch" href="/node-seeli/assets/js/3.8dcc17fe.js"><link rel="prefetch" href="/node-seeli/assets/js/4.28b8a761.js"><link rel="prefetch" href="/node-seeli/assets/js/5.9f5355f2.js"><link rel="prefetch" href="/node-seeli/assets/js/6.502b8c08.js"><link rel="prefetch" href="/node-seeli/assets/js/7.10c6e184.js"><link rel="prefetch" href="/node-seeli/assets/js/8.c9f49a79.js"><link rel="prefetch" href="/node-seeli/assets/js/9.dc242d84.js">
+    <link rel="preload" href="/node-seeli/assets/css/0.styles.908e3697.css" as="style"><link rel="preload" href="/node-seeli/assets/js/app.98130ecc.js" as="script"><link rel="preload" href="/node-seeli/assets/js/2.4ae7644b.js" as="script"><link rel="preload" href="/node-seeli/assets/js/3.5b0adbfa.js" as="script"><link rel="prefetch" href="/node-seeli/assets/js/10.731d73c1.js"><link rel="prefetch" href="/node-seeli/assets/js/11.c786ec96.js"><link rel="prefetch" href="/node-seeli/assets/js/12.6e462f01.js"><link rel="prefetch" href="/node-seeli/assets/js/13.020c58fa.js"><link rel="prefetch" href="/node-seeli/assets/js/14.c02581c9.js"><link rel="prefetch" href="/node-seeli/assets/js/15.64642f0d.js"><link rel="prefetch" href="/node-seeli/assets/js/16.a070f1cc.js"><link rel="prefetch" href="/node-seeli/assets/js/17.86c2ce92.js"><link rel="prefetch" href="/node-seeli/assets/js/18.c2e6abce.js"><link rel="prefetch" href="/node-seeli/assets/js/19.b7ea0f14.js"><link rel="prefetch" href="/node-seeli/assets/js/20.bfafe915.js"><link rel="prefetch" href="/node-seeli/assets/js/21.a9cadf09.js"><link rel="prefetch" href="/node-seeli/assets/js/22.3cf579e6.js"><link rel="prefetch" href="/node-seeli/assets/js/23.20a949c3.js"><link rel="prefetch" href="/node-seeli/assets/js/24.54f0fdb9.js"><link rel="prefetch" href="/node-seeli/assets/js/25.6972b07c.js"><link rel="prefetch" href="/node-seeli/assets/js/4.20c74d6b.js"><link rel="prefetch" href="/node-seeli/assets/js/5.e5cb2a77.js"><link rel="prefetch" href="/node-seeli/assets/js/6.9ef8d3c8.js"><link rel="prefetch" href="/node-seeli/assets/js/7.1d7fcd02.js"><link rel="prefetch" href="/node-seeli/assets/js/8.586bf0a1.js"><link rel="prefetch" href="/node-seeli/assets/js/9.5e1cfa3f.js">
     <link rel="stylesheet" href="/node-seeli/assets/css/0.styles.908e3697.css">
   </head>
   <body>
@@ -40,7 +40,202 @@
   Plugins
 </a></li></ul></div></div><div class="nav-item"><a href="/node-seeli/changelog.html" class="nav-link">
   Changelog
-</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Interactive Commands</span> <!----></p> <!----></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="interactive-commands"><a href="#interactive-commands" class="header-anchor">#</a> Interactive Commands</h1> <p><strong>Coming Soon</strong></p></div> <footer class="page-edit"><!----> <!----></footer> <!----> </main></div><div class="global-ui"><!----></div></div>
-    <script src="/node-seeli/assets/js/app.9d95edd6.js" defer></script><script src="/node-seeli/assets/js/2.dc635ad0.js" defer></script><script src="/node-seeli/assets/js/13.716df869.js" defer></script>
+</a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Interactive Commands</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/node-seeli/guides/interactive.html#advanced-flag-features" class="sidebar-link">Advanced Flag Features</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/node-seeli/guides/interactive.html#selective-interactivity" class="sidebar-link">Selective Interactivity</a></li><li class="sidebar-sub-header"><a href="/node-seeli/guides/interactive.html#input-masking" class="sidebar-link">Input Masking</a></li><li class="sidebar-sub-header"><a href="/node-seeli/guides/interactive.html#choice-lists" class="sidebar-link">Choice Lists</a></li><li class="sidebar-sub-header"><a href="/node-seeli/guides/interactive.html#multi-select" class="sidebar-link">Multi Select</a></li></ul></li><li><a href="/node-seeli/guides/interactive.html#conditional-flags" class="sidebar-link">Conditional Flags</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/node-seeli/guides/interactive.html#dynamic-prompting" class="sidebar-link">Dynamic Prompting</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="interactive-commands"><a href="#interactive-commands" class="header-anchor">#</a> Interactive Commands</h1> <p>One of the major features of seeli is that commands are inherently interactive.
+By default, all commands translate any flags into <a href="https://www.npmjs.com/package/inquirer" target="_blank" rel="noopener noreferrer">inquirer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> prompts.</p> <h2 id="advanced-flag-features"><a href="#advanced-flag-features" class="header-anchor">#</a> Advanced Flag Features</h2> <p>Command flags expose a number of options that allow you to customize the
+interactive experience.</p> <h3 id="selective-interactivity"><a href="#selective-interactivity" class="header-anchor">#</a> Selective Interactivity</h3> <p>It is possible to disable the built-in interactive behavior by simply setting
+the <code>interactive</code> option to false when creating a new command</p> <div class="language-javascript extra-class"><div class="highlight-lines"><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br></div><pre class="language-javascript"><code><span class="token string">'use strict'</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span>Command<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'seeli'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Command</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'sample'</span>
+<span class="token punctuation">,</span> interactive<span class="token operator">:</span> <span class="token boolean">false</span>
+<span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'This command disables interactive behavior'</span>
+<span class="token punctuation">,</span> <span class="token function-variable function">run</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">'hello world'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p>Alternatively, each flag may opt-out of the interactive work flow by setting a similar option</p> <div class="language-javascript extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-javascript"><code><span class="token string">'use strict'</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span>Command<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'seeli'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Command</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'sample'</span>
+<span class="token punctuation">,</span> interactive<span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'This command disable interactivity on a single flag'</span>
+<span class="token punctuation">,</span> flags<span class="token operator">:</span> <span class="token punctuation">{</span>
+    foo<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> Boolean
+    <span class="token punctuation">,</span> interactive<span class="token operator">:</span> <span class="token boolean">false</span>
+    <span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'Including more foo'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">,</span> bar<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> Boolean
+    <span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'Including more bar'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">,</span> <span class="token function-variable function">run</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">_<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token punctuation">{</span>foo<span class="token operator">:</span> data<span class="token punctuation">.</span>for<span class="token punctuation">,</span> bar<span class="token operator">:</span> data<span class="token punctuation">.</span>bar<span class="token punctuation">,</span> message<span class="token operator">:</span> <span class="token string">'hello world'</span><span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><h3 id="input-masking"><a href="#input-masking" class="header-anchor">#</a> Input Masking</h3> <p>String flags can make the input being typed to hide sensitive information by
+setting the <code>mask</code> property to <code>true</code>.</p> <div class="language-js extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div><pre class="language-js"><code><span class="token string">'use strict'</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span>Command<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'seeli'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Command</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'mask'</span>
+<span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'Input masking'</span>
+<span class="token punctuation">,</span> flags<span class="token operator">:</span> <span class="token punctuation">{</span>
+    password<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> String
+    <span class="token punctuation">,</span> mask<span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'user password'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">,</span> confirm<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> String
+    <span class="token punctuation">,</span> mask<span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'confirm password'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">,</span> <span class="token function-variable function">run</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">_<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span>confirm<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> data<span class="token punctuation">.</span>password <span class="token operator">==</span> data<span class="token punctuation">.</span>confirm
+        <span class="token operator">?</span> <span class="token string">'password confirmed'</span>
+        <span class="token operator">:</span> <span class="token string">'passwords do not match'</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token string">'no password entered'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="/node-seeli/assets/img/interactive-masking.03d48b29.gif" alt="masking"></p> <h3 id="choice-lists"><a href="#choice-lists" class="header-anchor">#</a> Choice Lists</h3> <p>Choice lists provide a fixed set of allowable input values forcing users to pick a single value.
+The experience is similar in <strong>non-interactive</strong> situations in that passing a value that is not specified
+in the choice list will result in an error being thrown.</p> <div class="language-js extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br></div><pre class="language-js"><code><span class="token string">'use strict'</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span>Command<span class="token punctuation">,</span> colorize<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'seeli'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Command</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'choices'</span>
+<span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'prompts for a specific value'</span>
+<span class="token punctuation">,</span> flags<span class="token operator">:</span> <span class="token punctuation">{</span>
+    direction<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> String
+    <span class="token punctuation">,</span> required<span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'The desired direction to travel'</span>
+    <span class="token punctuation">,</span> choices<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'north'</span><span class="token punctuation">,</span> <span class="token string">'south'</span><span class="token punctuation">,</span> <span class="token string">'east'</span><span class="token punctuation">,</span> <span class="token string">'west'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">,</span> <span class="token function-variable function">run</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">_<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">you selected </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">colorize</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>direction<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="/node-seeli/assets/img/interactive-choices.423a6843.gif" alt="choices"></p> <h3 id="multi-select"><a href="#multi-select" class="header-anchor">#</a> Multi Select</h3> <p>By defining your flag input type as an <code>Array</code>, the interactive input will
+be presented as a multi-select allowing users to pick multiple values.
+The result will be passed to the command as a single array just as it would from
+<strong>non-interactive</strong> input.</p> <div class="language-js extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><br><br><div class="highlighted"> </div><br><br><br><br><br><br><br></div><pre class="language-js"><code><span class="token string">'use strict'</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span>Command<span class="token punctuation">,</span> colorize<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'seeli'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Command</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'multi'</span>
+<span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'prompts for a specific value'</span>
+<span class="token punctuation">,</span> flags<span class="token operator">:</span> <span class="token punctuation">{</span>
+    direction<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> <span class="token punctuation">[</span>String<span class="token punctuation">,</span> Array<span class="token punctuation">]</span>
+    <span class="token punctuation">,</span> required<span class="token operator">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'The desired direction to travel'</span>
+    <span class="token punctuation">,</span> choices<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'north'</span><span class="token punctuation">,</span> <span class="token string">'south'</span><span class="token punctuation">,</span> <span class="token string">'east'</span><span class="token punctuation">,</span> <span class="token string">'west'</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">,</span> <span class="token function-variable function">run</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">_<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">you selected </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">colorize</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>direction<span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">!</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="/node-seeli/assets/img/interactive-multichoice.5f39e443.gif" alt="multiple choice"></p> <h2 id="conditional-flags"><a href="#conditional-flags" class="header-anchor">#</a> Conditional Flags</h2> <p>There are situations when triggering an input prompt is logically dependent on
+the input of a different flag. It is possible to define these dependencies by
+specifing a <code>when</code> function. This function accepts the accumulated input from
+the flags that were defined before it. The when function should return a boolean
+value which indicates if the prompt should be presented or not. An added benefit
+is that you do need to implement the logic of executing the prompts.</p> <div class="language-js extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br><br><br></div><pre class="language-js"><code><span class="token string">'use strict'</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span>Command<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'seeli'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Command</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'condition'</span>
+<span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'Conditional flags'</span>
+<span class="token punctuation">,</span> flags<span class="token operator">:</span> <span class="token punctuation">{</span>
+    one<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> String
+    <span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'first value'</span>
+    <span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">,</span> two<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> String
+    <span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'second value'</span>
+    <span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">,</span> <span class="token function-variable function">when</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">input</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">!</span><span class="token operator">!</span>input<span class="token punctuation">.</span>one
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">,</span> three<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> String
+    <span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'third value'</span>
+    <span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">,</span> <span class="token function-variable function">when</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">input</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span>one <span class="token operator">&amp;&amp;</span> input<span class="token punctuation">.</span>two<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">,</span> four<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> String
+    <span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'fourth value'</span>
+    <span class="token punctuation">,</span> <span class="token keyword">default</span><span class="token operator">:</span> <span class="token keyword">null</span>
+    <span class="token punctuation">,</span> <span class="token function-variable function">when</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">input</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token operator">!</span><span class="token operator">!</span><span class="token punctuation">(</span>input<span class="token punctuation">.</span>two<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">,</span> <span class="token function-variable function">run</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">_<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">dir</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="/node-seeli/assets/img/interactive-conditional.841993be.gif" alt="conditional"></p> <h2 id="dynamic-prompting"><a href="#dynamic-prompting" class="header-anchor">#</a> Dynamic Prompting</h2> <p>For situations when the automatic interactive behavior isn't enough to express
+complex logic, you can use the <code>prompt</code> to implement any kind of prompting logic.
+The Prompt function is a direct pass through to the <a href="https://www.npmjs.com/package/inquirer" target="_blank" rel="noopener noreferrer">inquirer<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> prompt function.</p> <div class="language-js extra-class"><div class="highlight-lines"><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><div class="highlighted"> </div><br><br><br><br><br></div><pre class="language-js"><code><span class="token string">'use strict'</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span>Command<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'seeli'</span><span class="token punctuation">)</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Command</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  name<span class="token operator">:</span> <span class="token string">'manual'</span>
+<span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'Manual prompting'</span>
+<span class="token punctuation">,</span> flags<span class="token operator">:</span> <span class="token punctuation">{</span>
+    foo<span class="token operator">:</span> <span class="token punctuation">{</span>
+      type<span class="token operator">:</span> Boolean
+    <span class="token punctuation">,</span> description<span class="token operator">:</span> <span class="token string">'Including more foo'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">,</span> <span class="token function-variable function">run</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">_<span class="token punctuation">,</span> data</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>data<span class="token punctuation">.</span>foo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> <span class="token punctuation">{</span>bar<span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">prompt</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        name<span class="token operator">:</span> <span class="token string">'bar'</span>
+      <span class="token punctuation">,</span> type<span class="token operator">:</span> <span class="token string">'input'</span>
+      <span class="token punctuation">,</span> message<span class="token operator">:</span> <span class="token string">'include more bar'</span>
+      <span class="token punctuation">,</span> <span class="token function-variable function">validate</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">value</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>value<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token string">'bar is required'</span>
+          <span class="token keyword">return</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> bar <span class="token operator">?</span> <span class="token string">'we need more bar'</span> <span class="token operator">:</span> <span class="token string">'we have no bar'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre></div><p><img src="/node-seeli/assets/img/interactive-manual.013fe4d1.gif" alt="manual prompts"></p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/node-seeli/guides/commands.html" class="prev">
+        Commands
+      </a></span> <span class="next"><a href="/node-seeli/guides/plugins.html">
+        Plugins
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/node-seeli/assets/js/app.98130ecc.js" defer></script><script src="/node-seeli/assets/js/2.4ae7644b.js" defer></script><script src="/node-seeli/assets/js/3.5b0adbfa.js" defer></script>
   </body>
 </html>
