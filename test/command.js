@@ -559,6 +559,34 @@ test('command', async (t) => {
     , args: ['--interactive']
     , flags: {
         fake: {
+          type: [String, Array]
+        , required: true
+        , description: 'is this fake'
+        , choices: ['yes', 'no']
+        }
+      }
+    , run: async function(_, data) {
+        return data
+      }
+    })
+
+    cmd.ask = async () => {
+      return ['yes']
+    }
+
+    const answers = await cmd.run()
+    t.match(answers, {
+      fake: ['yes']
+    })
+  })
+
+  t.test('interactive command', async (t) => {
+    const cmd = new Command({
+      interactive: true
+    , strict: true
+    , args: ['--interactive']
+    , flags: {
+        fake: {
           type: String
         , required: true
         , description: 'is this fake'
@@ -574,6 +602,7 @@ test('command', async (t) => {
     cmd.prompt = function(arg) {
       const promise = prompt.call(cmd, arg)
       promise.ui.activePrompt.done('yes')
+      promise.ui.activePrompt.close()
       return promise
     }
 
