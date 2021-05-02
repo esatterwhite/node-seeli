@@ -1,3 +1,10 @@
+## [12.5.3](https://github.com/esatterwhite/node-seeli/compare/v12.5.2...v12.5.3) (2021-05-02)
+
+
+### Chores
+
+* **deps**: update eslint-config-codedependant requirement [429f399](https://github.com/esatterwhite/node-seeli/commit/429f399936cd4c296c55a08b967e7d0c33ca74db) - Eric Satterwhite
+
 ## [12.5.2](https://github.com/esatterwhite/node-seeli/compare/v12.5.1...v12.5.2) (2021-05-02)
 
 
