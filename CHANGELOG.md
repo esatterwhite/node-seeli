@@ -1,3 +1,10 @@
+## [12.5.2](https://github.com/esatterwhite/node-seeli/compare/v12.5.1...v12.5.2) (2021-05-02)
+
+
+### Chores
+
+* **ci**: replace inline release config with shared config [c15c301](https://github.com/esatterwhite/node-seeli/commit/c15c30184286ca2c32943411e9c6c8d5dbb501db) - Eric Satterwhite
+
 # Changlog
 
 ## [12.5.1](https://github.com/esatterwhite/node-seeli/compare/v12.5.0...v12.5.1) (2021-04-25)
