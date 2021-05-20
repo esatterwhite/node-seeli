@@ -320,7 +320,7 @@ Your command's `run` function has access to an instance of [ora](https://www.npm
 
 ## Events
 
-Instances of the seeli Command or Commands the inherit from it as also instances of the `EventEmitter` class. By default any flag that has its `event` option set to `true` will emit an event with the value of of the flag before the run function is executed.
+Instances of the seeli Command or Commands that inherit from it as also instances of the `EventEmitter` class. By default any flag that has its `event` option set to `true` will emit an event with the value of the flag before the run function is executed.
 
 ```js
 var EventCommand = new cli.Command({
