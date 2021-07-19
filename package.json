@@ -103,7 +103,7 @@
     "@codedependant/release-config-npm": "^1.0.3",
     "@vuepress/plugin-back-to-top": "^1.5.4",
     "cli-spinners": "^2.3.0",
-    "eslint": "^7.9.0",
+    "eslint": "^7.31.0",
     "eslint-config-codedependant": "^2.1.6",
     "semantic-release": "^17.4.2",
     "tap": "^14.10.2",
