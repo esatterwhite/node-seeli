@@ -1,3 +1,10 @@
+## [12.5.5](https://github.com/esatterwhite/node-seeli/compare/v12.5.4...v12.5.5) (2021-07-26)
+
+
+### Chores
+
+* **deps**: update debug requirement from ^4.1.1 to ^4.3.2 [0603e3f](https://github.com/esatterwhite/node-seeli/commit/0603e3f23ebb780dde98cb5554624c0089ce9382) - Eric Satterwhite
+
 ## [12.5.4](https://github.com/esatterwhite/node-seeli/compare/v12.5.3...v12.5.4) (2021-07-26)
 
 
