@@ -1,6 +1,6 @@
 {
   "name": "seeli",
-  "version": "12.5.3",
+  "version": "12.5.4",
   "description": "Object oriented, flexible CLI tools",
   "main": "index.js",
   "directories": {

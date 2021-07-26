@@ -1,3 +1,15 @@
+## [12.5.4](https://github.com/esatterwhite/node-seeli/compare/v12.5.3...v12.5.4) (2021-07-26)
+
+
+### Chores
+
+* **deps**: update eslint requirement from ^7.9.0 to ^7.31.0 [a41dcf2](https://github.com/esatterwhite/node-seeli/commit/a41dcf26d64206c62146b1a78269e39844132384) - Eric Satterwhite
+
+
+### Miscellaneous
+
+* corrected spelling and remove duplicate word [edc055d](https://github.com/esatterwhite/node-seeli/commit/edc055d916c31bc87210f9904ec43f1314af4883) - Eric Satterwhite
+
 ## [12.5.3](https://github.com/esatterwhite/node-seeli/compare/v12.5.2...v12.5.3) (2021-05-02)
 
 
