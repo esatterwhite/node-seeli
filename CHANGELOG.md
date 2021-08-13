@@ -1,3 +1,10 @@
+## [12.5.6](https://github.com/esatterwhite/node-seeli/compare/v12.5.5...v12.5.6) (2021-08-13)
+
+
+### Chores
+
+* **deps**: update chalk requirement from ^4.0.0 to ^4.1.2 [2cd8a17](https://github.com/esatterwhite/node-seeli/commit/2cd8a1726d65921cf0555d4c30251344094a5998) - Eric Satterwhite
+
 ## [12.5.5](https://github.com/esatterwhite/node-seeli/compare/v12.5.4...v12.5.5) (2021-07-26)
 
 
