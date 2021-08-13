@@ -1,3 +1,10 @@
+## [12.5.7](https://github.com/esatterwhite/node-seeli/compare/v12.5.6...v12.5.7) (2021-08-13)
+
+
+### Chores
+
+* **deps**: update cli-spinners requirement from ^2.3.0 to ^2.6.0 [f015098](https://github.com/esatterwhite/node-seeli/commit/f015098fd81d06831c7a0b343af2c9c5d07a5b4c) - Eric Satterwhite
+
 ## [12.5.6](https://github.com/esatterwhite/node-seeli/compare/v12.5.5...v12.5.6) (2021-08-13)
 
 
