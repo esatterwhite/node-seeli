@@ -1,3 +1,10 @@
+## [12.5.8](https://github.com/esatterwhite/node-seeli/compare/v12.5.7...v12.5.8) (2021-08-15)
+
+
+### Chores
+
+* **deps**: update ora requirement from ^5.3.0 to ^5.4.1 [2fa2364](https://github.com/esatterwhite/node-seeli/commit/2fa23641853a4fa5dae8edf3465e12cea39d4ad6) - Eric Satterwhite
+
 ## [12.5.7](https://github.com/esatterwhite/node-seeli/compare/v12.5.6...v12.5.7) (2021-08-13)
 
 
