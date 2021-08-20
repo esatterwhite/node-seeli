@@ -1,3 +1,10 @@
+## [12.5.9](https://github.com/esatterwhite/node-seeli/compare/v12.5.8...v12.5.9) (2021-08-20)
+
+
+### Bug Fixes
+
+* **help**: remove the interactive disablement on help command [4c0283b](https://github.com/esatterwhite/node-seeli/commit/4c0283bc56070483103e4653f5a529d92ce090f3) - Eric Satterwhite
+
 ## [12.5.8](https://github.com/esatterwhite/node-seeli/compare/v12.5.7...v12.5.8) (2021-08-15)
 
 
