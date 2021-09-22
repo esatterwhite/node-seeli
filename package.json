@@ -106,7 +106,7 @@
     "eslint": "^7.31.0",
     "eslint-config-codedependant": "^2.1.6",
     "semantic-release": "^17.4.2",
-    "tap": "^14.10.2",
+    "tap": "^15.0.10",
     "vuepress": "^1.8.2"
   },
   "tap": {
