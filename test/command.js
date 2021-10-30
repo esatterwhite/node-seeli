@@ -702,6 +702,52 @@ test('command', async (t) => {
     })
   })
 
+  t.test('command serialize', async (t) => {
+    const base_flags = [
+      '--interactive'
+    , '--no-interactive'
+    , '--color'
+    , '--no-color'
+    ]
+    const cmd = new Command({
+      name: 'root'
+    , commands: [
+        new Command({
+          name: 'one'
+        , flags: {
+            option: {
+              type: [String, Array]
+            , choices: ['one', 'two']
+            }
+          , single: {
+              type: Number
+            , choices: [1, 4]
+            }
+          }
+        })
+      , new Command({
+          name: 'two'
+        , commands: [
+            new Command({
+              name: 'three'
+            })
+          ]
+        })
+      ]
+    })
+
+    t.deepEqual(cmd.tree, {
+      '-': base_flags
+    , '--': base_flags
+    , two: {
+        three: base_flags
+      , '-': base_flags
+      , '--': base_flags
+      }
+    , one: [...base_flags, '--option', '--single']
+    }, 'serialized command tree')
+  })
+
   t.test('choice validation', async (t) => {
     const cmd = new Command({
       interactive: false
