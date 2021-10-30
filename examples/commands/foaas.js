@@ -5,8 +5,8 @@ const https = require('https')
 const cli = require('seeli')
 const Command = cli.Command
 
-const NAME = cli.get('name')
-const color = cli[cli.get('color')]
+const NAME = cli.config('name')
+const color = cli[cli.config('color')]
 
 const subcommands = new Set([
   'awesome'

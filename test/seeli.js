@@ -1,11 +1,13 @@
 'use strict'
+
 const os = require('os')
 const path = require('path')
 const {test} = require('tap')
+const chalk = require('chalk')
 const cli = require('../')
 const config = require('../lib/conf.js')
 const Seeli = require('../lib/seeli.js')
-
+const Command = require('../lib/command/index.js')
 const FIXTURE_DIR = path.join(__dirname, 'fixtures')
 
 test('cli', async (t) => {
@@ -16,8 +18,36 @@ test('cli', async (t) => {
     t.strictEqual(seeli.config('foobar'), 1, 'config value set')
   })
 
+  t.test('statics', async (t) => {
+    t.test('config get/set', async (t) => {
+      Seeli.set('foo', 'bar')
+      Seeli.set({one: true})
+      const result = Seeli.get('one')
+      t.strictEqual(result, true, 'config value set')
+    })
+
+    t.test('Command', async (t) => {
+      t.strictEqual(Seeli.Command, Command, 'returns base command class')
+    })
+
+    t.test('colorize', async (t) => {
+      const configured = config.get('color')
+      t.strictEqual(
+        Seeli.colorize('hello')
+      , chalk[configured]('hello')
+      , 'no arguments returns configured color'
+      )
+
+      t.strictEqual(
+        Seeli.colorize('hello', 'bold')
+      , chalk.bold('hello')
+      , 'second argument controls color output'
+      )
+    })
+  })
+
   t.test('#run', function(tt) {
-    const help = cli.commands.get('help')
+    const help = cli.get('help')
     help.once('content', (data) => {
       if (/usage/i.test(data)) {
         const expected = [
@@ -35,7 +65,7 @@ test('cli', async (t) => {
       args: ['--no-color']
     })
 
-    cli.set({
+    cli.config({
       exitOnContent: false
     , name: 'runner'
     })
@@ -58,26 +88,26 @@ test('cli', async (t) => {
 
   t.test('conf', async (t) => {
     t.test('should store default values', async (t) => {
-      t.ok(cli.get('name'))
-      t.ok(cli.get('color'))
-      t.ok(cli.get('help'))
+      t.ok(cli.config('name'))
+      t.ok(cli.config('color'))
+      t.ok(cli.config('help'))
     })
 
     t.test('should allow arbitrary values', async (t) => {
-      cli.set('test', 1)
-      t.equal(cli.get('test'), 1)
+      cli.config('test', 1)
+      t.equal(cli.config('test'), 1)
     })
 
     t.test('should allow setting multiple values', async (t) => {
-      cli.set({
+      cli.config({
         a: 1
       , b: 2
       , c: 3
       })
 
-      t.equal(cli.get('a'), 1, 'a===1')
-      t.equal(cli.get('b'), 2, 'b===2')
-      t.equal(cli.get('c'), 3, 'c===3')
+      t.equal(cli.config('a'), 1, 'a===1')
+      t.equal(cli.config('b'), 2, 'b===2')
+      t.equal(cli.config('c'), 3, 'c===3')
     })
   })
 
