@@ -77,10 +77,10 @@ test('command', async (t) => {
   t.test('~usage', async (t) => {
     t.test('should accept a single string', async (t) => {
       t.on('end', () => {
-        cli.set('color', 'green')
+        cli.config('color', 'green')
       })
 
-      cli.set('color', 'invalid')
+      cli.config('color', 'invalid')
       const UsageCommand = new Command({
         usage: "usage -a 'fake' --verbose"
       , args: ['--no-color']
@@ -153,8 +153,7 @@ test('command', async (t) => {
             throw error
           }
 
-          const help = cli.commands.get('help')
-          console.log(flags.argv.remain)
+          const help = cli.get('help')
           return help.run(flags.argv.remain)
         }
       })
@@ -430,14 +429,14 @@ test('command', async (t) => {
       cli.use('alt', Alt)
       t.notEqual(cli.list.indexOf('alt'), -1)
       t.equal(Alt.fake(), false)
-      t.equal(cli.commands.get('alt').fake(), false)
+      t.equal(cli.get('alt').fake(), false)
     })
   })
 
   t.test('Aliasing', async (tt) => {
     test('from string', async (t) => {
       t.afterEach((cb) => {
-        cli.commands.reset()
+        cli.reset()
         cb()
       })
 
@@ -448,9 +447,9 @@ test('command', async (t) => {
 
       cli.use('single', SingleAlias)
 
-      t.ok(cli.commands.has('single'))
-      t.ok(cli.commands.has('singe'))
-      t.ok(cli.commands.has('singel'))
+      t.ok(cli.has('single'))
+      t.ok(cli.has('singe'))
+      t.ok(cli.has('singel'))
     })
 
     test('from Array', async (t) => {
@@ -460,10 +459,10 @@ test('command', async (t) => {
       })
 
       cli.use('single', SingleAlias)
-      t.ok(cli.commands.has('single'))
-      t.ok(cli.commands.has('sni'))
-      t.ok(cli.commands.has('snigle'))
-      t.ok(cli.commands.has('singel'))
+      t.ok(cli.has('single'))
+      t.ok(cli.has('sni'))
+      t.ok(cli.has('snigle'))
+      t.ok(cli.has('singel'))
     })
   })
 
