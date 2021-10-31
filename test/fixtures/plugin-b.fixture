@@ -1,5 +1,5 @@
 'use strict'
 
 module.exports = function(seeli) {
-  seeli.set('plugin_b_fixture', true)
+  seeli.config('plugin_b_fixture', false)
 }

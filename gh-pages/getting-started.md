@@ -16,6 +16,7 @@ Seeli has a `run` function that reads any arguments and flags from terminal inpu
 and either executes the appropriate command, or displays help messages.
 
 ```javascript
+// cli.js
 'use strict'
 var seeli = require('seeli')
 seeli.run()
@@ -43,15 +44,17 @@ const command = new seeli.Command({
 
 ## Configuring Seeli
 
-Seeli has a simple configuration system exposed as top level functions
-* `seeli.get`: get the value of a configuration property
-* `seeli.set`: set the value of a configuration property
+Seeli has a simple configuration system exposed as a single function 
+* `seeli.config`: gets or sets configuration values based on inputs
+
 
 ```javascript
 'use strict'
 
 const seeli = require('seeli')
-seeli.set('exitOnError', true)
+seeli.config('exitOnError', true) // set a value
+seeli.config('exitOnError') // get a value
+seeli.config
 ```
 
 There are a few global options you can manipulate to change basic behaviors
@@ -68,7 +71,7 @@ of seeli
 'use strict'
 
 const seeli = require('seeli')
-seeli.set('color', 'red')
+seeli.config('color', 'red')
 
 console.log(seeli.colorize('this is red'))
 ```
@@ -269,7 +272,7 @@ $ npm link .
 $ mycli
 ```
 
-or if published the to npm registry
+or if published the to the npm registry
 
 ```bash
 $ npm install my-project -g

@@ -182,7 +182,7 @@ test('cli', async (t) => {
         path.join(FIXTURE_DIR, 'plugin-a.fixture')
       ])
       const seeli = new Seeli()
-      t.strictEqual(seeli.get('plugin_a_fixture'), true, 'plugin path loaded')
+      t.strictEqual(seeli.config('plugin_a_fixture'), true, 'plugin path loaded')
     })
 
     t.test('require path loader', async (t) => {
@@ -192,7 +192,7 @@ test('cli', async (t) => {
         ]
       })
 
-      t.strictEqual(seeli.get('plugin_b_fixture'), true, 'plugin path loaded')
+      t.strictEqual(seeli.config('plugin_b_fixture'), false, 'plugin path loaded')
     })
 
     t.test('inline function loader', async (t) => {
@@ -201,7 +201,7 @@ test('cli', async (t) => {
           name: 'manual'
         })
         s.reset()
-        s.set('inline_plugin', true)
+        s.config('inline_plugin', 1)
         s.use(cmd)
       }
 
@@ -209,7 +209,7 @@ test('cli', async (t) => {
         plugins: [inline]
       })
 
-      t.strictEqual(seeli.get('inline_plugin'), true, 'inline plugin loaded')
+      t.strictEqual(seeli.config('inline_plugin'), 1, 'inline plugin loaded')
       t.deepEqual(seeli.list(), ['manual'], 'registered command list')
     })
 
@@ -219,14 +219,14 @@ test('cli', async (t) => {
           name: 'explicit'
         })
         s.reset()
-        s.set('outline_plugin', true)
+        s.config('outline_plugin', true)
         s.use(cmd)
       }
 
       const seeli = new Seeli()
       seeli.plugin(outline)
 
-      t.strictEqual(seeli.get('outline_plugin'), true, 'inline plugin loaded')
+      t.strictEqual(seeli.config('outline_plugin'), true, 'inline plugin loaded')
       t.deepEqual(seeli.list(), ['explicit'], 'registered command list')
     })
 

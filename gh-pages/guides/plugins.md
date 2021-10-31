@@ -16,7 +16,7 @@ const BasicCommand = require('./commands/basic')
 module.exports = simplePlugin
 
 function simplePlugin(seeli) {
-  seeli.set('color', 'magenta')
+  seeli.config('color', 'magenta')
   seeli.use(BasicCommand)
 }
 ```
