@@ -1,3 +1,15 @@
+## [13.0.1](https://github.com/esatterwhite/node-seeli/compare/v13.0.0...v13.0.1) (2021-10-31)
+
+
+### Bug Fixes
+
+* **release**: update release to regenerate docs. [74bd48d](https://github.com/esatterwhite/node-seeli/commit/74bd48d062bd7dcdee2408ca1f975f31ff493e00) - Eric Satterwhite
+
+
+### Chores
+
+* **deps**: semantic-release/exec@5.0.0 [23ee59b](https://github.com/esatterwhite/node-seeli/commit/23ee59b09504847deb7e55efbdb16968d1643159) - Eric Satterwhite
+
 # [13.0.0](https://github.com/esatterwhite/node-seeli/compare/v12.5.9...v13.0.0) (2021-10-31)
 
 
