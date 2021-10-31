@@ -15,7 +15,7 @@ A command line interface the way you want it, and otherwise, stays out of your w
 const os = require('os')
 const cli = require('seeli')
 
-cli.set({
+cli.config({
   exitOnError: true
 , color: 'green'
 , name: 'example'
@@ -129,8 +129,9 @@ node ./cli world --name=Mark --name=Sally --no-excited
   * [Seeli.greenBright( text `<string>`)](#seeligreenbright-text-string)
   * [Seeli.yellowBright( text `<string>`)](#seeliyellowbright-text-string)
   * [Seeli.cyanBright( text `<string>`)](#seelicyanbright-text-string)
-  * [Seeli.set( key `<string>`, value `<object>` )](#seeliset-key-string-value-object-)
-  * [Seeli.get( key `<string>` )](#seeliget-key-string-)
+  * [Seeli.config( key `<string>`, value `<object>` )](#seeliconfig-key-string-value-object-)
+  * [Seeli.config( opts `<object>` )](#seeliconfig-opts-object-)
+  * [Seeli.config( key `<string>` )](#seeliconfig-key-string-)
       * [Supported Confgurations](#supported-confgurations)
         * [Package Configuration](#package-configuration)
   * [Command( options `<object>` )](#command-options-object-)
@@ -213,11 +214,15 @@ wraps text in the ansi code for yellowBright
 
 wraps text in the ansi code for cyanBright
 
-## Seeli.set( key `<string>`, value `<object>` )
+## Seeli.config( key `<string>`, value `<object>` )
 
-sets a conf value.
+sets a configuration value.
 
-## Seeli.get( key `<string>` )
+## Seeli.config( opts `<object>` )
+
+set multiple configuration values using a single object
+
+## Seeli.config( key `<string>` )
 
 A config value to look up. Can be a dot separated key to look up nested values
 
@@ -230,7 +235,7 @@ A config value to look up. Can be a dot separated key to look up nested values
 * plugins `<String>|<function>[]` - A list of plugins to load and execute. A plugin may be either a function, or a module id to be required.
   If it is a module id, the module must export a single function which will be passed the seeli instance when called.
 * help `<String>`  - a file path or module name to a custom help command. This will be passed to `require` and must export a single command instance
-    * `seeli.set('help', '/path/to/help/command')`
+    * `seeli.config('help', '/path/to/help/command')`
 
 ##### Package Configuration
 

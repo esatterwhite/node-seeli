@@ -20,7 +20,7 @@ command should have a `name`, `description`, and some additional `usage` text.
 'use strict'
 
 const seeli = require('seeli')
-const name = seeli.get('name')
+const name = seeli.config('name')
 module.exports = new seeli.Command({
   name: 'simple'
 , description: 'This is a simple example'

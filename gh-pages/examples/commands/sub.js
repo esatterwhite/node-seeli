@@ -1,7 +1,7 @@
 'use strict'
 
 const seeli = require('seeli')
-const name = seeli.colorize(seeli.get('name'))
+const name = seeli.colorize(seeli.config('name'))
 
 const bar = new seeli.Command({
   name: 'bar'
