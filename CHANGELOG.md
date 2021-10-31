@@ -1,3 +1,22 @@
+# [13.0.0](https://github.com/esatterwhite/node-seeli/compare/v12.5.9...v13.0.0) (2021-10-31)
+
+
+### Documentation
+
+* **gh-pages**: update doc and example to reflect changes [75365eb](https://github.com/esatterwhite/node-seeli/commit/75365eb0839409b268aa8444516f17b53556a163) - Eric Satterwhite
+
+
+### Features
+
+* **command**: expose a `tree` getter for a json tree of a command [224c1f7](https://github.com/esatterwhite/node-seeli/commit/224c1f70036ab45ac87bc34fc300821576881f3f) - Eric Satterwhite
+* **seeli**: make primary export a seeli command instance [e7fe759](https://github.com/esatterwhite/node-seeli/commit/e7fe75928f50e7ee3f2a2741c828cdc27b16147a) - Eric Satterwhite
+
+
+### **BREAKING CHANGES**
+
+* **seeli:** get/set functions replaced with single `config` function
+* **seeli:** top level commands property removed
+
 ## [12.5.9](https://github.com/esatterwhite/node-seeli/compare/v12.5.8...v12.5.9) (2021-08-20)
 
 
