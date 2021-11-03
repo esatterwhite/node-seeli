@@ -1,3 +1,10 @@
+## [13.0.2](https://github.com/esatterwhite/node-seeli/compare/v13.0.1...v13.0.2) (2021-11-03)
+
+
+### Bug Fixes
+
+* **command**: exclude interactive flag from tree if disabled [0d0ee94](https://github.com/esatterwhite/node-seeli/commit/0d0ee94d1cb39170744ad78e223ad54d85ebd4ce) - Eric Satterwhite
+
 ## [13.0.1](https://github.com/esatterwhite/node-seeli/compare/v13.0.0...v13.0.1) (2021-10-31)
 
 
