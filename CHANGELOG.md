@@ -1,3 +1,10 @@
+## [13.0.3](https://github.com/esatterwhite/node-seeli/compare/v13.0.2...v13.0.3) (2021-12-10)
+
+
+### Bug Fixes
+
+* **seeli**: expose Command as a getter on seeli [13ea0e4](https://github.com/esatterwhite/node-seeli/commit/13ea0e45d543b19156e70caba49b24f90ca63b9e) - Eric Satterwhite
+
 ## [13.0.2](https://github.com/esatterwhite/node-seeli/compare/v13.0.1...v13.0.2) (2021-11-03)
 
 
