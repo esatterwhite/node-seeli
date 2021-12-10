@@ -26,8 +26,12 @@ test('cli', async (t) => {
       t.strictEqual(result, true, 'config value set')
     })
 
-    t.test('Command', async (t) => {
+    t.test('static get Command', async (t) => {
       t.strictEqual(Seeli.Command, Command, 'returns base command class')
+    })
+
+    t.test('instance get Command', async (t) => {
+      t.strictEqual(new Seeli().Command, Command, 'returns base command class')
     })
 
     t.test('colorize', async (t) => {
