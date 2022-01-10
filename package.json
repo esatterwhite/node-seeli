@@ -96,7 +96,7 @@
     "nopt": "^5.0.0",
     "ora": "^5.4.1",
     "pkg-up": "^3.1.0",
-    "string-width": "^4.2.0",
+    "string-width": "^5.1.0",
     "strip-ansi": "^6.0.0"
   },
   "devDependencies": {
