@@ -102,7 +102,7 @@
   "devDependencies": {
     "@codedependant/release-config-npm": "^1.0.3",
     "@semantic-release/exec": "^5.0.0",
-    "@vuepress/plugin-back-to-top": "^1.5.4",
+    "@vuepress/plugin-back-to-top": "^1.9.7",
     "cli-spinners": "^2.6.0",
     "eslint": "^7.31.0",
     "eslint-config-codedependant": "^2.1.6",
