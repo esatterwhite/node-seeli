@@ -1,4 +1,4 @@
-'use strict'
+'puse strict'
 
 const cli = require('seeli')
 

@@ -13,8 +13,8 @@ const test = require('tap').test
 test('command', async (t) => {
 
   // description parsing
-  t.test('~description', async (tt) => {
-    test('should accept a single string', async (t) => {
+  t.test('~description', async (t) => {
+    t.test('should accept a single string', async (t) => {
       const DescriptionCommand = new Command({
         description: 'a test command'
       })
@@ -26,6 +26,25 @@ test('command', async (t) => {
 
       t.equal('a different description', DescriptionCommand.description)
     })
+  })
+
+  t.test('duplicate shorthands', async (t) => {
+    t.throws(() => {
+      return new Command({
+        flags: {
+          foo: {
+            type: String
+          , description: 'this is foo'
+          , shorthand: 'f'
+          }
+        , bar: {
+            type: String
+          , description: 'this is bar'
+          , shorthand: 'f'
+          }
+        }
+      })
+    }, {code: 'ESHORTHAND', name: 'DuplicateShorthandException'})
   })
 
   t.test('nested flags', async (t) => {
@@ -738,12 +757,12 @@ test('command', async (t) => {
     t.deepEqual(cmd.tree, {
       '-': base_flags
     , '--': base_flags
-    , two: {
-        three: base_flags
+    , 'two': {
+        'three': base_flags
       , '-': base_flags
       , '--': base_flags
       }
-    , one: [...base_flags, '--option', '--single']
+    , 'one': [...base_flags, '--option', '--single']
     }, 'serialized command tree')
   })
 
