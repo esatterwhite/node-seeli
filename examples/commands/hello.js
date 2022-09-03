@@ -25,7 +25,7 @@ module.exports = new cli.Command({
 
   , excited: {
       'type': Boolean
-    , 'shorthand': 'e'
+    , 'shorthand': 'n'
     , 'description': 'Say hello in a very excited manner'
     , 'default': false
     }
