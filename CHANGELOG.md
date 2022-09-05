@@ -1,3 +1,15 @@
+# [14.0.0](https://github.com/esatterwhite/node-seeli/compare/v13.0.3...v14.0.0) (2022-09-05)
+
+
+### Bug Fixes
+
+* **command**: commands will throw when duplicate short hands are found [cdaddbb](https://github.com/esatterwhite/node-seeli/commit/cdaddbb1f5ee6d0a300301d945824261c038d5e7) - Eric Satterwhite, closes: [#113](https://github.com/esatterwhite/node-seeli/issues/113)
+
+
+### **BREAKING CHANGES**
+
+* **command:** commands will throw when duplicate short hands are found
+
 ## [13.0.3](https://github.com/esatterwhite/node-seeli/compare/v13.0.2...v13.0.3) (2021-12-10)
 
 
