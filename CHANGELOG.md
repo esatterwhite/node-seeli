@@ -1,3 +1,15 @@
+# [14.1.0](https://github.com/esatterwhite/node-seeli/compare/v14.0.0...v14.1.0) (2022-12-08)
+
+
+### Chores
+
+* **dep**: nopt@7.0.0 [4dca598](https://github.com/esatterwhite/node-seeli/commit/4dca59848232ee8b24873055f02c5e4d82493d3d) - Eric Satterwhite
+
+
+### Features
+
+* **colorize**: enable color mode parsing [578801d](https://github.com/esatterwhite/node-seeli/commit/578801ddddb032097e4757d912fc5504a7e97829) - Eric Satterwhite
+
 # [14.0.0](https://github.com/esatterwhite/node-seeli/compare/v13.0.3...v14.0.0) (2022-09-05)
 
 
