@@ -6,7 +6,7 @@ const cli = require('seeli')
 const Command = cli.Command
 
 const NAME = cli.config('name')
-const color = cli[cli.config('color')]
+const color = cli.colorize
 
 const subcommands = new Set([
   'awesome'
