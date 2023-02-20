@@ -67,7 +67,7 @@ test('command', async (t) => {
     , onContent: (content) => {
         t.equal(content, 'done', 'content also emitted')
       }
-    , run: function(cmd, data) {
+    , run: async function(cmd, data) {
         t.match(data, {
           foo: {
             bar: {
@@ -89,7 +89,7 @@ test('command', async (t) => {
     NestedCommand.once('content', (content) => {
       t.equal(content, 'done', 'content returned')
     })
-    NestedCommand.run()
+    await NestedCommand.run()
   })
 
   // usage parsing
