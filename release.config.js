@@ -13,12 +13,14 @@ function remap(plugins) {
 
   for (const [name, config] of plugins) {
     if (name === '@semantic-release/git') {
+      /*
       remapped.push([
         '@semantic-release/exec', {
           prepareCmd: 'npm run docs:build'
         }
       ])
       config.assets = [...config.assets, 'docs']
+      */
     }
 
     remapped.push([name, config])
