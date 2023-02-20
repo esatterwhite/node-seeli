@@ -106,7 +106,7 @@
     "cli-spinners": "^2.6.0",
     "eslint": "^7.31.0",
     "eslint-config-codedependant": "^2.1.6",
-    "semantic-release": "^17.4.2",
+    "semantic-release": "^19.0.2",
     "tap": "^14.10.2",
     "vuepress": "^1.8.2"
   },
