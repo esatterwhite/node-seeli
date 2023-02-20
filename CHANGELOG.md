@@ -1,3 +1,17 @@
+## [14.1.1](https://github.com/esatterwhite/node-seeli/compare/v14.1.0...v14.1.1) (2023-02-20)
+
+
+### Bug Fixes
+
+* **ci**: remove docs build from build [b4f2029](https://github.com/esatterwhite/node-seeli/commit/b4f202989a120f801e8eeed093c7a453e6a30ccd) - Eric Satterwhite
+* **command**: stop ora instance after run is called [9fc53c6](https://github.com/esatterwhite/node-seeli/commit/9fc53c63adaec68a8ab6fc5a90d7857088e7a7d5) - Eric Satterwhite
+* **gh-pages**: update node version to 14 [2584db7](https://github.com/esatterwhite/node-seeli/commit/2584db71a539fd36bda026362a9d0dafcc1247da) - Eric Satterwhite
+
+
+### Chores
+
+* **style**: fix linting errors [4fc23d7](https://github.com/esatterwhite/node-seeli/commit/4fc23d7815893b62d9e5fb5e44039f1431824a44) - Eric Satterwhite
+
 # [14.1.0](https://github.com/esatterwhite/node-seeli/compare/v14.0.0...v14.1.0) (2022-12-08)
 
 
