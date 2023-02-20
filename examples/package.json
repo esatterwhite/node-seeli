@@ -17,7 +17,7 @@
     "seeli": "file:../"
   },
   "seeli": {
-    "color": "magenta",
+    "color": "ansi256:229",
     "name": "fake",
     "help": "./commands/ui"
   }
