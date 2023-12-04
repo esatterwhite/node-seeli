@@ -1,3 +1,16 @@
+# [15.0.0](https://github.com/esatterwhite/node-seeli/compare/v14.1.1...v15.0.0) (2023-12-04)
+
+
+### Bug Fixes
+
+* **ci**: update node matrix to reflect true level of support [29ede75](https://github.com/esatterwhite/node-seeli/commit/29ede753a7d3848b9f5173fda7b6ddb0cfdd9425) - Eric Satterwhite
+* **typo**: Fix 2 exception name typos [517d7cb](https://github.com/esatterwhite/node-seeli/commit/517d7cb051584f1e471429865491f365b0bb41ea) - Eric Satterwhite
+
+
+### **BREAKING CHANGES**
+
+* **ci:** minimum version of node is 16
+
 ## [14.1.1](https://github.com/esatterwhite/node-seeli/compare/v14.1.0...v14.1.1) (2023-02-20)
 
 
