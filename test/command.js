@@ -58,6 +58,9 @@ test('command', async (t) => {
       , 'foo:bar:baz': {
           type: Number
         , required: true
+        , filter(input) {
+            return input + 100
+          }
         }
       , 'nested:array': {
           type: [Number, Array]
@@ -71,7 +74,7 @@ test('command', async (t) => {
         t.match(data, {
           foo: {
             bar: {
-              baz: Number
+              baz: 112
             }
           }
         , test: Boolean

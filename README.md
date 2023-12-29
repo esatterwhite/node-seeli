@@ -114,34 +114,34 @@ node ./cli world --name=Mark --name=Sally --no-excited
 <!-- vim-markdown-toc GFM -->
 
 * [API](#api)
-  * [Seeli.run( )](#seelirun-)
-  * [Seeli.list`<Array>`](#seelilistarray)
-  * [Seeli.use( name `<string>`, cmd `<Command>` )](#seeliuse-name-string-cmd-command-)
-  * [Seeli.bold( text `<string>`)](#seelibold-text-string)
-  * [Seeli.green( text `<string>`)](#seeligreen-text-string)
-  * [Seeli.blue( text `<string>`)](#seeliblue-text-string)
-  * [Seeli.red( text `<string>`)](#seelired-text-string)
-  * [Seeli.yellow( text `<string>`)](#seeliyellow-text-string)
-  * [Seeli.cyan( text `<string>`)](#seelicyan-text-string)
-  * [Seeli.magenta( text `<string>`)](#seelimagenta-text-string)
-  * [Seeli.redBright( text `<string>`)](#seeliredbright-text-string)
-  * [Seeli.blueBright( text `<string>`)](#seelibluebright-text-string)
-  * [Seeli.greenBright( text `<string>`)](#seeligreenbright-text-string)
-  * [Seeli.yellowBright( text `<string>`)](#seeliyellowbright-text-string)
-  * [Seeli.cyanBright( text `<string>`)](#seelicyanbright-text-string)
-  * [Seeli.config( key `<string>`, value `<object>` )](#seeliconfig-key-string-value-object-)
-  * [Seeli.config( opts `<object>` )](#seeliconfig-opts-object-)
-  * [Seeli.config( key `<string>` )](#seeliconfig-key-string-)
-      * [Supported Confgurations](#supported-confgurations)
-        * [Package Configuration](#package-configuration)
-  * [Command( options `<object>` )](#command-options-object-)
-  * [Options](#options)
-    * [Flag Options](#flag-options)
-      * [Nested Flags](#nested-flags)
-  * [Auto Help](#auto-help)
-  * [Asyncronous](#asyncronous)
-  * [Progress](#progress)
-  * [Events](#events)
+    * [Seeli.run( )](#seelirun-)
+    * [Seeli.list`<Array>`](#seelilistarray)
+    * [Seeli.use( name `<string>`, cmd `<Command>` )](#seeliuse-name-string-cmd-command-)
+    * [Seeli.bold( text `<string>`)](#seelibold-text-string)
+    * [Seeli.green( text `<string>`)](#seeligreen-text-string)
+    * [Seeli.blue( text `<string>`)](#seeliblue-text-string)
+    * [Seeli.red( text `<string>`)](#seelired-text-string)
+    * [Seeli.yellow( text `<string>`)](#seeliyellow-text-string)
+    * [Seeli.cyan( text `<string>`)](#seelicyan-text-string)
+    * [Seeli.magenta( text `<string>`)](#seelimagenta-text-string)
+    * [Seeli.redBright( text `<string>`)](#seeliredbright-text-string)
+    * [Seeli.blueBright( text `<string>`)](#seelibluebright-text-string)
+    * [Seeli.greenBright( text `<string>`)](#seeligreenbright-text-string)
+    * [Seeli.yellowBright( text `<string>`)](#seeliyellowbright-text-string)
+    * [Seeli.cyanBright( text `<string>`)](#seelicyanbright-text-string)
+    * [Seeli.config( key `<string>`, value `<object>` )](#seeliconfig-key-string-value-object-)
+    * [Seeli.config( opts `<object>` )](#seeliconfig-opts-object-)
+    * [Seeli.config( key `<string>` )](#seeliconfig-key-string-)
+            * [Supported Confgurations](#supported-confgurations)
+                * [Package Configuration](#package-configuration)
+    * [Command( options `<object>` )](#command-options-object-)
+    * [Options](#options)
+        * [Flag Options](#flag-options)
+            * [Nested Flags](#nested-flags)
+    * [Auto Help](#auto-help)
+    * [Asyncronous](#asyncronous)
+    * [Progress](#progress)
+    * [Events](#events)
 
 <!-- vim-markdown-toc -->
 # API
@@ -287,7 +287,7 @@ name | required | type | description
 **event**      | `false` | `boolean` | if set to `true` the command will emit an event withe the same name as the flag with **the** value that was captured for that flag |
 **when** | `false` | `function` | **interactive mode only** Receives the current user answers hash and should return true or **false** depending on whether or not this question should be asked.
 **validate** | `false` | `function` |  receives user input and should return true if the value is **valid**, and an error message (String) otherwise. If false is returned, a default error message is provided.
-**filter** | `false` | `function` | **interactive mode only** Receives the user input and return the filtered value to be used **inside** the program. The value returned will be added to the Answers hash.
+**filter** | `false` | `function` | Receives the user input and return the filtered value to be used **inside** the program. The value returned will be added to the Answers hash.
 
 #### Nested Flags
 
