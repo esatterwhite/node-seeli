@@ -1,3 +1,10 @@
+# [15.1.0](https://github.com/esatterwhite/node-seeli/compare/v15.0.0...v15.1.0) (2023-12-31)
+
+
+### Features
+
+* **command**: add support for input filter for non-interactive [a21e065](https://github.com/esatterwhite/node-seeli/commit/a21e065b1f3f74beeb44b15783d3050c1d1af053) - Eric Satterwhite
+
 # [15.0.0](https://github.com/esatterwhite/node-seeli/compare/v14.1.1...v15.0.0) (2023-12-04)
 
 
