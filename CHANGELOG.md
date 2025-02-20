@@ -1,3 +1,10 @@
+## [15.1.1](https://github.com/esatterwhite/node-seeli/compare/v15.1.0...v15.1.1) (2025-02-20)
+
+
+### Bug Fixes
+
+* **command**: fix typo in invalid field validation message [4964418](https://github.com/esatterwhite/node-seeli/commit/4964418279ed1af4c0e5568c7cb10c460decc72f) - Eric Satterwhite
+
 # [15.1.0](https://github.com/esatterwhite/node-seeli/compare/v15.0.0...v15.1.0) (2023-12-31)
 
 
