@@ -159,6 +159,7 @@ name | type | default | description
 **interactive** | `Boolean` | `true` | If set to false, the command will not offer interactive mode
 **usage** | `String` / `Array` | `""` | A string or array of strings used to generate help text
 **flags** | `Object` | `{}` | key value pairs used to control the command where keys are the name of the flag and the values is a configuration object for the flag
+**requires_one** | `Array` | `undefined` | Specify the flag names where one of their values must be entered
 **ui** | `String` | `dots` | The kind of [progress indicator](https://github.com/sindresorhus/cli-spinners/blob/master/spinners.json) your command should use. After instantiation, this becomes an instance of [ora](https://www.npmjs.com/package/ora) used to print output.
 **run** | `Function` | `no-op` | An async function used as the body of the command. It will be passed a `subcommand` name if one was passed, and a `data` object containing the processed values from the command input.
 **commands** | `Command[]` | `[]` | A list of additional command to utilize as sub commands.
@@ -180,6 +181,8 @@ name | required | type | description
 **when** | `false` | `function` | **interactive mode only** Receives the current user answers hash and should return true or **false** depending on whether or not this question should be asked.
 **validate** | `false` | `function` |  A synchronous function that receives the command object, which should return `true` or `undefined` if the value is **valid**. Otherwise, an error message (String) can be returned, and it will be rendered. If `false` is returned, a default error message is provided.
 **filter** | `false` | `function` | Receives the user input and return the filtered value to be used **inside** the program. The value returned will be added to the Answers hash.
+**required_with** | `false` | `Array` | A non-empty array which says that if the flag is set, then the specified other flags must also be set, i.e. "mutual inclusion."
+**required_without** | `false` | `Array` | A non-empty array which says that if the flag is set, then none of the other specified flags may also be set, i.e. "mutual exclusion."
 
 ### Nested Flags
 
