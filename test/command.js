@@ -106,6 +106,44 @@ test('command', async (t) => {
       const UsageCommand = new Command({
         usage: "usage -a 'fake' --verbose"
       , args: ['--no-color']
+      , requires_one: ['name', 'nickname']
+      , flags: {
+          'my-required': {
+            type: String
+          , shorthand: 'm'
+          , description: 'This flag is required'
+          , required: true
+          }
+        , 'name': {
+            type: String
+          , shorthand: 'n'
+          , description: 'This is my name'
+          }
+        , 'nickname': {
+            type: String
+          , shorthand: 'k'
+          , description: 'This is my nickname'
+          }
+        , 'city': {
+            type: String
+          , description: 'This is my city'
+          , required_with: ['state']
+          }
+        , 'state': {
+            type: String
+          , description: 'This is my state'
+          }
+        , 'zip': {
+            type: Number
+          , shorthand: 'z'
+          , description: 'This is my zip code'
+          , required_without: ['country-code']
+          }
+        , 'country-code': {
+            type: Number
+          , description: 'This is my country code'
+          }
+        }
       })
 
       const fixture_path = path.join(__dirname, 'fixtures', 'usage-sigular.fixture')
@@ -141,7 +179,7 @@ test('command', async (t) => {
 
       const fixture_path = path.join(__dirname, 'fixtures', 'usage-array.fixture')
       const stdout = fs.readFileSync(fixture_path, 'utf8')
-      t.equal(strip(UsageCommand.usage), stdout)
+      t.equal(strip(UsageCommand.usage).trim(), stdout.trim())
     })
 
     t.test('handles missing subcommands', async (t) => {
