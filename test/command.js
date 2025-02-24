@@ -765,6 +765,86 @@ test('command', async (t) => {
     }, 'correct error message')
   })
 
+
+  t.test('interactive command with custom flag `validate`', async (t) => {
+    let validate_call_count = 0
+
+    const cmd = new Command({
+      interactive: true
+    , strict: true
+    , args: ['--interactive']
+    , flags: {
+        other: {
+          type: String
+        , description: 'other flag'
+        , validate: (cmd) => {
+            t.match(cmd, {
+              interactive: true
+            , argv: {
+                remain: []
+              , cooked: ['--interactive']
+              , original: ['--interactive']
+              }
+            , color: true
+            , other: 'my_string'
+            }, 'cmd appears to be `this.parsed`')
+            validate_call_count += 1
+          }
+        }
+      }
+    , run: async function(_, data) {
+        return data.other
+      }
+    })
+
+    const prompt = cmd.prompt
+
+    cmd.prompt = function(arg) {
+      const promise = prompt.call(cmd, arg)
+      promise.ui.activePrompt.done('my_string')
+      promise.ui.activePrompt.close()
+      return promise
+    }
+    const answer = await cmd.run()
+    t.equal(answer, 'my_string', 'run function produced the right result')
+    t.equal(validate_call_count, 1, 'validate function was only called once')
+  })
+
+  t.test('non-interactive command with custom flag `validate`', async (t) => {
+    let validate_call_count = 0
+
+    const cmd = new Command({
+      strict: true
+    , args: ['--other=my_string']
+    , flags: {
+        other: {
+          type: String
+        , description: 'other flag'
+        , validate: (cmd) => {
+            t.match(cmd, {
+              other: 'my_string'
+            , argv: {
+                remain: []
+              , cooked: ['--other', 'my_string']
+              , original: ['--other=my_string']
+              }
+            , interactive: false
+            , color: true
+            }, 'cmd appears to be `this.parsed`')
+            validate_call_count += 1
+          }
+        }
+      }
+    , run: async function(_, data) {
+        return data.other
+      }
+    })
+
+    const answer = await cmd.run()
+    t.equal(answer, 'my_string', 'run function produced the right result')
+    t.equal(validate_call_count, 1, 'validate function was only called once')
+  })
+
   t.test('command#toPrompt', async (t) => {
     const cmd = new Command({
       flags: {
