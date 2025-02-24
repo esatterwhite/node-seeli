@@ -114,9 +114,9 @@
     "jsx": false,
     "ts": false,
     "browser": false,
-    "functions": 96,
-    "lines": 96,
-    "branches": 82,
+    "functions": 97,
+    "lines": 97,
+    "branches": 84,
     "statements": 94,
     "coverage-report": [
       "text",
