@@ -3,8 +3,9 @@ usage -b 'test' --no-verbose
 
 Options:
 
-  -i, --interactive, --no-interactive   <boolean> [false]             Use the interactive propmts
-  --color, --no-color                   <boolean> [true]              Enable ANSI color in output
+  -i, --interactive, --no-interactive         [false]       Use the interactive propmts
+      <boolean>
+      --color, --no-color <boolean>           [true]        Enable ANSI color in output
 
 
   <...>: input type | *: repeatable flags | [...]: default values

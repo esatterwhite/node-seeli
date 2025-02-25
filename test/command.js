@@ -106,6 +106,44 @@ test('command', async (t) => {
       const UsageCommand = new Command({
         usage: "usage -a 'fake' --verbose"
       , args: ['--no-color']
+      , requires_one: ['name', 'nickname']
+      , flags: {
+          'my-required': {
+            type: String
+          , shorthand: 'm'
+          , description: 'This flag is required'
+          , required: true
+          }
+        , 'name': {
+            type: String
+          , shorthand: 'n'
+          , description: 'This is my name'
+          }
+        , 'nickname': {
+            type: String
+          , shorthand: 'k'
+          , description: 'This is my nickname'
+          }
+        , 'city': {
+            type: String
+          , description: 'This is my city'
+          , required_with: ['state']
+          }
+        , 'state': {
+            type: String
+          , description: 'This is my state'
+          }
+        , 'zip': {
+            type: Number
+          , shorthand: 'z'
+          , description: 'This is my zip code'
+          , required_without: ['country-code']
+          }
+        , 'country-code': {
+            type: Number
+          , description: 'This is my country code'
+          }
+        }
       })
 
       const fixture_path = path.join(__dirname, 'fixtures', 'usage-sigular.fixture')
@@ -141,7 +179,7 @@ test('command', async (t) => {
 
       const fixture_path = path.join(__dirname, 'fixtures', 'usage-array.fixture')
       const stdout = fs.readFileSync(fixture_path, 'utf8')
-      t.equal(strip(UsageCommand.usage), stdout)
+      t.equal(strip(UsageCommand.usage).trim(), stdout.trim())
     })
 
     t.test('handles missing subcommands', async (t) => {
@@ -204,22 +242,22 @@ test('command', async (t) => {
       const ArgCommand = new Command({
         args: ['--no-color']
       })
-      t.strictEqual(ArgCommand.argv.color, false)
+      t.equal(ArgCommand.argv.color, false)
       ArgCommand.reset()
 
       ArgCommand.setOptions({
         args: ['--color']
       })
 
-      t.strictEqual(ArgCommand.argv.color, true)
+      t.equal(ArgCommand.argv.color, true)
     })
 
     test('should understand unknown flags', async (t) => {
       const ArgCommand = new Command({
         args: ['--no-color', '--fake']
       })
-      t.strictEqual(ArgCommand.argv.color, false)
-      t.strictEqual(ArgCommand.argv.fake, true)
+      t.equal(ArgCommand.argv.color, false)
+      t.equal(ArgCommand.argv.fake, true)
     })
   })
 
@@ -235,7 +273,7 @@ test('command', async (t) => {
       , args: ['--string=fake']
       })
 
-      t.strictEqual(StringCommand.argv.string, 'fake')
+      t.equal(StringCommand.argv.string, 'fake')
     })
 
     t.test('should reject input type miss matches', async (t) => {
@@ -263,12 +301,12 @@ test('command', async (t) => {
       , args: ['--bool']
       })
 
-      t.strictEqual(BooleanCommand.argv.bool, true)
+      t.equal(BooleanCommand.argv.bool, true)
       BooleanCommand.reset()
       BooleanCommand.setOptions({
         args: ['--no-bool']
       })
-      t.strictEqual(BooleanCommand.argv.bool, false)
+      t.equal(BooleanCommand.argv.bool, false)
     })
 
     t.test('should accept Number Types', async (t) => {
@@ -281,7 +319,7 @@ test('command', async (t) => {
       , args: ['--num=1']
       })
 
-      t.strictEqual(NumberCommand.argv.num, 1)
+      t.equal(NumberCommand.argv.num, 1)
     })
 
 
@@ -295,7 +333,7 @@ test('command', async (t) => {
         }
       , args: ['--multi=1', '--multi=2', '--multi=3']
       })
-      t.deepEqual(MultiCommand.argv.multi, [1, 2, 3])
+      t.same(MultiCommand.argv.multi, [1, 2, 3])
     })
 
     t.test('should accept short hand flags', async (t) => {
@@ -308,7 +346,7 @@ test('command', async (t) => {
         }
       , args: ['-s', 'short']
       })
-      t.strictEqual(Short.argv.short, 'short')
+      t.equal(Short.argv.short, 'short')
     })
 
     t.test('should accept default values', async (t) => {
@@ -449,7 +487,7 @@ test('command', async (t) => {
         }
       })
       cli.use('alt', Alt)
-      t.notEqual(cli.list.indexOf('alt'), -1)
+      t.not(cli.list.indexOf('alt'), -1)
       t.equal(Alt.fake(), false)
       t.equal(cli.get('alt').fake(), false)
     })
@@ -573,17 +611,21 @@ test('command', async (t) => {
     await t.rejects(cmd.run(), {code: 'ECOMMAND'})
   })
 
-  t.test('interactive command', async (t) => {
+  t.test('interactive command success', async (t) => {
     const cmd = new Command({
       interactive: true
     , strict: true
     , args: ['--interactive']
+    , requires_one: ['fake', 'other']
     , flags: {
         fake: {
           type: [String, Array]
-        , required: true
         , description: 'is this fake'
         , choices: ['yes', 'no']
+        }
+      , other: {
+          type: String
+        , description: 'other flag'
         }
       }
     , run: async function(_, data) {
@@ -591,17 +633,26 @@ test('command', async (t) => {
       }
     })
 
-    cmd.ask = async () => {
+    cmd.ask = async function(flag_name) {
+      // only used for `fake` because it's an array value
       return ['yes']
     }
+    const prompt = cmd.prompt
 
+    cmd.prompt = function(arg) {
+      const promise = prompt.call(cmd, arg)
+      promise.ui.activePrompt.done('')
+      promise.ui.activePrompt.close()
+      return promise
+    }
     const answers = await cmd.run()
     t.match(answers, {
       fake: ['yes']
+    , other: undefined
     })
   })
 
-  t.test('interactive command', async (t) => {
+  t.test('interactive command success with `required_with`', async (t) => {
     const cmd = new Command({
       interactive: true
     , strict: true
@@ -609,8 +660,12 @@ test('command', async (t) => {
     , flags: {
         fake: {
           type: String
-        , required: true
         , description: 'is this fake'
+        }
+      , other: {
+          type: String
+        , description: 'other flag'
+        , required_with: ['fake']
         }
       }
     , run: async function(_, data) {
@@ -630,7 +685,164 @@ test('command', async (t) => {
     const answers = await cmd.run()
     t.match(answers, {
       fake: 'yes'
+    , other: 'yes'
     })
+  })
+
+  t.test('interactive command that fails with required_without', async (t) => {
+    const cmd = new Command({
+      interactive: true
+    , strict: true
+    , args: ['--interactive']
+    , flags: {
+        fake: {
+          type: String
+        , description: 'is this fake'
+        }
+      , other: {
+          type: String
+        , description: 'other flag'
+        , required_without: ['fake']
+        }
+      }
+    , run: async function(_, data) {
+        return data
+      }
+    })
+
+    const prompt = cmd.prompt
+
+    cmd.prompt = function(arg) {
+      const promise = prompt.call(cmd, arg)
+      promise.ui.activePrompt.done('yes')
+      promise.ui.activePrompt.close()
+      return promise
+    }
+
+    t.rejects(cmd.run(), {
+      code: 'EMUTEXCLUSIVE'
+    , message: '`other` is mutually exclusive with fake. Erroneously set: fake'
+    }, 'correct error message')
+  })
+
+  t.test('interactive command that fails with required_with', async (t) => {
+    const cmd = new Command({
+      interactive: true
+    , strict: true
+    , args: ['--interactive']
+    , flags: {
+        fake: {
+          type: String
+        , description: 'is this fake'
+        }
+      , other: {
+          type: String
+        , description: 'other flag'
+        , required_with: ['fake']
+        }
+      }
+    , run: async function(_, data) {
+        return data
+      }
+    })
+
+    const prompt = cmd.prompt
+
+    cmd.prompt = function(arg) {
+      const promise = prompt.call(cmd, arg)
+      if (arg.name === 'fake') {
+        promise.ui.activePrompt.done('')
+      } else {
+        promise.ui.activePrompt.done('yes')
+      }
+      promise.ui.activePrompt.close()
+      return promise
+    }
+
+    t.rejects(cmd.run(), {
+      code: 'EMUTINCLUSIVE'
+    , message: '`other` is mutually inclusive with fake. Not set: fake'
+    }, 'correct error message')
+  })
+
+
+  t.test('interactive command with custom flag `validate`', async (t) => {
+    let validate_call_count = 0
+
+    const cmd = new Command({
+      interactive: true
+    , strict: true
+    , args: ['--interactive']
+    , flags: {
+        other: {
+          type: String
+        , description: 'other flag'
+        , validate: (cmd) => {
+            t.match(cmd, {
+              interactive: true
+            , argv: {
+                remain: []
+              , cooked: ['--interactive']
+              , original: ['--interactive']
+              }
+            , color: true
+            , other: 'my_string'
+            }, 'cmd appears to be `this.parsed`')
+            validate_call_count += 1
+          }
+        }
+      }
+    , run: async function(_, data) {
+        return data.other
+      }
+    })
+
+    const prompt = cmd.prompt
+
+    cmd.prompt = function(arg) {
+      const promise = prompt.call(cmd, arg)
+      promise.ui.activePrompt.done('my_string')
+      promise.ui.activePrompt.close()
+      return promise
+    }
+    const answer = await cmd.run()
+    t.equal(answer, 'my_string', 'run function produced the right result')
+    t.equal(validate_call_count, 1, 'validate function was only called once')
+  })
+
+  t.test('non-interactive command with custom flag `validate`', async (t) => {
+    let validate_call_count = 0
+
+    const cmd = new Command({
+      strict: true
+    , args: ['--other=my_string']
+    , flags: {
+        other: {
+          type: String
+        , description: 'other flag'
+        , validate: (cmd) => {
+            t.match(cmd, {
+              other: 'my_string'
+            , argv: {
+                remain: []
+              , cooked: ['--other', 'my_string']
+              , original: ['--other=my_string']
+              }
+            , interactive: false
+            , color: true
+            }, 'cmd appears to be `this.parsed`')
+            validate_call_count += 1
+          }
+        }
+      }
+    , run: async function(_, data) {
+        return data.other
+      }
+    })
+
+    const answer = await cmd.run()
+    t.equal(answer, 'my_string', 'run function produced the right result')
+    t.equal(validate_call_count, 1, 'validate function was only called once')
   })
 
   t.test('command#toPrompt', async (t) => {
@@ -757,7 +969,7 @@ test('command', async (t) => {
       ]
     })
 
-    t.deepEqual(cmd.tree, {
+    t.same(cmd.tree, {
       '-': base_flags
     , '--': base_flags
     , 'two': {
@@ -818,5 +1030,322 @@ test('command', async (t) => {
         code: 'EINVALIDCHOICE'
       }, 'EINVALIDCHOICE error raised')
     })
+  })
+
+  t.test('mutually inclusive/exclusive flags', async (t) => {
+    const cmd = new Command({
+      interactive: false
+    , strict: false
+    , flags: {
+        one: {
+          type: String
+        , choices: ['first', 'second']
+        , required_with: ['two', 'three']
+        }
+      , two: {
+          type: Number
+        , choices: [1, 4]
+        }
+      , three: {
+          type: String
+        }
+      , four: {
+          type: String
+        , required_without: ['one', 'two']
+        }
+      }
+    , run: async () => {
+        return true
+      }
+    })
+
+    t.afterEach(async () => {
+      cmd.reset()
+    })
+
+    t.test('valid options (no input)', async (t) => {
+      t.resolves(cmd.run(), 'valid options pass validation')
+    })
+
+    t.test('valid options (regular flags)', async (t) => {
+      cmd.setOptions({
+        args: ['--two=1', '--three=yep']
+      })
+      t.resolves(cmd.run(), 'valid options pass validation')
+    })
+
+    t.test('valid options (mutinc used)', async (t) => {
+      cmd.setOptions({
+        args: ['--one=first', '--two=4', '--three=yes']
+      })
+      t.resolves(cmd.run(), 'valid options pass validation')
+    })
+
+    t.test('valid options (mutex used)', async (t) => {
+      cmd.setOptions({
+        args: ['--four=hello', '--three=hi']
+      })
+      t.resolves(cmd.run(), 'valid options pass validation')
+    })
+
+    t.test('invalid options (mutinc violation)', async (t) => {
+      cmd.setOptions({
+        args: ['--one=second']
+      })
+      t.rejects(cmd.run(), {
+        code: 'EMUTINCLUSIVE'
+      , message: '`one` is mutually inclusive with two, three. Not set: two, three'
+      }, 'EMUTINCLUSIVE error raised')
+    })
+
+    t.test('invalid options (mutex violation)', async (t) => {
+      cmd.setOptions({
+        args: ['--two=1', '--four=hello']
+      })
+      t.rejects(cmd.run(), {
+        code: 'EMUTEXCLUSIVE'
+      , message: '`four` is mutually exclusive with one, two. Erroneously set: two'
+      }, 'EMUTEXCLUSIVE error raised')
+    })
+  })
+
+  t.test('requires_one flag option success', async (t) => {
+    const cmd = new Command({
+      interactive: false
+    , strict: false
+    , requires_one: ['one', 'two', 'three']
+    , flags: {
+        one: {
+          type: String
+        , choices: ['first', 'second']
+        }
+      , two: {
+          type: Number
+        }
+      , three: {
+          type: String
+        }
+      , four: {
+          type: String
+        }
+      }
+    , run: async () => {
+        return true
+      }
+    })
+
+    t.afterEach(async () => {
+      cmd.reset()
+    })
+
+    t.test('valid options - one selected', async (t) => {
+      cmd.setOptions({
+        args: ['--one=first']
+      })
+      t.resolves(cmd.run(), 'valid options pass validation')
+    })
+    t.test('valid options - two selected', async (t) => {
+      cmd.setOptions({
+        args: ['--two=1']
+      })
+      t.resolves(cmd.run(), 'valid options pass validation')
+    })
+    t.test('valid options - three selected', async (t) => {
+      cmd.setOptions({
+        args: ['--three=ues']
+      })
+      t.resolves(cmd.run(), 'valid options pass validation')
+    })
+
+    t.test('invalid options (too many selected)', async (t) => {
+      cmd.setOptions({
+        args: ['--one=first', '--two=1']
+      })
+      t.rejects(cmd.run(), {
+        code: 'EREQUIRESONEEXCEEDED'
+      , message: 'Only one of the following flags can be set: one, two, three. '
+          + 'Set flags were: one, two'
+      }, 'EREQUIRESONEEXCEEDED error raised')
+    })
+
+    t.test('invalid options (none selected)', async (t) => {
+      cmd.setOptions({
+        args: ['--four=nope']
+      })
+      t.rejects(cmd.run(), {
+        code: 'EREQUIRESONENOTSET'
+      , message: 'At least one of the following flags must be set: one, two, three.'
+      }, 'EREQUIRESONENOTSET error raised')
+    })
+  })
+
+  t.test('requires_one conflicts with required_with', async (t) => {
+    const cmd = new Command({
+      interactive: false
+    , strict: false
+    , requires_one: ['one', 'two']
+    , flags: {
+        one: {
+          type: String
+        , choices: ['first', 'second']
+        , required_with: ['two']
+        }
+      , two: {
+          type: Number
+        }
+      }
+    , run: async () => {
+        return true
+      }
+    })
+
+    cmd.setOptions({
+      args: ['--one=first', '--two=1']
+    })
+    t.rejects(cmd.run(), {
+      code: 'ECONFLICTINGFLAGOPTIONS'
+    , message: '`one` cannot use both \'required_with\' and \'requires_one\' options'
+    }, 'ECONFLICTINGFLAGOPTIONS error raised')
+  })
+
+  t.test('requires_one conflicts with required_without', async (t) => {
+    const cmd = new Command({
+      interactive: false
+    , strict: false
+    , requires_one: ['two', 'three']
+    , flags: {
+        one: {
+          type: String
+        , choices: ['first', 'second']
+        , required_without: ['two']
+        }
+      , two: {
+          type: Number
+        }
+      , three: {
+          type: Number
+        }
+      }
+    , run: async () => {
+        return true
+      }
+    })
+
+    cmd.setOptions({
+      args: ['--one=first']
+    })
+    t.rejects(cmd.run(), {
+      code: 'ECONFLICTINGFLAGOPTIONS'
+    , message: '`two` cannot use \'requires_one\' while `one` uses \'required_without\''
+    }, 'ECONFLICTINGFLAGOPTIONS error raised')
+  })
+
+  t.test('Error: requires_one is unnecessary', async (t) => {
+    const cmd = new Command({
+      interactive: false
+    , strict: false
+    , requires_one: ['one']
+    , flags: {
+        one: {
+          type: String
+        }
+      , two: {
+          type: Number
+        }
+      }
+    , run: async () => {
+        return true
+      }
+    })
+
+    cmd.setOptions({
+      args: ['--one=first']
+    })
+    t.rejects(cmd.run(), {
+      code: 'EINVALIDFIELD'
+    , message: '\'requires_one\' for `one` is unnecessary'
+    }, 'EINVALIDFIELD error raised')
+  })
+
+  t.test('Error: required_with is empty', async (t) => {
+    const cmd = new Command({
+      interactive: false
+    , strict: false
+    , flags: {
+        one: {
+          type: String
+        , required_with: []
+        }
+      , two: {
+          type: Number
+        }
+      }
+    , run: async () => {
+        return true
+      }
+    })
+
+    cmd.setOptions({
+      args: ['--one=first']
+    })
+    t.rejects(cmd.run(), {
+      code: 'EINVALIDFIELD'
+    , message: '`one` \'required_with\' must be a non-empty array'
+    }, 'EINVALIDFIELD error raised')
+  })
+
+  t.test('Error: required_without is empty', async (t) => {
+    const cmd = new Command({
+      interactive: false
+    , strict: false
+    , flags: {
+        one: {
+          type: String
+        , required_without: []
+        }
+      , two: {
+          type: Number
+        }
+      }
+    , run: async () => {
+        return true
+      }
+    })
+
+    cmd.setOptions({
+      args: ['--one=first']
+    })
+    t.rejects(cmd.run(), {
+      code: 'EINVALIDFIELD'
+    , message: '`one` \'required_without\' must be a non-empty array'
+    }, 'EINVALIDFIELD error raised')
+  })
+
+  t.test('Error: required conflicts with requires_one', async (t) => {
+    const cmd = new Command({
+      interactive: false
+    , strict: false
+    , requires_one: ['one', 'two']
+    , flags: {
+        one: {
+          type: String
+        , required: true
+        }
+      , two: {
+          type: Number
+        }
+      }
+    , run: async () => {
+        return true
+      }
+    })
+
+    cmd.setOptions({
+      args: ['--one=first']
+    })
+    t.rejects(cmd.run(), {
+      code: 'ECONFLICTINGFLAGOPTIONS'
+    , message: '`one` cannot use both \'required\' and \'requires_one\' options'
+    }, 'ECONFLICTINGFLAGOPTIONS error raised')
   })
 })

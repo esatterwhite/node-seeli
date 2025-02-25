@@ -15,7 +15,6 @@ test('flagToPrompt', async (t) => {
     , type: 'confirm'
     , message: 'test flag: (no description)'
     , when: undefined
-    , validate: undefined
     , filter: undefined
     , transformer: undefined
     })
@@ -28,7 +27,6 @@ test('flagToPrompt', async (t) => {
     , multi: true
     , choices: ['one']
     , when: () => {}
-    , validate: () => {}
     , filter: () => {}
     , transformer: () => {}
     })
@@ -39,7 +37,6 @@ test('flagToPrompt', async (t) => {
     , message: 'foobar: hello world'
     , choices: ['one']
     , when: Function
-    , validate: Function
     , filter: Function
     , transformer: Function
     })

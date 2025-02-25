@@ -2,8 +2,25 @@ usage -a 'fake' --verbose
 
 Options:
 
-  -i, --interactive, --no-interactive   <boolean> [false]             Use the interactive propmts
-  --color, --no-color                   <boolean> [true]              Enable ANSI color in output
+  -i, --interactive, --no-interactive         [false]       Use the interactive propmts
+      <boolean>
+      --color, --no-color <boolean>           [true]        Enable ANSI color in output
+  -m, --my-required <string> (required)                     This flag is required
+  -n, --name <string>                                       This is my name
+  -k, --nickname <string>                                   This is my nickname
+      --city <string>                                       This is my city
+      --state <string>                                      This is my state
+  -z, --zip <number>                                        This is my zip code
+      --country-code <number>                               This is my country code
 
 
   <...>: input type | *: repeatable flags | [...]: default values
+
+Mutually Inclusive Flags:
+  * city, state
+
+Mutually Exclusive Flags:
+  * zip, country-code
+
+Only 1 may have a value:
+  * name, nickname
