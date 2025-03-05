@@ -1,3 +1,26 @@
+# [16.0.0](https://github.com/esatterwhite/node-seeli/compare/v15.1.1...v16.0.0) (2025-03-05)
+
+
+### Bug Fixes
+
+* **from**: Remove unused `plain` parameter [98df6c1](https://github.com/esatterwhite/node-seeli/commit/98df6c18327eaf21d0690a481bd626aee80d4fe9) - Eric Satterwhite
+* **help**: Help text should display required flags [63b8c93](https://github.com/esatterwhite/node-seeli/commit/63b8c93779eeaed111411cb7b49d71d26504fc65) - Eric Satterwhite
+* **interactive**: `validate` should only be called once [78cfc8f](https://github.com/esatterwhite/node-seeli/commit/78cfc8f1f13c457b3ae993da0f68225cfda72542) - Eric Satterwhite, closes: [#134](https://github.com/esatterwhite/node-seeli/issues/134)
+* **wiki**: Add more information and fix typeos [067e224](https://github.com/esatterwhite/node-seeli/commit/067e22402e7df914d007a32759612b86f6c1be13) - Eric Satterwhite
+
+
+### Features
+
+* **flags**: Add flags to help specify exclusivity [5f12137](https://github.com/esatterwhite/node-seeli/commit/5f12137edc197c487c9546ccabb6051681276355) - Eric Satterwhite
+
+
+### **BREAKING CHANGES**
+
+* **flags:** `interactive` values need to be reset from `''` to
+`undefined` so that it behaves in the same way that missing argv values
+do. Also, validation is trickier now with the new options, so a `major`
+is the safe bet.
+
 ## [15.1.1](https://github.com/esatterwhite/node-seeli/compare/v15.1.0...v15.1.1) (2025-02-20)
 
 
