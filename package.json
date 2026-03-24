@@ -36,7 +36,7 @@
       "no-cond-assign": 0
     },
     "parserOptions": {
-      "ecmaVersion": 2020,
+      "ecmaVersion": 2022,
       "sourceType": "script"
     },
     "ignorePatterns": [
@@ -88,13 +88,14 @@
   "dependencies": {
     "abbrev": "^4.0.0",
     "chalk": "^5.6.2",
+    "cli-spinners": "^3.4.0",
     "cliui": "^9.0.1",
     "clone": "^2.1.2",
     "debug": "^4.3.2",
     "inquirer": "^7.1.0",
     "mout": "^1.2.2",
     "nopt": "^9.0.0",
-    "ora": "^5.4.1",
+    "ora": "^9.3.0",
     "pkg-up": "^3.1.0",
     "string-width": "^8.2.0",
     "strip-ansi": "^6.0.0"
@@ -103,7 +104,6 @@
     "@codedependant/release-config-npm": "^1.0.3",
     "@semantic-release/exec": "^5.0.0",
     "@vuepress/plugin-back-to-top": "^1.5.4",
-    "cli-spinners": "^2.6.0",
     "eslint": "^7.31.0",
     "eslint-config-codedependant": "^2.1.6",
     "semantic-release": "^17.4.2",
