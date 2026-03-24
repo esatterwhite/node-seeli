@@ -3,7 +3,7 @@
 const os = require('os')
 const path = require('path')
 const {test} = require('tap')
-const chalk = require('chalk')
+const {default: chalk} = require('chalk')
 const cli = require('../')
 const config = require('../lib/conf.js')
 const Seeli = require('../lib/seeli.js')
