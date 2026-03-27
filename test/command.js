@@ -237,8 +237,8 @@ test('command', async (t) => {
   })
 
   // internal argv parsing
-  t.test('~argv', async (tt) => {
-    test('should accept an array of arguments', async (t) => {
+  t.test('~argv', async (t) => {
+    t.test('should accept an array of arguments', async (t) => {
       const ArgCommand = new Command({
         args: ['--no-color']
       })
@@ -321,8 +321,6 @@ test('command', async (t) => {
 
       t.equal(NumberCommand.argv.num, 1)
     })
-
-
 
     t.test('should accept multiple value flags', async (t) => {
       const MultiCommand = new Command({
@@ -414,8 +412,8 @@ test('command', async (t) => {
     })
   })
 
-  t.test('#run', async (tt) => {
-    test('should emit events for marked flags', (t) => {
+  t.test('#run', async (t) => {
+    t.test('should emit events for marked flags', (t) => {
       t.plan(3)
       const EventCommand = new Command({
         args: ['--one', '--no-two']
@@ -463,8 +461,8 @@ test('command', async (t) => {
     t.equal(out, 'static call', 'static run function output')
   })
 
-  t.test('Subclassing', async (tt) => {
-    test('should allow for subclassing', async (t) => {
+  t.test('Subclassing', async (t) => {
+    t.test('should allow for subclassing', async (t) => {
       const defaults = {
         description: 'This is a subclass'
       }
@@ -493,8 +491,8 @@ test('command', async (t) => {
     })
   })
 
-  t.test('Aliasing', async (tt) => {
-    test('from string', async (t) => {
+  t.test('Aliasing', async (t) => {
+    t.test('from string', async (t) => {
       t.afterEach((cb) => {
         cli.reset()
         cb()
@@ -526,8 +524,8 @@ test('command', async (t) => {
     })
   })
 
-  t.test('Directive parsing', async (tt) => {
-    test('should pass the first non-flag argument to run', async (t) => {
+  t.test('Directive parsing', async (t) => {
+    t.test('should pass the first non-flag argument to run', async (t) => {
       const DirectiveCommand = new Command({
         flags: {
           test: {
@@ -566,7 +564,7 @@ test('command', async (t) => {
         , 'default': true
         }
       }
-    , run: async (cmd, data) => {
+    , run: async () => {
         return ''
       }
     })
@@ -584,22 +582,22 @@ test('command', async (t) => {
 
   t.test('manual prompt', async (t) => {
     const mockEnquirer = {
-      prompt: async (questions) => {
+      prompt: async () => {
         // Simulate user input - return the expected values
-        return { option: 'yes' }
+        return {option: 'yes'}
       }
     }
 
     const cmd = new Command({
-      enquirer: mockEnquirer,
-      run: async function() {
+      enquirer: mockEnquirer
+    , run: async function() {
         const value = await this.prompt({
           type: 'input'
         , name: 'option'
         , message: 'do you want this option'
         })
 
-        return value 
+        return value
       }
     })
 
@@ -628,7 +626,7 @@ test('command', async (t) => {
           case 'other': {
             return {other: ''}
           }
-      
+
         }
         return {}
       }
@@ -651,17 +649,15 @@ test('command', async (t) => {
         }
       }
     , run: async function(_, data) {
-        debugger;
         return data
       }
     })
 
-    cmd.ask = async function(flag_name) {
+    cmd.ask = async function() {
       // only used for `fake` because it's an array value
       return ['yes']
     }
 
-    debugger;
     const answers = await cmd.run()
     t.match(answers, {
       fake: ['yes']
@@ -679,7 +675,7 @@ test('command', async (t) => {
           case 'other': {
             return {other: 'yes'}
           }
-      
+
         }
         return {}
       }
@@ -706,7 +702,6 @@ test('command', async (t) => {
       }
     })
 
-    debugger;
     const answers = await cmd.run()
     t.match(answers, {
       fake: 'yes'
@@ -796,7 +791,6 @@ test('command', async (t) => {
     , message: '`other` is mutually inclusive with fake. Not set: fake'
     }, 'correct error message')
   })
-
 
   t.test('interactive command with custom flag `validate`', async (t) => {
     let validate_call_count = 0

@@ -104,8 +104,8 @@
     "@codedependant/release-config-npm": "^1.0.3",
     "@semantic-release/exec": "^5.0.0",
     "@vuepress/plugin-back-to-top": "^1.5.4",
-    "eslint": "^7.31.0",
-    "eslint-config-codedependant": "^2.1.6",
+    "eslint": "^10.1.0",
+    "eslint-config-logdna": "^8.0.1",
     "semantic-release": "^17.4.2",
     "tap": "^21.6.2",
     "vuepress": "^1.8.2"
