@@ -24,7 +24,7 @@ test('registry', async (t) => {
     registry.register(two)
 
     t.equal(registry.get('two'), two, 'registered property')
-    t.deepEqual(registry.list(), ['two'], 'registered commands')
+    t.same(registry.list(), ['two'], 'registered commands')
     t.equal(registry.get('tow'), two, 'registered alias')
 
   })
@@ -34,7 +34,7 @@ test('registry', async (t) => {
     registry.register('one', two)
 
     t.equal(registry.get('one'), two, 'registered property')
-    t.deepEqual(registry.list(), ['one'], 'registered commands')
+    t.same(registry.list(), ['one'], 'registered commands')
     t.equal(registry.get('tow'), two, 'registered alias')
   })
 
@@ -44,7 +44,7 @@ test('registry', async (t) => {
 
     t.equal(registry.get('one'), one, 'registered property')
     registry.unregister(one.options.name)
-    t.deepEqual(registry.list(), [], 'registered commands')
+    t.same(registry.list(), [], 'registered commands')
     t.notOk(registry.get('one'))
     t.doesNotThrow(() => {
       registry.unregister()

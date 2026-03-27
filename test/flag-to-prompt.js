@@ -33,12 +33,12 @@ test('flagToPrompt', async (t) => {
 
     t.match(out, {
       name: 'foobar'
-    , type: 'checkbox'
+    , type: 'multiselect'
     , message: 'foobar: hello world'
     , choices: ['one']
-    , when: Function
-    , filter: Function
-    , transformer: Function
+    , skip: Function
+    , result: Function
+    , format: Function
     })
   })
 }).catch(threw)

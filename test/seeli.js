@@ -15,7 +15,7 @@ test('cli', async (t) => {
     const seeli = new Seeli()
     t.notOk(seeli.config('foobar'), 'initial value not set')
     seeli.config('foobar', 1)
-    t.strictEqual(seeli.config('foobar'), 1, 'config value set')
+    t.equal(seeli.config('foobar'), 1, 'config value set')
   })
 
   t.test('statics', async (t) => {
@@ -23,26 +23,26 @@ test('cli', async (t) => {
       Seeli.set('foo', 'bar')
       Seeli.set({one: true})
       const result = Seeli.get('one')
-      t.strictEqual(result, true, 'config value set')
+      t.equal(result, true, 'config value set')
     })
 
     t.test('static get Command', async (t) => {
-      t.strictEqual(Seeli.Command, Command, 'returns base command class')
+      t.equal(Seeli.Command, Command, 'returns base command class')
     })
 
     t.test('instance get Command', async (t) => {
-      t.strictEqual(new Seeli().Command, Command, 'returns base command class')
+      t.equal(new Seeli().Command, Command, 'returns base command class')
     })
 
     t.test('colorize', async (t) => {
       const configured = config.get('color')
-      t.strictEqual(
+      t.equal(
         Seeli.colorize('hello')
       , chalk[configured]('hello')
       , 'no arguments returns configured color'
       )
 
-      t.strictEqual(
+      t.equal(
         Seeli.colorize('hello', 'bold')
       , chalk.bold('hello')
       , 'second argument controls color output'
@@ -123,7 +123,7 @@ test('cli', async (t) => {
 
     t.test('should allow commands to be registered by name', async (t) => {
       cli.use('test', TestCommand)
-      t.notEqual(cli.list.indexOf('test'), -1)
+      t.notSame(cli.list.indexOf('test'), -1)
     })
 
     t.test('#list', async (t) => {
@@ -132,8 +132,8 @@ test('cli', async (t) => {
       })
 
       t.test('should only list top level commands', async (t) => {
-        t.notEqual(cli.list.indexOf('test'), -1)
-        t.notEqual(cli.list.indexOf('help'), -1)
+        t.notSame(cli.list.indexOf('test'), -1)
+        t.notSame(cli.list.indexOf('help'), -1)
         t.equal(cli.list.indexOf('h'), -1)
         t.equal(cli.list.indexOf('he'), -1)
         t.equal(cli.list.indexOf('hel'), -1)
@@ -186,7 +186,7 @@ test('cli', async (t) => {
         path.join(FIXTURE_DIR, 'plugin-a.fixture')
       ])
       const seeli = new Seeli()
-      t.strictEqual(seeli.config('plugin_a_fixture'), true, 'plugin path loaded')
+      t.equal(seeli.config('plugin_a_fixture'), true, 'plugin path loaded')
     })
 
     t.test('require path loader', async (t) => {
@@ -196,7 +196,7 @@ test('cli', async (t) => {
         ]
       })
 
-      t.strictEqual(seeli.config('plugin_b_fixture'), false, 'plugin path loaded')
+      t.equal(seeli.config('plugin_b_fixture'), false, 'plugin path loaded')
     })
 
     t.test('inline function loader', async (t) => {
@@ -213,8 +213,8 @@ test('cli', async (t) => {
         plugins: [inline]
       })
 
-      t.strictEqual(seeli.config('inline_plugin'), 1, 'inline plugin loaded')
-      t.deepEqual(seeli.list(), ['manual'], 'registered command list')
+      t.equal(seeli.config('inline_plugin'), 1, 'inline plugin loaded')
+      t.same(seeli.list(), ['manual'], 'registered command list')
     })
 
     t.test('explicit call', async (t) => {
@@ -230,8 +230,8 @@ test('cli', async (t) => {
       const seeli = new Seeli()
       seeli.plugin(outline)
 
-      t.strictEqual(seeli.config('outline_plugin'), true, 'inline plugin loaded')
-      t.deepEqual(seeli.list(), ['explicit'], 'registered command list')
+      t.equal(seeli.config('outline_plugin'), true, 'inline plugin loaded')
+      t.same(seeli.list(), ['explicit'], 'registered command list')
     })
 
     t.test('invalid plugin type', async (t) => {

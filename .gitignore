@@ -17,3 +17,5 @@ cli.js
 *.vim
 
 pnpm-lock.yaml
+.tap
+.tap-output/

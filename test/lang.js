@@ -10,7 +10,7 @@ const test = tap.test
 test('object', async (t) => {
   t.test('#set', async (tt) => {
     const a = object.set({}, 'a:b:c:d', 1)
-    tt.deepEqual(a, {
+    tt.same(a, {
       a: {
         b: {
           c: {
@@ -21,7 +21,7 @@ test('object', async (t) => {
     })
 
     const b = object.set({}, 'a,b,c,d', 2, ',')
-    tt.deepEqual(b, {
+    tt.same(b, {
       a: {
         b: {
           c: {
@@ -36,9 +36,9 @@ test('object', async (t) => {
     const one = {a: {b: [1]}, c: path, d: url, x: {y: {z: 1}}}
     const two = {x: {y: {f: 3}}}
     const out = object.merge(one, two)
-    t.deepEqual(out.c, path, 'path module intact')
-    t.deepEqual(out.d, url, 'url module intact')
-    t.deepEqual(out, {
+    t.same(out.c, path, 'path module intact')
+    t.same(out.d, url, 'url module intact')
+    t.same(out, {
       a: {b: [1]}
     , c: path
     , d: url

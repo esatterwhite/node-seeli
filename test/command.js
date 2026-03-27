@@ -583,16 +583,23 @@ test('command', async (t) => {
   })
 
   t.test('manual prompt', async (t) => {
+    const mockEnquirer = {
+      prompt: async (questions) => {
+        // Simulate user input - return the expected values
+        return { option: 'yes' }
+      }
+    }
+
     const cmd = new Command({
+      enquirer: mockEnquirer,
       run: async function() {
-        const promise = this.prompt({
+        const value = await this.prompt({
           type: 'input'
         , name: 'option'
         , message: 'do you want this option'
         })
 
-        promise.ui.rl.emit('line', 'yes')
-        return promise
+        return value 
       }
     })
 
@@ -612,8 +619,23 @@ test('command', async (t) => {
   })
 
   t.test('interactive command success', async (t) => {
+    const mockEnquirer = {
+      prompt: async (question) => {
+        switch (question.name) {
+          case 'fake': {
+            return {fake: ['yes']}
+          }
+          case 'other': {
+            return {other: ''}
+          }
+      
+        }
+        return {}
+      }
+    }
     const cmd = new Command({
       interactive: true
+    , enquirer: mockEnquirer
     , strict: true
     , args: ['--interactive']
     , requires_one: ['fake', 'other']
@@ -629,6 +651,7 @@ test('command', async (t) => {
         }
       }
     , run: async function(_, data) {
+        debugger;
         return data
       }
     })
@@ -637,14 +660,8 @@ test('command', async (t) => {
       // only used for `fake` because it's an array value
       return ['yes']
     }
-    const prompt = cmd.prompt
 
-    cmd.prompt = function(arg) {
-      const promise = prompt.call(cmd, arg)
-      promise.ui.activePrompt.done('')
-      promise.ui.activePrompt.close()
-      return promise
-    }
+    debugger;
     const answers = await cmd.run()
     t.match(answers, {
       fake: ['yes']
@@ -653,8 +670,24 @@ test('command', async (t) => {
   })
 
   t.test('interactive command success with `required_with`', async (t) => {
+    const mockEnquirer = {
+      prompt: async (question) => {
+        switch (question.name) {
+          case 'fake': {
+            return {fake: 'yes'}
+          }
+          case 'other': {
+            return {other: 'yes'}
+          }
+      
+        }
+        return {}
+      }
+    }
+
     const cmd = new Command({
       interactive: true
+    , enquirer: mockEnquirer
     , strict: true
     , args: ['--interactive']
     , flags: {
@@ -673,15 +706,7 @@ test('command', async (t) => {
       }
     })
 
-    const prompt = cmd.prompt
-
-    cmd.prompt = function(arg) {
-      const promise = prompt.call(cmd, arg)
-      promise.ui.activePrompt.done('yes')
-      promise.ui.activePrompt.close()
-      return promise
-    }
-
+    debugger;
     const answers = await cmd.run()
     t.match(answers, {
       fake: 'yes'
@@ -690,8 +715,23 @@ test('command', async (t) => {
   })
 
   t.test('interactive command that fails with required_without', async (t) => {
+    const mockEnquirer = {
+      prompt: async (question) => {
+        switch (question.name) {
+          case 'fake': {
+            return {fake: 'yes'}
+          }
+          case 'other': {
+            return {other: 'yes'}
+          }
+
+        }
+        return {}
+      }
+    }
     const cmd = new Command({
       interactive: true
+    , enquirer: mockEnquirer
     , strict: true
     , args: ['--interactive']
     , flags: {
@@ -710,15 +750,6 @@ test('command', async (t) => {
       }
     })
 
-    const prompt = cmd.prompt
-
-    cmd.prompt = function(arg) {
-      const promise = prompt.call(cmd, arg)
-      promise.ui.activePrompt.done('yes')
-      promise.ui.activePrompt.close()
-      return promise
-    }
-
     t.rejects(cmd.run(), {
       code: 'EMUTEXCLUSIVE'
     , message: '`other` is mutually exclusive with fake. Erroneously set: fake'
@@ -726,8 +757,23 @@ test('command', async (t) => {
   })
 
   t.test('interactive command that fails with required_with', async (t) => {
+    const mockEnquirer = {
+      prompt: async (question) => {
+        switch (question.name) {
+          case 'fake': {
+            return {}
+          }
+          case 'other': {
+            return {other: 'yes'}
+          }
+
+        }
+        return {}
+      }
+    }
     const cmd = new Command({
       interactive: true
+    , enquirer: mockEnquirer
     , strict: true
     , args: ['--interactive']
     , flags: {
@@ -745,20 +791,6 @@ test('command', async (t) => {
         return data
       }
     })
-
-    const prompt = cmd.prompt
-
-    cmd.prompt = function(arg) {
-      const promise = prompt.call(cmd, arg)
-      if (arg.name === 'fake') {
-        promise.ui.activePrompt.done('')
-      } else {
-        promise.ui.activePrompt.done('yes')
-      }
-      promise.ui.activePrompt.close()
-      return promise
-    }
-
     t.rejects(cmd.run(), {
       code: 'EMUTINCLUSIVE'
     , message: '`other` is mutually inclusive with fake. Not set: fake'
@@ -768,9 +800,20 @@ test('command', async (t) => {
 
   t.test('interactive command with custom flag `validate`', async (t) => {
     let validate_call_count = 0
+    const mockEnquirer = {
+      prompt: async (question) => {
+        switch (question.name) {
+          case 'other': {
+            return {other: 'my_string'}
+          }
+        }
+        return {}
+      }
+    }
 
     const cmd = new Command({
       interactive: true
+    , enquirer: mockEnquirer
     , strict: true
     , args: ['--interactive']
     , flags: {
@@ -797,14 +840,6 @@ test('command', async (t) => {
       }
     })
 
-    const prompt = cmd.prompt
-
-    cmd.prompt = function(arg) {
-      const promise = prompt.call(cmd, arg)
-      promise.ui.activePrompt.done('my_string')
-      promise.ui.activePrompt.close()
-      return promise
-    }
     const answer = await cmd.run()
     t.equal(answer, 'my_string', 'run function produced the right result')
     t.equal(validate_call_count, 1, 'validate function was only called once')
@@ -871,15 +906,15 @@ test('command', async (t) => {
     t.match(out, [{
       type: 'confirm'
     , message: 'one: boolean flag'
-    , when: Function
+    , skip: Function
     , validate: undefined
-    , filter: undefined
+    , result: undefined
     }, {
       type: 'number'
     , message: /no description/ig
     , when: undefined
     , validate: undefined
-    , filter: Function
+    , result: Function
     }])
   })
 
