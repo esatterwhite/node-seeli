@@ -79,7 +79,7 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=22.0.0"
   },
   "bugs": {
     "url": "https://github.com/esatterwhite/node-seeli/issues"
@@ -107,13 +107,12 @@
     "eslint": "^7.31.0",
     "eslint-config-codedependant": "^2.1.6",
     "semantic-release": "^17.4.2",
-    "tap": "^16.3.9",
+    "tap": "^21.6.2",
     "vuepress": "^1.8.2"
   },
   "tap": {
-    "jsx": false,
-    "ts": false,
     "browser": false,
+    "show-full-coverage": true,
     "functions": 97,
     "lines": 97,
     "branches": 84,
@@ -121,19 +120,14 @@
     "coverage-report": [
       "text",
       "text-summary",
+      "lcov",
       "json",
+      "json-summary",
       "html"
     ],
+    "output-file": ".tap-out",
     "files": [
       "test/**/*.js"
-    ],
-    "nyc-arg": [
-      "--exclude=test/",
-      "--exclude=examples/",
-      "--exclude=gh-pages/",
-      "--exclude=docs/",
-      "--exclude=release.config.js",
-      "--all"
     ]
   }
 }

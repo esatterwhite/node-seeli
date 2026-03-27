@@ -15,8 +15,8 @@ test('flagType', async (t) => {
   , [{type: url}, 'input', 'url === input']
   , [{type: [Number, Array]}, 'number', '[Number, Array] === number']
   , [{type: String, mask: true}, 'password', 'mask=true === password']
-  , [{type: String, choices: []}, 'list', 'choices === list']
-  , [{type: String, choices: [], multi: true}, 'checkbox', 'choices + multi === checkbox']
+  , [{type: String, choices: []}, 'select', 'choices === select']
+  , [{type: String, choices: [], multi: true}, 'multiselect', 'choices + multi === multiselect']
   , [{type: Function}, 'input', 'unexpected type === input']
   ]
 
