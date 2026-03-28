@@ -166,6 +166,11 @@ name | required | type | description
 **when** | `false` | `function` | **interactive mode only** Receives the current user answers hash and should return true or **false** depending on whether or not this question should be asked.
 **validate** | `false` | `function` |  receives user input and should return true if the value is **valid**, and an error message (String) otherwise. If false is returned, a default error message is provided.
 **filter** | `false` | `function` | **interactive mode only** Receives the user input and return the filtered value to be used **inside** the program. The value returned will be added to the Answers hash.
+**required_with** | `false` | `Array` | A non-empty array which says that if the flag is set, then the specified other flags must also be set, i.e. "mutual inclusion."
+**required_without** | `false` | `Array` | A non-empty array which says that if the flag is set, then none of the other specified flags may also be set, i.e. "mutual exclusion."
+**affirmative** | `false` | `String` | **interactive mode only** For `Boolean` flags, this is the value to display when the flag is true (default is `yes`)
+**negative** | `false` | `String` | **interactive mode only** For `Boolean` flags, this is the value to display when the flag is true (default is `no`)
+
 
 ### Types
 
