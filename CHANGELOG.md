@@ -1,3 +1,33 @@
+# [17.0.0](https://github.com/esatterwhite/node-seeli/compare/v16.0.0...v17.0.0) (2026-03-28)
+
+
+### Bug Fixes
+
+* **registry**: make sure registry sets name if provided [5ed796e](https://github.com/esatterwhite/node-seeli/commit/5ed796e129224e657be03374b5b4d868ca004e6e) - Eric Satterwhite
+
+
+### Chores
+
+* **ci**: update testable node versions [f7170e7](https://github.com/esatterwhite/node-seeli/commit/f7170e7677311fa39d068c786621b4f7fefcd86f) - Eric Satterwhite
+* **dep-dev**: eslint-config-logdna@8.0.1 [e62cbda](https://github.com/esatterwhite/node-seeli/commit/e62cbda5ddb4cb21ca9b1a4113617041cc337258) - Eric Satterwhite
+* **dep-dev**: tap@21.6.2 [4892b01](https://github.com/esatterwhite/node-seeli/commit/4892b01e2fa240e3d202b0cf6bd1c93a6bd0f6f9) - Eric Satterwhite
+* **deps**: abbrev@4.0.0 [8b0dd54](https://github.com/esatterwhite/node-seeli/commit/8b0dd54a8a4100cc04eb06a16ab9c7c40091a481) - Eric Satterwhite
+* **deps**: chalk@5.6.2 [e7e9fee](https://github.com/esatterwhite/node-seeli/commit/e7e9fee9bd2597070410f4f83cc90d6a6c529236) - Eric Satterwhite
+* **deps**: cliui@9.0.1 [34e87a5](https://github.com/esatterwhite/node-seeli/commit/34e87a5e6bb4cb1735f2b35d6976dc053fa2b854) - Eric Satterwhite
+* **deps**: enquirer@2.4.1 [17f15aa](https://github.com/esatterwhite/node-seeli/commit/17f15aa5fd3659e8e257182085b90f1f1d0a8eb1) - Eric Satterwhite
+* **deps**: nopt@9.0.0 [1bf23e8](https://github.com/esatterwhite/node-seeli/commit/1bf23e8ae85ab39da1cd3e3c17e7a537428274f9) - Eric Satterwhite
+* **deps**: ora@9.3.1 [8cb8b0d](https://github.com/esatterwhite/node-seeli/commit/8cb8b0d243fdf420c19efb5726f76e36e0984ac1) - Eric Satterwhite
+* **deps**: package-up@5.0.0 [003898f](https://github.com/esatterwhite/node-seeli/commit/003898f7ba28d5e3b9659d13e3d0484f06e7598b) - Eric Satterwhite
+* **deps**: string-width@8.2.0 [921ca3e](https://github.com/esatterwhite/node-seeli/commit/921ca3eb54c4782ead4cc4980a12b2fce909cf24) - Eric Satterwhite
+* **doc**: update docs to reflect new flag options [e34e5c0](https://github.com/esatterwhite/node-seeli/commit/e34e5c0071f4007ec6b608b2b3e5597cac1976df) - Eric Satterwhite
+
+
+### **BREAKING CHANGES**
+
+* **deps:** replaces inquirer with enquirer.
+
+See: https://github.com/enquirer/enquirer/issues/483
+
 # [16.0.0](https://github.com/esatterwhite/node-seeli/compare/v15.1.1...v16.0.0) (2025-03-05)
 
 
