@@ -6,7 +6,7 @@ const logdna = require('eslint-config-logdna')
 module.exports = defineConfig([
   {
     'extends': [logdna]
-  , 'files': ['lib/**/*.js', '*.js', 'test/**/*.js']
+  , 'files': ['lib/**/*.js', 'test/**/*.js', 'index.js']
   , 'languageOptions': {
       ecmaVersion: 2022
     , sourceType: 'commonjs'
