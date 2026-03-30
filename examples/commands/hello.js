@@ -27,9 +27,7 @@ module.exports = new cli.Command({
       'type': Boolean
     , 'shorthand': 'e'
     , 'description': 'Say hello in a very excited manner'
-    , 'default': true
-    , 'affirmative': 'Yes'
-    , 'negative': 'Nope'
+    , 'default': false
     }
 
   , volume: {
@@ -38,13 +36,6 @@ module.exports = new cli.Command({
     , 'description': 'Will yell at each person'
     , 'default': 'normal'
     , 'shorthand': 'v'
-    }
-  , things: {
-      type: String
-    , description: 'which thing'
-    , choices: ['one', 'two', 'three']
-    , multi: true
-    , shorthand: 't'
     }
   }
 , onContent: (content) => {

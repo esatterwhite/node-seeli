@@ -13,12 +13,10 @@ module.exports = new cli.Command({
       'type': Boolean
     , 'default': true
     , 'description': 'do you like hub'
-    , affirmative: 'I think so'
-    , negative: 'i do not think so'
     }
   }
 , async run(cmd, data) {
-    return data.ask ? 'hub' : 'no hub'
+    return 'hub'
   }
 })
 
