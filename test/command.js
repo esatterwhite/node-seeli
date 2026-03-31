@@ -4,12 +4,14 @@ const fs = require('fs')
 const path = require('path')
 const assert = require('assert')
 const strip = require('strip-ansi')
+const {input} = require('@inquirer/prompts')
+const {render} = require('@inquirer/testing')
 const cli = require('../')
 const Command = require('../lib/command')
 const commands = require('../lib/commands')
+const PROMPTS = require('../lib/command/prompt-map')
 const Help = require('../lib/commands/help')
 const test = require('tap').test
-
 test('command', async (t) => {
 
   // description parsing
@@ -583,17 +585,30 @@ test('command', async (t) => {
   t.test('manual prompt', async (t) => {
     const cmd = new Command({
       run: async function() {
-        const promise = this.prompt({
+        const answer = await this.prompt({
           type: 'input'
         , name: 'option'
         , message: 'do you want this option'
         })
 
-        promise.ui.rl.emit('line', 'yes')
-        return promise
+        return answer
       }
     })
 
+    const prompt = cmd.prompt
+
+    t.teardown(() => {
+      cmd.prompt = prompt
+    })
+
+    cmd.prompt = async function(options) {
+      const {answer, events} = await render(input, {
+        message: options.message
+      })
+      events.type('yes')
+      events.keypress('enter')
+      return {[options.name]: await answer}
+    }
     const output = await cmd.run()
     t.match(output, {option: 'yes'})
   })
@@ -635,13 +650,11 @@ test('command', async (t) => {
       // only used for `fake` because it's an array value
       return ['yes']
     }
-    const prompt = cmd.prompt
 
     cmd.prompt = function(arg) {
-      const promise = prompt.call(cmd, arg)
-      promise.ui.activePrompt.done('')
-      promise.ui.activePrompt.close()
-      return promise
+      // Mock the prompt to return predefined answers
+      const answer = arg.name === 'fake' ? 'yes' : undefined
+      return Promise.resolve({[arg.name]: answer})
     }
     const answers = await cmd.run()
     t.match(answers, {
@@ -672,12 +685,28 @@ test('command', async (t) => {
     })
 
     const prompt = cmd.prompt
+    const input = PROMPTS.get('input')
 
-    cmd.prompt = function(arg) {
-      const promise = prompt.call(cmd, arg)
-      promise.ui.activePrompt.done('yes')
-      promise.ui.activePrompt.close()
+    // shim the input prompt
+    PROMPTS.set('input', function(options) {
+      const promise = render(input, options)
       return promise
+    })
+
+    t.teardown(() => {
+      cmd.prompt = prompt
+      PROMPTS.set('input', input)
+    })
+
+    cmd.prompt = async function(arg) {
+      // returns the wrapped prompts for progmattic control
+      const result = await prompt.call(cmd, arg)
+
+      // Mock the prompt to return predefined answers
+      result[arg.name].events.type('yes')
+      result[arg.name].events.keypress('enter')
+      const ans = await result[arg.name].answer
+      return {[arg.name]: ans}
     }
 
     const answers = await cmd.run()
@@ -709,12 +738,26 @@ test('command', async (t) => {
     })
 
     const prompt = cmd.prompt
+    const input = PROMPTS.get('input')
 
-    cmd.prompt = function(arg) {
-      const promise = prompt.call(cmd, arg)
-      promise.ui.activePrompt.done('yes')
-      promise.ui.activePrompt.close()
-      return promise
+    // shim the input prompt
+    PROMPTS.set('input', function(options) {
+      return render(input, options)
+    })
+
+    t.teardown(() => {
+      cmd.prompt = prompt
+      PROMPTS.set('input', input)
+    })
+
+    cmd.prompt = async function(arg) {
+      // returns the wrapped prompts for progmattic control
+      const result = await prompt.call(cmd, arg)
+
+      // Mock the prompt to return predefined answers
+      result[arg.name].events.type('yes')
+      result[arg.name].events.keypress('enter')
+      return {[arg.name]: await result[arg.name].answer}
     }
 
     t.rejects(cmd.run(), {
@@ -745,16 +788,28 @@ test('command', async (t) => {
     })
 
     const prompt = cmd.prompt
+    const input = PROMPTS.get('input')
 
-    cmd.prompt = function(arg) {
-      const promise = prompt.call(cmd, arg)
-      if (arg.name === 'fake') {
-        promise.ui.activePrompt.done('')
-      } else {
-        promise.ui.activePrompt.done('yes')
-      }
-      promise.ui.activePrompt.close()
-      return promise
+    // shim the input prompt
+    PROMPTS.set('input', function(options) {
+      return render(input, options)
+    })
+
+    t.teardown(() => {
+      cmd.prompt = prompt
+      PROMPTS.set('input', input)
+    })
+
+    cmd.prompt = async function(arg) {
+      const input = arg.name === 'fake' ? '' : 'yes'
+
+      // returns the wrapped prompts for progmattic control
+      const result = await prompt.call(cmd, arg)
+
+      result[arg.name].events.type(input)
+      result[arg.name].events.keypress('enter')
+      // Mock the prompt to return predefined answers
+      return {[arg.name]: await result[arg.name].answer}
     }
 
     t.rejects(cmd.run(), {
@@ -774,16 +829,16 @@ test('command', async (t) => {
         other: {
           type: String
         , description: 'other flag'
-        , validate: (cmd) => {
-            t.match(cmd, {
-              interactive: true
+        , validate: async (value) => {
+            t.match(value, {
+              other: 'my_string'
             , argv: {
                 remain: []
               , cooked: ['--interactive']
               , original: ['--interactive']
               }
+            , interactive: true
             , color: true
-            , other: 'my_string'
             }, 'cmd appears to be `this.parsed`')
             validate_call_count += 1
           }
@@ -795,13 +850,27 @@ test('command', async (t) => {
     })
 
     const prompt = cmd.prompt
+    const input = PROMPTS.get('input')
 
-    cmd.prompt = function(arg) {
-      const promise = prompt.call(cmd, arg)
-      promise.ui.activePrompt.done('my_string')
-      promise.ui.activePrompt.close()
-      return promise
+    // shim the input prompt
+    PROMPTS.set('input', function(options) {
+      return render(input, options)
+    })
+
+    t.teardown(() => {
+      cmd.prompt = prompt
+      PROMPTS.set('input', input)
+    })
+
+    cmd.prompt = async function(arg) {
+      const answer = 'my_string'
+      const result = await prompt.call(cmd, arg)
+
+      result[arg.name].events.type(answer)
+      result[arg.name].events.keypress('enter')
+      return {[arg.name]: await result[arg.name].answer}
     }
+
     const answer = await cmd.run()
     t.equal(answer, 'my_string', 'run function produced the right result')
     t.equal(validate_call_count, 1, 'validate function was only called once')
@@ -864,17 +933,16 @@ test('command', async (t) => {
     const out = cmd.toPrompt()
     t.ok(Array.isArray(out), 'output is an array')
     t.equal(out.length, 2, 'expected prompt count')
-
     t.match(out, [{
       type: 'confirm'
     , message: 'one: boolean flag'
-    , when: Function
+    , skip: Function
     , validate: undefined
     , filter: undefined
     }, {
       type: 'number'
     , message: /no description/ig
-    , when: undefined
+    , skip: undefined
     , validate: undefined
     , filter: Function
     }])

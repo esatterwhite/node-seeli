@@ -35,8 +35,8 @@ test('flagToPrompt', async (t) => {
       name: 'foobar'
     , type: 'checkbox'
     , message: 'foobar: hello world'
-    , choices: ['one']
-    , when: Function
+    , choices: [{name: 'one', value: 'one'}]
+    , skip: Function
     , filter: Function
     , transformer: Function
     })
