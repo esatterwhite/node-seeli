@@ -16,7 +16,7 @@ module.exports = new cli.Command({
     }
   }
 , async run(cmd, data) {
-    return 'hub'
+    return data.ask ? 'hub' : 'no hub'
   }
 })
 

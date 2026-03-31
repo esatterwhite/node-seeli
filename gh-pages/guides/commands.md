@@ -168,8 +168,6 @@ name | required | type | description
 **filter** | `false` | `function` | **interactive mode only** Receives the user input and return the filtered value to be used **inside** the program. The value returned will be added to the Answers hash.
 **required_with** | `false` | `Array` | A non-empty array which says that if the flag is set, then the specified other flags must also be set, i.e. "mutual inclusion."
 **required_without** | `false` | `Array` | A non-empty array which says that if the flag is set, then none of the other specified flags may also be set, i.e. "mutual exclusion."
-**affirmative** | `false` | `String` | **interactive mode only** For `Boolean` flags, this is the value to display when the flag is true (default is `yes`)
-**negative** | `false` | `String` | **interactive mode only** For `Boolean` flags, this is the value to display when the flag is true (default is `no`)
 
 
 ### Types
