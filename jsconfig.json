@@ -1,0 +1,19 @@
+{
+  "exclude": [
+    "deployment",
+    "compose"
+  ],
+  "include": [
+    "lib/**/*.js",
+    "*.js"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "Node",
+    "checkJs": false,
+    "target": "ES2025",
+    "module": "CommonJS",
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true
+  }
+}
