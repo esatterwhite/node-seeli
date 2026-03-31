@@ -18,4 +18,5 @@ cli.js
 
 pnpm-lock.yaml
 .tap
-.tap-output/
+.tap-out
+.vimspector.json
