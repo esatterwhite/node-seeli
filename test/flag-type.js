@@ -15,7 +15,7 @@ test('flagType', async (t) => {
   , [{type: url}, 'input', 'url === input']
   , [{type: [Number, Array]}, 'number', '[Number, Array] === number']
   , [{type: String, mask: true}, 'password', 'mask=true === password']
-  , [{type: String, choices: []}, 'list', 'choices === list']
+  , [{type: String, choices: []}, 'select', 'choices === select']
   , [{type: String, choices: [], multi: true}, 'checkbox', 'choices + multi === checkbox'] // eslint-disable-line max-len
   , [{type: Function}, 'input', 'unexpected type === input']
   ]
