@@ -1,3 +1,32 @@
+# [18.0.0](https://github.com/esatterwhite/node-seeli/compare/v17.0.0...v18.0.0) (2026-04-01)
+
+
+### Bug Fixes
+
+* **ci**: update the actions versiosn for npm publishing [bd5253c](https://github.com/esatterwhite/node-seeli/commit/bd5253c1ca5444f447466cdb90daf36a534cf238) - Eric Satterwhite
+* **ci**: update the release to use github apps and npx [ad139bf](https://github.com/esatterwhite/node-seeli/commit/ad139bf6fc02ebd65a5cb5577368bf6e19651dd1) - Eric Satterwhite
+* use npm install over ci [4bf4369](https://github.com/esatterwhite/node-seeli/commit/4bf4369d404ad1abae8f35ac1c178100f0cc3bd1) - Eric Satterwhite
+
+
+### Chores
+
+* **ci**: update release for npm trusted publisher [8359e8d](https://github.com/esatterwhite/node-seeli/commit/8359e8d6fca274afa3d046d38fbfd7a403ce48f1) - Eric Satterwhite
+* **dep-dev**: semantic-release@25 [d03e0a7](https://github.com/esatterwhite/node-seeli/commit/d03e0a786a77a6e811aa1bea97468871de3d56a0) - Eric Satterwhite
+* **deps**: @inquirer/prompts@8.3.2 [9e28725](https://github.com/esatterwhite/node-seeli/commit/9e28725b5a92907a9d3a7c7ed16888bc9ee2ad5e) - Eric Satterwhite
+* **deps**: codedependant/release-config-core@1.1.1 [24dd132](https://github.com/esatterwhite/node-seeli/commit/24dd13229587d043803556444cf70daebc90e7e4) - Eric Satterwhite
+* **doc**: update documentation after inquire refactor [3d9e739](https://github.com/esatterwhite/node-seeli/commit/3d9e739ccf4a28be5b4618b49157260fa5c89331) - Eric Satterwhite
+* **pkg**: include basic type definitions [9c234c1](https://github.com/esatterwhite/node-seeli/commit/9c234c158a5e503e616040ddd42de92e66db121d) - Eric Satterwhite
+
+
+### Miscellaneous
+
+* Revert "chore(deps)!: enquirer@2.4.1" [ee887bc](https://github.com/esatterwhite/node-seeli/commit/ee887bcce98758aa8e6db28641630abd6b235b6d) - Eric Satterwhite
+
+
+### **BREAKING CHANGES**
+
+* **deps:** The filter function is handled by seeli, not inquirer
+
 # [17.0.0](https://github.com/esatterwhite/node-seeli/compare/v16.0.0...v17.0.0) (2026-03-28)
 
 
