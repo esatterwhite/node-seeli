@@ -12,6 +12,7 @@
     "lint": "eslint ./",
     "lint:fix": "npm run lint -- --fix",
     "release": "npx semantic-release",
+    "release:dry": "npm run release -- --no-ci --dry-run --branches=${BRANCH_NAME:-main}",
     "vuepress": "vuepress",
     "docs:dev": "vuepress dev gh-pages",
     "docs:build": "vuepress build gh-pages",

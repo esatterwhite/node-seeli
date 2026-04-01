@@ -29,7 +29,8 @@ jobs:
         run: npm test
 
   release:
-    name: release
+    name: Release
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     needs: test
     runs-on: ubuntu-latest
     permissions:
@@ -38,20 +39,29 @@ jobs:
       issues: write
       pull-requests: write
     steps:
+      - name: Generate Token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.RELEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          token: ${{ steps.app-token.outputs.token }}
           persist-credentials: false
+
       - uses: actions/setup-node@v4
         with:
           node-version: 24
-      - run: npm install
+      - run: npm ci
 
       - name: Publish
         run: npm run release
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
           GIT_AUTHOR_NAME: 'Dependant Bot'
           GIT_AUTHOR_EMAIL: 'release-bot@codedependant.net'
           GIT_COMMITTER_NAME: 'Dependant Bot'
           GIT_COMMITTER_EMAIL: 'release-bot@codedependant.net'
+          NPM_TOKEN: 'false'
