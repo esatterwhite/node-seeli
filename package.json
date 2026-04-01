@@ -11,7 +11,7 @@
     "tap": "tap",
     "lint": "eslint ./",
     "lint:fix": "npm run lint -- --fix",
-    "release": "semantic-release",
+    "release": "npx semantic-release",
     "vuepress": "vuepress",
     "docs:dev": "vuepress dev gh-pages",
     "docs:build": "vuepress build gh-pages",
@@ -101,15 +101,12 @@
     "strip-ansi": "^6.0.0"
   },
   "devDependencies": {
-    "@codedependant/release-config-npm": "^1.0.3",
+    "@codedependant/release-config-core": "^1.1.1",
     "@inquirer/testing": "^3.3.2",
     "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/exec": "^7.1.0",
-    "@semantic-release/git": "^10.0.1",
     "@vuepress/plugin-back-to-top": "^1.5.4",
     "eslint": "^10.1.0",
     "eslint-config-logdna": "^8.0.1",
-    "semantic-release": "^25.0.3",
     "tap": "^21.6.2",
     "vuepress": "^1.8.2"
   },
