@@ -1,3 +1,10 @@
+## [18.0.1](https://github.com/esatterwhite/node-seeli/compare/v18.0.0...v18.0.1) (2026-04-02)
+
+
+### Bug Fixes
+
+* **ci**: make sure the release process publishes a pacakge [2749972](https://github.com/esatterwhite/node-seeli/commit/27499722dd8c641665c8caf928e97d37b5ffe1b9) - Eric Satterwhite
+
 # [18.0.0](https://github.com/esatterwhite/node-seeli/compare/v17.0.0...v18.0.0) (2026-04-01)
 
 
