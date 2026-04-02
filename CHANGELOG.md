@@ -1,3 +1,10 @@
+## [18.0.2](https://github.com/esatterwhite/node-seeli/compare/v18.0.1...v18.0.2) (2026-04-02)
+
+
+### Chores
+
+* **doc**: fix dependency badge [65259bc](https://github.com/esatterwhite/node-seeli/commit/65259bcc55b83a4e2b05386aca714d30f54186b7) - Eric Satterwhite
+
 ## [18.0.1](https://github.com/esatterwhite/node-seeli/compare/v18.0.0...v18.0.1) (2026-04-02)
 
 
