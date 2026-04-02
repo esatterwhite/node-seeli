@@ -1,5 +1,5 @@
 [![Test + Release](https://github.com/esatterwhite/node-seeli/actions/workflows/release.yml/badge.svg)](https://github.com/esatterwhite/node-seeli/actions/workflows/release.yml)
-![package dependancies](https://david-dm.org/esatterwhite/node-seeli.png)
+[![package dependancies](https://img.shields.io/librariesio/github/esatterwhite/node-seeli.svg)](https://github.com/esatterwhite/node-seeli)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/0df91a318dc444e7aedcdd4c77fda673)](https://app.codacy.com/gh/esatterwhite/node-seeli/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
