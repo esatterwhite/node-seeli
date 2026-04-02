@@ -1,3 +1,10 @@
+## [18.0.3](https://github.com/esatterwhite/node-seeli/compare/v18.0.2...v18.0.3) (2026-04-02)
+
+
+### Bug Fixes
+
+* **command**: fixes a prompt alias mismatch with select [c65a3b8](https://github.com/esatterwhite/node-seeli/commit/c65a3b81420e162f244059945f3f6aa31860bd62) - Eric Satterwhite
+
 ## [18.0.2](https://github.com/esatterwhite/node-seeli/compare/v18.0.1...v18.0.2) (2026-04-02)
 
 
