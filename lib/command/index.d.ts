@@ -61,7 +61,7 @@ declare class Command extends Map<any, any> {
    * Will be passed the contents return by the command
    * @return String|undefined Will return the result from the command specific run directive if there is any.
    */
-  run(cmd?: any, depth?: number): Promise<any>;
+  run(cmd?: any, depth?: number): Promise<any> | undefined;
 
   /**
    * Validates the current data set before running the command

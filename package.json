@@ -20,6 +20,7 @@
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "lib/",
     "README.md",
     "LICENSE",
@@ -130,5 +131,6 @@
     "files": [
       "test/**/*.js"
     ]
-  }
+  },
+  "types": "./index.d.ts"
 }
