@@ -1,0 +1,241 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/esatterwhite/dev/js/seeli-docs/docs
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 80
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 10
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: UI Prompts
+    style:
+      border: 0px black solid
+      boxShadow: none
+      margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Inconsolata, Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 20
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 1793
+    content: "\e~\e[01;32m$\e[00m "
+  - delay: 552
+    content: s
+  - delay: 235
+    content: e
+  - delay: 131
+    content: e
+  - delay: 169
+    content: l
+  - delay: 228
+    content: i
+  - delay: 120
+    content: ' '
+  - delay: 252
+    content: p
+  - delay: 175
+    content: r
+  - delay: 159
+    content: o
+  - delay: 159
+    content: m
+  - delay: 163
+    content: p
+  - delay: 233
+    content: t
+  - delay: 232
+    content: s
+  - delay: 296
+    content: "\r\n"
+  - delay: 366
+    content: "\e[32m?\e[39m \e[1mWhat is your name\e[22m\e[0m \e[0m\e[20D\e[20C"
+  - delay: 1031
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your name\e[22m\e[0m \e[0mb\e[21D\e[21C"
+  - delay: 305
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your name\e[22m\e[0m \e[0mbi\e[22D\e[22C"
+  - delay: 237
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your name\e[22m\e[0m \e[0mbif\e[23D\e[23C"
+  - delay: 125
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your name\e[22m\e[0m \e[0mbiff\e[24D\e[24C"
+  - delay: 398
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your name\e[22m\e[0m \e[0m\e[36mbiff\e[39m\e[24D\e[24C\r\n"
+  - delay: 5
+    content: "\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 793
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 193
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 186
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 282
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 88
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 114
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 173
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[hidden]\e[22m\e[23m\e[32D\e[32C\r\n\e[32m?\e[39m \e[1mAre you sure\e[22m\e[0m \e[0m\e[2m(Y/n) \e[22m\e[21D\e[21C"
+  - delay: 776
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mAre you sure\e[22m\e[0m \e[0m\e[2m(Y/n) \e[22mn\e[22D\e[22C"
+  - delay: 322
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mAre you sure\e[22m\e[0m \e[0m\e[36mNo\e[39m\e[17D\e[17C\r\n\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 1027
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 207
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 273
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 482
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 733
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 404
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[input is hidden] \e[22m\e[23m\e[42D\e[42C"
+  - delay: 272
+    content: "\e[2K\e[G\e[32m?\e[39m \e[1mWhat is your password\e[22m\e[0m \e[0m\e[3m\e[2m[hidden]\e[22m\e[23m\e[32D\e[32C\r\n\e[?25l\e[91m⠋\e[39m processing..."
+  - delay: 83
+    content: "\e[2K\e[1G\e[91m⠙\e[39m processing..."
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠹\e[39m processing..."
+  - delay: 82
+    content: "\e[2K\e[1G\e[91m⠸\e[39m processing..."
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠼\e[39m processing..."
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠴\e[39m processing..."
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠦\e[39m processing..."
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠧\e[39m processing..."
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠇\e[39m processing..."
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠏\e[39m processing..."
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠋\e[39m processing..."
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠙\e[39m processing..."
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠹\e[39m processing..."
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠸\e[39m processing..."
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠼\e[39m processing..."
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠴\e[39m processing..."
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠦\e[39m processing..."
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠧\e[39m processing..."
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠇\e[39m processing..."
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠏\e[39m processing..."
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠋\e[39m processing..."
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠙\e[39m processing..."
+  - delay: 81
+    content: "\e[2K\e[1G\e[91m⠹\e[39m processing..."
+  - delay: 79
+    content: "\e[2K\e[1G\e[91m⠸\e[39m processing..."
+  - delay: 80
+    content: "\e[2K\e[1G\e[91m⠼\e[39m processing..."
+  - delay: 68
+    content: "\e[2K\e[1G\e[?25h\e[34mℹ\e[39m name: biff\r\n\e[?25h\e[34mℹ\e[39m password: bcx124\r\n\e[?25h\e[34mℹ\e[39m confirmed: false\r\n\e[?25h\e[?25h\e_esatterwhite@thanos:~/dev/js/seeli-docs/docs\e\\\e[01;32m[esatterwhite@thanos\e[01;37m docs\e[01;32m]$\e[00m "
+  - delay: 1826
+    content: "\r\n"

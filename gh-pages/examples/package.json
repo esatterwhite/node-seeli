@@ -1,0 +1,25 @@
+{
+  "name": "seeli-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cli.js",
+  "bin": {
+    "seeli": "./cli.js"
+  },
+  "scripts": {
+    "terminalizer": "terminalizer"
+  },
+  "seeli": {
+    "color": "magenta",
+    "name": "seeli"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "seeli": "link:../..",
+    "seeli-examples": "link:"
+  },
+  "devDependencies": {
+    "terminalizer": "^0.7.2"
+  }
+}

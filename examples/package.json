@@ -1,0 +1,24 @@
+{
+  "name": "examples",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "cli.js",
+  "bin": {
+    "seeli": "cli.js"
+  },
+  "scripts": {},
+  "keywords": [],
+  "author": "Eric Satterwhite <esatterwhite@wi.rr.com>",
+  "license": "ISC",
+  "dependencies": {
+    "cli-spinners": "^2.5.0",
+    "debug": "*",
+    "seeli": "file:../"
+  },
+  "seeli": {
+    "color": "ansi256:229",
+    "name": "fake",
+    "help": "./commands/ui"
+  }
+}

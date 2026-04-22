@@ -1,0 +1,267 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: bash -l
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /home/esatterwhite
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 80
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 10
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: Interactive Multiselect
+    style:
+      border: 0px black solid
+      boxShadow: none
+      margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: block
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Inconsalata, Monaco, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 20
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 1146
+    content: "\e~\e[01;32m$\e[00m "
+  - delay: 1678
+    content: s
+  - delay: 193
+    content: e
+  - delay: 134
+    content: e
+  - delay: 249
+    content: l
+  - delay: 178
+    content: i
+  - delay: 692
+    content: ' '
+  - delay: 451
+    content: m
+  - delay: 273
+    content: u
+  - delay: 115
+    content: l
+  - delay: 169
+    content: t
+  - delay: 132
+    content: i
+  - delay: 777
+    content: ' '
+  - delay: 1267
+    content: '-'
+  - delay: 231
+    content: '-'
+  - delay: 409
+    content: d
+  - delay: 181
+    content: i
+  - delay: 89
+    content: r
+  - delay: 91
+    content: e
+  - delay: 229
+    content: c
+  - delay: 151
+    content: t
+  - delay: 350
+    content: i
+  - delay: 91
+    content: o
+  - delay: 90
+    content: 'n'
+  - delay: 334
+    content: '='
+  - delay: 279
+    content: 'n'
+  - delay: 137
+    content: o
+  - delay: 172
+    content: r
+  - delay: 219
+    content: t
+  - delay: 137
+    content: h
+  - delay: 302
+    content: ' '
+  - delay: 135
+    content: '-'
+  - delay: 188
+    content: '-'
+  - delay: 253
+    content: d
+  - delay: 205
+    content: i
+  - delay: 112
+    content: r
+  - delay: 89
+    content: e
+  - delay: 264
+    content: c
+  - delay: 173
+    content: t
+  - delay: 143
+    content: i
+  - delay: 92
+    content: o
+  - delay: 43
+    content: 'n'
+  - delay: 251
+    content: '='
+  - delay: 258
+    content: s
+  - delay: 171
+    content: o
+  - delay: 65
+    content: u
+  - delay: 584
+    content: t
+  - delay: 94
+    content: h
+  - delay: 538
+    content: "\r\n\e[?2004l\r"
+  - delay: 352
+    content: "\e[?25hyou selected \e[35mnorth,south\e[39m!\r\n"
+  - delay: 1547
+    content: "\e~\e[01;32m$\e[00m "
+  - delay: 445
+    content: s
+  - delay: 192
+    content: e
+  - delay: 146
+    content: e
+  - delay: 95
+    content: l
+  - delay: 205
+    content: i
+  - delay: 250
+    content: ' '
+  - delay: 196
+    content: m
+  - delay: 435
+    content: u
+  - delay: 164
+    content: l
+  - delay: 147
+    content: t
+  - delay: 123
+    content: i
+  - delay: 865
+    content: ' '
+  - delay: 133
+    content: '-'
+  - delay: 243
+    content: i
+  - delay: 514
+    content: "\r\n\e[?2004l\r"
+  - delay: 385
+    content: "\e[?25l\e[32m?\e[39m \e[1mdirection: The desired direction to travel\e[22m\e[0m \e[0m(Press \e[36m\e[1m<space>\e[22m\e[39m to select, \e[36m\e[1m<a>\e[22m\e[39m to to\r\nggle all, \e[36m\e[1m<i>\e[22m\e[39m to invert selection)\r\n\e[36m❯◯ north\e[39m\r\n ◯ south\r\n ◯ east\r\n ◯ west\e[7D\e[7C"
+  - delay: 1257
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mdirection: The desired direction to travel\e[22m\e[0m \e[0m(Press \e[36m\e[1m<space>\e[22m\e[39m to select, \e[36m\e[1m<a>\e[22m\e[39m to to\r\nggle all, \e[36m\e[1m<i>\e[22m\e[39m to invert selection)\r\n ◯ north\r\n\e[36m❯◯ south\e[39m\r\n ◯ east\r\n ◯ west\e[7D\e[7C"
+  - delay: 261
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mdirection: The desired direction to travel\e[22m\e[0m \e[0m(Press \e[36m\e[1m<space>\e[22m\e[39m to select, \e[36m\e[1m<a>\e[22m\e[39m to to\r\nggle all, \e[36m\e[1m<i>\e[22m\e[39m to invert selection)\r\n ◯ north\r\n ◯ south\r\n\e[36m❯◯ east\e[39m\r\n ◯ west\e[7D\e[7C"
+  - delay: 329
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mdirection: The desired direction to travel\e[22m\e[0m \e[0m(Press \e[36m\e[1m<space>\e[22m\e[39m to select, \e[36m\e[1m<a>\e[22m\e[39m to to\r\nggle all, \e[36m\e[1m<i>\e[22m\e[39m to invert selection)\r\n ◯ north\r\n ◯ south\r\n ◯ east\r\n\e[36m❯◯ west\e[39m\e[7D\e[7C"
+  - delay: 615
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mdirection: The desired direction to travel\e[22m\e[0m \e[0m\r\n ◯ north\r\n ◯ south\r\n ◯ east\r\n\e[36m❯\e[32m◉\e[39m\e[36m west\e[39m\e[7D\e[7C"
+  - delay: 714
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mdirection: The desired direction to travel\e[22m\e[0m \e[0m\r\n ◯ north\r\n ◯ south\r\n\e[36m❯◯ east\e[39m\r\n \e[32m◉\e[39m west\e[7D\e[7C"
+  - delay: 168
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mdirection: The desired direction to travel\e[22m\e[0m \e[0m\r\n ◯ north\r\n\e[36m❯◯ south\e[39m\r\n ◯ east\r\n \e[32m◉\e[39m west\e[7D\e[7C"
+  - delay: 583
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mdirection: The desired direction to travel\e[22m\e[0m \e[0m\r\n ◯ north\r\n\e[36m❯\e[32m◉\e[39m\e[36m south\e[39m\r\n ◯ east\r\n \e[32m◉\e[39m west\e[7D\e[7C"
+  - delay: 1958
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mdirection: The desired direction to travel\e[22m\e[0m \e[0m\r\n \e[32m◉\e[39m north\r\n\e[36m❯◯ south\e[39m\r\n \e[32m◉\e[39m east\r\n ◯ west\e[7D\e[7C"
+  - delay: 1022
+    content: "\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[1A\e[2K\e[G\e[32m?\e[39m \e[1mdirection: The desired direction to travel\e[22m\e[0m \e[0m\e[36mnorth, east\e[39m\e[56D\e[56C\r\n\e[?25hyou selected \e[35mnorth,east\e[39m!\r\n\e[?25h"
+  - delay: 1823
+    content: "\e~\e[01;32m$\e[00m "

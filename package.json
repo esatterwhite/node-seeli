@@ -1,0 +1,130 @@
+{\n  "name": "seeli",\n  "version": "18.0.3",\n  "description": "Object oriented, flexible CLI tools",\n  "main": "index.js",\n  "exports": {\n    ".": {\n      "import": "./seeli.mjs",\n      "require": "./index.js"\n    }\n  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tap",
+    "tap": "tap",
+    "lint": "eslint ./",
+    "lint:fix": "npm run lint -- --fix",
+    "release": "npx semantic-release",
+    "release:dry": "npm run release -- --no-ci --dry-run --branches=${BRANCH_NAME:-main}",
+    "vuepress": "vuepress",
+    "docs:dev": "vuepress dev gh-pages",
+    "docs:build": "vuepress build gh-pages",
+    "npm:clean": "rm -rf node_modules gh-pages/**/node_modules"
+  },
+  "files": [
+    "index.js",
+    "lib/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "eslintConfig": {
+    "root": true,
+    "extends": "codedependant",
+    "rules": {
+      "no-eq-null": 0,
+      "no-var": 2,
+      "prefer-const": [
+        "error"
+      ],
+      "no-cond-assign": 0
+    },
+    "parserOptions": {
+      "ecmaVersion": 2022,
+      "sourceType": "script"
+    },
+    "ignorePatterns": [
+      "node_modules/",
+      "gh-pages/",
+      "docs/",
+      "examples/"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/esatterwhite/node-seeli.git"
+  },
+  "keywords": [
+    "CLI",
+    "OOP",
+    "command",
+    "line",
+    "class",
+    "terminal",
+    "ANSI",
+    "cli",
+    "opts",
+    "nopt",
+    "options",
+    "args",
+    "argv",
+    "interactive"
+  ],
+  "author": {
+    "name": "Eric Satterwhite",
+    "email": "esatterwhite@wi.rr.com"
+  },
+  "contributors": [
+    {
+      "name": "Dennis Ploeger",
+      "email": "develop@dieploegers.de",
+      "url": "http://dennis.dieploegers.de"
+    }
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/esatterwhite/node-seeli/issues"
+  },
+  "homepage": "https://github.com/esatterwhite/node-seeli",
+  "dependencies": {
+    "@inquirer/prompts": "^8.3.2",
+    "abbrev": "^4.0.0",
+    "chalk": "^5.6.2",
+    "cli-spinners": "^3.4.0",
+    "cliui": "^9.0.1",
+    "clone": "^2.1.2",
+    "debug": "^4.3.2",
+    "mout": "^1.2.2",
+    "nopt": "^9.0.0",
+    "ora": "^9.3.0",
+    "package-up": "^5.0.0",
+    "string-width": "^8.2.0",
+    "strip-ansi": "^6.0.0"
+  },
+  "devDependencies": {
+    "@codedependant/release-config-core": "^1.1.1",
+    "@inquirer/testing": "^3.3.2",
+    "@semantic-release/changelog": "^6.0.3",
+    "@vuepress/plugin-back-to-top": "^1.5.4",
+    "eslint": "^10.1.0",
+    "eslint-config-logdna": "^8.0.1",
+    "tap": "^21.6.2",
+    "vuepress": "^1.8.2"
+  },
+  "tap": {
+    "browser": false,
+    "show-full-coverage": true,
+    "functions": 97,
+    "lines": 97,
+    "branches": 84,
+    "statements": 94,
+    "coverage-report": [
+      "text",
+      "text-summary",
+      "lcov",
+      "json",
+      "json-summary",
+      "html"
+    ],
+    "output-file": ".tap-out",
+    "files": [
+      "test/**/*.js"
+    ]
+  }
+}
