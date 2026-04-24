@@ -1,3 +1,11 @@
+## [18.0.4](https://github.com/esatterwhite/node-seeli/compare/v18.0.3...v18.0.4) (2026-04-24)
+
+
+### Bug Fixes
+
+* apply lint cleanup for Codacy [ed2f374](https://github.com/esatterwhite/node-seeli/commit/ed2f3742a7bf2abcbe0e9f26be07dd88d671c34a) - Eric Satterwhite
+* publish root TypeScript declarations [76e8fa0](https://github.com/esatterwhite/node-seeli/commit/76e8fa093e573bf79ee95f1e01313fa41804686f) - Eric Satterwhite
+
 ## [18.0.3](https://github.com/esatterwhite/node-seeli/compare/v18.0.2...v18.0.3) (2026-04-02)
 
 
