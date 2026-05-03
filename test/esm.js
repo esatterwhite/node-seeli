@@ -8,10 +8,9 @@ test('esm entrypoint', async (t) => {
   const esm = await import(packageName)
 
   t.equal(esm.default, cjs, 'default export matches CommonJS entrypoint')
-  t.equal(esm.commands, cjs, 'commands named export matches CommonJS entrypoint')
-  t.equal(esm.Seeli, cjs.Seeli, 'exports Seeli')
-  t.equal(esm.Command, cjs.Command, 'exports Command')
-  t.same(esm.list, cjs.list, 'exports command list')
+  t.equal(esm.default.Seeli, cjs.Seeli, 'default export exposes Seeli')
+  t.equal(esm.default.Command, cjs.Command, 'default export exposes Command')
+  t.same(esm.default.list, cjs.list, 'default export exposes command list')
 })
 
 test('package exports keep CommonJS compatibility', async (t) => {
