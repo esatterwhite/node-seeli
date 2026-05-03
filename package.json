@@ -3,6 +3,32 @@
   "version": "18.0.4",
   "description": "Object oriented, flexible CLI tools",
   "main": "index.js",
+  "module": "index.mjs",
+  "exports": {
+    ".": {
+      "types": {
+        "import": "./index.d.mts",
+        "require": "./index.d.ts",
+        "default": "./index.d.ts"
+      },
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "default": "./index.js"
+    },
+    "./lib/command": {
+      "types": "./lib/command/index.d.ts",
+      "default": "./lib/command/index.js"
+    },
+    "./lib/commands": "./lib/commands/index.js",
+    "./lib/lang/object": "./lib/lang/object/index.js",
+    "./lib/usage": "./lib/usage/index.js",
+    "./lib/command/*": "./lib/command/*.js",
+    "./lib/commands/*": "./lib/commands/*.js",
+    "./lib/lang/object/*": "./lib/lang/object/*.js",
+    "./lib/usage/*": "./lib/usage/*.js",
+    "./lib/*": "./lib/*.js",
+    "./package.json": "./package.json"
+  },
   "directories": {
     "test": "test"
   },
@@ -20,7 +46,9 @@
   },
   "files": [
     "index.js",
+    "index.mjs",
     "index.d.ts",
+    "index.d.mts",
     "lib/",
     "README.md",
     "LICENSE",
@@ -110,6 +138,7 @@
     "eslint": "^10.1.0",
     "eslint-config-logdna": "^8.0.1",
     "tap": "^21.6.2",
+    "typescript": "^5.9.3",
     "vuepress": "^1.8.2"
   },
   "tap": {
