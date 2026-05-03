@@ -3,7 +3,6 @@
   "version": "18.0.4",
   "description": "Object oriented, flexible CLI tools",
   "main": "index.js",
-  "module": "index.mjs",
   "exports": {
     ".": {
       "types": {
@@ -11,7 +10,7 @@
         "require": "./index.d.ts",
         "default": "./index.d.ts"
       },
-      "import": "./index.mjs",
+      "import": "./index.js",
       "require": "./index.js",
       "default": "./index.js"
     },
@@ -46,7 +45,6 @@
   },
   "files": [
     "index.js",
-    "index.mjs",
     "index.d.ts",
     "index.d.mts",
     "lib/",

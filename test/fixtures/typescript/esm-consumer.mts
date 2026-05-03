@@ -1,8 +1,8 @@
-import seeli, {Command, Seeli, list} from 'seeli';
+import seeli from 'seeli';
 
-const command = new Command({name: 'typed-esm'});
-const cli = new Seeli();
-const names: string[] = list;
+const command = new seeli.Command({name: 'typed-esm'});
+const cli = new seeli.Seeli();
+const names: string[] = seeli.list;
 
 cli.use(command);
 seeli.use(command);
