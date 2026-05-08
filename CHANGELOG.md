@@ -1,3 +1,15 @@
+# [18.1.0](https://github.com/esatterwhite/node-seeli/compare/v18.0.4...v18.1.0) (2026-05-08)
+
+
+### Features
+
+* add ESM entrypoint and TypeScript exports [12a1eab](https://github.com/esatterwhite/node-seeli/commit/12a1eab38e16c2962dd9c10baae664c081eb1eeb) - Eric Satterwhite
+
+
+### Miscellaneous
+
+* refine ESM support around CommonJS entrypoint [dda612d](https://github.com/esatterwhite/node-seeli/commit/dda612dd90af03fcbe028f01dcf24cf56c334905) - Eric Satterwhite
+
 ## [18.0.4](https://github.com/esatterwhite/node-seeli/compare/v18.0.3...v18.0.4) (2026-04-24)
 
 
